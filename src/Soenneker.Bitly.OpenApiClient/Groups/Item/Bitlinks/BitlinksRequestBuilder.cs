@@ -167,19 +167,8 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
         public partial class BitlinksRequestBuilderGetQueryParameters 
         {
             /// <summary>Whether or not to include archived resources</summary>
-            [Obsolete("This property is deprecated, use ArchivedAsGetArchivedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("archived")]
-            public string? Archived { get; set; }
-#nullable restore
-#else
-            [QueryParameter("archived")]
-            public string Archived { get; set; }
-#endif
-            /// <summary>Whether or not to include archived resources</summary>
-            [QueryParameter("archived")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetArchivedQueryParameterType? ArchivedAsGetArchivedQueryParameterType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetArchivedQueryParameterType? Archived { get; set; }
             /// <summary>Filter to return only links for the given campaign GUID, can be provided</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,46 +195,14 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
             /// <summary>Timestamp as an integer unix epoch (seconds only)</summary>
             [QueryParameter("created_before")]
             public int? CreatedBefore { get; set; }
-            [Obsolete("This property is deprecated, use CustomBitlinkAsGetCustomBitlinkQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("custom_bitlink")]
-            public string? CustomBitlink { get; set; }
-#nullable restore
-#else
-            [QueryParameter("custom_bitlink")]
-            public string CustomBitlink { get; set; }
-#endif
-            [QueryParameter("custom_bitlink")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetCustom_bitlinkQueryParameterType? CustomBitlinkAsGetCustomBitlinkQueryParameterType { get; set; }
-            /// <summary>Filter to only Bitlinks that contain deeplinks</summary>
-            [Obsolete("This property is deprecated, use DeeplinksAsGetDeeplinksQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("deeplinks")]
-            public string? Deeplinks { get; set; }
-#nullable restore
-#else
-            [QueryParameter("deeplinks")]
-            public string Deeplinks { get; set; }
-#endif
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetCustom_bitlinkQueryParameterType? CustomBitlink { get; set; }
             /// <summary>Filter to only Bitlinks that contain deeplinks</summary>
             [QueryParameter("deeplinks")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetDeeplinksQueryParameterType? DeeplinksAsGetDeeplinksQueryParameterType { get; set; }
-            /// <summary>Filter to only Bitlinks that contain deeplinks configured with a custom domain</summary>
-            [Obsolete("This property is deprecated, use DomainDeeplinksAsGetDomainDeeplinksQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("domain_deeplinks")]
-            public string? DomainDeeplinks { get; set; }
-#nullable restore
-#else
-            [QueryParameter("domain_deeplinks")]
-            public string DomainDeeplinks { get; set; }
-#endif
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetDeeplinksQueryParameterType? Deeplinks { get; set; }
             /// <summary>Filter to only Bitlinks that contain deeplinks configured with a custom domain</summary>
             [QueryParameter("domain_deeplinks")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetDomain_deeplinksQueryParameterType? DomainDeeplinksAsGetDomainDeeplinksQueryParameterType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetDomain_deeplinksQueryParameterType? DomainDeeplinks { get; set; }
             /// <summary>Filter by the login of the authenticated user that created the Bitlink</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -257,19 +214,8 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
             public string[] EncodingLogin { get; set; }
 #endif
             /// <summary>a filter value if the resource has any QR codes</summary>
-            [Obsolete("This property is deprecated, use HasQrCodesAsGetHasQrCodesQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("has_qr_codes")]
-            public string? HasQrCodes { get; set; }
-#nullable restore
-#else
-            [QueryParameter("has_qr_codes")]
-            public string HasQrCodes { get; set; }
-#endif
-            /// <summary>a filter value if the resource has any QR codes</summary>
-            [QueryParameter("has_qr_codes")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetHas_qr_codesQueryParameterType? HasQrCodesAsGetHasQrCodesQueryParameterType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.GetHas_qr_codesQueryParameterType? HasQrCodes { get; set; }
             /// <summary>The hostname and/or path you would like to search (case-insensitive). Subdomains included; query params and fragment ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -323,22 +269,6 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
             [QueryParameter("tags")]
             public string[] Tags { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BitlinksRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.BitlinksRequestBuilder.BitlinksRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BitlinksRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

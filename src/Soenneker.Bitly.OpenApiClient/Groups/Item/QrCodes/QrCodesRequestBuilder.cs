@@ -95,19 +95,8 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
         public partial class QrCodesRequestBuilderGetQueryParameters 
         {
             /// <summary>Whether or not to include archived resources</summary>
-            [Obsolete("This property is deprecated, use ArchivedAsGetArchivedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("archived")]
-            public string? Archived { get; set; }
-#nullable restore
-#else
-            [QueryParameter("archived")]
-            public string Archived { get; set; }
-#endif
-            /// <summary>Whether or not to include archived resources</summary>
-            [QueryParameter("archived")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetArchivedQueryParameterType? ArchivedAsGetArchivedQueryParameterType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetArchivedQueryParameterType? Archived { get; set; }
             /// <summary>Timestamp as an integer unix epoch (seconds only)</summary>
             [QueryParameter("created_after")]
             public int? CreatedAfter { get; set; }
@@ -125,19 +114,8 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
             public string[] CreatingLogin { get; set; }
 #endif
             /// <summary>Whether or not QRCode has any render customizations (like color or shape changes)</summary>
-            [Obsolete("This property is deprecated, use HasRenderCustomizationsAsGetHasRenderCustomizationsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("has_render_customizations")]
-            public string? HasRenderCustomizations { get; set; }
-#nullable restore
-#else
-            [QueryParameter("has_render_customizations")]
-            public string HasRenderCustomizations { get; set; }
-#endif
-            /// <summary>Whether or not QRCode has any render customizations (like color or shape changes)</summary>
-            [QueryParameter("has_render_customizations")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetHas_render_customizationsQueryParameterType? HasRenderCustomizationsAsGetHasRenderCustomizationsQueryParameterType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetHas_render_customizationsQueryParameterType? HasRenderCustomizations { get; set; }
             /// <summary>The hostname and/or path you would like to search (case-insensitive). Subdomains included; query params and fragment ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,37 +127,16 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
             public string HostnamePathQuery { get; set; }
 #endif
             /// <summary>a filter value if the resource is a GS1 QR code</summary>
-            [Obsolete("This property is deprecated, use IsGs1AsGetIsGs1QueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("is_gs1")]
-            public string? IsGs1 { get; set; }
-#nullable restore
-#else
-            [QueryParameter("is_gs1")]
-            public string IsGs1 { get; set; }
-#endif
-            /// <summary>a filter value if the resource is a GS1 QR code</summary>
-            [QueryParameter("is_gs1")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetIs_gs1QueryParameterType? IsGs1AsGetIsGs1QueryParameterType { get; set; }
-            [Obsolete("This property is deprecated, use QrcTypeAsGetQrcTypeQueryParameterType instead")]
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetIs_gs1QueryParameterType? IsGs1 { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("qrc_type")]
-            public string[]? QrcType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetQrc_typeQueryParameterType[]? QrcType { get; set; }
 #nullable restore
 #else
             [QueryParameter("qrc_type")]
-            public string[] QrcType { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("qrc_type")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetQrc_typeQueryParameterType[]? QrcTypeAsGetQrcTypeQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("qrc_type")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetQrc_typeQueryParameterType[] QrcTypeAsGetQrcTypeQueryParameterType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetQrc_typeQueryParameterType[] QrcType { get; set; }
 #endif
             /// <summary>The value that you would like to search</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -214,14 +171,6 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
             [QueryParameter("tags")]
             public string[] Tags { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class QrCodesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.QrCodesRequestBuilder.QrCodesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

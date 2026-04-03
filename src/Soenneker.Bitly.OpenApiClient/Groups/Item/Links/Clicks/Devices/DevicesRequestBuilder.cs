@@ -45,11 +45,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesGetResponse?> GetAsDevicesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesGetResponse> GetAsDevicesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -61,36 +61,6 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesGetResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get link clicks by device for all links in a group.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.Forbidden">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsDevicesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Bitly.OpenApiClient.Models.BadRequest.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get link clicks by device for all links in a group.
@@ -130,19 +100,8 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices
             [QueryParameter("size")]
             public int? Size { get; set; }
             /// <summary>A unit of time</summary>
-            [Obsolete("This property is deprecated, use UnitAsTimeUnit instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("unit")]
-            public string? Unit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("unit")]
-            public string Unit { get; set; }
-#endif
-            /// <summary>A unit of time</summary>
-            [QueryParameter("unit")]
-            public global::Soenneker.Bitly.OpenApiClient.Models.TimeUnit? UnitAsTimeUnit { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.TimeUnit? Unit { get; set; }
             /// <summary>An ISO-8601 timestamp, indicating the most recent time for which to pull metrics. Will default to current time. Timestamp values should be url encoded (i.e. replace &apos;+&apos; with &apos;%2B&apos; and &apos;:&apos; with &apos;%3A&apos;; 2022-02-02T15:53:02+0000 becomes 2022-02-02T15%3A53%3A02%2B0000)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,14 +115,6 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices
             /// <summary>An integer representing the time units to query data for. pass -1 to return all units of time</summary>
             [QueryParameter("units")]
             public int? Units { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }
