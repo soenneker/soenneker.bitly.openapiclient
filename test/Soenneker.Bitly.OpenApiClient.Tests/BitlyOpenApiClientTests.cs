@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Bitly.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class BitlyOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class BitlyOpenApiClientTests : HostedUnitTest
 {
-    public BitlyOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public BitlyOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
