@@ -31,7 +31,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeBranding Branding { get; set; }
 #endif
-        /// <summary>An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right</summary>
+        /// <summary>&quot;An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeCorners? Corners { get; set; }

@@ -7,46 +7,37 @@ using System.IO;
 using System;
 namespace Soenneker.Bitly.OpenApiClient.Models
 {
-    /// <summary>
-    /// The text to be inserted into the QR code&apos;s frame
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QRCodeFrameRequest_text : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class ExpandBitlinkBody : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An object describing text with color</summary>
+        /// <summary>The bitlink_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Primary { get; set; }
+        public string? BitlinkId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text Primary { get; set; }
-#endif
-        /// <summary>An object describing text with color</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Secondary { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text Secondary { get; set; }
+        public string BitlinkId { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.ExpandBitlinkBody"/> and sets the default values.
         /// </summary>
-        public QRCodeFrameRequest_text()
+        public ExpandBitlinkBody()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.ExpandBitlinkBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Bitly.OpenApiClient.Models.ExpandBitlinkBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text();
+            return new global::Soenneker.Bitly.OpenApiClient.Models.ExpandBitlinkBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +47,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "primary", n => { Primary = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Text>(global::Soenneker.Bitly.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
-                { "secondary", n => { Secondary = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Text>(global::Soenneker.Bitly.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
+                { "bitlink_id", n => { BitlinkId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +57,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Text>("primary", Primary);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Text>("secondary", Secondary);
+            writer.WriteStringValue("bitlink_id", BitlinkId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

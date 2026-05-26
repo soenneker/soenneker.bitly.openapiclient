@@ -9,67 +9,43 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BaseChannel : IAdditionalDataHolder, IParsable
+    public partial class AddCustomBitlinkBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ISO TIMESTAMP</summary>
+        /// <summary>The bitlink_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Created { get; set; }
+        public string? BitlinkId { get; set; }
 #nullable restore
 #else
-        public string Created { get; set; }
+        public string BitlinkId { get; set; }
 #endif
-        /// <summary>The group_guid property</summary>
+        /// <summary>The custom_bitlink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupGuid { get; set; }
+        public string? CustomBitlink { get; set; }
 #nullable restore
 #else
-        public string GroupGuid { get; set; }
-#endif
-        /// <summary>The guid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Guid { get; set; }
-#nullable restore
-#else
-        public string Guid { get; set; }
-#endif
-        /// <summary>ISO_TIMESTAMP</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Modified { get; set; }
-#nullable restore
-#else
-        public string Modified { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
+        public string CustomBitlink { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BaseChannel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.AddCustomBitlinkBody"/> and sets the default values.
         /// </summary>
-        public BaseChannel()
+        public AddCustomBitlinkBody()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BaseChannel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.AddCustomBitlinkBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Bitly.OpenApiClient.Models.BaseChannel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Bitly.OpenApiClient.Models.AddCustomBitlinkBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.BaseChannel();
+            return new global::Soenneker.Bitly.OpenApiClient.Models.AddCustomBitlinkBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,11 +55,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetStringValue(); } },
-                { "group_guid", n => { GroupGuid = n.GetStringValue(); } },
-                { "guid", n => { Guid = n.GetStringValue(); } },
-                { "modified", n => { Modified = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "bitlink_id", n => { BitlinkId = n.GetStringValue(); } },
+                { "custom_bitlink", n => { CustomBitlink = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +66,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("created", Created);
-            writer.WriteStringValue("group_guid", GroupGuid);
-            writer.WriteStringValue("guid", Guid);
-            writer.WriteStringValue("modified", Modified);
-            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("bitlink_id", BitlinkId);
+            writer.WriteStringValue("custom_bitlink", CustomBitlink);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

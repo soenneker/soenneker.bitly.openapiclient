@@ -9,9 +9,13 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Metrics : global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics, IParsable
+    public partial class Metrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The facet property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Models.Metrics_facet? Facet { get; set; }
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,12 +24,37 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public List<global::Soenneker.Bitly.OpenApiClient.Models.Metric> MetricsProp { get; set; }
 #endif
+        /// <summary>The unit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Unit { get; set; }
+#nullable restore
+#else
+        public string Unit { get; set; }
+#endif
+        /// <summary>The unit_reference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnitReference { get; set; }
+#nullable restore
+#else
+        public string UnitReference { get; set; }
+#endif
+        /// <summary>The units property</summary>
+        public int? Units { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Metrics"/> and sets the default values.
+        /// </summary>
+        public Metrics()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Metrics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Bitly.OpenApiClient.Models.Metrics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Bitly.OpenApiClient.Models.Metrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Bitly.OpenApiClient.Models.Metrics();
@@ -34,22 +63,30 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "facet", n => { Facet = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Metrics_facet>(); } },
                 { "metrics", n => { MetricsProp = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.Metric>(global::Soenneker.Bitly.OpenApiClient.Models.Metric.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unit", n => { Unit = n.GetStringValue(); } },
+                { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
+                { "units", n => { Units = n.GetIntValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Metrics_facet>("facet", Facet);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.Metric>("metrics", MetricsProp);
+            writer.WriteStringValue("unit", Unit);
+            writer.WriteStringValue("unit_reference", UnitReference);
+            writer.WriteIntValue("units", Units);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,47 +9,27 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BaseMetrics : IAdditionalDataHolder, IParsable
+    public partial class Organization_references : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The facet property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics_facet? Facet { get; set; }
-        /// <summary>The unit property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Unit { get; set; }
-#nullable restore
-#else
-        public string Unit { get; set; }
-#endif
-        /// <summary>The unit_reference property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UnitReference { get; set; }
-#nullable restore
-#else
-        public string UnitReference { get; set; }
-#endif
-        /// <summary>The units property</summary>
-        public int? Units { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Organization_references"/> and sets the default values.
         /// </summary>
-        public BaseMetrics()
+        public Organization_references()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Organization_references"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Bitly.OpenApiClient.Models.Organization_references CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics();
+            return new global::Soenneker.Bitly.OpenApiClient.Models.Organization_references();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,10 +39,6 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "facet", n => { Facet = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics_facet>(); } },
-                { "unit", n => { Unit = n.GetStringValue(); } },
-                { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
-                { "units", n => { Units = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -72,10 +48,6 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BaseMetrics_facet>("facet", Facet);
-            writer.WriteStringValue("unit", Unit);
-            writer.WriteStringValue("unit_reference", UnitReference);
-            writer.WriteIntValue("units", Units);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

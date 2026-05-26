@@ -7,54 +7,39 @@ using System.IO;
 using System;
 namespace Soenneker.Bitly.OpenApiClient.Models
 {
-    /// <summary>
-    /// An object of named colors denoting which color should go to which area of the frame
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QRCodeFrameRequest_colors : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class GetGroupLinkClicksByDevice200_metrics : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The background color of the frame in hex code format</summary>
+        /// <summary>The clicks property</summary>
+        public int? Clicks { get; set; }
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Background { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public string Background { get; set; }
-#endif
-        /// <summary>The primary color of the frame in hex code format</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Primary { get; set; }
-#nullable restore
-#else
-        public string Primary { get; set; }
-#endif
-        /// <summary>The secondary color of the frame in hex code format</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Secondary { get; set; }
-#nullable restore
-#else
-        public string Secondary { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200_metrics"/> and sets the default values.
         /// </summary>
-        public QRCodeFrameRequest_colors()
+        public GetGroupLinkClicksByDevice200_metrics()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200_metrics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200_metrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors();
+            return new global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200_metrics();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,9 +49,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "background", n => { Background = n.GetStringValue(); } },
-                { "primary", n => { Primary = n.GetStringValue(); } },
-                { "secondary", n => { Secondary = n.GetStringValue(); } },
+                { "clicks", n => { Clicks = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +60,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("background", Background);
-            writer.WriteStringValue("primary", Primary);
-            writer.WriteStringValue("secondary", Secondary);
+            writer.WriteIntValue("clicks", Clicks);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

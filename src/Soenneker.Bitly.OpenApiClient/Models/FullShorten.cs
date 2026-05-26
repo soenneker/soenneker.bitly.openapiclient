@@ -15,7 +15,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Existing bitlink ID to add a keyword override to. Format: domain/hash. Cannot be used with long_url</summary>
+        /// <summary>&quot;Existing bitlink ID to add a keyword override to. Format: domain/hash. Cannot be used with long_url&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BitlinkId { get; set; }

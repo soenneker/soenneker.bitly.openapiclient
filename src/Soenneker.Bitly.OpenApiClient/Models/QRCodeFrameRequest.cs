@@ -17,20 +17,20 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>An object of named colors denoting which color should go to which area of the frame</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors? Colors { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors? Colors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors Colors { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors Colors { get; set; }
 #endif
         /// <summary>The id property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameType? Id { get; set; }
         /// <summary>The text to be inserted into the QR code&apos;s frame</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text? Text { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestText? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text Text { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestText Text { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest"/> and sets the default values.
@@ -58,9 +58,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "colors", n => { Colors = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors>(global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors.CreateFromDiscriminatorValue); } },
+                { "colors", n => { Colors = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors>(global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameType>(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text>(global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestText>(global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestText.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_colors>("colors", Colors);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors>("colors", Colors);
             writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameType>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequest_text>("text", Text);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestText>("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

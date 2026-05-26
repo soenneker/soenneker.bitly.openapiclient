@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "7B9A96E5EA8B6BC4AFB336C74D9E6B8A80448147513CB61500E486FC1009A1BF4CA1ED464A921B32D5713F0B473E1D8FC91EA361C9DEFBCDE94AE59B13720FAF",
-  "descriptionLocation": "../../openapi.json",
+  "descriptionHash": "3125F214A1F5F74CF7C55747354D5EBE1C10900F79FCCBDE7DED5CDE63EF28EE0B1D0FFC4252FF08C3E9C1FCD654EC6170D7DD4A70114FB9034D0B9EEF00DAEE",
+  "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.30.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "BitlyOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Bitly.OpenApiClient",

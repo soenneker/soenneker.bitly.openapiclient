@@ -7,53 +7,54 @@ using System.IO;
 using System;
 namespace Soenneker.Bitly.OpenApiClient.Models
 {
+    /// <summary>
+    /// An object of named colors denoting which color should go to which area of the frame
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PlanLimits : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class QRCodeFrameRequestColors : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The organization_guid property</summary>
+        /// <summary>The background color of the frame in hex code format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationGuid { get; set; }
+        public string? Background { get; set; }
 #nullable restore
 #else
-        public string OrganizationGuid { get; set; }
+        public string Background { get; set; }
 #endif
-        /// <summary>The plan_limits property</summary>
+        /// <summary>The primary color of the frame in hex code format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>? PlanLimitsProp { get; set; }
+        public string? Primary { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit> PlanLimitsProp { get; set; }
+        public string Primary { get; set; }
 #endif
-        /// <summary>The references property</summary>
+        /// <summary>The secondary color of the frame in hex code format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references? References { get; set; }
+        public string? Secondary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references References { get; set; }
+        public string Secondary { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors"/> and sets the default values.
         /// </summary>
-        public PlanLimits()
+        public QRCodeFrameRequestColors()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits();
+            return new global::Soenneker.Bitly.OpenApiClient.Models.QRCodeFrameRequestColors();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +64,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "organization_guid", n => { OrganizationGuid = n.GetStringValue(); } },
-                { "plan_limits", n => { PlanLimitsProp = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>(global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references>(global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references.CreateFromDiscriminatorValue); } },
+                { "background", n => { Background = n.GetStringValue(); } },
+                { "primary", n => { Primary = n.GetStringValue(); } },
+                { "secondary", n => { Secondary = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +76,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("organization_guid", OrganizationGuid);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>("plan_limits", PlanLimitsProp);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references>("references", References);
+            writer.WriteStringValue("background", Background);
+            writer.WriteStringValue("primary", Primary);
+            writer.WriteStringValue("secondary", Secondary);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
