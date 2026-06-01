@@ -10,6 +10,7 @@ using Soenneker.Bitly.OpenApiClient.Groups.Item.Codes;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Countries;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Devices;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements;
+using Soenneker.Bitly.OpenApiClient.Groups.Item.Exports;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Feature_usage;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Historical_usage;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Links;
@@ -67,6 +68,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.EngagementsRequestBuilder Engagements
         {
             get => new global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.EngagementsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The exports property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Exports.ExportsRequestBuilder Exports
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Groups.Item.Exports.ExportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The feature_usage property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Feature_usage.Feature_usageRequestBuilder Feature_usage

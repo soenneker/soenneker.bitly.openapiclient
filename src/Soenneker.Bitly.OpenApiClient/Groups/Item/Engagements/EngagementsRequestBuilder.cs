@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Over_time;
+using Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Top;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Over_time.Over_timeRequestBuilder Over_time
         {
             get => new global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Over_time.Over_timeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sorted property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.SortedRequestBuilder Sorted
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.SortedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The top property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Top.TopRequestBuilder Top

@@ -3000,6 +3000,95 @@
         }
       }
     },
+    "/groups/{group_guid}/engagements/sorted/top": {
+      "get": {
+        "tags": [
+          "Bitlinks"
+        ],
+        "summary": "Retrieve Top Links and Decoupled QR Codes by Engagements",
+        "description": "Returns the bitlinks and decoupled QR codes in a group with the most engagements over the requested time window, ranked together in descending order by engagement count. Bitlinks and decoupled QR codes are returned in separate lists; `sorted_links` preserves the unified descending-by-count ordering across both, with each entry's id referencing either a bitlink or a QR code guid.\n",
+        "operationId": "getTopLinksAndQRCodesByEngagements",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/GroupGUID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmountOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "$ref": "#/components/parameters/SortedSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopLinksAndQRCodes"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/groups/{group_guid}/bitlinks/{sort}": {
       "get": {
         "tags": [
@@ -4052,6 +4141,102 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/{group_guid}/exports": {
+      "post": {
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Create an inline CSV export for a group",
+        "description": "\"Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.\nThe export_type field selects the CSV shape: link_engagements_batch (engagement metrics for\nexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR code\nmetadata roster). Row caps apply per request: 200 rows when metrics are included\n(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-only\nlist exports. When the match set exceeds the cap, truncated is true and only the first\ncap rows are returned; row_count reports how many data rows are in the CSV.\n\"",
+        "operationId": "postCreateGroupExport",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/GroupGUID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupExportRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupExportResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
                 }
               }
             }
@@ -8767,6 +8952,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "decoupled",
+            "in": "query",
+            "description": "When true, ranks results by decoupled QR scan count and returns a TopLinksAndQRCodes response with links and QR codes partitioned into separate lists and a unified sorted_engagements ordering.\n",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -8775,7 +8968,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SortedLinks"
+                  "$ref": "#/components/schemas/GetGroupTopCodeScans200"
                 }
               }
             }
@@ -9505,6 +9698,18 @@
           }
         }
       },
+      "EngagementSubtotal": {
+        "type": "object",
+        "properties": {
+          "engagements": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "description": "Engagement-count subtotal for a single bitlink or decoupled QR code. The `id` references either a bitlink (`<domain>/<hash>`) or a QR code guid, and `engagements` is the combined count of bitlink clicks or QR code scans for that entity.\n"
+      },
       "SortedLinks": {
         "type": "object",
         "properties": {
@@ -9521,6 +9726,30 @@
             }
           }
         }
+      },
+      "TopLinksAndQRCodes": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BitlinkBody"
+            }
+          },
+          "qr_codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QRCodeMinimal"
+            }
+          },
+          "sorted_engagements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EngagementSubtotal"
+            }
+          }
+        },
+        "description": "Response shape for top bitlinks and decoupled QR codes in a group, ranked together by engagement count. `links` and `qr_codes` are independent lists (a link and a decoupled QR code are never the same entity); `sorted_engagements` is the unified descending-by-engagement ordering across both, with each entry's id referencing either a bitlink or a QR code guid. Coupled QRCs are listed by their bitlink ID.\n"
       },
       "DeeplinkRule": {
         "type": "object",
@@ -11082,6 +11311,143 @@
           }
         }
       },
+      "GroupExportRequestBody": {
+        "required": [
+          "export_type"
+        ],
+        "type": "object",
+        "properties": {
+          "export_type": {
+            "enum": [
+              "link_engagements_batch",
+              "links_list",
+              "qr_codes_list"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Which export shape to produce."
+          },
+          "bitlinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Fully qualified bitlinks (e.g. \"bit.ly/abc\"). Used by export_type link_engagements_batch when\nthe caller already knows the exact links. Mutually exclusive with filter (provide one or the other).\n"
+          },
+          "unix_from": {
+            "type": "integer",
+            "description": "Start of the metrics date range (Unix seconds, UTC). Clamped to the caller's tier data window.\nFor link_engagements_batch, required together with unix_to unless the tier max-history default applies.\nFor links_list or qr_codes_list, used when include_metrics is true.\n"
+          },
+          "unix_to": {
+            "type": "integer",
+            "description": "End of the metrics date range (Unix seconds, UTC). See unix_from."
+          },
+          "filter": {
+            "$ref": "#/components/schemas/GroupExportFilter"
+          },
+          "include_metrics": {
+            "type": "boolean",
+            "description": "When true on links_list or qr_codes_list, append clicks, scans, and button_clicks columns and apply\nthe 200-row cap. Requires unix_from and unix_to (or tier-default window behavior where applicable).\n"
+          }
+        }
+      },
+      "GroupExportFilter": {
+        "type": "object",
+        "properties": {
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "domain": {
+            "type": "string"
+          },
+          "archived": {
+            "enum": [
+              "on",
+              "off",
+              "both"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Filter by archive state."
+          },
+          "query": {
+            "type": "string",
+            "description": "Free-text search query."
+          },
+          "created_after": {
+            "type": "integer",
+            "description": "Include items created at or after this Unix timestamp (UTC)."
+          },
+          "created_before": {
+            "type": "integer",
+            "description": "Include items created before this Unix timestamp (UTC)."
+          },
+          "campaign_guid": {
+            "type": "string",
+            "description": "Filter links by campaign GUID. Ignored for qr_codes_list."
+          }
+        },
+        "description": "Search constraints used to resolve links or QR codes for export. Required for links_list and qr_codes_list."
+      },
+      "GroupExportResponse": {
+        "type": "object",
+        "properties": {
+          "export_type": {
+            "enum": [
+              "link_engagements_batch",
+              "links_list",
+              "qr_codes_list"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "filename": {
+            "type": "string",
+            "description": "Suggested download filename for the CSV."
+          },
+          "media_type": {
+            "type": "string",
+            "example": "text/csv"
+          },
+          "row_count": {
+            "type": "integer",
+            "description": "Number of data rows in the CSV (excluding the header row)."
+          },
+          "column_count": {
+            "type": "integer"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "CSV column headers in order."
+          },
+          "size_bytes": {
+            "type": "integer",
+            "description": "Size of the raw CSV bytes before base64 encoding."
+          },
+          "data_uri": {
+            "type": "string",
+            "description": "CSV file as a data:text/csv;base64,... URI."
+          },
+          "unix_from": {
+            "type": "integer",
+            "description": "Metrics window start (Unix seconds) when metrics are included in the export."
+          },
+          "unix_to": {
+            "type": "integer",
+            "description": "Metrics window end (Unix seconds) when metrics are included in the export."
+          },
+          "truncated": {
+            "type": "boolean",
+            "description": "True when the match set exceeded the per-request row cap and only the first cap rows were exported."
+          }
+        }
+      },
       "BulkUpdateRequest": {
         "required": [
           "action"
@@ -12316,6 +12682,33 @@
                 }
               }
             }
+          }
+        }
+      },
+      "GetGroupTopCodeScans200": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SortedLinks"
+          },
+          {
+            "$ref": "#/components/schemas/TopLinksAndQRCodes"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "SortedLinks": "#/components/schemas/SortedLinks",
+            "TopLinksAndQRCodes": "#/components/schemas/TopLinksAndQRCodes"
           }
         }
       },
