@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\engagements\sorted\top
+    /// Builds and executes requests for operations under \groups\{groupGuid}\engagements\sorted\top
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TopRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/engagements/sorted/top{?size*,unit*,unit_reference*,units*}", pathParameters)
+        public TopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/engagements/sorted/top{?size*,unit*,unit_reference*,units*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/engagements/sorted/top{?size*,unit*,unit_reference*,units*}", rawUrl)
+        public TopRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/engagements/sorted/top{?size*,unit*,unit_reference*,units*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns the bitlinks and decoupled QR codes in a group with the most engagements over the requested time window, ranked together in descending order by engagement count. Bitlinks and decoupled QR codes are returned in separate lists; `sorted_links` preserves the unified descending-by-count ordering across both, with each entry&apos;s id referencing either a bitlink or a QR code guid.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQRCodes"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQrCodes"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.Forbidden">When receiving a 403 status code</exception>
@@ -46,11 +46,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQRCodes?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQrCodes?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQRCodes> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQrCodes> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -62,7 +62,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted.Top
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQRCodes>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQRCodes.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQrCodes>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.TopLinksAndQrCodes.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the bitlinks and decoupled QR codes in a group with the most engagements over the requested time window, ranked together in descending order by engagement count. Bitlinks and decoupled QR codes are returned in separate lists; `sorted_links` preserves the unified descending-by-count ordering across both, with each entry&apos;s id referencing either a bitlink or a QR code guid.

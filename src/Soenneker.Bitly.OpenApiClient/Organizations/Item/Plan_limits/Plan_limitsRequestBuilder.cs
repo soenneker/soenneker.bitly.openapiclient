@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Organizations.Item.Plan_limits
 {
     /// <summary>
-    /// Builds and executes requests for operations under \organizations\{organization_guid}\plan_limits
+    /// Builds and executes requests for operations under \organizations\{organizationGuid}\plan_limits
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Plan_limitsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Organizations.Item.Plan_limits
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Plan_limitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_guid}/plan_limits", pathParameters)
+        public Plan_limitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationGuid}/plan_limits", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Organizations.Item.Plan_limits
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Plan_limitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_guid}/plan_limits", rawUrl)
+        public Plan_limitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationGuid}/plan_limits", rawUrl)
         {
         }
         /// <summary>

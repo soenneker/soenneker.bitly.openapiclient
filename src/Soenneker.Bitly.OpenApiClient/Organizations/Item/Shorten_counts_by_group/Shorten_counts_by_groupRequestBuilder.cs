@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Organizations.Item.Shorten_counts_by_group
 {
     /// <summary>
-    /// Builds and executes requests for operations under \organizations\{organization_guid}\shorten_counts_by_group
+    /// Builds and executes requests for operations under \organizations\{organizationGuid}\shorten_counts_by_group
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Shorten_counts_by_groupRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Organizations.Item.Shorten_counts_by_gro
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Shorten_counts_by_groupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_guid}/shorten_counts_by_group", pathParameters)
+        public Shorten_counts_by_groupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationGuid}/shorten_counts_by_group", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Organizations.Item.Shorten_counts_by_gro
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Shorten_counts_by_groupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_guid}/shorten_counts_by_group", rawUrl)
+        public Shorten_counts_by_groupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationGuid}/shorten_counts_by_group", rawUrl)
         {
         }
         /// <summary>

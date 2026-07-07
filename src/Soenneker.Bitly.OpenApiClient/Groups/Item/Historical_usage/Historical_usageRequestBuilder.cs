@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Historical_usage
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\historical_usage
+    /// Builds and executes requests for operations under \groups\{groupGuid}\historical_usage
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Historical_usageRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Historical_usage
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Historical_usageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/historical_usage{?end_date*,name*,start_date*,unit*}", pathParameters)
+        public Historical_usageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/historical_usage{?end_date*,name*,start_date*,unit*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Historical_usage
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Historical_usageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/historical_usage{?end_date*,name*,start_date*,unit*}", rawUrl)
+        public Historical_usageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/historical_usage{?end_date*,name*,start_date*,unit*}", rawUrl)
         {
         }
         /// <summary>
@@ -128,7 +128,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Historical_usage
 #endif
             /// <summary>A unit of time (day, week, or month)</summary>
             [QueryParameter("unit")]
-            public global::Soenneker.Bitly.OpenApiClient.Models.TimeUnitDWM? Unit { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.TimeUnitDwm? Unit { get; set; }
         }
     }
 }

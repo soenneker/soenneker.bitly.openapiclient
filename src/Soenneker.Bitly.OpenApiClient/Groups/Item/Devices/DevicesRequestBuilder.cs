@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Devices
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\devices
+    /// Builds and executes requests for operations under \groups\{groupGuid}\devices
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DevicesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Devices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/devices?unit={unit}&units={units}{&size*,unit_reference*}", pathParameters)
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/devices?unit={unit}&units={units}{&size*,unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Devices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/devices?unit={unit}&units={units}{&size*,unit_reference*}", rawUrl)
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/devices?unit={unit}&units={units}{&size*,unit_reference*}", rawUrl)
         {
         }
         /// <summary>

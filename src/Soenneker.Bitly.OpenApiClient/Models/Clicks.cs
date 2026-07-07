@@ -23,7 +23,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public List<global::Soenneker.Bitly.OpenApiClient.Models.LinkClicks> LinkClicks { get; set; }
 #endif
         /// <summary>The unit property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.Clicks_unit? Unit { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.ClicksUnit? Unit { get; set; }
         /// <summary>The unit_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +60,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "link_clicks", n => { LinkClicks = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.LinkClicks>(global::Soenneker.Bitly.OpenApiClient.Models.LinkClicks.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Clicks_unit>(); } },
+                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksUnit>(); } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
                 { "units", n => { Units = n.GetIntValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.LinkClicks>("link_clicks", LinkClicks);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Clicks_unit>("unit", Unit);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksUnit>("unit", Unit);
             writer.WriteStringValue("unit_reference", UnitReference);
             writer.WriteIntValue("units", Units);
             writer.WriteAdditionalData(AdditionalData);

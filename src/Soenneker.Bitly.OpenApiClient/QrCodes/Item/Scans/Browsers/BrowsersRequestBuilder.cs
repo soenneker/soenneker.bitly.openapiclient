@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Browsers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \qr-codes\{qrcode_id}\scans\browsers
+    /// Builds and executes requests for operations under \qr-codes\{qrcodeId}\scans\browsers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrowsersRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Browsers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcode_id}/scans/browsers?unit={unit}&units={units}{&size*,unit_reference*}", pathParameters)
+        public BrowsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcodeId}/scans/browsers?unit={unit}&units={units}{&size*,unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Browsers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcode_id}/scans/browsers?unit={unit}&units={units}{&size*,unit_reference*}", rawUrl)
+        public BrowsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcodeId}/scans/browsers?unit={unit}&units={units}{&size*,unit_reference*}", rawUrl)
         {
         }
         /// <summary>

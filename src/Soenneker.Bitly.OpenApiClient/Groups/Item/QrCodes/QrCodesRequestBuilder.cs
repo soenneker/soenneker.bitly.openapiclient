@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\qr-codes
+    /// Builds and executes requests for operations under \groups\{groupGuid}\qr-codes
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QrCodesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QrCodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", pathParameters)
+        public QrCodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QrCodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", rawUrl)
+        public QrCodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves a list of QR codes matching the filter settings. Values are in reverse chronological order.The pagination occurs by calling the next link in the pagination response object.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodesMinimal"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrCodesMinimal"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.Forbidden">When receiving a 403 status code</exception>
@@ -44,11 +44,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QRCodesMinimal?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.QrCodesRequestBuilder.QrCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QrCodesMinimal?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.QrCodesRequestBuilder.QrCodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QRCodesMinimal> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.QrCodesRequestBuilder.QrCodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QrCodesMinimal> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.QrCodesRequestBuilder.QrCodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,7 +58,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QRCodesMinimal>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QRCodesMinimal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QrCodesMinimal>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QrCodesMinimal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of QR codes matching the filter settings. Values are in reverse chronological order.The pagination occurs by calling the next link in the pagination response object.
@@ -96,7 +96,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
         {
             /// <summary>Whether or not to include archived resources</summary>
             [QueryParameter("archived")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetArchivedQueryParameterType? Archived { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.Archived? Archived { get; set; }
             /// <summary>Timestamp as an integer unix epoch (seconds only)</summary>
             [QueryParameter("created_after")]
             public int? CreatedAfter { get; set; }
@@ -115,10 +115,10 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
 #endif
             /// <summary>filter bitlinks by presence of expiration</summary>
             [QueryParameter("has_expiration")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetHas_expirationQueryParameterType? HasExpiration { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterHasExpiration? HasExpiration { get; set; }
             /// <summary>Whether or not QRCode has any render customizations (like color or shape changes)</summary>
             [QueryParameter("has_render_customizations")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetHas_render_customizationsQueryParameterType? HasRenderCustomizations { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterHasRenderCustomizations? HasRenderCustomizations { get; set; }
             /// <summary>The hostname and/or path you would like to search (case-insensitive). Subdomains included; query params and fragment ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,18 +131,18 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
 #endif
             /// <summary>filter bitlinks by expiration status</summary>
             [QueryParameter("is_expired")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetIs_expiredQueryParameterType? IsExpired { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterIsExpired? IsExpired { get; set; }
             /// <summary>a filter value if the resource is a GS1 QR code</summary>
             [QueryParameter("is_gs1")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetIs_gs1QueryParameterType? IsGs1 { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterIsGs1? IsGs1 { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("qrc_type")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetQrc_typeQueryParameterType[]? QrcType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterQrCodeTypeItem[]? QrcType { get; set; }
 #nullable restore
 #else
             [QueryParameter("qrc_type")]
-            public global::Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes.GetQrc_typeQueryParameterType[] QrcType { get; set; }
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterQrCodeTypeItem[] QrcType { get; set; }
 #endif
             /// <summary>The value that you would like to search</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

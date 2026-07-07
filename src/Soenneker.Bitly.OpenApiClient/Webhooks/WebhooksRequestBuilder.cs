@@ -19,15 +19,15 @@ namespace Soenneker.Bitly.OpenApiClient.Webhooks
     public partial class WebhooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.webhooks.item collection</summary>
-        /// <param name="position">A GUID for a Bitly webhook</param>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhook_guItemRequestBuilder"/></returns>
-        public global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhook_guItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhookGuItemRequestBuilder"/></returns>
+        public global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhookGuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("webhook_guid", position);
-                return new global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhook_guItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("webhookGuid", position);
+                return new global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhookGuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

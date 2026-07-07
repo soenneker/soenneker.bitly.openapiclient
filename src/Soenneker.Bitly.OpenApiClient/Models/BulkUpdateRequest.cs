@@ -13,7 +13,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>archive or edit_tags</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequest_action? Action { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The add_tags property</summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequest_action>(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction>(); } },
                 { "add_tags", n => { AddTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "archive", n => { Archive = n.GetBoolValue(); } },
                 { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequest_action>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction>("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("add_tags", AddTags);
             writer.WriteBoolValue("archive", Archive);
             writer.WriteCollectionOfPrimitiveValues<string>("links", Links);

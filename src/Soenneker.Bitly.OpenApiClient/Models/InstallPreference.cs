@@ -10,15 +10,15 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     {
         [EnumMember(Value = "no_install")]
         #pragma warning disable CS1591
-        No_install,
+        NoInstall,
         #pragma warning restore CS1591
         [EnumMember(Value = "auto_install")]
         #pragma warning disable CS1591
-        Auto_install,
+        AutoInstall,
         #pragma warning restore CS1591
         [EnumMember(Value = "promote_install")]
         #pragma warning disable CS1591
-        Promote_install,
+        PromoteInstall,
         #pragma warning restore CS1591
     }
 }

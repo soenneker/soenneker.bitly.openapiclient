@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks_by_destination
 {
     /// <summary>
-    /// Builds and executes requests for operations under \custom_bitlinks\{custom_bitlink}\clicks_by_destination
+    /// Builds and executes requests for operations under \custom_bitlinks\{customBitlink}\clicks_by_destination
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Clicks_by_destinationRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks_by_destinati
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Clicks_by_destinationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{custom_bitlink}/clicks_by_destination?unit={unit}&units={units}{&unit_reference*}", pathParameters)
+        public Clicks_by_destinationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{customBitlink}/clicks_by_destination?unit={unit}&units={units}{&unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks_by_destinati
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Clicks_by_destinationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{custom_bitlink}/clicks_by_destination?unit={unit}&units={units}{&unit_reference*}", rawUrl)
+        public Clicks_by_destinationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{customBitlink}/clicks_by_destination?unit={unit}&units={units}{&unit_reference*}", rawUrl)
         {
         }
         /// <summary>

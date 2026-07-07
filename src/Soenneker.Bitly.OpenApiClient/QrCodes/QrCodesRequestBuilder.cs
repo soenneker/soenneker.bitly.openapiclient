@@ -26,14 +26,14 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes
         }
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.qrCodes.item collection</summary>
         /// <param name="position">The QR code ID</param>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.WithQrcode_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.WithQrcode_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.WithQrcodeItemRequestBuilder"/></returns>
+        public global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.WithQrcodeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("qrcode_id", position);
-                return new global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.WithQrcode_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("qrcodeId", position);
+                return new global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.WithQrcodeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes
         /// <summary>
         /// Create a new QR Code and return its metadata
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QRCodeMinimal"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal"/></returns>
         /// <param name="body">Customization and content values for a QR code created through the public API</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,11 +68,11 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeMinimal?> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQRCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal?> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQrCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeMinimal> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQRCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQrCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -87,7 +87,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QRCodeMinimal>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QRCodeMinimal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new QR Code and return its metadata
@@ -97,11 +97,11 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQRCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQrCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQRCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateQrCodeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

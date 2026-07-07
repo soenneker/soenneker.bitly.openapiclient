@@ -30,6 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public GradientColor()
         {
             AdditionalData = new Dictionary<string, object>();
+            Offset = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

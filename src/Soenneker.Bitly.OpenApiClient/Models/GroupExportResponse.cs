@@ -33,7 +33,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public string DataUri { get; set; }
 #endif
         /// <summary>The export_type property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponse_export_type? ExportType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponseExportType? ExportType { get; set; }
         /// <summary>Suggested download filename for the CSV.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +88,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "column_count", n => { ColumnCount = n.GetIntValue(); } },
                 { "columns", n => { Columns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "data_uri", n => { DataUri = n.GetStringValue(); } },
-                { "export_type", n => { ExportType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponse_export_type>(); } },
+                { "export_type", n => { ExportType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponseExportType>(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "media_type", n => { MediaType = n.GetStringValue(); } },
                 { "row_count", n => { RowCount = n.GetIntValue(); } },
@@ -108,7 +108,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteIntValue("column_count", ColumnCount);
             writer.WriteCollectionOfPrimitiveValues<string>("columns", Columns);
             writer.WriteStringValue("data_uri", DataUri);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponse_export_type>("export_type", ExportType);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponseExportType>("export_type", ExportType);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("media_type", MediaType);
             writer.WriteIntValue("row_count", RowCount);

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Shorten_counts
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\shorten_counts
+    /// Builds and executes requests for operations under \groups\{groupGuid}\shorten_counts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Shorten_countsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Shorten_counts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Shorten_countsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/shorten_counts?unit={unit}&units={units}{&unit_reference*}", pathParameters)
+        public Shorten_countsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/shorten_counts?unit={unit}&units={units}{&unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Shorten_counts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Shorten_countsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/shorten_counts?unit={unit}&units={units}{&unit_reference*}", rawUrl)
+        public Shorten_countsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/shorten_counts?unit={unit}&units={units}{&unit_reference*}", rawUrl)
         {
         }
         /// <summary>

@@ -17,7 +17,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The total_clicks property</summary>
         public int? TotalClicks { get; set; }
         /// <summary>The unit property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummary_unit? Unit { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit? Unit { get; set; }
         /// <summary>The unit_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +54,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "total_clicks", n => { TotalClicks = n.GetIntValue(); } },
-                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummary_unit>(); } },
+                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit>(); } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
                 { "units", n => { Units = n.GetIntValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("total_clicks", TotalClicks);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummary_unit>("unit", Unit);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit>("unit", Unit);
             writer.WriteStringValue("unit_reference", UnitReference);
             writer.WriteIntValue("units", Units);
             writer.WriteAdditionalData(AdditionalData);

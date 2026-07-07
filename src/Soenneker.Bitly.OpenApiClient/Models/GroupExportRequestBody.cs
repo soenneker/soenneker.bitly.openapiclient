@@ -23,7 +23,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public List<string> Bitlinks { get; set; }
 #endif
         /// <summary>Which export shape to produce.</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBody_export_type? ExportType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBodyExportType? ExportType { get; set; }
         /// <summary>Search constraints used to resolve links or QR codes for export. Required for links_list and qr_codes_list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +64,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bitlinks", n => { Bitlinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "export_type", n => { ExportType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBody_export_type>(); } },
+                { "export_type", n => { ExportType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBodyExportType>(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter>(global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter.CreateFromDiscriminatorValue); } },
                 { "include_metrics", n => { IncludeMetrics = n.GetBoolValue(); } },
                 { "unix_from", n => { UnixFrom = n.GetIntValue(); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("bitlinks", Bitlinks);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBody_export_type>("export_type", ExportType);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBodyExportType>("export_type", ExportType);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter>("filter", Filter);
             writer.WriteBoolValue("include_metrics", IncludeMetrics);
             writer.WriteIntValue("unix_from", UnixFrom);

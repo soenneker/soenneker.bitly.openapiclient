@@ -59,15 +59,15 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Organization_references? References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.OrganizationReferences? References { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Organization_references References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.OrganizationReferences References { get; set; }
 #endif
         /// <summary>&quot;Two-factor authentication requirement for this organization. Possible values: \&quot;none\&quot;, \&quot;sms\&quot;. Omitted when no auth requirements are configured.&quot;</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.Organization_require_2fa? Require2fa { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequire2Fa? Require2fa { get; set; }
         /// <summary>&quot;SSO authentication requirement for this organization. Possible values: \&quot;none\&quot;, \&quot;any\&quot;. Omitted when no auth requirements are configured.&quot;</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.Organization_require_sso? RequireSso { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequireSso? RequireSso { get; set; }
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,9 +131,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "modified", n => { Modified = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Organization_references>(global::Soenneker.Bitly.OpenApiClient.Models.Organization_references.CreateFromDiscriminatorValue); } },
-                { "require_2fa", n => { Require2fa = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Organization_require_2fa>(); } },
-                { "require_sso", n => { RequireSso = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Organization_require_sso>(); } },
+                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.OrganizationReferences>(global::Soenneker.Bitly.OpenApiClient.Models.OrganizationReferences.CreateFromDiscriminatorValue); } },
+                { "require_2fa", n => { Require2fa = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequire2Fa>(); } },
+                { "require_sso", n => { RequireSso = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequireSso>(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "tier", n => { Tier = n.GetStringValue(); } },
                 { "tier_display_name", n => { TierDisplayName = n.GetStringValue(); } },
@@ -153,9 +153,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Organization_references>("references", References);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Organization_require_2fa>("require_2fa", Require2fa);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Organization_require_sso>("require_sso", RequireSso);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.OrganizationReferences>("references", References);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequire2Fa>("require_2fa", Require2fa);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequireSso>("require_sso", RequireSso);
             writer.WriteStringValue("role", Role);
             writer.WriteStringValue("tier", Tier);
             writer.WriteStringValue("tier_display_name", TierDisplayName);

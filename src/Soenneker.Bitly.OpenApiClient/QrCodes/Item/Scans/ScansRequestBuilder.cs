@@ -17,7 +17,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans
 {
     /// <summary>
-    /// Builds and executes requests for operations under \qr-codes\{qrcode_id}\scans
+    /// Builds and executes requests for operations under \qr-codes\{qrcodeId}\scans
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScansRequestBuilder : BaseRequestBuilder
@@ -52,7 +52,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScansRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcode_id}/scans?unit={unit}&units={units}{&unit_reference*}", pathParameters)
+        public ScansRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcodeId}/scans?unit={unit}&units={units}{&unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcode_id}/scans?unit={unit}&units={units}{&unit_reference*}", rawUrl)
+        public ScansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/qr-codes/{qrcodeId}/scans?unit={unit}&units={units}{&unit_reference*}", rawUrl)
         {
         }
         /// <summary>

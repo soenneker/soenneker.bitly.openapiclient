@@ -16,7 +16,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Filter by archive state.</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter_archived? Archived { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilterArchived? Archived { get; set; }
         /// <summary>Filter links by campaign GUID. Ignored for qr_codes_list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,7 +78,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "archived", n => { Archived = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter_archived>(); } },
+                { "archived", n => { Archived = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilterArchived>(); } },
                 { "campaign_guid", n => { CampaignGuid = n.GetStringValue(); } },
                 { "created_after", n => { CreatedAfter = n.GetIntValue(); } },
                 { "created_before", n => { CreatedBefore = n.GetIntValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter_archived>("archived", Archived);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilterArchived>("archived", Archived);
             writer.WriteStringValue("campaign_guid", CampaignGuid);
             writer.WriteIntValue("created_after", CreatedAfter);
             writer.WriteIntValue("created_before", CreatedBefore);

@@ -67,10 +67,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Group_references? References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupReferences? References { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Group_references References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupReferences References { get; set; }
 #endif
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "modified", n => { Modified = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_guid", n => { OrganizationGuid = n.GetStringValue(); } },
-                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Group_references>(global::Soenneker.Bitly.OpenApiClient.Models.Group_references.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupReferences>(global::Soenneker.Bitly.OpenApiClient.Models.GroupReferences.CreateFromDiscriminatorValue); } },
                 { "role", n => { Role = n.GetStringValue(); } },
             };
         }
@@ -130,7 +130,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("modified", Modified);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_guid", OrganizationGuid);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Group_references>("references", References);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupReferences>("references", References);
             writer.WriteStringValue("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }

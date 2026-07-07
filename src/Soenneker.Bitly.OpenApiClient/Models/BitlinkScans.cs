@@ -17,13 +17,13 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The scans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.QRScans>? Scans { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrScans>? Scans { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.QRScans> Scans { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrScans> Scans { get; set; }
 #endif
         /// <summary>The unit property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.BitlinkScans_unit? Unit { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.BitlinkScansUnit? Unit { get; set; }
         /// <summary>The unit_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,8 +59,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scans", n => { Scans = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.QRScans>(global::Soenneker.Bitly.OpenApiClient.Models.QRScans.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkScans_unit>(); } },
+                { "scans", n => { Scans = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.QrScans>(global::Soenneker.Bitly.OpenApiClient.Models.QrScans.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkScansUnit>(); } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
                 { "units", n => { Units = n.GetIntValue(); } },
             };
@@ -72,8 +72,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.QRScans>("scans", Scans);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkScans_unit>("unit", Unit);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.QrScans>("scans", Scans);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkScansUnit>("unit", Unit);
             writer.WriteStringValue("unit_reference", UnitReference);
             writer.WriteIntValue("units", Units);
             writer.WriteAdditionalData(AdditionalData);

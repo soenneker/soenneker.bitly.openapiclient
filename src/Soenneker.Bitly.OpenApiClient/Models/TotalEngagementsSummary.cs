@@ -25,7 +25,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The total_engagements property</summary>
         public int? TotalEngagements { get; set; }
         /// <summary>The unit property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.TotalEngagementsSummary_unit? Unit { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.TotalEngagementsSummaryUnit? Unit { get; set; }
         /// <summary>The unit_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +63,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "engagements", n => { Engagements = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Engagement>(global::Soenneker.Bitly.OpenApiClient.Models.Engagement.CreateFromDiscriminatorValue); } },
                 { "total_engagements", n => { TotalEngagements = n.GetIntValue(); } },
-                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.TotalEngagementsSummary_unit>(); } },
+                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.TotalEngagementsSummaryUnit>(); } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
                 { "units", n => { Units = n.GetIntValue(); } },
             };
@@ -77,7 +77,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Engagement>("engagements", Engagements);
             writer.WriteIntValue("total_engagements", TotalEngagements);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.TotalEngagementsSummary_unit>("unit", Unit);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.TotalEngagementsSummaryUnit>("unit", Unit);
             writer.WriteStringValue("unit_reference", UnitReference);
             writer.WriteIntValue("units", Units);
             writer.WriteAdditionalData(AdditionalData);

@@ -33,10 +33,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references? References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences? References { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences References { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "organization_guid", n => { OrganizationGuid = n.GetStringValue(); } },
                 { "plan_limits", n => { PlanLimitsProp = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>(global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references>(global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences>(global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("organization_guid", OrganizationGuid);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>("plan_limits", PlanLimitsProp);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimits_references>("references", References);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences>("references", References);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

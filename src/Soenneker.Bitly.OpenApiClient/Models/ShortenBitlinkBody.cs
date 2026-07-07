@@ -67,10 +67,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBody_references? References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBodyReferences? References { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBody_references References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBodyReferences References { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "link", n => { Link = n.GetStringValue(); } },
                 { "long_url", n => { LongUrl = n.GetStringValue(); } },
-                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBody_references>(global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBody_references.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBodyReferences>(global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBodyReferences.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -130,7 +130,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("link", Link);
             writer.WriteStringValue("long_url", LongUrl);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBody_references>("references", References);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.ShortenBitlinkBodyReferences>("references", References);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }

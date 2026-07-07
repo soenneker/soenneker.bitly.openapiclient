@@ -27,8 +27,8 @@
           "Bitlinks"
         ],
         "summary": "Shorten a Link",
-        "description": "Converts a long url to a Bitlink. You may see errors returned from this endpoint - \"BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED\" occurs if you have shortened more links than your account is configured for for the month, and \"DNS_CONFIGURATION_ERROR\" occurs if you are attempting to shorten links against a custom domain which doesn't have DNS properly configured.",
-        "operationId": "createBitlink",
+        "description": "Converts a long url to a Bitlink. You may see errors returned from this endpoint - \u0022BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED\u0022 occurs if you have shortened more links than your account is configured for for the month, and \u0022DNS_CONFIGURATION_ERROR\u0022 occurs if you are attempting to shorten links against a custom domain which doesn\u0027t have DNS properly configured.",
+        "operationId": "CreateBitlink",
         "requestBody": {
           "content": {
             "application/json": {
@@ -138,8 +138,8 @@
           "Bitlinks"
         ],
         "summary": "Create a Bitlink",
-        "description": "Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - \"BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED\" occurs if you have shortened more links than your account is configured for for the month, and \"DNS_CONFIGURATION_ERROR\" occurs if you are attempting to shorten links against a custom domain which doesn't have DNS properly configured.",
-        "operationId": "createFullBitlink",
+        "description": "Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - \u0022BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED\u0022 occurs if you have shortened more links than your account is configured for for the month, and \u0022DNS_CONFIGURATION_ERROR\u0022 occurs if you are attempting to shorten links against a custom domain which doesn\u0027t have DNS properly configured.",
+        "operationId": "CreateFullBitlink",
         "requestBody": {
           "content": {
             "application/json": {
@@ -164,7 +164,7 @@
                 "With Expiration": {
                   "value": {
                     "long_url": "https://dev.bitly.com",
-                    "expiration_at": "2025-07-28T14:30:00+0000"
+                    "expiration_at": "2025-07-28T14:30:00\u002B0000"
                   }
                 }
               }
@@ -292,7 +292,7 @@
         ],
         "summary": "Delete a Bitlink",
         "description": "Delete an unedited hash Bitlink.",
-        "operationId": "deleteBitlink",
+        "operationId": "DeleteBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -377,7 +377,7 @@
         ],
         "summary": "Update a Bitlink",
         "description": "Updates fields in the specified link. To redirect the link (i.e. to update the Long URL), use the long_url parameter. This will always charge an encode limit.",
-        "operationId": "updateBitlink",
+        "operationId": "UpdateBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -397,7 +397,7 @@
                 },
                 "With Expiration": {
                   "value": {
-                    "expiration_at": "2025-07-28T14:30:00+0000"
+                    "expiration_at": "2025-07-28T14:30:00\u002B0000"
                   }
                 }
               }
@@ -523,7 +523,7 @@
         ],
         "summary": "Retrieve a Bitlink",
         "description": "Returns information for the specified link.",
-        "operationId": "getBitlink",
+        "operationId": "GetBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -610,7 +610,7 @@
         ],
         "summary": "Expand a Bitlink",
         "description": "Returns the short link and long URL for the specified link.",
-        "operationId": "expandBitlink",
+        "operationId": "ExpandBitlink",
         "requestBody": {
           "content": {
             "application/json": {
@@ -701,7 +701,7 @@
         ],
         "summary": "Get Clicks for a Bitlink",
         "description": "Returns the click counts for the specified link in an array based on a date.",
-        "operationId": "getClicksForBitlink",
+        "operationId": "GetClicksForBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -727,9 +727,9 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetClicksForBitlink200ResponseResponseCsv"
                 },
-                "example": "Date, Clicks\n2023-07-10T00:00:00+0000, 15\n"
+                "example": "Date, Clicks\n2023-07-10T00:00:00\u002B0000, 15\n"
               }
             }
           },
@@ -793,7 +793,7 @@
         ],
         "summary": "Get a Clicks Summary for a Bitlink",
         "description": "Returns the click counts for the specified link rolled up into a single field.",
-        "operationId": "getClicksSummaryForBitlink",
+        "operationId": "GetClicksSummaryForBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -879,7 +879,7 @@
         ],
         "summary": "Get Engagement Counts for a Bitlink",
         "description": "Returns an array of engagement counts for the specified link. The array is comprised of button click, click and scan counts for each time window, where the window is based on the provided unit.",
-        "operationId": "getEngagements",
+        "operationId": "GetEngagements",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -905,7 +905,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetEngagements200ResponseResponseCsv"
                 },
                 "example": "Date, Engagements\n2006-01-02T15:04:05, 5\n"
               }
@@ -981,7 +981,7 @@
         ],
         "summary": "Get an Engagement Count Summary for a Bitlink",
         "description": "Returns the engagement counts for the specified link rolled up into a single field.",
-        "operationId": "getEngagementsSummary",
+        "operationId": "GetEngagementsSummary",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1077,7 +1077,7 @@
         ],
         "summary": "Get Metrics for a Bitlink by Country",
         "description": "Returns the country origins of click traffic for the specified link.",
-        "operationId": "getMetricsForBitlinkByCountries",
+        "operationId": "GetMetricsForBitlinkByCountries",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1106,7 +1106,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCountries200ResponseResponseCsv"
                 },
                 "example": "Country, Clicks\nUS, 5\n"
               }
@@ -1192,7 +1192,7 @@
         ],
         "summary": "Get Metrics for a Bitlink by City",
         "description": "Returns the city origins of click traffic for the specified link.",
-        "operationId": "getMetricsForBitlinkByCities",
+        "operationId": "GetMetricsForBitlinkByCities",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1221,7 +1221,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCities200ResponseResponseCsv"
                 },
                 "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
               }
@@ -1317,7 +1317,7 @@
         ],
         "summary": "Get Metrics for a Bitlink by Device Type",
         "description": "Returns the device types generating click traffic to the specified link.",
-        "operationId": "getMetricsForBitlinkByDevices",
+        "operationId": "GetMetricsForBitlinkByDevices",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1346,7 +1346,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByDevices200ResponseResponseCsv"
                 },
                 "example": "Device Type, Clicks\nDesktop, 5\n"
               }
@@ -1442,7 +1442,7 @@
         ],
         "summary": "Get Metrics for a Bitlink by Referrers",
         "description": "Returns referrer click counts for the specified link.",
-        "operationId": "getMetricsForBitlinkByReferrers",
+        "operationId": "GetMetricsForBitlinkByReferrers",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1471,7 +1471,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrers200ResponseResponseCsv"
                 },
                 "example": "Referrers, Domain/Sub-Domain, Clicks\nOther Sites, direct, 5\n"
               }
@@ -1557,7 +1557,7 @@
         ],
         "summary": "Get Metrics for a Bitlink by Referrer Name",
         "description": "Returns referrer click counts for the specified link.",
-        "operationId": "getMetricsForBitlinkByReferrerName",
+        "operationId": "GetMetricsForBitlinkByReferrerName",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1586,7 +1586,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrerName200ResponseResponseCsv"
                 },
                 "example": "Referrer-Name,Clicks\ndirect,4\n"
               }
@@ -1662,7 +1662,7 @@
         ],
         "summary": "Get Metrics for a Bitlink by Referring Domains",
         "description": "Returns the referring domain click counts for the specified link.",
-        "operationId": "getMetricsForBitlinkByReferringDomains",
+        "operationId": "GetMetricsForBitlinkByReferringDomains",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1771,7 +1771,7 @@
         ],
         "summary": "Get Metrics for a Bitlink by Referrers by Domain",
         "description": "Returns click metrics grouped by referrers for the specified link.",
-        "operationId": "getMetricsForBitlinkByReferrersByDomains",
+        "operationId": "GetMetricsForBitlinkByReferrersByDomains",
         "parameters": [
           {
             "$ref": "#/components/parameters/Bitlink"
@@ -1879,8 +1879,8 @@
           "Custom Bitlinks"
         ],
         "summary": "Add Custom Bitlink",
-        "description": "Add a keyword (or \"custom back-half\") to a Bitlink with a Custom Domain (domains must match). This endpoint can also be used for initial redirects to a link.",
-        "operationId": "addCustomBitlink",
+        "description": "Add a keyword (or \u0022custom back-half\u0022) to a Bitlink with a Custom Domain (domains must match). This endpoint can also be used for initial redirects to a link.",
+        "operationId": "AddCustomBitlink",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1994,14 +1994,14 @@
         }
       }
     },
-    "/custom_bitlinks/{custom_bitlink}": {
+    "/custom_bitlinks/{customBitlink}": {
       "patch": {
         "tags": [
           "Custom Bitlinks"
         ],
         "summary": "Update Custom Bitlink",
         "description": "Move a keyword (or custom back-half) to a different Bitlink (domains must match).",
-        "operationId": "updateCustomBitlink",
+        "operationId": "UpdateCustomBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/CustomBitlink"
@@ -2115,7 +2115,7 @@
         ],
         "summary": "Retrieve Custom Bitlink",
         "description": "Returns the details and history of the specified link.",
-        "operationId": "getCustomBitlink",
+        "operationId": "GetCustomBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/CustomBitlink"
@@ -2205,14 +2205,14 @@
         }
       }
     },
-    "/custom_bitlinks/{custom_bitlink}/clicks_by_destination": {
+    "/custom_bitlinks/{customBitlink}/clicks_by_destination": {
       "get": {
         "tags": [
           "Custom Bitlinks"
         ],
         "summary": "Get Metrics for a Custom Bitlink by Destination",
         "description": "Returns click metrics for the specified link by its historical destinations.",
-        "operationId": "getCustomBitlinkMetricsByDestination",
+        "operationId": "GetCustomBitlinkMetricsByDestination",
         "parameters": [
           {
             "$ref": "#/components/parameters/CustomBitlink"
@@ -2311,14 +2311,14 @@
         }
       }
     },
-    "/custom_bitlinks/{custom_bitlink}/clicks": {
+    "/custom_bitlinks/{customBitlink}/clicks": {
       "get": {
         "tags": [
           "Custom Bitlinks"
         ],
-        "summary": "Get Clicks for a Custom Bitlink's Entire History",
+        "summary": "Get Clicks for a Custom Bitlink\u0027s Entire History",
         "description": "Returns the click counts for the specified link. This returns an array with clicks based on a date.",
-        "operationId": "getClicksForCustomBitlink",
+        "operationId": "GetClicksForCustomBitlink",
         "parameters": [
           {
             "$ref": "#/components/parameters/CustomBitlink"
@@ -2434,7 +2434,7 @@
         ],
         "summary": "Retrieve Groups",
         "description": "Returns a list of groups in the organization.",
-        "operationId": "getGroups",
+        "operationId": "GetGroups",
         "parameters": [
           {
             "$ref": "#/components/parameters/OrganizationGUIDFilter"
@@ -2524,14 +2524,14 @@
         }
       }
     },
-    "/groups/{group_guid}": {
+    "/groups/{groupGuid}": {
       "patch": {
         "tags": [
           "Groups"
         ],
         "summary": "Update a Group",
         "description": "Updates the details of a group.",
-        "operationId": "updateGroup",
+        "operationId": "UpdateGroup",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -2625,7 +2625,7 @@
         ],
         "summary": "Retrieve a Group",
         "description": "Returns details for a group.",
-        "operationId": "getGroup",
+        "operationId": "GetGroup",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -2695,14 +2695,14 @@
         }
       }
     },
-    "/groups/{group_guid}/tags": {
+    "/groups/{groupGuid}/tags": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Retrieve Tags by Group",
         "description": "Returns the tags currently used in the specified group. Maximum 1000.",
-        "operationId": "getGroupTags",
+        "operationId": "GetGroupTags",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -2785,14 +2785,14 @@
         }
       }
     },
-    "/groups/{group_guid}/bitlinks": {
+    "/groups/{groupGuid}/bitlinks": {
       "get": {
         "tags": [
           "Bitlinks"
         ],
         "summary": "Retrieve Bitlinks by Group",
         "description": "Returns a paginated collection of Bitlinks for a group. The list of custom bitlinks has newest entries first.",
-        "operationId": "getBitlinksByGroup",
+        "operationId": "GetBitlinksByGroup",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -2911,7 +2911,7 @@
         ],
         "summary": "Bulk update bitlinks",
         "description": "Bulk update can add or remove tags or archive up to 100 links at a time; The response includes a list of bitlink ids that were updated.",
-        "operationId": "updateBitlinksByGroup",
+        "operationId": "UpdateBitlinksByGroup",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3000,14 +3000,14 @@
         }
       }
     },
-    "/groups/{group_guid}/engagements/sorted/top": {
+    "/groups/{groupGuid}/engagements/sorted/top": {
       "get": {
         "tags": [
           "Bitlinks"
         ],
         "summary": "Retrieve Top Links and Decoupled QR Codes by Engagements",
-        "description": "Returns the bitlinks and decoupled QR codes in a group with the most engagements over the requested time window, ranked together in descending order by engagement count. Bitlinks and decoupled QR codes are returned in separate lists; `sorted_links` preserves the unified descending-by-count ordering across both, with each entry's id referencing either a bitlink or a QR code guid.\n",
-        "operationId": "getTopLinksAndQRCodesByEngagements",
+        "description": "Returns the bitlinks and decoupled QR codes in a group with the most engagements over the requested time window, ranked together in descending order by engagement count. Bitlinks and decoupled QR codes are returned in separate lists; \u0060sorted_links\u0060 preserves the unified descending-by-count ordering across both, with each entry\u0027s id referencing either a bitlink or a QR code guid.\n",
+        "operationId": "GetTopLinksAndQrCodesByEngagements",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3031,7 +3031,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TopLinksAndQRCodes"
+                  "$ref": "#/components/schemas/TopLinksAndQrCodes"
                 }
               }
             }
@@ -3089,14 +3089,14 @@
         }
       }
     },
-    "/groups/{group_guid}/bitlinks/{sort}": {
+    "/groups/{groupGuid}/bitlinks/{sort}": {
       "get": {
         "tags": [
           "Bitlinks"
         ],
         "summary": "Retrieve Sorted Bitlinks for Group",
         "description": "Returns a list of Bitlinks sorted by group. The list of custom bitlinks has newest entries first.",
-        "operationId": "getSortedBitlinks",
+        "operationId": "GetSortedBitlinks",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3181,14 +3181,14 @@
         }
       }
     },
-    "/groups/{group_guid}/preferences": {
+    "/groups/{groupGuid}/preferences": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Retrieve Group Preferences",
         "description": "Returns preferences for the specified group.",
-        "operationId": "getGroupPreferences",
+        "operationId": "GetGroupPreferences",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3253,7 +3253,7 @@
         ],
         "summary": "Update Group Preferences",
         "description": "Updates preferences for a group.",
-        "operationId": "updateGroupPreferences",
+        "operationId": "UpdateGroupPreferences",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3352,14 +3352,14 @@
         }
       }
     },
-    "/groups/{group_guid}/shorten_counts": {
+    "/groups/{groupGuid}/shorten_counts": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Retrieve Group Shorten Counts",
         "description": "Returns all the shorten counts for a group.",
-        "operationId": "getGroupShortenCounts",
+        "operationId": "GetGroupShortenCounts",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3438,14 +3438,14 @@
         }
       }
     },
-    "/groups/{group_guid}/countries": {
+    "/groups/{groupGuid}/countries": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Click Metrics for a Group by Country",
         "description": "Returns the geographic origins of click traffic by country for the specified group.",
-        "operationId": "getGroupMetricsByCountries",
+        "operationId": "GetGroupMetricsByCountries",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3474,7 +3474,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetGroupMetricsByCountries200ResponseResponseCsv"
                 },
                 "example": "Country, Clicks\nUS, 5\n"
               }
@@ -3533,14 +3533,14 @@
         }
       }
     },
-    "/groups/{group_guid}/cities": {
+    "/groups/{groupGuid}/cities": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Click Metrics for a Group by City",
         "description": "Returns the geographic origins of click traffic by city for the specified group.",
-        "operationId": "getGroupMetricsByCities",
+        "operationId": "GetGroupMetricsByCities",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3569,7 +3569,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetGroupMetricsByCities200ResponseResponseCsv"
                 },
                 "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
               }
@@ -3638,14 +3638,14 @@
         }
       }
     },
-    "/groups/{group_guid}/devices": {
+    "/groups/{groupGuid}/devices": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Click Metrics for a Group by Device Type",
-        "description": "Returns the device types generating click traffic to the specified group's links.",
-        "operationId": "getGroupMetricsByDevices",
+        "description": "Returns the device types generating click traffic to the specified group\u0027s links.",
+        "operationId": "GetGroupMetricsByDevices",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3674,7 +3674,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetGroupMetricsByDevices200ResponseResponseCsv"
                 },
                 "example": "Device Type, Clicks\nDesktop, 5\n"
               }
@@ -3743,13 +3743,13 @@
         }
       }
     },
-    "/groups/{group_guid}/referring_networks": {
+    "/groups/{groupGuid}/referring_networks": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Click Metrics for a Group by Referring Networks",
-        "description": "Returns metrics by referring networks for the specified group's links.",
+        "description": "Returns metrics by referring networks for the specified group\u0027s links.",
         "operationId": "GetGroupMetricsByReferringNetworks",
         "parameters": [
           {
@@ -3822,13 +3822,13 @@
         }
       }
     },
-    "/groups/{group_guid}/referrers": {
+    "/groups/{groupGuid}/referrers": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Click Metrics for a Group by Referrer",
-        "description": "Returns metrics by referrer for the specified group's links.",
+        "description": "Returns metrics by referrer for the specified group\u0027s links.",
         "operationId": "GetGroupMetricsByReferrer",
         "parameters": [
           {
@@ -3858,7 +3858,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetGroupMetricsByReferrer200ResponseResponseCsv"
                 },
                 "example": "Referrer,Clicks\ndirect,25\n"
               }
@@ -3917,14 +3917,14 @@
         }
       }
     },
-    "/groups/{group_guid}/engagements/top": {
+    "/groups/{groupGuid}/engagements/top": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Top Performing Links by Engagement",
         "description": "Get top performing links by engagement for all links in a group.",
-        "operationId": "getGroupTopMetrics",
+        "operationId": "GetGroupTopMetrics",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -3996,14 +3996,14 @@
         }
       }
     },
-    "/groups/{group_guid}/engagements/over_time": {
+    "/groups/{groupGuid}/engagements/over_time": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Metrics Over Time",
         "description": "Get group engagement metrics over time for all links in a group.",
-        "operationId": "getGroupMetricsOverTime",
+        "operationId": "GetGroupMetricsOverTime",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -4072,14 +4072,14 @@
         }
       }
     },
-    "/groups/{group_guid}/clicks": {
+    "/groups/{groupGuid}/clicks": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get clicks by group",
         "description": "get number of clicks on bitlinks in a group",
-        "operationId": "getGroupClicks",
+        "operationId": "GetGroupClicks",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -4168,14 +4168,14 @@
         }
       }
     },
-    "/groups/{group_guid}/exports": {
+    "/groups/{groupGuid}/exports": {
       "post": {
         "tags": [
           "Groups"
         ],
         "summary": "Create an inline CSV export for a group",
-        "description": "\"Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.\nThe export_type field selects the CSV shape: link_engagements_batch (engagement metrics for\nexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR code\nmetadata roster). Row caps apply per request: 200 rows when metrics are included\n(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-only\nlist exports. When the match set exceeds the cap, truncated is true and only the first\ncap rows are returned; row_count reports how many data rows are in the CSV.\n\"",
-        "operationId": "postCreateGroupExport",
+        "description": "\u0022Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.\nThe export_type field selects the CSV shape: link_engagements_batch (engagement metrics for\nexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR code\nmetadata roster). Row caps apply per request: 200 rows when metrics are included\n(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-only\nlist exports. When the match set exceeds the cap, truncated is true and only the first\ncap rows are returned; row_count reports how many data rows are in the CSV.\n\u0022",
+        "operationId": "PostCreateGroupExport",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -4270,13 +4270,13 @@
           "Organizations"
         ],
         "summary": "Retrieve Organizations",
-        "description": "Retrieve a list of organizations for the authenticated user. By default, only organizations permitted by the token's allowed_orgs are returned. Use include_all=true to return all organizations regardless of token restrictions. Each organization is annotated with its authentication requirements (require_sso, require_2fa) when configured.\n",
-        "operationId": "getOrganizations",
+        "description": "Retrieve a list of organizations for the authenticated user. By default, only organizations permitted by the token\u0027s allowed_orgs are returned. Use include_all=true to return all organizations regardless of token restrictions. Each organization is annotated with its authentication requirements (require_sso, require_2fa) when configured.\n",
+        "operationId": "GetOrganizations",
         "parameters": [
           {
             "name": "include_all",
             "in": "query",
-            "description": "When set to true, returns all of the user's organizations regardless of the token's allowed_orgs restrictions.\n",
+            "description": "When set to true, returns all of the user\u0027s organizations regardless of the token\u0027s allowed_orgs restrictions.\n",
             "schema": {
               "type": "boolean"
             }
@@ -4336,14 +4336,14 @@
         }
       }
     },
-    "/organizations/{organization_guid}": {
+    "/organizations/{organizationGuid}": {
       "get": {
         "tags": [
           "Organizations"
         ],
         "summary": "Retrieve an Organization",
         "description": "Retrive details for the specified organization.",
-        "operationId": "getOrganization",
+        "operationId": "GetOrganization",
         "parameters": [
           {
             "$ref": "#/components/parameters/OrganizationGUID"
@@ -4403,14 +4403,14 @@
         }
       }
     },
-    "/organizations/{organization_guid}/shorten_counts": {
+    "/organizations/{organizationGuid}/shorten_counts": {
       "get": {
         "tags": [
           "Organizations"
         ],
         "summary": "Get Shorten Counts for an Organization",
         "description": "Returns the shorten counts for a specific organization over a specified time period.",
-        "operationId": "getOrganizationShortenCounts",
+        "operationId": "GetOrganizationShortenCounts",
         "parameters": [
           {
             "$ref": "#/components/parameters/OrganizationGUID"
@@ -4479,14 +4479,14 @@
         }
       }
     },
-    "/organizations/{organization_guid}/shorten_counts_by_group": {
+    "/organizations/{organizationGuid}/shorten_counts_by_group": {
       "get": {
         "tags": [
           "Organizations"
         ],
         "summary": "Get Shorten Counts for an Organization by Group",
         "description": "Returns the shorten counts for a specific organization by group for the current month.",
-        "operationId": "getOrganizationShortenCountsByGroup",
+        "operationId": "GetOrganizationShortenCountsByGroup",
         "parameters": [
           {
             "$ref": "#/components/parameters/OrganizationGUID"
@@ -4553,7 +4553,7 @@
         ],
         "summary": "Update a User",
         "description": "Update fields in the user",
-        "operationId": "updateUser",
+        "operationId": "UpdateUser",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4642,7 +4642,7 @@
         ],
         "summary": "Retrieve a User",
         "description": "Returns information for the current authenticated user.",
-        "operationId": "getUser",
+        "operationId": "GetUser",
         "responses": {
           "200": {
             "description": "SUCCESS",
@@ -4704,7 +4704,7 @@
         ],
         "summary": "Retrieve Campaigns",
         "description": "Returns the campaigns for the current authenticated user.",
-        "operationId": "getCampaigns",
+        "operationId": "GetCampaigns",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUIDFilter"
@@ -4799,7 +4799,7 @@
         ],
         "summary": "Create Campaign",
         "description": "Creates a new campaign.",
-        "operationId": "createCampaign",
+        "operationId": "CreateCampaign",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4903,14 +4903,14 @@
         }
       }
     },
-    "/campaigns/{campaign_guid}": {
+    "/campaigns/{campaignGuid}": {
       "get": {
         "tags": [
           "Campaigns"
         ],
         "summary": "Retrieve a Campaign",
         "description": "Returns details for a campaign.",
-        "operationId": "getCampaign",
+        "operationId": "GetCampaign",
         "parameters": [
           {
             "$ref": "#/components/parameters/CampaignGUID"
@@ -4994,8 +4994,8 @@
           "Campaigns"
         ],
         "summary": "Update Campaign",
-        "description": "Updates a campaign's details.",
-        "operationId": "updateCampaign",
+        "description": "Updates a campaign\u0027s details.",
+        "operationId": "UpdateCampaign",
         "parameters": [
           {
             "$ref": "#/components/parameters/CampaignGUID"
@@ -5111,7 +5111,7 @@
         ],
         "summary": "Retrieve Channels",
         "description": "Returns the channels available to a user.",
-        "operationId": "getChannels",
+        "operationId": "GetChannels",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUIDFilter"
@@ -5189,7 +5189,7 @@
         ],
         "summary": "Create Channel",
         "description": "Creates a new channel.",
-        "operationId": "createChannel",
+        "operationId": "CreateChannel",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5293,14 +5293,14 @@
         }
       }
     },
-    "/channels/{channel_guid}": {
+    "/channels/{channelGuid}": {
       "get": {
         "tags": [
           "Campaigns"
         ],
         "summary": "Get a Channel",
-        "description": "Returns a channel's details.",
-        "operationId": "getChannel",
+        "description": "Returns a channel\u0027s details.",
+        "operationId": "GetChannel",
         "parameters": [
           {
             "$ref": "#/components/parameters/ChannelGUID"
@@ -5385,7 +5385,7 @@
         ],
         "summary": "Update a Channel",
         "description": "Updates an existing channel.",
-        "operationId": "updateChannel",
+        "operationId": "UpdateChannel",
         "parameters": [
           {
             "$ref": "#/components/parameters/ChannelGUID"
@@ -5494,11 +5494,11 @@
         }
       }
     },
-    "/apps/{client_id}": {
+    "/apps/{clientId}": {
       "get": {
         "summary": "Retrieve OAuth App",
         "description": "Retrieve the details for the provided OAuth App client ID",
-        "operationId": "getOAuthApp",
+        "operationId": "GetOAuthApp",
         "parameters": [
           {
             "$ref": "#/components/parameters/ClientID"
@@ -5565,14 +5565,14 @@
         ],
         "summary": "Get BSDs",
         "description": "Fetch all Branded Short Domains",
-        "operationId": "getBSDs",
+        "operationId": "GetBsDs",
         "responses": {
           "200": {
             "description": "SUCCESS",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BSDsResponse"
+                  "$ref": "#/components/schemas/BsDsResponse"
                 }
               }
             }
@@ -5620,14 +5620,14 @@
         }
       }
     },
-    "/organizations/{organization_guid}/webhooks": {
+    "/organizations/{organizationGuid}/webhooks": {
       "get": {
         "tags": [
           "Webhooks"
         ],
         "summary": "Get Webhooks",
         "description": "Fetch all webhooks available for an Organization",
-        "operationId": "getWebhooks",
+        "operationId": "GetWebhooks",
         "parameters": [
           {
             "$ref": "#/components/parameters/OrganizationGUID"
@@ -5714,7 +5714,7 @@
         ],
         "summary": "Create Webhook",
         "description": "Creates a webhook.",
-        "operationId": "createWebhook",
+        "operationId": "CreateWebhook",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5818,14 +5818,14 @@
         }
       }
     },
-    "/webhooks/{webhook_guid}": {
+    "/webhooks/{webhookGuid}": {
       "get": {
         "tags": [
           "Webhooks"
         ],
         "summary": "Retrieve Webhook",
         "description": "Returns a webhook.",
-        "operationId": "getWebhook",
+        "operationId": "GetWebhook",
         "parameters": [
           {
             "$ref": "#/components/parameters/WebhookGUID"
@@ -5920,7 +5920,7 @@
         ],
         "summary": "Update Webhook",
         "description": "Update a webhook",
-        "operationId": "updateWebhook",
+        "operationId": "UpdateWebhook",
         "parameters": [
           {
             "$ref": "#/components/parameters/WebhookGUID"
@@ -6034,7 +6034,7 @@
         ],
         "summary": "Delete Webhook",
         "description": "Deletes a webhook.",
-        "operationId": "deleteWebhook",
+        "operationId": "DeleteWebhook",
         "parameters": [
           {
             "$ref": "#/components/parameters/WebhookGUID"
@@ -6104,14 +6104,14 @@
         }
       }
     },
-    "/webhooks/{webhook_guid}/verify": {
+    "/webhooks/{webhookGuid}/verify": {
       "post": {
         "tags": [
           "Webhooks"
         ],
         "summary": "Verify Webhook",
         "description": "Sends ping event to test webhook configuration.",
-        "operationId": "verifyWebhook",
+        "operationId": "VerifyWebhook",
         "parameters": [
           {
             "$ref": "#/components/parameters/WebhookGUID"
@@ -6191,14 +6191,14 @@
         }
       }
     },
-    "/organizations/{organization_guid}/plan_limits": {
+    "/organizations/{organizationGuid}/plan_limits": {
       "get": {
         "tags": [
           "Organizations"
         ],
         "summary": "Get Plan Limits",
         "description": "Returns all plan limits and counts available for an organization.",
-        "operationId": "getPlanLimits",
+        "operationId": "GetPlanLimits",
         "parameters": [
           {
             "$ref": "#/components/parameters/OrganizationGUID"
@@ -6255,7 +6255,7 @@
         ],
         "summary": "Get Platform Limits",
         "description": "Fetch all platform limits and counts available for an organization",
-        "operationId": "getPlatformLimits",
+        "operationId": "GetPlatformLimits",
         "parameters": [
           {
             "$ref": "#/components/parameters/Path"
@@ -6322,12 +6322,12 @@
         ],
         "summary": "Create a QR Code",
         "description": "Create a new QR Code and return its metadata",
-        "operationId": "createQRCodePublic",
+        "operationId": "CreateQrCodePublic",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PublicCreateQRCodeRequest"
+                "$ref": "#/components/schemas/PublicCreateQrCodeRequest"
               },
               "examples": {
                 "Minimal": {
@@ -6541,7 +6541,7 @@
                     "destination": {
                       "bitlink_id": "bit.ly/abc123"
                     },
-                    "expiration_at": "2025-07-28T14:30:00+0000"
+                    "expiration_at": "2025-07-28T14:30:00\u002B0000"
                   }
                 },
                 "Stand Alone QR Code": {
@@ -6563,7 +6563,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QRCodeMinimal"
+                  "$ref": "#/components/schemas/QrCodeMinimal"
                 }
               }
             }
@@ -6647,36 +6647,24 @@
           "QR Codes"
         ],
         "summary": "Generate a static QR Code image",
-        "description": "\"Generate a static QR code image without creating or saving a QR code resource. SVG and PNG output are supported via the Accept header\nContact your Account Manager to discuss enabling this feature for your account.\n\nThe `render_customizations` field supports basic appearance options. Customizations that require the rasterize API are not supported: `gradient`, `background_gradient`, `frame`, `text`, and `logo`.\n\nThe Accept header controls the response format:\n- `application/json` (default): Returns a JSON object with the image as a base64-encoded byte string.\n- `image/svg+xml`: Returns the raw SVG image.\n- `image/png`: Returns the raw PNG image.\n\"",
-        "operationId": "createStaticQRCodePublic",
+        "description": "\u0022Generate a static QR code image without creating or saving a QR code resource. SVG and PNG output are supported via the Accept header\nContact your Account Manager to discuss enabling this feature for your account.\n\nThe \u0060render_customizations\u0060 field supports basic appearance options. Customizations that require the rasterize API are not supported: \u0060gradient\u0060, \u0060background_gradient\u0060, \u0060frame\u0060, \u0060text\u0060, and \u0060logo\u0060.\n\nThe Accept header controls the response format:\n- \u0060application/json\u0060 (default): Returns a JSON object with the image as a base64-encoded byte string.\n- \u0060image/svg\u002Bxml\u0060: Returns the raw SVG image.\n- \u0060image/png\u0060: Returns the raw PNG image.\n\u0022",
+        "operationId": "CreateStaticQrCodePublic",
         "parameters": [
           {
             "name": "Accept",
             "in": "header",
-            "description": "Controls the response format. Use `application/json` (default) to receive a JSON-wrapped base64 image, `image/svg+xml` to receive the raw SVG, or `image/png` to receive the raw PNG.",
+            "description": "Controls the response format. Use \u0060application/json\u0060 (default) to receive a JSON-wrapped base64 image, \u0060image/svg\u002Bxml\u0060 to receive the raw SVG, or \u0060image/png\u0060 to receive the raw PNG.",
             "schema": {
-              "enum": [
-                "application/json",
-                "image/svg+xml",
-                "image/png"
-              ],
-              "type": "string",
-              "additionalProperties": false
+              "$ref": "#/components/schemas/CreateStaticQrCodePublicAcceptParameter"
             },
-            "example": "image/svg+xml"
+            "example": "image/svg\u002Bxml"
           },
           {
             "name": "format",
             "in": "query",
-            "description": "The image format. Supports `svg` and `png`. Ignored if the Accept header specifies an image type.",
+            "description": "The image format. Supports \u0060svg\u0060 and \u0060png\u0060. Ignored if the Accept header specifies an image type.",
             "schema": {
-              "enum": [
-                "svg",
-                "png"
-              ],
-              "type": "string",
-              "additionalProperties": false,
-              "default": "svg"
+              "$ref": "#/components/schemas/CreateStaticQrCodePublicFormatParameter"
             }
           }
         ],
@@ -6684,7 +6672,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PublicCreateStaticQRCodeRequest"
+                "$ref": "#/components/schemas/PublicCreateStaticQrCodeRequest"
               },
               "examples": {
                 "Minimal": {
@@ -6731,18 +6719,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PublicStaticQRCodeResponse"
+                  "$ref": "#/components/schemas/PublicStaticQrCodeResponse"
                 }
               },
-              "image/svg+xml": {
+              "image/svg\u002Bxml": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200ResponseResponseSvgXml"
                 },
-                "example": "<svg>QR code svg</svg>"
+                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
               },
               "image/png": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200ResponseResponsePng2"
                 },
                 "example": "...png bytes..."
               }
@@ -6811,23 +6799,23 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}/image": {
+    "/qr-codes/{qrcodeId}/image": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Retrieve a QR Code image",
-        "description": "Get the image of a given QR Code. The Accept header controls how this is returned (options are \"application/json\", \"image/svg+xml\", and \"image/png\").\nIf the Accept header is \"application/json\" the format query parameter will determine the image format inside of the json (which will be base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag).\nTo Return the QR Code image itself, set the Accept header to \"image/svg+xml\" or \"image/png\", or remove the Accept header and set the format query parameter to “svg” or “png” (if no format is specified the default will be “svg”).\n",
-        "operationId": "getQRCodeImagePublic",
+        "description": "Get the image of a given QR Code. The Accept header controls how this is returned (options are \u0022application/json\u0022, \u0022image/svg\u002Bxml\u0022, and \u0022image/png\u0022).\nIf the Accept header is \u0022application/json\u0022 the format query parameter will determine the image format inside of the json (which will be base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag).\nTo Return the QR Code image itself, set the Accept header to \u0022image/svg\u002Bxml\u0022 or \u0022image/png\u0022, or remove the Accept header and set the format query parameter to \u201Csvg\u201D or \u201Cpng\u201D (if no format is specified the default will be \u201Csvg\u201D).\n",
+        "operationId": "GetQrCodeImagePublic",
         "parameters": [
           {
             "name": "Accept",
             "in": "header",
-            "description": "The file format for the QR code's image. If the accept header is application/json the image data will be wrapped in a json object, base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag.",
+            "description": "The file format for the QR code\u0027s image. If the accept header is application/json the image data will be wrapped in a json object, base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag.",
             "schema": {
               "type": "string"
             },
-            "example": "image/svg+xml"
+            "example": "image/svg\u002Bxml"
           },
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -6837,14 +6825,7 @@
             "in": "query",
             "description": "The format type of the image. If there is an image format in the header it takes precedence.",
             "schema": {
-              "enum": [
-                "svg",
-                "png"
-              ],
-              "type": "string",
-              "additionalProperties": false,
-              "default": "svg",
-              "example": "svg"
+              "$ref": "#/components/schemas/GetQrCodeImagePublicFormatParameter"
             }
           }
         ],
@@ -6854,18 +6835,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PublicQRCodeImageResponse"
+                  "$ref": "#/components/schemas/PublicQrCodeImageResponse"
                 }
               },
-              "image/svg+xml": {
+              "image/svg\u002Bxml": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetQrCodeImagePublic200ResponseResponseSvgXml"
                 },
-                "example": "<svg>QR code svg</svg>"
+                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
               },
               "image/png": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetQrCodeImagePublic200ResponseResponsePng2"
                 },
                 "example": "...png bytes..."
               }
@@ -6924,17 +6905,17 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}": {
+    "/qr-codes/{qrcodeId}": {
       "patch": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Update a QR Code",
         "description": "Updates the QR code with a matching id and returns it.",
-        "operationId": "updateQRCodePublic",
+        "operationId": "UpdateQrCodePublic",
         "parameters": [
           {
-            "name": "qrcode_id",
+            "name": "qrcodeId",
             "in": "path",
             "description": "The QR code ID",
             "required": true,
@@ -6948,7 +6929,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PublicUpdateQRCodeRequest"
+                "$ref": "#/components/schemas/PublicUpdateQrCodeRequest"
               },
               "examples": {
                 "Minimal": {
@@ -7112,7 +7093,7 @@
                 },
                 "With Expiration": {
                   "value": {
-                    "expiration_at": "2025-07-28T14:30:00+0000"
+                    "expiration_at": "2025-07-28T14:30:00\u002B0000"
                   }
                 }
               }
@@ -7125,7 +7106,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QRCodeMinimal"
+                  "$ref": "#/components/schemas/QrCodeMinimal"
                 }
               }
             }
@@ -7188,7 +7169,7 @@
         ],
         "summary": "Retrieve a QR Code",
         "description": "Gets the QR code with a matching id.",
-        "operationId": "getQRCodeByIdPublic",
+        "operationId": "GetQrCodeByIdPublic",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -7200,7 +7181,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QRCodeDetails"
+                  "$ref": "#/components/schemas/QrCodeDetails"
                 }
               }
             }
@@ -7263,7 +7244,7 @@
         ],
         "summary": "Delete a QR Code",
         "description": "Delete a QR Code that has not been redirected and is not for a custom link. Also deletes the associated link (if applicable).",
-        "operationId": "deleteQRCode",
+        "operationId": "DeleteQrCode",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -7275,7 +7256,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PublicDeleteQRCodeResponse"
+                  "$ref": "#/components/schemas/PublicDeleteQrCodeResponse"
                 }
               }
             }
@@ -7343,14 +7324,14 @@
         }
       }
     },
-    "/groups/{group_guid}/qr-codes": {
+    "/groups/{groupGuid}/qr-codes": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Retrieve QR Codes by Group",
         "description": "Retrieves a list of QR codes matching the filter settings. Values are in reverse chronological order.\nThe pagination occurs by calling the next link in the pagination response object.\n",
-        "operationId": "listQRMinimal",
+        "operationId": "ListQrMinimal",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -7404,7 +7385,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QRCodesMinimal"
+                  "$ref": "#/components/schemas/QrCodesMinimal"
                 }
               }
             }
@@ -7442,14 +7423,14 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}/scans": {
+    "/qr-codes/{qrcodeId}/scans": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Get Scans for a QR Code",
         "description": "Returns an array of scan counts for the specified QR code. The array is comprised of scan counts for each time window, where the window is based on the provided unit.",
-        "operationId": "getScanMetricsForQRCode",
+        "operationId": "GetScanMetricsForQrCode",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -7538,14 +7519,14 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}/scans/summary": {
+    "/qr-codes/{qrcodeId}/scans/summary": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Get Scans Summary for a QR Code",
         "description": "Returns the scan counts for a QR Code rolled up into a single field for a specified time window, where the window is based on the provided unit.",
-        "operationId": "getScanMetricsSummaryForQRCode",
+        "operationId": "GetScanMetricsSummaryForQrCode",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -7634,14 +7615,14 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}/scans/countries": {
+    "/qr-codes/{qrcodeId}/scans/countries": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Get Scans for a QR Code by Country",
         "description": "Returns the country origins of scan traffic for the specified QR Code.",
-        "operationId": "getScanMetricsForQRCodeByCountries",
+        "operationId": "GetScanMetricsForQrCodeByCountries",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -7670,7 +7651,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCountries200ResponseResponseCsv"
                 },
                 "example": "Country, Scans\nUS, 5\n"
               }
@@ -7739,14 +7720,14 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}/scans/cities": {
+    "/qr-codes/{qrcodeId}/scans/cities": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Get Metrics for a QR Code by City",
         "description": "Returns the city origins of scan traffic for the specified QR Code.",
-        "operationId": "getScanMetricsForQRCodeByCities",
+        "operationId": "GetScanMetricsForQrCodeByCities",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -7775,7 +7756,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCities200ResponseResponseCsv"
                 },
                 "example": "City, Subregion, Region, Country, Scans\nNew York, , NY, US, 5\n"
               }
@@ -7854,14 +7835,14 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}/scans/device_os": {
+    "/qr-codes/{qrcodeId}/scans/device_os": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Get Scans for a QR Code by Device OS",
         "description": "Returns the device os generating scan traffic for the specified QR Code.",
-        "operationId": "getScanMetricsForQRCodeByDevicesOS",
+        "operationId": "GetScanMetricsForQrCodeByDevicesOs",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -7890,7 +7871,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByDevicesOs200ResponseResponseCsv"
                 },
                 "example": "Device OS, Scans\nApple, 5\n"
               }
@@ -7969,14 +7950,14 @@
         }
       }
     },
-    "/qr-codes/{qrcode_id}/scans/browsers": {
+    "/qr-codes/{qrcodeId}/scans/browsers": {
       "get": {
         "tags": [
           "QR Codes"
         ],
         "summary": "Get Scans for a QR Code by Browser",
         "description": "Returns the browsers generating scan traffic to the specified QR Code.",
-        "operationId": "getScanMetricsForQRCodeByBrowser",
+        "operationId": "GetScanMetricsForQrCodeByBrowser",
         "parameters": [
           {
             "$ref": "#/components/parameters/QRCodeID"
@@ -8005,7 +7986,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByBrowser200ResponseResponseCsv"
                 },
                 "example": "Browser, Scans\nGoogle Chrome, 5\n"
               }
@@ -8084,14 +8065,14 @@
         }
       }
     },
-    "/groups/{group_guid}/feature_usage": {
+    "/groups/{groupGuid}/feature_usage": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get limit usage for a group",
-        "description": "Get a group's current feature limit usage, optionally provide limit name(s) for usage on specific limit(s)",
-        "operationId": "getGroupFeatureUsage",
+        "description": "Get a group\u0027s current feature limit usage, optionally provide limit name(s) for usage on specific limit(s)",
+        "operationId": "GetGroupFeatureUsage",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8154,14 +8135,14 @@
         }
       }
     },
-    "/groups/{group_guid}/historical_usage": {
+    "/groups/{groupGuid}/historical_usage": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get historical usage for a group",
-        "description": "Get a group's historical usage for specific limit(s) and date range. Refer to GET /v4/groups/{group_guid}/feature_usage endpoint response for available limit names.",
-        "operationId": "getGroupHistoricalUsage",
+        "description": "Get a group\u0027s historical usage for specific limit(s) and date range. Refer to GET /v4/groups/{group_guid}/feature_usage endpoint response for available limit names.",
+        "operationId": "GetGroupHistoricalUsage",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8233,14 +8214,14 @@
         }
       }
     },
-    "/groups/{group_guid}/links/clicks/over_time": {
+    "/groups/{groupGuid}/links/clicks/over_time": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Link Clicks Over Time",
         "description": "Get link clicks over time for all links in a group.",
-        "operationId": "getGroupLinkClicksOverTime",
+        "operationId": "GetGroupLinkClicksOverTime",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8309,14 +8290,14 @@
         }
       }
     },
-    "/groups/{group_guid}/links/clicks/devices": {
+    "/groups/{groupGuid}/links/clicks/devices": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Link Clicks by Device",
         "description": "Get link clicks by device for all links in a group.",
-        "operationId": "getGroupLinkClicksByDevice",
+        "operationId": "GetGroupLinkClicksByDevice",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8340,7 +8321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupLinkClicksByDevice200"
+                  "$ref": "#/components/schemas/GetGroupLinkClicksByDevice200Response"
                 }
               }
             }
@@ -8388,14 +8369,14 @@
         }
       }
     },
-    "/groups/{group_guid}/links/clicks/referrers": {
+    "/groups/{groupGuid}/links/clicks/referrers": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Link Clicks by Referrer",
         "description": "Get link clicks by referrer for all links in a group.",
-        "operationId": "getGroupLinkClicksByReferrer",
+        "operationId": "GetGroupLinkClicksByReferrer",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8467,14 +8448,14 @@
         }
       }
     },
-    "/groups/{group_guid}/links/clicks/countries": {
+    "/groups/{groupGuid}/links/clicks/countries": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Link Clicks by Country",
         "description": "Get link clicks by country for all links in a group.",
-        "operationId": "getGroupLinkClicksByCountry",
+        "operationId": "GetGroupLinkClicksByCountry",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8546,14 +8527,14 @@
         }
       }
     },
-    "/groups/{group_guid}/links/clicks/cities": {
+    "/groups/{groupGuid}/links/clicks/cities": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Link Clicks by City",
         "description": "Get link clicks by city for all links in a group.",
-        "operationId": "getGroupLinkClicksByCity",
+        "operationId": "GetGroupLinkClicksByCity",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8625,14 +8606,14 @@
         }
       }
     },
-    "/groups/{group_guid}/links/clicks/top": {
+    "/groups/{groupGuid}/links/clicks/top": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Group Top Performing Links by Click",
         "description": "Get top performing links by click for all links in a group.",
-        "operationId": "getGroupTopLinkClicks",
+        "operationId": "GetGroupTopLinkClicks",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8704,14 +8685,14 @@
         }
       }
     },
-    "/groups/{group_guid}/codes/scans/over_time": {
+    "/groups/{groupGuid}/codes/scans/over_time": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Scan Metrics for a Group Over Time",
         "description": "Get QR code scan metrics over time for a group.",
-        "operationId": "getGroupCodeScansOverTime",
+        "operationId": "GetGroupCodeScansOverTime",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8780,14 +8761,14 @@
         }
       }
     },
-    "/groups/{group_guid}/codes/scans/countries": {
+    "/groups/{groupGuid}/codes/scans/countries": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Scan Metrics for a Group by Country",
         "description": "Get QR code scan metrics for a group broken down by country.",
-        "operationId": "getGroupCodeScansByCountry",
+        "operationId": "GetGroupCodeScansByCountry",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8856,14 +8837,14 @@
         }
       }
     },
-    "/groups/{group_guid}/codes/scans/cities": {
+    "/groups/{groupGuid}/codes/scans/cities": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Scan Metrics for a Group by City",
         "description": "Get QR code scan metrics for a group broken down by city.",
-        "operationId": "getGroupCodeScansByCity",
+        "operationId": "GetGroupCodeScansByCity",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8932,14 +8913,14 @@
         }
       }
     },
-    "/groups/{group_guid}/codes/scans/top": {
+    "/groups/{groupGuid}/codes/scans/top": {
       "get": {
         "tags": [
           "Groups"
         ],
         "summary": "Get Top Performing QR Codes for a Group",
         "description": "Get top performing QR codes by scan count for all codes in a group.",
-        "operationId": "getGroupTopCodeScans",
+        "operationId": "GetGroupTopCodeScans",
         "parameters": [
           {
             "$ref": "#/components/parameters/GroupGUID"
@@ -8968,7 +8949,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupTopCodeScans200"
+                  "$ref": "#/components/schemas/GetGroupTopCodeScans200Response"
                 }
               }
             }
@@ -9026,7 +9007,25 @@
           "promote_install"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "InstallPreference",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "no_install",
+              "name": "NoInstall"
+            },
+            {
+              "value": "auto_install",
+              "name": "AutoInstall"
+            },
+            {
+              "value": "promote_install",
+              "name": "PromoteInstall"
+            }
+          ]
+        }
       },
       "FieldError": {
         "type": "object",
@@ -9090,7 +9089,7 @@
           }
         }
       },
-      "QRPagination": {
+      "QrPagination": {
         "type": "object",
         "properties": {
           "next": {
@@ -9124,10 +9123,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/GroupReferences"
           },
           "name": {
             "type": "string"
@@ -9212,10 +9208,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/OrganizationReferences"
           },
           "name": {
             "type": "string"
@@ -9251,22 +9244,10 @@
             }
           },
           "require_sso": {
-            "enum": [
-              "none",
-              "any"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "\"SSO authentication requirement for this organization. Possible values: \\\"none\\\", \\\"any\\\". Omitted when no auth requirements are configured.\n\""
+            "$ref": "#/components/schemas/OrganizationRequireSso"
           },
           "require_2fa": {
-            "enum": [
-              "none",
-              "sms"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "\"Two-factor authentication requirement for this organization. Possible values: \\\"none\\\", \\\"sms\\\". Omitted when no auth requirements are configured.\n\""
+            "$ref": "#/components/schemas/OrganizationRequire2Fa"
           }
         }
       },
@@ -9373,10 +9354,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/ShortenBitlinkBodyReferences"
           },
           "link": {
             "type": "string"
@@ -9433,7 +9411,7 @@
           }
         }
       },
-      "DeletedQRCode": {
+      "DeletedQrCode": {
         "type": "object",
         "properties": {
           "id": {
@@ -9445,10 +9423,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/BitlinkBodyReferences"
           },
           "link": {
             "type": "string"
@@ -9517,7 +9492,7 @@
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00+0000)"
+            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
           }
         }
       },
@@ -9591,7 +9566,7 @@
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00+0000)"
+            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
           }
         }
       },
@@ -9621,7 +9596,7 @@
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
+            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
           }
         },
         "example": {
@@ -9636,7 +9611,7 @@
               "guid": "Ra1bcD2eF3h",
               "bitlink": "bit.ly/documentation",
               "app_uri_path": "/store?id=123456",
-              "install_url": "https://play.google.com/store/apps/details?id=com.bitly.app&hl=en_US",
+              "install_url": "https://play.google.com/store/apps/details?id=com.bitly.app\u0026hl=en_US",
               "app_guid": "Ab1cdE2fG3h",
               "os": "android",
               "install_type": "promote_install",
@@ -9708,7 +9683,7 @@
             "type": "string"
           }
         },
-        "description": "Engagement-count subtotal for a single bitlink or decoupled QR code. The `id` references either a bitlink (`<domain>/<hash>`) or a QR code guid, and `engagements` is the combined count of bitlink clicks or QR code scans for that entity.\n"
+        "description": "Engagement-count subtotal for a single bitlink or decoupled QR code. The \u0060id\u0060 references either a bitlink (\u0060\u003Cdomain\u003E/\u003Chash\u003E\u0060) or a QR code guid, and \u0060engagements\u0060 is the combined count of bitlink clicks or QR code scans for that entity.\n"
       },
       "SortedLinks": {
         "type": "object",
@@ -9727,7 +9702,7 @@
           }
         }
       },
-      "TopLinksAndQRCodes": {
+      "TopLinksAndQrCodes": {
         "type": "object",
         "properties": {
           "links": {
@@ -9739,7 +9714,7 @@
           "qr_codes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/QRCodeMinimal"
+              "$ref": "#/components/schemas/QrCodeMinimal"
             }
           },
           "sorted_engagements": {
@@ -9749,7 +9724,7 @@
             }
           }
         },
-        "description": "Response shape for top bitlinks and decoupled QR codes in a group, ranked together by engagement count. `links` and `qr_codes` are independent lists (a link and a decoupled QR code are never the same entity); `sorted_engagements` is the unified descending-by-engagement ordering across both, with each entry's id referencing either a bitlink or a QR code guid. Coupled QRCs are listed by their bitlink ID.\n"
+        "description": "Response shape for top bitlinks and decoupled QR codes in a group, ranked together by engagement count. \u0060links\u0060 and \u0060qr_codes\u0060 are independent lists (a link and a decoupled QR code are never the same entity); \u0060sorted_engagements\u0060 is the unified descending-by-engagement ordering across both, with each entry\u0027s id referencing either a bitlink or a QR code guid. Coupled QRCs are listed by their bitlink ID.\n"
       },
       "DeeplinkRule": {
         "type": "object",
@@ -9770,7 +9745,7 @@
             "type": "string"
           },
           "os": {
-            "$ref": "#/components/schemas/MobileOS"
+            "$ref": "#/components/schemas/MobileOs"
           },
           "install_type": {
             "$ref": "#/components/schemas/InstallPreference"
@@ -9816,9 +9791,34 @@
         "type": "string",
         "additionalProperties": false,
         "description": "the unit of time queried for (minute, hour, day, week, month)",
-        "default": "day"
+        "x-ms-enum": {
+          "name": "TimeUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
       },
-      "TimeUnitDWM": {
+      "TimeUnitDwm": {
         "enum": [
           "day",
           "week",
@@ -9827,7 +9827,24 @@
         "type": "string",
         "additionalProperties": false,
         "description": "the unit of time queried for (day, week, month)",
-        "default": "month"
+        "x-ms-enum": {
+          "name": "TimeUnitDwm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
       },
       "FullShorten": {
         "type": "object",
@@ -9868,11 +9885,11 @@
           },
           "bitlink_id": {
             "type": "string",
-            "description": "\"Existing bitlink ID to add a keyword override to. Format: domain/hash. Cannot be used with long_url\""
+            "description": "\u0022Existing bitlink ID to add a keyword override to. Format: domain/hash. Cannot be used with long_url\u0022"
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
+            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
           }
         },
         "description": "Either long_url (for new bitlinks) or bitlink_id (for adding keywords to existing bitlinks) must be provided, but not both.",
@@ -9924,7 +9941,7 @@
           }
         }
       },
-      "QRScans": {
+      "QrScans": {
         "type": "object",
         "properties": {
           "scans": {
@@ -9948,15 +9965,7 @@
             "type": "integer"
           },
           "unit": {
-            "enum": [
-              "minute",
-              "hour",
-              "day",
-              "week",
-              "month"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/ClicksUnit"
           },
           "unit_reference": {
             "type": "string"
@@ -9976,15 +9985,7 @@
             "type": "integer"
           },
           "unit": {
-            "enum": [
-              "minute",
-              "hour",
-              "day",
-              "week",
-              "month"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/TotalEngagementsUnit"
           },
           "unit_reference": {
             "type": "string"
@@ -10032,15 +10033,7 @@
             "type": "integer"
           },
           "unit": {
-            "enum": [
-              "minute",
-              "hour",
-              "day",
-              "week",
-              "month"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/TotalEngagementsSummaryUnit"
           },
           "unit_reference": {
             "type": "string"
@@ -10053,22 +10046,14 @@
           "scans": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/QRScans"
+              "$ref": "#/components/schemas/QrScans"
             }
           },
           "units": {
             "type": "integer"
           },
           "unit": {
-            "enum": [
-              "minute",
-              "hour",
-              "day",
-              "week",
-              "month"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BitlinkScansUnit"
           },
           "unit_reference": {
             "type": "string"
@@ -10085,15 +10070,7 @@
             "type": "integer"
           },
           "unit": {
-            "enum": [
-              "minute",
-              "hour",
-              "day",
-              "week",
-              "month"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/ClicksSummaryUnit"
           },
           "unit_reference": {
             "type": "string"
@@ -10110,15 +10087,7 @@
             "type": "integer"
           },
           "unit": {
-            "enum": [
-              "minute",
-              "hour",
-              "day",
-              "week",
-              "month"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BitlinkScansSummaryUnit"
           },
           "unit_reference": {
             "type": "string"
@@ -10332,18 +10301,7 @@
             }
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "devices",
-              "referrers",
-              "referrers_by_domain",
-              "referring_domains",
-              "referring_networks",
-              "shorten_counts"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10368,18 +10326,7 @@
             }
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "devices",
-              "referrers",
-              "referrers_by_domain",
-              "referring_domains",
-              "referring_networks",
-              "shorten_counts"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10410,18 +10357,7 @@
             }
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "devices",
-              "referrers",
-              "referrers_by_domain",
-              "referring_domains",
-              "referring_networks",
-              "shorten_counts"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10452,18 +10388,7 @@
             }
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "devices",
-              "referrers",
-              "referrers_by_domain",
-              "referring_domains",
-              "referring_networks",
-              "shorten_counts"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10494,18 +10419,7 @@
             }
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "devices",
-              "referrers",
-              "referrers_by_domain",
-              "referring_domains",
-              "referring_networks",
-              "shorten_counts"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10563,14 +10477,7 @@
             "type": "integer"
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "device_os",
-              "browsers"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseScanMetricsFacet"
           },
           "unit_reference": {
             "type": "string"
@@ -10587,14 +10494,7 @@
             "type": "integer"
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "device_os",
-              "browsers"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseScanMetricsFacet"
           },
           "unit_reference": {
             "type": "string"
@@ -10617,14 +10517,7 @@
             "type": "integer"
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "device_os",
-              "browsers"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/BaseScanMetricsFacet"
           },
           "unit_reference": {
             "type": "string"
@@ -10664,11 +10557,7 @@
             "type": "integer"
           },
           "facet": {
-            "enum": [
-              "referrers_by_domains"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/ReferrersByDomainsFacet"
           },
           "unit_reference": {
             "type": "string"
@@ -10685,10 +10574,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/CampaignReferences"
           },
           "guid": {
             "type": "string"
@@ -10809,10 +10695,7 @@
             "type": "string"
           },
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/ChannelReferences"
           }
         }
       },
@@ -10870,10 +10753,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/HasReferencesReferencesProperty"
           }
         }
       },
@@ -10904,7 +10784,7 @@
           }
         }
       },
-      "BSDsResponse": {
+      "BsDsResponse": {
         "type": "object",
         "properties": {
           "bsds": {
@@ -10915,13 +10795,27 @@
           }
         }
       },
-      "MobileOS": {
+      "MobileOs": {
         "enum": [
           "ios",
           "android"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MobileOs",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ios",
+              "name": "Ios"
+            },
+            {
+              "value": "android",
+              "name": "Android"
+            }
+          ]
+        }
       },
       "GroupClicks": {
         "type": "object",
@@ -10994,14 +10888,14 @@
         "properties": {
           "group_guid": {
             "type": "string",
-            "description": "the group's guid"
+            "description": "the group\u0027s guid"
           },
           "limit_usage": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/GroupConsumableFeatureUsage"
             },
-            "description": "an array of all of the group's consumable feature usage"
+            "description": "an array of all of the group\u0027s consumable feature usage"
           }
         }
       },
@@ -11017,7 +10911,7 @@
         "properties": {
           "group_guid": {
             "type": "string",
-            "description": "the group's guid"
+            "description": "the group\u0027s guid"
           },
           "unit": {
             "type": "string",
@@ -11025,18 +10919,18 @@
           },
           "start_date": {
             "type": "string",
-            "description": "Start date (format \"2006-01-02\") of the historical usage"
+            "description": "Start date (format \u00222006-01-02\u0022) of the historical usage"
           },
           "end_date": {
             "type": "string",
-            "description": "End date (format \"2006-01-02\") of the historical usage"
+            "description": "End date (format \u00222006-01-02\u0022) of the historical usage"
           },
           "historical_limit_usage": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/HistoricalFeatureUsage"
             },
-            "description": "an array of all of the group's historical feature usage"
+            "description": "an array of all of the group\u0027s historical feature usage"
           }
         }
       },
@@ -11058,10 +10952,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/WebhookReferences"
           },
           "guid": {
             "type": "string"
@@ -11239,10 +11130,7 @@
         "type": "object",
         "properties": {
           "references": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/PlanLimitsReferences"
           },
           "organization_guid": {
             "type": "string"
@@ -11318,25 +11206,18 @@
         "type": "object",
         "properties": {
           "export_type": {
-            "enum": [
-              "link_engagements_batch",
-              "links_list",
-              "qr_codes_list"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "Which export shape to produce."
+            "$ref": "#/components/schemas/GroupExportRequestBodyExportType"
           },
           "bitlinks": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Fully qualified bitlinks (e.g. \"bit.ly/abc\"). Used by export_type link_engagements_batch when\nthe caller already knows the exact links. Mutually exclusive with filter (provide one or the other).\n"
+            "description": "Fully qualified bitlinks (e.g. \u0022bit.ly/abc\u0022). Used by export_type link_engagements_batch when\nthe caller already knows the exact links. Mutually exclusive with filter (provide one or the other).\n"
           },
           "unix_from": {
             "type": "integer",
-            "description": "Start of the metrics date range (Unix seconds, UTC). Clamped to the caller's tier data window.\nFor link_engagements_batch, required together with unix_to unless the tier max-history default applies.\nFor links_list or qr_codes_list, used when include_metrics is true.\n"
+            "description": "Start of the metrics date range (Unix seconds, UTC). Clamped to the caller\u0027s tier data window.\nFor link_engagements_batch, required together with unix_to unless the tier max-history default applies.\nFor links_list or qr_codes_list, used when include_metrics is true.\n"
           },
           "unix_to": {
             "type": "integer",
@@ -11364,14 +11245,7 @@
             "type": "string"
           },
           "archived": {
-            "enum": [
-              "on",
-              "off",
-              "both"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "Filter by archive state."
+            "$ref": "#/components/schemas/GroupExportFilterArchived"
           },
           "query": {
             "type": "string",
@@ -11396,13 +11270,7 @@
         "type": "object",
         "properties": {
           "export_type": {
-            "enum": [
-              "link_engagements_batch",
-              "links_list",
-              "qr_codes_list"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/GroupExportResponseExportType"
           },
           "filename": {
             "type": "string",
@@ -11455,13 +11323,7 @@
         "type": "object",
         "properties": {
           "action": {
-            "enum": [
-              "archive",
-              "edit_tags"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "archive or edit_tags"
+            "$ref": "#/components/schemas/BulkUpdateRequestAction"
           },
           "archive": {
             "type": "boolean"
@@ -11509,7 +11371,7 @@
           }
         }
       },
-      "QRCodeDetails": {
+      "QrCodeDetails": {
         "type": "object",
         "properties": {
           "qrcode_id": {
@@ -11522,13 +11384,13 @@
             "type": "string"
           },
           "gs1": {
-            "$ref": "#/components/schemas/GS1Metadata"
+            "$ref": "#/components/schemas/Gs1Metadata"
           },
           "render_customizations": {
-            "$ref": "#/components/schemas/QRCodeCustomizationsPublic"
+            "$ref": "#/components/schemas/QrCodeCustomizationsPublic"
           },
           "qr_code_type": {
-            "$ref": "#/components/schemas/QRCodeTypeEnum"
+            "$ref": "#/components/schemas/QrCodeTypeEnum"
           },
           "bitlink_id": {
             "type": "string",
@@ -11543,7 +11405,7 @@
           },
           "serialized_content": {
             "type": "string",
-            "description": "The serialized string of the QR code's content"
+            "description": "The serialized string of the QR code\u0027s content"
           },
           "archived": {
             "type": "boolean"
@@ -11556,11 +11418,18 @@
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the QR code's bitlink (e.g., 2025-01-28T14:30:00+0000)"
+            "description": "Optional expiration timestamp for the QR code\u0027s bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of tags associated with QR code"
           }
         }
       },
-      "QRCodeDestination": {
+      "QrCodeDestination": {
         "type": "object",
         "properties": {
           "bitlink_id": {
@@ -11574,7 +11443,7 @@
           }
         }
       },
-      "QRCodeMinimal": {
+      "QrCodeMinimal": {
         "type": "object",
         "properties": {
           "qrcode_id": {
@@ -11588,14 +11457,14 @@
           },
           "is_customized": {
             "type": "boolean",
-            "description": "Set to true if the QR code's customization values have been changed from their default setting"
+            "description": "Set to true if the QR code\u0027s customization values have been changed from their default setting"
           },
           "serialized_content": {
             "type": "string",
-            "description": "A serialized string of the QR code's content"
+            "description": "A serialized string of the QR code\u0027s content"
           },
           "qr_code_type": {
-            "$ref": "#/components/schemas/QRCodeTypeEnum"
+            "$ref": "#/components/schemas/QrCodeTypeEnum"
           },
           "long_urls": {
             "type": "array",
@@ -11628,7 +11497,7 @@
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the QR code's bitlink (e.g., 2025-01-28T14:30:00+0000)"
+            "description": "Optional expiration timestamp for the QR code\u0027s bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
           },
           "created": {
             "type": "string"
@@ -11638,20 +11507,20 @@
           }
         }
       },
-      "GS1Metadata": {
+      "Gs1Metadata": {
         "type": "object",
         "properties": {
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GS1Value"
+              "$ref": "#/components/schemas/Gs1Value"
             },
             "description": "A list of GS1 application identifiers and their values"
           }
         },
         "description": "Contains GS1 related metadata"
       },
-      "GS1Value": {
+      "Gs1Value": {
         "type": "object",
         "properties": {
           "key": {
@@ -11664,50 +11533,50 @@
           }
         }
       },
-      "QRCodeCustomizationsPublic": {
+      "QrCodeCustomizationsPublic": {
         "type": "object",
         "properties": {
           "background_color": {
             "type": "string",
-            "description": "The QR code's background color in hex code format with values for alpha channel",
+            "description": "The QR code\u0027s background color in hex code format with values for alpha channel",
             "example": "#ff07d280"
           },
           "dot_pattern_color": {
             "type": "string",
-            "description": "The QR code's dot pattern color in hex code format",
+            "description": "The QR code\u0027s dot pattern color in hex code format",
             "example": "#ff07d2"
           },
           "dot_pattern_type": {
-            "$ref": "#/components/schemas/QRCodeDotPatternType"
+            "$ref": "#/components/schemas/QrCodeDotPatternType"
           },
           "corners": {
-            "$ref": "#/components/schemas/QRCodeCorners"
+            "$ref": "#/components/schemas/QrCodeCorners"
           },
           "gradient": {
-            "$ref": "#/components/schemas/QRCodeGradient"
+            "$ref": "#/components/schemas/QrCodeGradient"
           },
           "background_gradient": {
-            "$ref": "#/components/schemas/QRCodeGradient"
+            "$ref": "#/components/schemas/QrCodeGradient"
           },
           "logo": {
-            "$ref": "#/components/schemas/QRCodeLogoPublic"
+            "$ref": "#/components/schemas/QrCodeLogoPublic"
           },
           "frame": {
-            "$ref": "#/components/schemas/QRCodeFrameRequest"
+            "$ref": "#/components/schemas/QrCodeFrameRequest"
           },
           "text": {
-            "$ref": "#/components/schemas/QRCodeText"
+            "$ref": "#/components/schemas/QrCodeText"
           },
           "branding": {
-            "$ref": "#/components/schemas/QRCodeBranding"
+            "$ref": "#/components/schemas/QrCodeBranding"
           },
           "spec_settings": {
-            "$ref": "#/components/schemas/QRCodeSpecSettingsPublic"
+            "$ref": "#/components/schemas/QrCodeSpecSettingsPublic"
           }
         },
-        "description": "Options for customizing a QR Code's appearance"
+        "description": "Options for customizing a QR Code\u0027s appearance"
       },
-      "PublicCreateQRCodeRequest": {
+      "PublicCreateQrCodeRequest": {
         "required": [
           "group_guid",
           "destination"
@@ -11723,21 +11592,21 @@
             "description": "Identify which group to place the QR Code."
           },
           "render_customizations": {
-            "$ref": "#/components/schemas/QRCodeCustomizationsPublic"
+            "$ref": "#/components/schemas/QrCodeCustomizationsPublic"
           },
           "archived": {
             "type": "boolean",
             "description": "A boolean representing if the QR code should be archived (hidden from the UI) upon creation"
           },
           "destination": {
-            "$ref": "#/components/schemas/QRCodeDestination"
+            "$ref": "#/components/schemas/QrCodeDestination"
           },
           "gs1": {
-            "$ref": "#/components/schemas/GS1Metadata"
+            "$ref": "#/components/schemas/Gs1Metadata"
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the QR code's bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
+            "description": "Optional expiration timestamp for the QR code\u0027s bitlink (e.g., 2025-01-28T14:30:00\u002B0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
           },
           "tags": {
             "type": "array",
@@ -11835,7 +11704,7 @@
           }
         }
       },
-      "PublicCreateStaticQRCodeRequest": {
+      "PublicCreateStaticQrCodeRequest": {
         "required": [
           "content",
           "group_guid"
@@ -11853,7 +11722,7 @@
             "example": "Ba1bc23dE4F"
           },
           "render_customizations": {
-            "$ref": "#/components/schemas/QRCodeCustomizationsStaticPublic"
+            "$ref": "#/components/schemas/QrCodeCustomizationsStaticPublic"
           }
         },
         "description": "Request body for generating a static QR code image. Customizations such as gradient, background_gradient, frame, text and logo are not supported.",
@@ -11867,35 +11736,35 @@
           }
         }
       },
-      "QRCodeCustomizationsStaticPublic": {
+      "QrCodeCustomizationsStaticPublic": {
         "type": "object",
         "properties": {
           "background_color": {
             "type": "string",
-            "description": "The QR code's background color in hex code format with values for alpha channel",
+            "description": "The QR code\u0027s background color in hex code format with values for alpha channel",
             "example": "#ff07d280"
           },
           "dot_pattern_color": {
             "type": "string",
-            "description": "The QR code's dot pattern color in hex code format",
+            "description": "The QR code\u0027s dot pattern color in hex code format",
             "example": "#ff07d2"
           },
           "dot_pattern_type": {
-            "$ref": "#/components/schemas/QRCodeDotPatternType"
+            "$ref": "#/components/schemas/QrCodeDotPatternType"
           },
           "corners": {
-            "$ref": "#/components/schemas/QRCodeCorners"
+            "$ref": "#/components/schemas/QrCodeCorners"
           },
           "branding": {
-            "$ref": "#/components/schemas/QRCodeBranding"
+            "$ref": "#/components/schemas/QrCodeBranding"
           },
           "spec_settings": {
-            "$ref": "#/components/schemas/QRCodeSpecSettingsPublic"
+            "$ref": "#/components/schemas/QrCodeSpecSettingsPublic"
           }
         },
         "description": "Appearance options for a static QR code. gradient, background_gradient, frame, text, and logo are not supported."
       },
-      "PublicStaticQRCodeResponse": {
+      "PublicStaticQrCodeResponse": {
         "type": "object",
         "properties": {
           "image": {
@@ -11906,14 +11775,14 @@
         },
         "description": "Response containing a generated static QR code image."
       },
-      "PublicUpdateQRCodeRequest": {
+      "PublicUpdateQrCodeRequest": {
         "type": "object",
         "properties": {
           "title": {
             "type": "string"
           },
           "render_customizations": {
-            "$ref": "#/components/schemas/QRCodeCustomizationsPublic"
+            "$ref": "#/components/schemas/QrCodeCustomizationsPublic"
           },
           "archived": {
             "type": "boolean",
@@ -11921,7 +11790,7 @@
           },
           "expiration_at": {
             "type": "string",
-            "description": "Optional expiration timestamp for the QR code's bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
+            "description": "Optional expiration timestamp for the QR code\u0027s bitlink (e.g., 2025-01-28T14:30:00\u002B0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
           },
           "tags": {
             "type": "array",
@@ -12015,38 +11884,38 @@
           }
         }
       },
-      "PublicQRCodeImageResponse": {
+      "PublicQrCodeImageResponse": {
         "type": "object",
         "properties": {
           "qr_code_image": {
             "type": "string",
-            "description": "The stringified data for the QR code's image"
+            "description": "The stringified data for the QR code\u0027s image"
           }
         },
         "description": "Wraps the image data for a QR code."
       },
-      "QRCodesMinimal": {
+      "QrCodesMinimal": {
         "type": "object",
         "properties": {
           "qr_codes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/QRCodeMinimal"
+              "$ref": "#/components/schemas/QrCodeMinimal"
             }
           },
           "pagination": {
-            "$ref": "#/components/schemas/QRPagination"
+            "$ref": "#/components/schemas/QrPagination"
           }
         },
         "description": "QR code paginated list Response"
       },
-      "PublicDeleteQRCodeResponse": {
+      "PublicDeleteQrCodeResponse": {
         "type": "object",
         "properties": {
           "qrcodes_deleted": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DeletedQRCode"
+              "$ref": "#/components/schemas/DeletedQrCode"
             }
           },
           "links_deleted": {
@@ -12058,22 +11927,22 @@
         },
         "description": "QR Code delete response"
       },
-      "QRCodeCorners": {
+      "QrCodeCorners": {
         "type": "object",
         "properties": {
           "corner_1": {
-            "$ref": "#/components/schemas/QRCodeCorner"
+            "$ref": "#/components/schemas/QrCodeCorner"
           },
           "corner_2": {
-            "$ref": "#/components/schemas/QRCodeCorner"
+            "$ref": "#/components/schemas/QrCodeCorner"
           },
           "corner_3": {
-            "$ref": "#/components/schemas/QRCodeCorner"
+            "$ref": "#/components/schemas/QrCodeCorner"
           }
         },
-        "description": "\"An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right\""
+        "description": "\u0022An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right\u0022"
       },
-      "QRCodeCorner": {
+      "QrCodeCorner": {
         "type": "object",
         "properties": {
           "inner_color": {
@@ -12085,38 +11954,16 @@
             "description": "The outer color of a corner of the QR code in hex code format"
           },
           "shape": {
-            "enum": [
-              "standard",
-              "slightly_round",
-              "rounded",
-              "extra_round",
-              "leaf",
-              "leaf_inner",
-              "leaf_outer",
-              "target",
-              "concave"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "The shape one of the QR code's corners should take",
-            "default": "standard"
+            "$ref": "#/components/schemas/QrCodeCornerShape"
           }
         },
         "description": "Represents one corner, both inner and outer, of a QR code, with color and shape values"
       },
-      "QRCodeGradient": {
+      "QrCodeGradient": {
         "type": "object",
         "properties": {
           "style": {
-            "enum": [
-              "no_gradient",
-              "linear",
-              "radial"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "The style of the gradient. Can be either linear or radial.",
-            "default": "no_gradient"
+            "$ref": "#/components/schemas/QrCodeGradientStyle"
           },
           "angle": {
             "type": "number",
@@ -12140,7 +11987,7 @@
         "properties": {
           "color": {
             "type": "string",
-            "description": "A color in hexadecimal format to be used in one of the gradient's <stop> elements",
+            "description": "A color in hexadecimal format to be used in one of the gradient\u0027s \u003Cstop\u003E elements",
             "example": "#ff0098"
           },
           "offset": {
@@ -12150,7 +11997,7 @@
           }
         }
       },
-      "QRCodeLogoPublic": {
+      "QrCodeLogoPublic": {
         "type": "object",
         "properties": {
           "image_guid": {
@@ -12159,7 +12006,7 @@
           }
         }
       },
-      "QRCodeBranding": {
+      "QrCodeBranding": {
         "type": "object",
         "properties": {
           "bitly_brand": {
@@ -12168,24 +12015,24 @@
           }
         }
       },
-      "QRCodeFrameRequest": {
+      "QrCodeFrameRequest": {
         "required": [
           "id"
         ],
         "type": "object",
         "properties": {
           "id": {
-            "$ref": "#/components/schemas/QRCodeFrameType"
+            "$ref": "#/components/schemas/QrCodeFrameType"
           },
           "colors": {
-            "$ref": "#/components/schemas/QRCodeFrameRequestColors"
+            "$ref": "#/components/schemas/QrCodeFrameRequestColors"
           },
           "text": {
-            "$ref": "#/components/schemas/QRCodeFrameRequestText"
+            "$ref": "#/components/schemas/QrCodeFrameRequestText"
           }
         }
       },
-      "QRCodeText": {
+      "QrCodeText": {
         "type": "object",
         "properties": {
           "center": {
@@ -12235,7 +12082,7 @@
         },
         "description": "An object describing text with color"
       },
-      "QRCodeTypeEnum": {
+      "QrCodeTypeEnum": {
         "enum": [
           "bitlink",
           "long_url",
@@ -12248,9 +12095,47 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The type of dynamic/static content the QR serves, e.g. Link In Bio page, micro site, bitlink, email, text, Wifi, etc."
+        "description": "The type of dynamic/static content the QR serves, e.g. Link In Bio page, micro site, bitlink, email, text, Wifi, etc.",
+        "x-ms-enum": {
+          "name": "QrCodeTypeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bitlink",
+              "name": "Bitlink"
+            },
+            {
+              "value": "long_url",
+              "name": "LongUrl"
+            },
+            {
+              "value": "link_in_bio",
+              "name": "LinkInBio"
+            },
+            {
+              "value": "v_card",
+              "name": "VCard"
+            },
+            {
+              "value": "wifi",
+              "name": "Wifi"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "phone",
+              "name": "Phone"
+            },
+            {
+              "value": "text",
+              "name": "Text"
+            }
+          ]
+        }
       },
-      "QRCodeFrameType": {
+      "QrCodeFrameType": {
         "enum": [
           "none",
           "border_only",
@@ -12266,9 +12151,58 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "none"
+        "x-ms-enum": {
+          "name": "QrCodeFrameType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "border_only",
+              "name": "BorderOnly"
+            },
+            {
+              "value": "text_bottom",
+              "name": "TextBottom"
+            },
+            {
+              "value": "tooltip_bottom",
+              "name": "TooltipBottom"
+            },
+            {
+              "value": "arrow",
+              "name": "Arrow"
+            },
+            {
+              "value": "text_top",
+              "name": "TextTop"
+            },
+            {
+              "value": "text_bottom_in_frame",
+              "name": "TextBottomInFrame"
+            },
+            {
+              "value": "script",
+              "name": "Script"
+            },
+            {
+              "value": "text_top_and_bottom",
+              "name": "TextTopAndBottom"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "instagram",
+              "name": "Instagram"
+            }
+          ]
+        }
       },
-      "QRCodeDotPatternType": {
+      "QrCodeDotPatternType": {
         "enum": [
           "standard",
           "circle",
@@ -12284,9 +12218,58 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "standard"
+        "x-ms-enum": {
+          "name": "QrCodeDotPatternType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
+            {
+              "value": "circle",
+              "name": "Circle"
+            },
+            {
+              "value": "block",
+              "name": "Block"
+            },
+            {
+              "value": "blob",
+              "name": "Blob"
+            },
+            {
+              "value": "rounded",
+              "name": "Rounded"
+            },
+            {
+              "value": "vertical",
+              "name": "Vertical"
+            },
+            {
+              "value": "horizontal",
+              "name": "Horizontal"
+            },
+            {
+              "value": "triangle",
+              "name": "Triangle"
+            },
+            {
+              "value": "heart",
+              "name": "Heart"
+            },
+            {
+              "value": "star",
+              "name": "Star"
+            },
+            {
+              "value": "diamond",
+              "name": "Diamond"
+            }
+          ]
+        }
       },
-      "QRCodeSpecSettingsPublic": {
+      "QrCodeSpecSettingsPublic": {
         "type": "object",
         "properties": {
           "error_correction": {
@@ -12294,7 +12277,7 @@
             "description": "The amount of error correction that the QR code was generated with"
           }
         },
-        "description": "The QR code's editable spec settings, which for now is just the error correction"
+        "description": "The QR code\u0027s editable spec settings, which for now is just the error correction"
       },
       "BadRequest": {
         "type": "object",
@@ -12548,13 +12531,312 @@
         },
         "description": "GONE"
       },
+      "GroupAllOf2": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "guid": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "role": {
+            "type": "string"
+          },
+          "organization_guid": {
+            "type": "string"
+          },
+          "bsds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OrganizationAllOf2": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "guid": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          },
+          "tier_family": {
+            "type": "string"
+          },
+          "tier_display_name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "bsds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "require_sso": {
+            "$ref": "#/components/schemas/OrganizationRequireSso"
+          },
+          "require_2fa": {
+            "$ref": "#/components/schemas/OrganizationRequire2Fa"
+          }
+        }
+      },
+      "ShortenBitlinkBodyAllOf2": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "long_url": {
+            "type": "string"
+          },
+          "archived": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "custom_bitlinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "list of previously edited backhalfs for the bitlink - these are in reverse chronological order, with the most recently edited backhalf first"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deeplinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeeplinkRule"
+            }
+          }
+        }
+      },
+      "MetricsAllOf2": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metric"
+            }
+          }
+        }
+      },
+      "ClickMetricsAllOf2": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClickMetric"
+            }
+          }
+        }
+      },
+      "DeviceMetricsAllOf2": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeviceMetric"
+            }
+          }
+        }
+      },
+      "CityMetricsAllOf2": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CityMetric"
+            }
+          },
+          "other_metrics": {
+            "$ref": "#/components/schemas/OtherMetrics"
+          }
+        }
+      },
+      "ScanMetricsAllOf2": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScanMetric"
+            }
+          }
+        }
+      },
+      "CityScanMetricsAllOf2": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CityScanMetric"
+            }
+          },
+          "other_metrics": {
+            "$ref": "#/components/schemas/OtherScanMetrics"
+          }
+        }
+      },
+      "CampaignAllOf2": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string"
+          },
+          "group_guid": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string",
+            "description": "ISO timestamp"
+          },
+          "modified": {
+            "type": "string",
+            "description": "ISO timestamp"
+          }
+        }
+      },
+      "ChannelModifyAllOf2": {
+        "type": "object",
+        "properties": {
+          "bitlinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseChannelBitlink"
+            }
+          }
+        }
+      },
+      "WebhookAllOf2": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "modified_by": {
+            "type": "string"
+          },
+          "alerted": {
+            "type": "string"
+          },
+          "deactivated": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_alert": {
+            "type": "boolean"
+          },
+          "organization_guid": {
+            "type": "string"
+          },
+          "group_guid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "oauth_url": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "fetch_tags": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PlanLimitsAllOf2": {
+        "type": "object",
+        "properties": {
+          "organization_guid": {
+            "type": "string"
+          },
+          "plan_limits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PlanLimit"
+            }
+          }
+        }
+      },
       "HasReferencesReferences": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "QRCodeFrameRequestColors": {
+      "QrCodeFrameRequestColors": {
         "type": "object",
         "properties": {
           "primary": {
@@ -12572,7 +12854,7 @@
         },
         "description": "An object of named colors denoting which color should go to which area of the frame"
       },
-      "QRCodeFrameRequestText": {
+      "QrCodeFrameRequestText": {
         "type": "object",
         "properties": {
           "primary": {
@@ -12582,60 +12864,67 @@
             "$ref": "#/components/schemas/Text"
           }
         },
-        "description": "The text to be inserted into the QR code's frame"
+        "description": "The text to be inserted into the QR code\u0027s frame"
       },
-      "GetClicksForBitlink200": {
+      "GetClicksForBitlink200Response": {
         "type": "string"
       },
-      "GetEngagements200": {
+      "GetEngagements200Response": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByCountries200": {
+      "GetMetricsForBitlinkByCountries200Response": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByCities200": {
+      "GetMetricsForBitlinkByCities200Response": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByDevices200": {
+      "GetMetricsForBitlinkByDevices200Response": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByReferrers200": {
+      "GetMetricsForBitlinkByReferrers200Response": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByReferrerName200": {
+      "GetMetricsForBitlinkByReferrerName200Response": {
         "type": "string"
       },
-      "GetGroupMetricsByCountries200": {
+      "GetGroupMetricsByCountries200Response": {
         "type": "string"
       },
-      "GetGroupMetricsByCities200": {
+      "GetGroupMetricsByCities200Response": {
         "type": "string"
       },
-      "GetGroupMetricsByDevices200": {
+      "GetGroupMetricsByDevices200Response": {
         "type": "string"
       },
-      "GetGroupMetricsByReferrer200": {
+      "GetGroupMetricsByReferrer200Response": {
         "type": "string"
       },
-      "CreateStaticQRCodePublic200": {
+      "CreateStaticQrCodePublic200Response": {
         "type": "string"
       },
-      "GetQRCodeImagePublic200": {
+      "CreateStaticQrCodePublic200ResponseResponsePng": {
+        "type": "string",
+        "format": "binary"
+      },
+      "GetQrCodeImagePublic200Response": {
         "type": "string"
       },
-      "GetScanMetricsForQRCodeByCountries200": {
+      "GetQrCodeImagePublic200ResponseResponsePng": {
         "type": "string"
       },
-      "GetScanMetricsForQRCodeByCities200": {
+      "GetScanMetricsForQrCodeByCountries200Response": {
         "type": "string"
       },
-      "GetScanMetricsForQRCodeByDevicesOS200": {
+      "GetScanMetricsForQrCodeByCities200Response": {
         "type": "string"
       },
-      "GetScanMetricsForQRCodeByBrowser200": {
+      "GetScanMetricsForQrCodeByDevicesOs200Response": {
         "type": "string"
       },
-      "GetGroupLinkClicksByDevice200": {
+      "GetScanMetricsForQrCodeByBrowser200Response": {
+        "type": "string"
+      },
+      "GetGroupLinkClicksByDevice200Response": {
         "type": "object",
         "properties": {
           "unit": {
@@ -12652,18 +12941,7 @@
             }
           },
           "facet": {
-            "enum": [
-              "countries",
-              "cities",
-              "devices",
-              "referrers",
-              "referrers_by_domain",
-              "referring_domains",
-              "referring_networks",
-              "shorten_counts"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/GetGroupLinkClicksByDevice200ResponseFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -12672,20 +12950,12 @@
           "metrics": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "clicks": {
-                  "type": "integer"
-                },
-                "value": {
-                  "type": "string"
-                }
-              }
+              "$ref": "#/components/schemas/GetGroupLinkClicksByDevice200ResponseMetricsItem"
             }
           }
         }
       },
-      "GetGroupTopCodeScans200": {
+      "GetGroupTopCodeScans200Response": {
         "required": [
           "type"
         ],
@@ -12695,7 +12965,7 @@
             "$ref": "#/components/schemas/SortedLinks"
           },
           {
-            "$ref": "#/components/schemas/TopLinksAndQRCodes"
+            "$ref": "#/components/schemas/TopLinksAndQrCodes"
           }
         ],
         "properties": {
@@ -12708,13 +12978,1135 @@
           "propertyName": "type",
           "mapping": {
             "SortedLinks": "#/components/schemas/SortedLinks",
-            "TopLinksAndQRCodes": "#/components/schemas/TopLinksAndQRCodes"
+            "TopLinksAndQrCodes": "#/components/schemas/TopLinksAndQrCodes"
           }
         }
       },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
+      },
+      "GetClicksForBitlink200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetEngagements200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetMetricsForBitlinkByCountries200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetMetricsForBitlinkByCities200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetMetricsForBitlinkByDevices200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetMetricsForBitlinkByReferrers200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetMetricsForBitlinkByReferrerName200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetGroupMetricsByCountries200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetGroupMetricsByCities200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetGroupMetricsByDevices200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetGroupMetricsByReferrer200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "CreateStaticQrCodePublic200ResponseResponseSvgXml": {
+        "type": "string"
+      },
+      "CreateStaticQrCodePublic200ResponseResponsePng2": {
+        "type": "string",
+        "format": "binary"
+      },
+      "GetQrCodeImagePublic200ResponseResponseSvgXml": {
+        "type": "string"
+      },
+      "GetQrCodeImagePublic200ResponseResponsePng2": {
+        "type": "string"
+      },
+      "GetScanMetricsForQrCodeByCountries200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetScanMetricsForQrCodeByCities200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetScanMetricsForQrCodeByDevicesOs200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GetScanMetricsForQrCodeByBrowser200ResponseResponseCsv": {
+        "type": "string"
+      },
+      "GroupReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "OrganizationReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "ShortenBitlinkBodyReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "BitlinkBodyReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "CampaignReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "ChannelReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "HasReferencesReferencesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "WebhookReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "PlanLimitsReferences": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "GetGroupLinkClicksByDevice200ResponseMetricsItem": {
+        "type": "object",
+        "properties": {
+          "clicks": {
+            "type": "integer"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "OrganizationRequireSso": {
+        "enum": [
+          "none",
+          "any"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022SSO authentication requirement for this organization. Possible values: \\\u0022none\\\u0022, \\\u0022any\\\u0022. Omitted when no auth requirements are configured.\n\u0022",
+        "x-ms-enum": {
+          "name": "OrganizationRequireSso",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "any",
+              "name": "Any"
+            }
+          ]
+        }
+      },
+      "OrganizationRequire2Fa": {
+        "enum": [
+          "none",
+          "sms"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Two-factor authentication requirement for this organization. Possible values: \\\u0022none\\\u0022, \\\u0022sms\\\u0022. Omitted when no auth requirements are configured.\n\u0022",
+        "x-ms-enum": {
+          "name": "OrganizationRequire2Fa",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "sms",
+              "name": "Sms"
+            }
+          ]
+        }
+      },
+      "ClicksUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ClicksUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "TotalEngagementsUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TotalEngagementsUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "TotalEngagementsSummaryUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TotalEngagementsSummaryUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "BitlinkScansUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BitlinkScansUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "ClicksSummaryUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ClicksSummaryUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "BitlinkScansSummaryUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BitlinkScansSummaryUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "BaseMetricsFacet": {
+        "enum": [
+          "countries",
+          "cities",
+          "devices",
+          "referrers",
+          "referrers_by_domain",
+          "referring_domains",
+          "referring_networks",
+          "shorten_counts",
+          "destinations"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BaseMetricsFacet",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "countries",
+              "name": "Countries"
+            },
+            {
+              "value": "cities",
+              "name": "Cities"
+            },
+            {
+              "value": "devices",
+              "name": "Devices"
+            },
+            {
+              "value": "referrers",
+              "name": "Referrers"
+            },
+            {
+              "value": "referrers_by_domain",
+              "name": "ReferrersByDomain"
+            },
+            {
+              "value": "referring_domains",
+              "name": "ReferringDomains"
+            },
+            {
+              "value": "referring_networks",
+              "name": "ReferringNetworks"
+            },
+            {
+              "value": "shorten_counts",
+              "name": "ShortenCounts"
+            },
+            {
+              "value": "destinations",
+              "name": "Destinations"
+            }
+          ]
+        }
+      },
+      "BaseScanMetricsFacet": {
+        "enum": [
+          "countries",
+          "cities",
+          "device_os",
+          "browsers",
+          "destinations"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BaseScanMetricsFacet",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "countries",
+              "name": "Countries"
+            },
+            {
+              "value": "cities",
+              "name": "Cities"
+            },
+            {
+              "value": "device_os",
+              "name": "DeviceOs"
+            },
+            {
+              "value": "browsers",
+              "name": "Browsers"
+            },
+            {
+              "value": "destinations",
+              "name": "Destinations"
+            }
+          ]
+        }
+      },
+      "ReferrersByDomainsFacet": {
+        "enum": [
+          "referrers_by_domains"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ReferrersByDomainsFacet",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "referrers_by_domains",
+              "name": "ReferrersByDomains"
+            }
+          ]
+        }
+      },
+      "GroupExportRequestBodyExportType": {
+        "enum": [
+          "link_engagements_batch",
+          "links_list",
+          "qr_codes_list"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Which export shape to produce.",
+        "x-ms-enum": {
+          "name": "GroupExportRequestBodyExportType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "link_engagements_batch",
+              "name": "LinkEngagementsBatch"
+            },
+            {
+              "value": "links_list",
+              "name": "LinksList"
+            },
+            {
+              "value": "qr_codes_list",
+              "name": "QrCodesList"
+            }
+          ]
+        }
+      },
+      "GroupExportFilterArchived": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Filter by archive state.",
+        "x-ms-enum": {
+          "name": "GroupExportFilterArchived",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "GroupExportResponseExportType": {
+        "enum": [
+          "link_engagements_batch",
+          "links_list",
+          "qr_codes_list"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GroupExportResponseExportType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "link_engagements_batch",
+              "name": "LinkEngagementsBatch"
+            },
+            {
+              "value": "links_list",
+              "name": "LinksList"
+            },
+            {
+              "value": "qr_codes_list",
+              "name": "QrCodesList"
+            }
+          ]
+        }
+      },
+      "BulkUpdateRequestAction": {
+        "enum": [
+          "archive",
+          "edit_tags"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "archive or edit_tags",
+        "x-ms-enum": {
+          "name": "BulkUpdateRequestAction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "archive",
+              "name": "Archive"
+            },
+            {
+              "value": "edit_tags",
+              "name": "EditTags"
+            }
+          ]
+        }
+      },
+      "QrCodeCornerShape": {
+        "enum": [
+          "standard",
+          "slightly_round",
+          "rounded",
+          "extra_round",
+          "leaf",
+          "leaf_inner",
+          "leaf_outer",
+          "target",
+          "concave"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The shape one of the QR code\u0027s corners should take",
+        "x-ms-enum": {
+          "name": "QrCodeCornerShape",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
+            {
+              "value": "slightly_round",
+              "name": "SlightlyRound"
+            },
+            {
+              "value": "rounded",
+              "name": "Rounded"
+            },
+            {
+              "value": "extra_round",
+              "name": "ExtraRound"
+            },
+            {
+              "value": "leaf",
+              "name": "Leaf"
+            },
+            {
+              "value": "leaf_inner",
+              "name": "LeafInner"
+            },
+            {
+              "value": "leaf_outer",
+              "name": "LeafOuter"
+            },
+            {
+              "value": "target",
+              "name": "Target"
+            },
+            {
+              "value": "concave",
+              "name": "Concave"
+            }
+          ]
+        }
+      },
+      "QrCodeGradientStyle": {
+        "enum": [
+          "no_gradient",
+          "linear",
+          "radial"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The style of the gradient. Can be either linear or radial.",
+        "x-ms-enum": {
+          "name": "QrCodeGradientStyle",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "no_gradient",
+              "name": "NoGradient"
+            },
+            {
+              "value": "linear",
+              "name": "Linear"
+            },
+            {
+              "value": "radial",
+              "name": "Radial"
+            }
+          ]
+        }
+      },
+      "GetGroupLinkClicksByDevice200ResponseFacet": {
+        "enum": [
+          "countries",
+          "cities",
+          "devices",
+          "referrers",
+          "referrers_by_domain",
+          "referring_domains",
+          "referring_networks",
+          "shorten_counts"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetGroupLinkClicksByDevice200ResponseFacet",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "countries",
+              "name": "Countries"
+            },
+            {
+              "value": "cities",
+              "name": "Cities"
+            },
+            {
+              "value": "devices",
+              "name": "Devices"
+            },
+            {
+              "value": "referrers",
+              "name": "Referrers"
+            },
+            {
+              "value": "referrers_by_domain",
+              "name": "ReferrersByDomain"
+            },
+            {
+              "value": "referring_domains",
+              "name": "ReferringDomains"
+            },
+            {
+              "value": "referring_networks",
+              "name": "ReferringNetworks"
+            },
+            {
+              "value": "shorten_counts",
+              "name": "ShortenCounts"
+            }
+          ]
+        }
+      },
+      "Archived": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "Archived",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "Deeplinks": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "Deeplinks",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "DomainDeeplinks": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "DomainDeeplinks",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "TagType": {
+        "enum": [
+          "bitlink",
+          "qr_code"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TagType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bitlink",
+              "name": "Bitlink"
+            },
+            {
+              "value": "qr_code",
+              "name": "QrCode"
+            }
+          ]
+        }
+      },
+      "FilterCustomBitlink": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterCustomBitlink",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "FilterHasRenderCustomizations": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterHasRenderCustomizations",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "FilterIsGs1": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterIsGs1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "FilterHasQrCodes": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterHasQrCodes",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "FilterIsExpired": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterIsExpired",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "FilterHasExpiration": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterHasExpiration",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "FilterQrCodeTypeItem": {
+        "enum": [
+          "bitlink",
+          "long_url"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterQrCodeTypeItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bitlink",
+              "name": "Bitlink"
+            },
+            {
+              "value": "long_url",
+              "name": "LongUrl"
+            }
+          ]
+        }
+      },
+      "Sort": {
+        "enum": [
+          "clicks"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "Sort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "clicks",
+              "name": "Clicks"
+            }
+          ]
+        }
+      },
+      "CreateStaticQrCodePublicAcceptParameter": {
+        "enum": [
+          "application/json",
+          "image/svg\u002Bxml",
+          "image/png"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateStaticQrCodePublicAcceptParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "application/json",
+              "name": "ApplicationJson"
+            },
+            {
+              "value": "image/svg\u002Bxml",
+              "name": "ImageSvgPlusXml"
+            },
+            {
+              "value": "image/png",
+              "name": "ImagePng"
+            }
+          ]
+        }
+      },
+      "CreateStaticQrCodePublicFormatParameter": {
+        "enum": [
+          "svg",
+          "png"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateStaticQrCodePublicFormatParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "svg",
+              "name": "Svg"
+            },
+            {
+              "value": "png",
+              "name": "Png"
+            }
+          ]
+        }
+      },
+      "GetQrCodeImagePublicFormatParameter": {
+        "enum": [
+          "svg",
+          "png"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "example": "svg",
+        "x-ms-enum": {
+          "name": "GetQrCodeImagePublicFormatParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "svg",
+              "name": "Svg"
+            },
+            {
+              "value": "png",
+              "name": "Png"
+            }
+          ]
+        }
       }
     },
     "parameters": {
@@ -12839,14 +14231,7 @@
         "in": "query",
         "description": "Whether or not to include archived resources",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "off"
+          "$ref": "#/components/schemas/Archived"
         },
         "example": "both"
       },
@@ -12855,14 +14240,7 @@
         "in": "query",
         "description": "Filter to only Bitlinks that contain deeplinks",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/Deeplinks"
         },
         "example": "both"
       },
@@ -12871,14 +14249,7 @@
         "in": "query",
         "description": "Filter to only Bitlinks that contain deeplinks configured with a custom domain",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/DomainDeeplinks"
         },
         "example": "both"
       },
@@ -12920,13 +14291,7 @@
         "in": "query",
         "description": "Tag set to return; defaults to bitlink",
         "schema": {
-          "enum": [
-            "bitlink",
-            "qr_code"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "bitlink"
+          "$ref": "#/components/schemas/TagType"
         }
       },
       "LaunchpadIDs": {
@@ -12977,14 +14342,7 @@
         "name": "custom_bitlink",
         "in": "query",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/FilterCustomBitlink"
         },
         "example": "both"
       },
@@ -12993,14 +14351,7 @@
         "in": "query",
         "description": "Whether or not QRCode has any render customizations (like color or shape changes)",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/FilterHasRenderCustomizations"
         },
         "example": "both"
       },
@@ -13009,14 +14360,7 @@
         "in": "query",
         "description": "a filter value if the resource is a GS1 QR code",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/FilterIsGs1"
         },
         "example": "both"
       },
@@ -13025,14 +14369,7 @@
         "in": "query",
         "description": "a filter value if the resource has any QR codes",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/FilterHasQrCodes"
         },
         "example": "both"
       },
@@ -13041,14 +14378,7 @@
         "in": "query",
         "description": "filter bitlinks by expiration status",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/FilterIsExpired"
         }
       },
       "FilterHasExpiration": {
@@ -13056,14 +14386,7 @@
         "in": "query",
         "description": "filter bitlinks by presence of expiration",
         "schema": {
-          "enum": [
-            "on",
-            "off",
-            "both"
-          ],
-          "type": "string",
-          "additionalProperties": false,
-          "default": "both"
+          "$ref": "#/components/schemas/FilterHasExpiration"
         }
       },
       "CreatingLogin": {
@@ -13086,12 +14409,7 @@
         "schema": {
           "type": "array",
           "items": {
-            "enum": [
-              "bitlink",
-              "long_url"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/FilterQrCodeTypeItem"
           },
           "default": [
             "bitlink",
@@ -13108,11 +14426,7 @@
         "description": "The type of sorting that you would like to do",
         "required": true,
         "schema": {
-          "enum": [
-            "clicks"
-          ],
-          "type": "string",
-          "additionalProperties": false
+          "$ref": "#/components/schemas/Sort"
         },
         "example": "clicks"
       },
@@ -13131,7 +14445,7 @@
         "in": "query",
         "description": "A unit of time (day, week, or month)",
         "schema": {
-          "$ref": "#/components/schemas/TimeUnitDWM"
+          "$ref": "#/components/schemas/TimeUnitDwm"
         },
         "example": "month"
       },
@@ -13168,7 +14482,7 @@
       "UnitReferenceTimeStamp": {
         "name": "unit_reference",
         "in": "query",
-        "description": "An ISO-8601 timestamp, indicating the most recent time for which to pull metrics. Will default to current time. Timestamp values should be url encoded (i.e. replace '+' with '%2B' and ':' with '%3A'; 2022-02-02T15:53:02+0000 becomes 2022-02-02T15%3A53%3A02%2B0000)",
+        "description": "An ISO-8601 timestamp, indicating the most recent time for which to pull metrics. Will default to current time. Timestamp values should be url encoded (i.e. replace \u0027\u002B\u0027 with \u0027%2B\u0027 and \u0027:\u0027 with \u0027%3A\u0027; 2022-02-02T15:53:02\u002B0000 becomes 2022-02-02T15%3A53%3A02%2B0000)",
         "schema": {
           "type": "string"
         },
@@ -13289,7 +14603,7 @@
   },
   "security": [
     {
-      "bearerAuth": [ ]
+      "bearerAuth": []
     }
   ],
   "tags": [
@@ -13323,7 +14637,7 @@
     },
     {
       "name": "Webhooks",
-      "description": "Webhooks are a method of sending information from Bitly to an application outside of Bitly. It's a way to automate actions or updates between two different systems. These endpoints are for configuring your webhooks.\n"
+      "description": "Webhooks are a method of sending information from Bitly to an application outside of Bitly. It\u0027s a way to automate actions or updates between two different systems. These endpoints are for configuring your webhooks.\n"
     },
     {
       "name": "Deeplinks",

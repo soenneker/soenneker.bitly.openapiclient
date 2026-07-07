@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\engagements\sorted
+    /// Builds and executes requests for operations under \groups\{groupGuid}\engagements\sorted
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SortedRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SortedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/engagements/sorted", pathParameters)
+        public SortedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/engagements/sorted", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements.Sorted
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SortedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/engagements/sorted", rawUrl)
+        public SortedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/engagements/sorted", rawUrl)
         {
         }
     }

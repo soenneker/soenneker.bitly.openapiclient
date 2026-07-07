@@ -15,7 +15,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The facet property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.Metrics_facet? Facet { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.BaseMetricsFacet? Facet { get; set; }
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "facet", n => { Facet = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Metrics_facet>(); } },
+                { "facet", n => { Facet = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BaseMetricsFacet>(); } },
                 { "metrics", n => { MetricsProp = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.Metric>(global::Soenneker.Bitly.OpenApiClient.Models.Metric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.Metrics_facet>("facet", Facet);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BaseMetricsFacet>("facet", Facet);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.Metric>("metrics", MetricsProp);
             writer.WriteStringValue("unit", Unit);
             writer.WriteStringValue("unit_reference", UnitReference);

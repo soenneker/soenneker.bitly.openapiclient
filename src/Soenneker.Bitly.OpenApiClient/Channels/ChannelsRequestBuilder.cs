@@ -19,15 +19,15 @@ namespace Soenneker.Bitly.OpenApiClient.Channels
     public partial class ChannelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.channels.item collection</summary>
-        /// <param name="position">A GUID for a Bitly Channel</param>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannel_guItemRequestBuilder"/></returns>
-        public global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannel_guItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder"/></returns>
+        public global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("channel_guid", position);
-                return new global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannel_guItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("channelGuid", position);
+                return new global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

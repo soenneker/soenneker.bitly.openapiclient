@@ -127,10 +127,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Webhook_references? References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.WebhookReferences? References { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Webhook_references References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.WebhookReferences References { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,7 +189,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "oauth_url", n => { OauthUrl = n.GetStringValue(); } },
                 { "organization_guid", n => { OrganizationGuid = n.GetStringValue(); } },
-                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Webhook_references>(global::Soenneker.Bitly.OpenApiClient.Models.Webhook_references.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.WebhookReferences>(global::Soenneker.Bitly.OpenApiClient.Models.WebhookReferences.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -217,7 +217,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("oauth_url", OauthUrl);
             writer.WriteStringValue("organization_guid", OrganizationGuid);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Webhook_references>("references", References);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.WebhookReferences>("references", References);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

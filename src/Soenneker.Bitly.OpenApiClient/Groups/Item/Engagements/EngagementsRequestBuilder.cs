@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\engagements
+    /// Builds and executes requests for operations under \groups\{groupGuid}\engagements
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EngagementsRequestBuilder : BaseRequestBuilder
@@ -37,7 +37,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EngagementsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/engagements", pathParameters)
+        public EngagementsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/engagements", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Engagements
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EngagementsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/engagements", rawUrl)
+        public EngagementsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/engagements", rawUrl)
         {
         }
     }

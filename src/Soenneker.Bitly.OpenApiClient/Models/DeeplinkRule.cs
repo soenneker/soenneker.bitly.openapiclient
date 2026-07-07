@@ -81,7 +81,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public string Modified { get; set; }
 #endif
         /// <summary>The os property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.MobileOS? Os { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.MobileOs? Os { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule"/> and sets the default values.
         /// </summary>
@@ -116,7 +116,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "install_type", n => { InstallType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference>(); } },
                 { "install_url", n => { InstallUrl = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetStringValue(); } },
-                { "os", n => { Os = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.MobileOS>(); } },
+                { "os", n => { Os = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.MobileOs>(); } },
             };
         }
         /// <summary>
@@ -135,7 +135,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference>("install_type", InstallType);
             writer.WriteStringValue("install_url", InstallUrl);
             writer.WriteStringValue("modified", Modified);
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.MobileOS>("os", Os);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.MobileOs>("os", Os);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

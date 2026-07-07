@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks
 {
     /// <summary>
-    /// Builds and executes requests for operations under \custom_bitlinks\{custom_bitlink}\clicks
+    /// Builds and executes requests for operations under \custom_bitlinks\{customBitlink}\clicks
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClicksRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClicksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{custom_bitlink}/clicks?unit={unit}&units={units}{&unit_reference*}", pathParameters)
+        public ClicksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{customBitlink}/clicks?unit={unit}&units={units}{&unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClicksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{custom_bitlink}/clicks?unit={unit}&units={units}{&unit_reference*}", rawUrl)
+        public ClicksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_bitlinks/{customBitlink}/clicks?unit={unit}&units={units}{&unit_reference*}", rawUrl)
         {
         }
         /// <summary>

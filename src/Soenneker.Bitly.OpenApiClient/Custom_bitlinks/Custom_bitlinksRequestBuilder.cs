@@ -19,15 +19,15 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks
     public partial class Custom_bitlinksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.custom_bitlinks.item collection</summary>
-        /// <param name="position">A Custom Bitlink made of the domain and keyword</param>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustom_bitlinkItemRequestBuilder"/></returns>
-        public global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustom_bitlinkItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustomBitlinkItemRequestBuilder"/></returns>
+        public global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustomBitlinkItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("custom_bitlink", position);
-                return new global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustom_bitlinkItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("customBitlink", position);
+                return new global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustomBitlinkItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -15,7 +15,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The facet property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.CityScanMetrics_facet? Facet { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.BaseScanMetricsFacet? Facet { get; set; }
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "facet", n => { Facet = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.CityScanMetrics_facet>(); } },
+                { "facet", n => { Facet = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BaseScanMetricsFacet>(); } },
                 { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.CityScanMetric>(global::Soenneker.Bitly.OpenApiClient.Models.CityScanMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "other_metrics", n => { OtherMetrics = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.OtherScanMetrics>(global::Soenneker.Bitly.OpenApiClient.Models.OtherScanMetrics.CreateFromDiscriminatorValue); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.CityScanMetrics_facet>("facet", Facet);
+            writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BaseScanMetricsFacet>("facet", Facet);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.CityScanMetric>("metrics", Metrics);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.OtherScanMetrics>("other_metrics", OtherMetrics);
             writer.WriteStringValue("unit", Unit);

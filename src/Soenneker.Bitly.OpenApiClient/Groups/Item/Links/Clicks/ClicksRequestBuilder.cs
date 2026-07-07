@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\links\clicks
+    /// Builds and executes requests for operations under \groups\{groupGuid}\links\clicks
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClicksRequestBuilder : BaseRequestBuilder
@@ -55,7 +55,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClicksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/links/clicks", pathParameters)
+        public ClicksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/links/clicks", pathParameters)
         {
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Links.Clicks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClicksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/links/clicks", rawUrl)
+        public ClicksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/links/clicks", rawUrl)
         {
         }
     }

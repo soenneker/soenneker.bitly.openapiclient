@@ -19,15 +19,15 @@ namespace Soenneker.Bitly.OpenApiClient.Campaigns
     public partial class CampaignsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.campaigns.item collection</summary>
-        /// <param name="position">A GUID for a Bitly campaign</param>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaign_guItemRequestBuilder"/></returns>
-        public global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaign_guItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaignGuItemRequestBuilder"/></returns>
+        public global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaignGuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("campaign_guid", position);
-                return new global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaign_guItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("campaignGuid", position);
+                return new global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaignGuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

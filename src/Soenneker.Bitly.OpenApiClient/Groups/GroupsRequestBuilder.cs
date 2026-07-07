@@ -19,15 +19,15 @@ namespace Soenneker.Bitly.OpenApiClient.Groups
     public partial class GroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.groups.item collection</summary>
-        /// <param name="position">A GUID for a Bitly group</param>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroup_guItemRequestBuilder"/></returns>
-        public global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroup_guItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroupGuItemRequestBuilder"/></returns>
+        public global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroupGuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("group_guid", position);
-                return new global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroup_guItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("groupGuid", position);
+                return new global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroupGuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

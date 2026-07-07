@@ -57,10 +57,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Channel_references? References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.ChannelReferences? References { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Channel_references References { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.ChannelReferences References { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Channel"/> and sets the default values.
@@ -92,7 +92,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "guid", n => { Guid = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Channel_references>(global::Soenneker.Bitly.OpenApiClient.Models.Channel_references.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.ChannelReferences>(global::Soenneker.Bitly.OpenApiClient.Models.ChannelReferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("guid", Guid);
             writer.WriteStringValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Channel_references>("references", References);
+            writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.ChannelReferences>("references", References);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top
 {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group_guid}\codes\scans\top
+    /// Builds and executes requests for operations under \groups\{groupGuid}\codes\scans\top
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TopRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/codes/scans/top?unit={unit}&units={units}{&decoupled*,unit_reference*}", pathParameters)
+        public TopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/codes/scans/top?unit={unit}&units={units}{&decoupled*,unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group_guid}/codes/scans/top?unit={unit}&units={units}{&decoupled*,unit_reference*}", rawUrl)
+        public TopRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/codes/scans/top?unit={unit}&units={units}{&decoupled*,unit_reference*}", rawUrl)
         {
         }
         /// <summary>
         /// Get top performing QR codes by scan count for all codes in a group.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Codes.Scans.Top
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200Response>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get top performing QR codes by scan count for all codes in a group.
