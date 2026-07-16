@@ -5,7 +5,9 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Bitly.OpenApiClient.Models;
 using Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image;
+using Soenneker.Bitly.OpenApiClient.QrCodes.Item.Redirect;
 using Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans;
+using Soenneker.Bitly.OpenApiClient.QrCodes.Item.ToBitlink;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -24,10 +26,20 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item
         {
             get => new global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image.ImageRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The redirect property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Redirect.RedirectRequestBuilder Redirect
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Redirect.RedirectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The scans property</summary>
         public global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.ScansRequestBuilder Scans
         {
             get => new global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The toBitlink property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.ToBitlink.ToBitlinkRequestBuilder ToBitlink
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.ToBitlink.ToBitlinkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.WithQrcodeItemRequestBuilder"/> and sets the default values.

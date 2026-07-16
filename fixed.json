@@ -7421,6 +7421,120 @@
             }
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "QR Codes"
+        ],
+        "summary": "Bulk update QR codes",
+        "description": "Bulk update can add or remove tags, or archive/un-archive, up to 100 QR codes at a time.\nPages QR codes cannot be updated with this endpoint.\nThe response includes a list of QR code ids that were updated.\n",
+        "operationId": "UpdateQrCodesByGroup",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/GroupGUID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QrcBulkUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QrcBulkUpdate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "GONE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Gone"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/qr-codes/{qrcodeId}/scans": {
@@ -8058,6 +8172,246 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/qr-codes/{qrcodeId}/to-bitlink": {
+      "put": {
+        "tags": [
+          "QR Codes"
+        ],
+        "summary": "Upgrade a QR Code to a bitlink",
+        "description": "Upgrades a stand alone (decoupled) QR Code to a coupled QR Code by associating it with its underlying Bitly short link. This operation consumes one encode from the organization\u0027s monthly Link limit. If the QR Code is already coupled, no encode is consumed.",
+        "operationId": "UpgradeQrCodeToBitlink",
+        "parameters": [
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlinkBody"
+                },
+                "examples": {
+                  "Upgraded QR Code": {
+                    "value": {
+                      "link": "https://bit.ly/abc123",
+                      "id": "bit.ly/abc123",
+                      "long_url": "https://example.com/page",
+                      "title": "My Stand Alone QR Code",
+                      "archived": false,
+                      "created_at": "2024-01-15T10:00:00\u002B0000",
+                      "created_by": "jane",
+                      "custom_bitlinks": [],
+                      "tags": [],
+                      "qr_code_ids": [
+                        "Ab1Cd2Ef3G4"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/qr-codes/{qrcodeId}/redirect": {
+      "patch": {
+        "tags": [
+          "QR Codes"
+        ],
+        "summary": "Redirect a QR Code",
+        "description": "Changes the destination URL that a stand alone QR Code redirects to. This only works for stand alone QR Codes; a QR Code already associated with a bitlink must be updated via the Bitlinks API.",
+        "operationId": "RedirectQrCodeDestination",
+        "parameters": [
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RedirectQrCodeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QrCodeMinimal"
+                },
+                "examples": {
+                  "Redirected QR Code": {
+                    "value": {
+                      "qrcode_id": "Ab1Cd2Ef3G4",
+                      "group_guid": "Ba1bc23dE4F",
+                      "title": "My Stand Alone QR Code",
+                      "is_customized": false,
+                      "qr_code_type": "long_url",
+                      "long_urls": [
+                        "https://example.com/new-page"
+                      ],
+                      "is_gs1": false,
+                      "tags": [],
+                      "archived": false,
+                      "created": "2024-01-15T10:00:00\u002B0000",
+                      "updated": "2024-01-16T09:30:00\u002B0000"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "GONE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Gone"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
                 }
               }
             }
@@ -11371,6 +11725,61 @@
           }
         }
       },
+      "QrcBulkUpdateRequest": {
+        "required": [
+          "action"
+        ],
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/QrcBulkUpdateRequestAction"
+          },
+          "archive": {
+            "type": "boolean"
+          },
+          "add_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "remove_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "qr_code_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "this is limited to 100 QR code ids; Pages QR codes are not supported"
+          }
+        },
+        "example": {
+          "action": "edit_tags",
+          "add_tags": [
+            "tag1",
+            "tag2"
+          ],
+          "qr_code_ids": [
+            "Qo9id25UxtOcnns",
+            "Qb1a2c3d4e5f6g7"
+          ]
+        }
+      },
+      "QrcBulkUpdate": {
+        "type": "object",
+        "properties": {
+          "qr_code_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "QrCodeDetails": {
         "type": "object",
         "properties": {
@@ -11926,6 +12335,19 @@
           }
         },
         "description": "QR Code delete response"
+      },
+      "RedirectQrCodeRequest": {
+        "required": [
+          "long_url"
+        ],
+        "type": "object",
+        "properties": {
+          "long_url": {
+            "type": "string",
+            "example": "https://www.google.com"
+          }
+        },
+        "description": "Request to redirect a QRCode"
       },
       "QrCodeCorners": {
         "type": "object",
@@ -13581,6 +14003,29 @@
         "description": "archive or edit_tags",
         "x-ms-enum": {
           "name": "BulkUpdateRequestAction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "archive",
+              "name": "Archive"
+            },
+            {
+              "value": "edit_tags",
+              "name": "EditTags"
+            }
+          ]
+        }
+      },
+      "QrcBulkUpdateRequestAction": {
+        "enum": [
+          "archive",
+          "edit_tags"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "archive or edit_tags",
+        "x-ms-enum": {
+          "name": "QrcBulkUpdateRequestAction",
           "modelAsString": false,
           "values": [
             {

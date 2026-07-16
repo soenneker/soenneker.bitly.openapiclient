@@ -61,6 +61,45 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QrCodesMinimal>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QrCodesMinimal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Bulk update can add or remove tags, or archive/un-archive, up to 100 QR codes at a time.Pages QR codes cannot be updated with this endpoint.The response includes a list of QR code ids that were updated.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdate"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.Forbidden">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.NotFound">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.Gone">When receiving a 410 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.UnprocessableEntity">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdate?> PatchAsync(global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdate> PatchAsync(global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Bitly.OpenApiClient.Models.BadRequest.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
+                { "410", global::Soenneker.Bitly.OpenApiClient.Models.Gone.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Bitly.OpenApiClient.Models.UnprocessableEntity.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdate>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Retrieves a list of QR codes matching the filter settings. Values are in reverse chronological order.The pagination occurs by calling the next link in the pagination response object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -77,6 +116,28 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Bulk update can add or remove tags, or archive/un-archive, up to 100 QR codes at a time.Pages QR codes cannot be updated with this endpoint.The response includes a list of QR code ids that were updated.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
