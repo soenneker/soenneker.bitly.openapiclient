@@ -35,7 +35,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitlinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/bitlinks{?archived*,campaign_guid*,channel_guid*,created_after*,created_before*,custom_bitlink*,deeplinks*,domain_deeplinks*,encoding_login*,has_expiration*,has_qr_codes*,hostname_path_query*,is_expired*,launchpad_ids*,query*,search_after*,size*,tags*}", pathParameters)
+        public BitlinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/bitlinks{?archived*,campaign_guid*,channel_guid*,created_after*,created_before*,custom_bitlink*,deeplinks*,domain_deeplinks*,encoding_login*,has_dynamic_routing*,has_expiration*,has_qr_codes*,hostname_path_query*,is_expired*,launchpad_ids*,query*,search_after*,size*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitlinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/bitlinks{?archived*,campaign_guid*,channel_guid*,created_after*,created_before*,custom_bitlink*,deeplinks*,domain_deeplinks*,encoding_login*,has_expiration*,has_qr_codes*,hostname_path_query*,is_expired*,launchpad_ids*,query*,search_after*,size*,tags*}", rawUrl)
+        public BitlinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/bitlinks{?archived*,campaign_guid*,channel_guid*,created_after*,created_before*,custom_bitlink*,deeplinks*,domain_deeplinks*,encoding_login*,has_dynamic_routing*,has_expiration*,has_qr_codes*,hostname_path_query*,is_expired*,launchpad_ids*,query*,search_after*,size*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -213,6 +213,9 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
             [QueryParameter("encoding_login")]
             public string[] EncodingLogin { get; set; }
 #endif
+            /// <summary>filter bitlinks by presence of dynamic routing rules</summary>
+            [QueryParameter("has_dynamic_routing")]
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterHasDynamicRouting? HasDynamicRouting { get; set; }
             /// <summary>filter bitlinks by presence of expiration</summary>
             [QueryParameter("has_expiration")]
             public global::Soenneker.Bitly.OpenApiClient.Models.FilterHasExpiration? HasExpiration { get; set; }

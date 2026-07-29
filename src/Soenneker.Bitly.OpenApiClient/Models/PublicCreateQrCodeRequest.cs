@@ -25,6 +25,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination Destination { get; set; }
 #endif
+        /// <summary>Optional dynamic routing rules for this decoupled QR code. Only supported for long_url destinations. Providing this field replaces all existing rules. Send an empty array to clear all rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get; set; }
+#endif
         /// <summary>Optional expiration timestamp for the QR code&apos;s bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination>(global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination.CreateFromDiscriminatorValue); } },
+                { "dynamic_routing", n => { DynamicRouting = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>(global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration_at", n => { ExpirationAt = n.GetStringValue(); } },
                 { "group_guid", n => { GroupGuid = n.GetStringValue(); } },
                 { "gs1", n => { Gs1 = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata>(global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata.CreateFromDiscriminatorValue); } },
@@ -117,6 +126,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination>("destination", Destination);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>("dynamic_routing", DynamicRouting);
             writer.WriteStringValue("expiration_at", ExpirationAt);
             writer.WriteStringValue("group_guid", GroupGuid);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata>("gs1", Gs1);

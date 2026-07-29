@@ -2843,6 +2843,9 @@
             "$ref": "#/components/parameters/FilterHasExpiration"
           },
           {
+            "$ref": "#/components/parameters/FilterHasDynamicRouting"
+          },
+          {
             "$ref": "#/components/parameters/Tags"
           },
           {
@@ -7376,6 +7379,9 @@
             "$ref": "#/components/parameters/FilterHasExpiration"
           },
           {
+            "$ref": "#/components/parameters/FilterHasDynamicRouting"
+          },
+          {
             "$ref": "#/components/parameters/Tags"
           }
         ],
@@ -9847,6 +9853,13 @@
           "expiration_at": {
             "type": "string",
             "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Dynamic routing rules for this bitlink. Only present when at least one rule is configured."
           }
         }
       },
@@ -9921,8 +9934,81 @@
           "expiration_at": {
             "type": "string",
             "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Dynamic routing rules for this bitlink. Only present when at least one rule is configured."
           }
         }
+      },
+      "DynamicRoutingRule": {
+        "type": "object",
+        "properties": {
+          "long_url": {
+            "type": "string",
+            "description": "The destination URL for requests matching this rule."
+          },
+          "country_match": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "ISO 3166-1 alpha-2 country codes that trigger this rule (e.g., [\u0022US\u0022, \u0022CA\u0022])."
+          },
+          "country_exclude": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "ISO 3166-1 alpha-2 country codes that must NOT match for this rule to apply."
+          },
+          "region_match": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "ISO 3166-2 region codes that trigger this rule (e.g., [\u0022US-CA\u0022, \u0022CA-ON\u0022])."
+          },
+          "region_exclude": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "ISO 3166-2 region codes that must NOT match for this rule to apply (e.g., [\u0022US-CA\u0022, \u0022CA-ON\u0022])."
+          },
+          "device_match": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingDeviceEnum"
+            },
+            "description": "Device types that trigger this rule (e.g., [\u0022mobile\u0022, \u0022tablet\u0022])."
+          },
+          "device_exclude": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingDeviceEnum"
+            },
+            "description": "Device types that must NOT match for this rule to apply."
+          },
+          "os_match": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingPlatformEnum"
+            },
+            "description": "Operating systems that trigger this rule (e.g., [\u0022ios\u0022, \u0022android\u0022])."
+          },
+          "os_exclude": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingPlatformEnum"
+            },
+            "description": "Operating systems that must NOT match for this rule to apply."
+          }
+        },
+        "description": "A dynamic routing rule that redirects traffic to a different destination based on user attributes."
       },
       "BitlinkUpdateBody": {
         "type": "object",
@@ -9951,6 +10037,13 @@
           "expiration_at": {
             "type": "string",
             "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Dynamic routing rules for this bitlink. Providing this field replaces all existing rules. Send an empty array to clear all rules."
           }
         },
         "example": {
@@ -10010,6 +10103,13 @@
           },
           "long_url": {
             "type": "string"
+          },
+          "long_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of destination URLs for this bitlink, including the default long URL and any dynamically routed destination URLs.\n"
           },
           "created_at": {
             "type": "string"
@@ -10244,6 +10344,13 @@
           "expiration_at": {
             "type": "string",
             "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000). Minimum expiration time is 5 minutes from now and maximum is 1 year."
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "dynamic routing rules for this bitlink."
           }
         },
         "description": "Either long_url (for new bitlinks) or bitlink_id (for adding keywords to existing bitlinks) must be provided, but not both.",
@@ -11135,6 +11242,10 @@
           },
           "require_oauth_pkce": {
             "type": "boolean"
+          },
+          "internal_app": {
+            "type": "boolean",
+            "description": "True for Bitly\u0027s own first-party apps (dashboard, mobile apps), as opposed to third-party integrations."
           }
         }
       },
@@ -11835,6 +11946,13 @@
               "type": "string"
             },
             "description": "A list of tags associated with QR code"
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Dynamic routing rules for this QR code. Only present when at least one rule is configured."
           }
         }
       },
@@ -11907,6 +12025,13 @@
           "expiration_at": {
             "type": "string",
             "description": "Optional expiration timestamp for the QR code\u0027s bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Dynamic routing rules for this QR code. Only present when at least one rule is configured."
           },
           "created": {
             "type": "string"
@@ -12023,6 +12148,13 @@
               "type": "string"
             },
             "description": "A list of tags to add to the QR code"
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Optional dynamic routing rules for this decoupled QR code. Only supported for long_url destinations. Providing this field replaces all existing rules. Send an empty array to clear all rules."
           }
         },
         "description": "Customization and content values for a QR code created through the public API",
@@ -12207,6 +12339,13 @@
               "type": "string"
             },
             "description": "A list of tags to add to the QR code"
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Dynamic routing rules for this QR code. Providing this field replaces all existing rules. Send an empty array to clear all rules."
           }
         },
         "description": "Customization and content values for a QR code created through the public API",
@@ -12553,6 +12692,57 @@
             {
               "value": "text",
               "name": "Text"
+            }
+          ]
+        }
+      },
+      "DynamicRoutingPlatformEnum": {
+        "enum": [
+          "ios",
+          "android"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Platform (OS) values for use in dynamic routing rules (os_match / os_exclude)",
+        "x-ms-enum": {
+          "name": "DynamicRoutingPlatformEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ios",
+              "name": "Ios"
+            },
+            {
+              "value": "android",
+              "name": "Android"
+            }
+          ]
+        }
+      },
+      "DynamicRoutingDeviceEnum": {
+        "enum": [
+          "mobile",
+          "tablet",
+          "desktop"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Device type values for use in dynamic routing rules (device_match / device_exclude)",
+        "x-ms-enum": {
+          "name": "DynamicRoutingDeviceEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "mobile",
+              "name": "Mobile"
+            },
+            {
+              "value": "tablet",
+              "name": "Tablet"
+            },
+            {
+              "value": "desktop",
+              "name": "Desktop"
             }
           ]
         }
@@ -14442,6 +14632,33 @@
           ]
         }
       },
+      "FilterHasDynamicRouting": {
+        "enum": [
+          "on",
+          "off",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterHasDynamicRouting",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on",
+              "name": "On"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
       "FilterQrCodeTypeItem": {
         "enum": [
           "bitlink",
@@ -14832,6 +15049,14 @@
         "description": "filter bitlinks by presence of expiration",
         "schema": {
           "$ref": "#/components/schemas/FilterHasExpiration"
+        }
+      },
+      "FilterHasDynamicRouting": {
+        "name": "has_dynamic_routing",
+        "in": "query",
+        "description": "filter bitlinks by presence of dynamic routing rules",
+        "schema": {
+          "$ref": "#/components/schemas/FilterHasDynamicRouting"
         }
       },
       "CreatingLogin": {

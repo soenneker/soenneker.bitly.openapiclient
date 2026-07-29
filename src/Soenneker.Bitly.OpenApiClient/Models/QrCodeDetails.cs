@@ -32,6 +32,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public string Created { get; set; }
 #endif
+        /// <summary>Dynamic routing rules for this QR code. Only present when at least one rule is configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get; set; }
+#endif
         /// <summary>Optional expiration timestamp for the QR code&apos;s bitlink (e.g., 2025-01-28T14:30:00+0000)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +150,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "bitlink_id", n => { BitlinkId = n.GetStringValue(); } },
                 { "created", n => { Created = n.GetStringValue(); } },
+                { "dynamic_routing", n => { DynamicRouting = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>(global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration_at", n => { ExpirationAt = n.GetStringValue(); } },
                 { "group_guid", n => { GroupGuid = n.GetStringValue(); } },
                 { "gs1", n => { Gs1 = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata>(global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata.CreateFromDiscriminatorValue); } },
@@ -165,6 +174,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteBoolValue("archived", Archived);
             writer.WriteStringValue("bitlink_id", BitlinkId);
             writer.WriteStringValue("created", Created);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>("dynamic_routing", DynamicRouting);
             writer.WriteStringValue("expiration_at", ExpirationAt);
             writer.WriteStringValue("group_guid", GroupGuid);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata>("gs1", Gs1);

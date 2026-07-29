@@ -39,6 +39,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
+        /// <summary>dynamic routing rules for this bitlink.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get; set; }
+#endif
         /// <summary>Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "bitlink_id", n => { BitlinkId = n.GetStringValue(); } },
                 { "deeplinks", n => { Deeplinks = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.Deeplink>(global::Soenneker.Bitly.OpenApiClient.Models.Deeplink.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
+                { "dynamic_routing", n => { DynamicRouting = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>(global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration_at", n => { ExpirationAt = n.GetStringValue(); } },
                 { "force_new_link", n => { ForceNewLink = n.GetBoolValue(); } },
                 { "group_guid", n => { GroupGuid = n.GetStringValue(); } },
@@ -137,6 +146,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("bitlink_id", BitlinkId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.Deeplink>("deeplinks", Deeplinks);
             writer.WriteStringValue("domain", Domain);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>("dynamic_routing", DynamicRouting);
             writer.WriteStringValue("expiration_at", ExpirationAt);
             writer.WriteBoolValue("force_new_link", ForceNewLink);
             writer.WriteStringValue("group_guid", GroupGuid);

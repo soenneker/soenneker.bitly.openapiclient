@@ -30,6 +30,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>True for Bitly&apos;s own first-party apps (dashboard, mobile apps), as opposed to third-party integrations.</summary>
+        public bool? InternalApp { get; set; }
         /// <summary>The link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +77,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "internal_app", n => { InternalApp = n.GetBoolValue(); } },
                 { "link", n => { Link = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "require_oauth_pkce", n => { RequireOauthPkce = n.GetBoolValue(); } },
@@ -89,6 +92,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("internal_app", InternalApp);
             writer.WriteStringValue("link", Link);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("require_oauth_pkce", RequireOauthPkce);

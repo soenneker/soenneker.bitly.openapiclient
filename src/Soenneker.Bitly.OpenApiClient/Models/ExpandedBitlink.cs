@@ -46,6 +46,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public string LongUrl { get; set; }
 #endif
+        /// <summary>The list of destination URLs for this bitlink, including the default long URL and any dynamically routed destination URLs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? LongUrls { get; set; }
+#nullable restore
+#else
+        public List<string> LongUrls { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.ExpandedBitlink"/> and sets the default values.
         /// </summary>
@@ -75,6 +83,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "link", n => { Link = n.GetStringValue(); } },
                 { "long_url", n => { LongUrl = n.GetStringValue(); } },
+                { "long_urls", n => { LongUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,6 +97,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("link", Link);
             writer.WriteStringValue("long_url", LongUrl);
+            writer.WriteCollectionOfPrimitiveValues<string>("long_urls", LongUrls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

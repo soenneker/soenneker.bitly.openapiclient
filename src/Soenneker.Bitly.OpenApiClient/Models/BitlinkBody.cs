@@ -64,6 +64,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public List<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule> Deeplinks { get; set; }
 #endif
+        /// <summary>Dynamic routing rules for this bitlink. Only present when at least one rule is configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get; set; }
+#endif
         /// <summary>Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00+0000)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +178,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "custom_bitlinks", n => { CustomBitlinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deeplinks", n => { Deeplinks = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule>(global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dynamic_routing", n => { DynamicRouting = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>(global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration_at", n => { ExpirationAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_deleted", n => { IsDeleted = n.GetBoolValue(); } },
@@ -196,6 +205,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteCollectionOfPrimitiveValues<string>("custom_bitlinks", CustomBitlinks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule>("deeplinks", Deeplinks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>("dynamic_routing", DynamicRouting);
             writer.WriteStringValue("expiration_at", ExpirationAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_deleted", IsDeleted);

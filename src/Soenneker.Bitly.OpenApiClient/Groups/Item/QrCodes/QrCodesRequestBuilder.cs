@@ -22,7 +22,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QrCodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", pathParameters)
+        public QrCodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_dynamic_routing*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QrCodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", rawUrl)
+        public QrCodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{groupGuid}/qr-codes{?archived*,created_after*,created_before*,creating_login*,has_dynamic_routing*,has_expiration*,has_render_customizations*,hostname_path_query*,is_expired*,is_gs1*,qrc_type*,query*,search_after*,size*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -174,6 +174,9 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
             [QueryParameter("creating_login")]
             public string[] CreatingLogin { get; set; }
 #endif
+            /// <summary>filter bitlinks by presence of dynamic routing rules</summary>
+            [QueryParameter("has_dynamic_routing")]
+            public global::Soenneker.Bitly.OpenApiClient.Models.FilterHasDynamicRouting? HasDynamicRouting { get; set; }
             /// <summary>filter bitlinks by presence of expiration</summary>
             [QueryParameter("has_expiration")]
             public global::Soenneker.Bitly.OpenApiClient.Models.FilterHasExpiration? HasExpiration { get; set; }

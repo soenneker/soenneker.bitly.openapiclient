@@ -17,6 +17,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A boolean representing if the QR code has been archived</summary>
         public bool? Archived { get; set; }
+        /// <summary>Dynamic routing rules for this QR code. Providing this field replaces all existing rules. Send an empty array to clear all rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get; set; }
+#endif
         /// <summary>Optional expiration timestamp for the QR code&apos;s bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "archived", n => { Archived = n.GetBoolValue(); } },
+                { "dynamic_routing", n => { DynamicRouting = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>(global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration_at", n => { ExpirationAt = n.GetStringValue(); } },
                 { "render_customizations", n => { RenderCustomizations = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic>(global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -89,6 +98,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>("dynamic_routing", DynamicRouting);
             writer.WriteStringValue("expiration_at", ExpirationAt);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic>("render_customizations", RenderCustomizations);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
