@@ -727,7 +727,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetClicksForBitlink200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetClicksForBitlink200CsvResponseSchema"
                 },
                 "example": "Date, Clicks\n2023-07-10T00:00:00\u002B0000, 15\n"
               }
@@ -905,7 +905,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEngagements200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetEngagements200CsvResponseSchema"
                 },
                 "example": "Date, Engagements\n2006-01-02T15:04:05, 5\n"
               }
@@ -1106,7 +1106,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCountries200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCountries200CsvResponseSchema"
                 },
                 "example": "Country, Clicks\nUS, 5\n"
               }
@@ -1221,7 +1221,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCities200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCities200CsvResponseSchema"
                 },
                 "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
               }
@@ -1346,7 +1346,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByDevices200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByDevices200CsvResponseSchema"
                 },
                 "example": "Device Type, Clicks\nDesktop, 5\n"
               }
@@ -1471,7 +1471,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrers200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrers200CsvResponseSchema"
                 },
                 "example": "Referrers, Domain/Sub-Domain, Clicks\nOther Sites, direct, 5\n"
               }
@@ -1586,7 +1586,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrerName200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrerName200CsvResponseSchema"
                 },
                 "example": "Referrer-Name,Clicks\ndirect,4\n"
               }
@@ -3477,7 +3477,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByCountries200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetGroupMetricsByCountries200CsvResponseSchema"
                 },
                 "example": "Country, Clicks\nUS, 5\n"
               }
@@ -3572,7 +3572,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByCities200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetGroupMetricsByCities200CsvResponseSchema"
                 },
                 "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
               }
@@ -3677,7 +3677,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByDevices200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetGroupMetricsByDevices200CsvResponseSchema"
                 },
                 "example": "Device Type, Clicks\nDesktop, 5\n"
               }
@@ -3861,7 +3861,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByReferrer200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetGroupMetricsByReferrer200CsvResponseSchema"
                 },
                 "example": "Referrer,Clicks\ndirect,25\n"
               }
@@ -6727,13 +6727,13 @@
               },
               "image/svg\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200ResponseResponseSvgXml"
+                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200SvgXmlResponseSchema"
                 },
                 "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
               },
               "image/png": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200ResponseResponsePng2"
+                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200PngResponseSchema"
                 },
                 "example": "...png bytes..."
               }
@@ -6843,13 +6843,13 @@
               },
               "image/svg\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetQrCodeImagePublic200ResponseResponseSvgXml"
+                  "$ref": "#/components/schemas/GetQrCodeImagePublic200SvgXmlResponseSchema"
                 },
                 "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
               },
               "image/png": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetQrCodeImagePublic200ResponseResponsePng2"
+                  "$ref": "#/components/schemas/GetQrCodeImagePublic200PngResponseSchema"
                 },
                 "example": "...png bytes..."
               }
@@ -7771,7 +7771,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCountries200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCountries200CsvResponseSchema"
                 },
                 "example": "Country, Scans\nUS, 5\n"
               }
@@ -7876,7 +7876,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCities200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCities200CsvResponseSchema"
                 },
                 "example": "City, Subregion, Region, Country, Scans\nNew York, , NY, US, 5\n"
               }
@@ -7991,7 +7991,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByDevicesOs200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByDevicesOs200CsvResponseSchema"
                 },
                 "example": "Device OS, Scans\nApple, 5\n"
               }
@@ -8106,7 +8106,7 @@
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByBrowser200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByBrowser200CsvResponseSchema"
                 },
                 "example": "Browser, Scans\nGoogle Chrome, 5\n"
               }
@@ -13478,62 +13478,62 @@
         },
         "description": "The text to be inserted into the QR code\u0027s frame"
       },
-      "GetClicksForBitlink200Response": {
+      "GetClicksForBitlink200CsvResponse": {
         "type": "string"
       },
-      "GetEngagements200Response": {
+      "GetEngagements200CsvResponse": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByCountries200Response": {
+      "GetMetricsForBitlinkByCountries200CsvResponse": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByCities200Response": {
+      "GetMetricsForBitlinkByCities200CsvResponse": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByDevices200Response": {
+      "GetMetricsForBitlinkByDevices200CsvResponse": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByReferrers200Response": {
+      "GetMetricsForBitlinkByReferrers200CsvResponse": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByReferrerName200Response": {
+      "GetMetricsForBitlinkByReferrerName200CsvResponse": {
         "type": "string"
       },
-      "GetGroupMetricsByCountries200Response": {
+      "GetGroupMetricsByCountries200CsvResponse": {
         "type": "string"
       },
-      "GetGroupMetricsByCities200Response": {
+      "GetGroupMetricsByCities200CsvResponse": {
         "type": "string"
       },
-      "GetGroupMetricsByDevices200Response": {
+      "GetGroupMetricsByDevices200CsvResponse": {
         "type": "string"
       },
-      "GetGroupMetricsByReferrer200Response": {
+      "GetGroupMetricsByReferrer200CsvResponse": {
         "type": "string"
       },
-      "CreateStaticQrCodePublic200Response": {
+      "CreateStaticQrCodePublic200SvgXmlResponse": {
         "type": "string"
       },
-      "CreateStaticQrCodePublic200ResponseResponsePng": {
+      "CreateStaticQrCodePublic200PngResponse": {
         "type": "string",
         "format": "binary"
       },
-      "GetQrCodeImagePublic200Response": {
+      "GetQrCodeImagePublic200SvgXmlResponse": {
         "type": "string"
       },
-      "GetQrCodeImagePublic200ResponseResponsePng": {
+      "GetQrCodeImagePublic200PngResponse": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByCountries200Response": {
+      "GetScanMetricsForQrCodeByCountries200CsvResponse": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByCities200Response": {
+      "GetScanMetricsForQrCodeByCities200CsvResponse": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByDevicesOs200Response": {
+      "GetScanMetricsForQrCodeByDevicesOs200CsvResponse": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByBrowser200Response": {
+      "GetScanMetricsForQrCodeByBrowser200CsvResponse": {
         "type": "string"
       },
       "GetGroupLinkClicksByDevice200Response": {
@@ -13598,62 +13598,62 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "GetClicksForBitlink200ResponseResponseCsv": {
+      "GetClicksForBitlink200CsvResponseSchema": {
         "type": "string"
       },
-      "GetEngagements200ResponseResponseCsv": {
+      "GetEngagements200CsvResponseSchema": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByCountries200ResponseResponseCsv": {
+      "GetMetricsForBitlinkByCountries200CsvResponseSchema": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByCities200ResponseResponseCsv": {
+      "GetMetricsForBitlinkByCities200CsvResponseSchema": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByDevices200ResponseResponseCsv": {
+      "GetMetricsForBitlinkByDevices200CsvResponseSchema": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByReferrers200ResponseResponseCsv": {
+      "GetMetricsForBitlinkByReferrers200CsvResponseSchema": {
         "type": "string"
       },
-      "GetMetricsForBitlinkByReferrerName200ResponseResponseCsv": {
+      "GetMetricsForBitlinkByReferrerName200CsvResponseSchema": {
         "type": "string"
       },
-      "GetGroupMetricsByCountries200ResponseResponseCsv": {
+      "GetGroupMetricsByCountries200CsvResponseSchema": {
         "type": "string"
       },
-      "GetGroupMetricsByCities200ResponseResponseCsv": {
+      "GetGroupMetricsByCities200CsvResponseSchema": {
         "type": "string"
       },
-      "GetGroupMetricsByDevices200ResponseResponseCsv": {
+      "GetGroupMetricsByDevices200CsvResponseSchema": {
         "type": "string"
       },
-      "GetGroupMetricsByReferrer200ResponseResponseCsv": {
+      "GetGroupMetricsByReferrer200CsvResponseSchema": {
         "type": "string"
       },
-      "CreateStaticQrCodePublic200ResponseResponseSvgXml": {
+      "CreateStaticQrCodePublic200SvgXmlResponseSchema": {
         "type": "string"
       },
-      "CreateStaticQrCodePublic200ResponseResponsePng2": {
+      "CreateStaticQrCodePublic200PngResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "GetQrCodeImagePublic200ResponseResponseSvgXml": {
+      "GetQrCodeImagePublic200SvgXmlResponseSchema": {
         "type": "string"
       },
-      "GetQrCodeImagePublic200ResponseResponsePng2": {
+      "GetQrCodeImagePublic200PngResponseSchema": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByCountries200ResponseResponseCsv": {
+      "GetScanMetricsForQrCodeByCountries200CsvResponseSchema": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByCities200ResponseResponseCsv": {
+      "GetScanMetricsForQrCodeByCities200CsvResponseSchema": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByDevicesOs200ResponseResponseCsv": {
+      "GetScanMetricsForQrCodeByDevicesOs200CsvResponseSchema": {
         "type": "string"
       },
-      "GetScanMetricsForQrCodeByBrowser200ResponseResponseCsv": {
+      "GetScanMetricsForQrCodeByBrowser200CsvResponseSchema": {
         "type": "string"
       },
       "GroupReferences": {
