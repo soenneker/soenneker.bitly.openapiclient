@@ -12155,6 +12155,10 @@
               "$ref": "#/components/schemas/DynamicRoutingRule"
             },
             "description": "Optional dynamic routing rules for this decoupled QR code. Only supported for long_url destinations. Providing this field replaces all existing rules. Send an empty array to clear all rules."
+          },
+          "domain": {
+            "type": "string",
+            "default": "bit.ly"
           }
         },
         "description": "Customization and content values for a QR code created through the public API",

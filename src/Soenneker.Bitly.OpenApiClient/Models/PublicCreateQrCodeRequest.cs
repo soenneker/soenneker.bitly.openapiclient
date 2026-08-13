@@ -25,6 +25,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination Destination { get; set; }
 #endif
+        /// <summary>The domain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Domain { get; set; }
+#nullable restore
+#else
+        public string Domain { get; set; }
+#endif
         /// <summary>Optional dynamic routing rules for this decoupled QR code. Only supported for long_url destinations. Providing this field replaces all existing rules. Send an empty array to clear all rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public PublicCreateQrCodeRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Domain = "bit.ly";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -108,6 +117,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination>(global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
                 { "dynamic_routing", n => { DynamicRouting = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>(global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration_at", n => { ExpirationAt = n.GetStringValue(); } },
                 { "group_guid", n => { GroupGuid = n.GetStringValue(); } },
@@ -126,6 +136,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination>("destination", Destination);
+            writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>("dynamic_routing", DynamicRouting);
             writer.WriteStringValue("expiration_at", ExpirationAt);
             writer.WriteStringValue("group_guid", GroupGuid);
