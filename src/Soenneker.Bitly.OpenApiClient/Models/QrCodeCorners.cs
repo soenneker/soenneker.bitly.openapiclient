@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right&quot;
+    /// An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QrCodeCorners : IAdditionalDataHolder, IParsable

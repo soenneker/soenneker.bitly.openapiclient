@@ -36,11 +36,20 @@
                 "$ref": "#/components/schemas/Shorten"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
             "description": "SUCCESS",
+            "headers": {
+              "X-Bsd-Error": {
+                "description": "An explanation of the DNS error received",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -51,6 +60,14 @@
           },
           "201": {
             "description": "CREATED",
+            "headers": {
+              "X-Bsd-Error": {
+                "description": "An explanation of the DNS error received",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -71,6 +88,14 @@
           },
           "403": {
             "description": "FORBIDDEN",
+            "headers": {
+              "X-Ratelimit-Reason": {
+                "description": "An explanation of the ratelimit received.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -169,7 +194,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -402,7 +428,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -618,7 +645,8 @@
                 "$ref": "#/components/schemas/ExpandBitlinkBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1888,7 +1916,8 @@
                 "$ref": "#/components/schemas/AddCustomBitlinkBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2014,7 +2043,8 @@
                 "$ref": "#/components/schemas/UpdateCustomBitlinkBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2544,7 +2574,8 @@
                 "$ref": "#/components/schemas/GroupUpdate"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2927,7 +2958,8 @@
                 "$ref": "#/components/schemas/BulkUpdateRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3269,7 +3301,8 @@
                 "$ref": "#/components/schemas/GroupPreferences"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -4177,7 +4210,7 @@
           "Groups"
         ],
         "summary": "Create an inline CSV export for a group",
-        "description": "\u0022Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.\nThe export_type field selects the CSV shape: link_engagements_batch (engagement metrics for\nexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR code\nmetadata roster). Row caps apply per request: 200 rows when metrics are included\n(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-only\nlist exports. When the match set exceeds the cap, truncated is true and only the first\ncap rows are returned; row_count reports how many data rows are in the CSV.\n\u0022",
+        "description": "Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.\nThe export_type field selects the CSV shape: link_engagements_batch (engagement metrics for\nexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR code\nmetadata roster). Row caps apply per request: 200 rows when metrics are included\n(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-only\nlist exports. When the match set exceeds the cap, truncated is true and only the first\ncap rows are returned; row_count reports how many data rows are in the CSV.\n",
         "operationId": "PostCreateGroupExport",
         "parameters": [
           {
@@ -4191,7 +4224,8 @@
                 "$ref": "#/components/schemas/GroupExportRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -4564,7 +4598,8 @@
                 "$ref": "#/components/schemas/UserUpdate"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -4810,7 +4845,8 @@
                 "$ref": "#/components/schemas/CampaignModify"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5011,7 +5047,8 @@
                 "$ref": "#/components/schemas/CampaignModify"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5200,7 +5237,8 @@
                 "$ref": "#/components/schemas/ChannelModify"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5401,7 +5439,8 @@
                 "$ref": "#/components/schemas/ChannelModify"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5592,6 +5631,14 @@
           },
           "403": {
             "description": "FORBIDDEN",
+            "headers": {
+              "X-Ratelimit-Reason": {
+                "description": "An explanation of the ratelimit received.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -5725,7 +5772,8 @@
                 "$ref": "#/components/schemas/WebhookCreate"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -5936,7 +5984,8 @@
                 "$ref": "#/components/schemas/WebhookUpdate"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -6044,6 +6093,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "SUCCESS"
+          },
           "400": {
             "description": "BAD_REQUEST",
             "content": {
@@ -6558,7 +6610,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -6650,7 +6703,7 @@
           "QR Codes"
         ],
         "summary": "Generate a static QR Code image",
-        "description": "\u0022Generate a static QR code image without creating or saving a QR code resource. SVG and PNG output are supported via the Accept header\nContact your Account Manager to discuss enabling this feature for your account.\n\nThe \u0060render_customizations\u0060 field supports basic appearance options. Customizations that require the rasterize API are not supported: \u0060gradient\u0060, \u0060background_gradient\u0060, \u0060frame\u0060, \u0060text\u0060, and \u0060logo\u0060.\n\nThe Accept header controls the response format:\n- \u0060application/json\u0060 (default): Returns a JSON object with the image as a base64-encoded byte string.\n- \u0060image/svg\u002Bxml\u0060: Returns the raw SVG image.\n- \u0060image/png\u0060: Returns the raw PNG image.\n\u0022",
+        "description": "Generate a static QR code image without creating or saving a QR code resource. SVG and PNG output are supported via the Accept header\nContact your Account Manager to discuss enabling this feature for your account.\n\nThe \u0060render_customizations\u0060 field supports basic appearance options. Customizations that require the rasterize API are not supported: \u0060gradient\u0060, \u0060background_gradient\u0060, \u0060frame\u0060, \u0060text\u0060, and \u0060logo\u0060.\n\nThe Accept header controls the response format:\n- \u0060application/json\u0060 (default): Returns a JSON object with the image as a base64-encoded byte string.\n- \u0060image/svg\u002Bxml\u0060: Returns the raw SVG image.\n- \u0060image/png\u0060: Returns the raw PNG image.\n",
         "operationId": "CreateStaticQrCodePublic",
         "parameters": [
           {
@@ -6714,7 +6767,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -7447,7 +7501,8 @@
                 "$ref": "#/components/schemas/QrcBulkUpdateRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -8310,7 +8365,8 @@
                 "$ref": "#/components/schemas/RedirectQrCodeRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -10339,7 +10395,7 @@
           },
           "bitlink_id": {
             "type": "string",
-            "description": "\u0022Existing bitlink ID to add a keyword override to. Format: domain/hash. Cannot be used with long_url\u0022"
+            "description": "Existing bitlink ID to add a keyword override to. Format: domain/hash. Cannot be used with long_url"
           },
           "expiration_at": {
             "type": "string",
@@ -12505,7 +12561,7 @@
             "$ref": "#/components/schemas/QrCodeCorner"
           }
         },
-        "description": "\u0022An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right\u0022"
+        "description": "An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right"
       },
       "QrCodeCorner": {
         "type": "object",
@@ -13572,9 +13628,6 @@
         }
       },
       "GetGroupTopCodeScans200Response": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -13585,16 +13638,29 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "SortedLinks": "#/components/schemas/SortedLinks",
-            "TopLinksAndQrCodes": "#/components/schemas/TopLinksAndQrCodes"
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BitlinkBody"
+            }
+          },
+          "sorted_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClickLink"
+            }
+          },
+          "qr_codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QrCodeMinimal"
+            }
+          },
+          "sorted_engagements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EngagementSubtotal"
+            }
           }
         }
       },
@@ -13732,7 +13798,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022SSO authentication requirement for this organization. Possible values: \\\u0022none\\\u0022, \\\u0022any\\\u0022. Omitted when no auth requirements are configured.\n\u0022",
+        "description": "SSO authentication requirement for this organization. Possible values: \u0022none\u0022, \u0022any\u0022. Omitted when no auth requirements are configured.\n",
         "x-ms-enum": {
           "name": "OrganizationRequireSso",
           "modelAsString": false,
@@ -13755,7 +13821,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Two-factor authentication requirement for this organization. Possible values: \\\u0022none\\\u0022, \\\u0022sms\\\u0022. Omitted when no auth requirements are configured.\n\u0022",
+        "description": "Two-factor authentication requirement for this organization. Possible values: \u0022none\u0022, \u0022sms\u0022. Omitted when no auth requirements are configured.\n",
         "x-ms-enum": {
           "name": "OrganizationRequire2Fa",
           "modelAsString": false,
@@ -14685,14 +14751,14 @@
           ]
         }
       },
-      "Sort": {
+      "ClicksSort": {
         "enum": [
           "clicks"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "Sort",
+          "name": "ClicksSort",
           "modelAsString": false,
           "values": [
             {
@@ -15100,7 +15166,7 @@
         "description": "The type of sorting that you would like to do",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/Sort"
+          "$ref": "#/components/schemas/ClicksSort"
         },
         "example": "clicks"
       },
@@ -15266,12 +15332,6 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   },

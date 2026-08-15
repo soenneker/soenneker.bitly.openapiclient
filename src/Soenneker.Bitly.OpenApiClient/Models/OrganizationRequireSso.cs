@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Bitly.OpenApiClient.Models
 {
-    /// <summary>&quot;SSO authentication requirement for this organization. Possible values: \&quot;none\&quot;, \&quot;any\&quot;. Omitted when no auth requirements are configured.&quot;</summary>
+    /// <summary>SSO authentication requirement for this organization. Possible values: &quot;none&quot;, &quot;any&quot;. Omitted when no auth requirements are configured.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationRequireSso
     {

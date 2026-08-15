@@ -34,7 +34,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Exports
         {
         }
         /// <summary>
-        /// &quot;Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.The export_type field selects the CSV shape: link_engagements_batch (engagement metrics forexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR codemetadata roster). Row caps apply per request: 200 rows when metrics are included(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-onlylist exports. When the match set exceeds the cap, truncated is true and only the firstcap rows are returned; row_count reports how many data rows are in the CSV.&quot;
+        /// Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.The export_type field selects the CSV shape: link_engagements_batch (engagement metrics forexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR codemetadata roster). Row caps apply per request: 200 rows when metrics are included(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-onlylist exports. When the match set exceeds the cap, truncated is true and only the firstcap rows are returned; row_count reports how many data rows are in the CSV.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Exports
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.GroupExportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.The export_type field selects the CSV shape: link_engagements_batch (engagement metrics forexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR codemetadata roster). Row caps apply per request: 200 rows when metrics are included(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-onlylist exports. When the match set exceeds the cap, truncated is true and only the firstcap rows are returned; row_count reports how many data rows are in the CSV.&quot;
+        /// Build a CSV export synchronously and return it inline as a base64 data URI plus metadata.The export_type field selects the CSV shape: link_engagements_batch (engagement metrics forexplicit bitlinks or a filter), links_list (link metadata roster), or qr_codes_list (QR codemetadata roster). Row caps apply per request: 200 rows when metrics are included(link_engagements_batch, or include_metrics on a list export); 1000 rows for metadata-onlylist exports. When the match set exceeds the cap, truncated is true and only the firstcap rows are returned; row_count reports how many data rows are in the CSV.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

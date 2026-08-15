@@ -64,9 +64,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public global::Soenneker.Bitly.OpenApiClient.Models.OrganizationReferences References { get; set; }
 #endif
-        /// <summary>&quot;Two-factor authentication requirement for this organization. Possible values: \&quot;none\&quot;, \&quot;sms\&quot;. Omitted when no auth requirements are configured.&quot;</summary>
+        /// <summary>Two-factor authentication requirement for this organization. Possible values: &quot;none&quot;, &quot;sms&quot;. Omitted when no auth requirements are configured.</summary>
         public global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequire2Fa? Require2fa { get; set; }
-        /// <summary>&quot;SSO authentication requirement for this organization. Possible values: \&quot;none\&quot;, \&quot;any\&quot;. Omitted when no auth requirements are configured.&quot;</summary>
+        /// <summary>SSO authentication requirement for this organization. Possible values: &quot;none&quot;, &quot;any&quot;. Omitted when no auth requirements are configured.</summary>
         public global::Soenneker.Bitly.OpenApiClient.Models.OrganizationRequireSso? RequireSso { get; set; }
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

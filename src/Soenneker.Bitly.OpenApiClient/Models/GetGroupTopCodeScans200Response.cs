@@ -37,7 +37,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Bitly.OpenApiClient.Models.GetGroupTopCodeScans200Response();
             if("SortedLinks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
