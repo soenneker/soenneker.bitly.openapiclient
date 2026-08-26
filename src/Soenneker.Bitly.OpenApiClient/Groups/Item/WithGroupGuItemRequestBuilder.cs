@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Bitly.OpenApiClient.Groups.Item.Agentic_traffic;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Cities;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Clicks;
@@ -34,6 +35,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithGroupGuItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agentic_traffic property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Agentic_traffic.Agentic_trafficRequestBuilder Agentic_traffic
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Groups.Item.Agentic_traffic.Agentic_trafficRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The bitlinks property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks.BitlinksRequestBuilder Bitlinks
         {

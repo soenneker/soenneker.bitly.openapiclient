@@ -8630,6 +8630,63 @@
         }
       }
     },
+    "/groups/{groupGuid}/agentic_traffic/rollup": {
+      "get": {
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Get Group Agentic Traffic Rollup",
+        "description": "Get the total agentic traffic (AI agents and assistants) count over the last 90 days for a group.",
+        "operationId": "GetGroupAgenticTrafficRollup",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/GroupGUID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupBitlinksCountRollup"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/groups/{groupGuid}/links/clicks/over_time": {
       "get": {
         "tags": [
@@ -11336,6 +11393,23 @@
               "name": "Android"
             }
           ]
+        }
+      },
+      "GroupBitlinksCountRollup": {
+        "type": "object",
+        "properties": {
+          "unit": {
+            "type": "string"
+          },
+          "units": {
+            "type": "integer"
+          },
+          "unit_reference": {
+            "type": "string"
+          },
+          "total_clicks": {
+            "type": "integer"
+          }
         }
       },
       "GroupClicks": {
