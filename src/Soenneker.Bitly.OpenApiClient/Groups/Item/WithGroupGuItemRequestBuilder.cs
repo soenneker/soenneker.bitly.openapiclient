@@ -20,6 +20,7 @@ using Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Referrers;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Referring_networks;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Shorten_counts;
+using Soenneker.Bitly.OpenApiClient.Groups.Item.Sites;
 using Soenneker.Bitly.OpenApiClient.Groups.Item.Tags;
 using Soenneker.Bitly.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -119,6 +120,11 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Shorten_counts.Shorten_countsRequestBuilder Shorten_counts
         {
             get => new global::Soenneker.Bitly.OpenApiClient.Groups.Item.Shorten_counts.Shorten_countsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sites property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Sites.SitesRequestBuilder Sites
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Groups.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.Tags.TagsRequestBuilder Tags

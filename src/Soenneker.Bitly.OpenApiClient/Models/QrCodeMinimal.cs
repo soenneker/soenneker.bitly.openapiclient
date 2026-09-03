@@ -40,6 +40,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 #else
         public string CreatedBy { get; set; }
 #endif
+        /// <summary>The short domain the qr code redirects from. Present for both bitlink and long_url qr codes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Domain { get; set; }
+#nullable restore
+#else
+        public string Domain { get; set; }
+#endif
         /// <summary>Dynamic routing rules for this QR code. Only present when at least one rule is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +155,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "bitlink_id", n => { BitlinkId = n.GetStringValue(); } },
                 { "created", n => { Created = n.GetStringValue(); } },
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
                 { "dynamic_routing", n => { DynamicRouting = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>(global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration_at", n => { ExpirationAt = n.GetStringValue(); } },
                 { "group_guid", n => { GroupGuid = n.GetStringValue(); } },
@@ -172,6 +181,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("bitlink_id", BitlinkId);
             writer.WriteStringValue("created", Created);
             writer.WriteStringValue("created_by", CreatedBy);
+            writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>("dynamic_routing", DynamicRouting);
             writer.WriteStringValue("expiration_at", ExpirationAt);
             writer.WriteStringValue("group_guid", GroupGuid);

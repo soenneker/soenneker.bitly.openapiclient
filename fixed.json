@@ -6370,6 +6370,3104 @@
         }
       }
     },
+    "/sites": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Creates a New Bitly Site for a Group",
+        "description": "Creates an empty Bitly Site for a group using default appearance settings",
+        "operationId": "CreateSite",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLaunchpad"
+              },
+              "example": {
+                "group_guid": "Ba1bc23dE4F",
+                "domain": "bit.ly",
+                "keyword": "mysite",
+                "uri": "bit.ly/m/mysite"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/site_templates": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Retrieve\u0027s Bitly templates",
+        "description": "Retrieves all templates optionally sorted by a Site\u0027s onboarding category",
+        "operationId": "GetTemplates",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TemplateCategory"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemplates200ResponseSchema"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/template": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Apply a template to a site",
+        "description": "Applies a template\u0027s appearance and optionally sample content to a Bitly Site",
+        "operationId": "ApplyTemplate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyTemplateRequest"
+              },
+              "example": {
+                "template_guid": "T1234567890"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}": {
+      "patch": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Updates an existing Bitly Site",
+        "description": "Updates a Bitly Site\u0027s URI, display name, description and attached QR code. Changing the URI also creates a redirect from the previous URI.",
+        "operationId": "UpdateSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSiteBody"
+              },
+              "example": {
+                "uri": "bit.ly/m/bitlySocial",
+                "display_name": "Bitly Social",
+                "description": "All of our social links in one place",
+                "qr_code_id": "Qabc123"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Retrieve All Data Necessary To Render a Bitly Site",
+        "description": "Retrieves a Bitly Site by ID",
+        "operationId": "GetSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Deletes an existing Site",
+        "description": "Deletes an existing Site",
+        "operationId": "DeleteSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NO_CONTENT"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/appearance": {
+      "put": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Update the appearance of a Bitly Site",
+        "description": "Updates the appearance of a Bitly Site",
+        "operationId": "UpdateSiteAppearance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BitlySiteAppearance"
+              },
+              "example": {
+                "theme_id": 1,
+                "layout": "default",
+                "font": "Inter",
+                "hide_bitly_logo": false,
+                "style_preference": "theme",
+                "background_color": "#ffffff",
+                "bottom_background_color": "#f5f5f5",
+                "text_color": "#000000",
+                "description_color": "#333333",
+                "default_button_background_color": "#000000",
+                "default_button_text_color": "#ffffff",
+                "default_button_shape": "rounded"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "SUCCESS"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/publish": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Publishes a Draft Site to become Production Site",
+        "description": "Replaces a production Site with its draft Site if changes are made",
+        "operationId": "PublishSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/clone": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Clone a Bitly Site from an existing one",
+        "description": "Creates a new Bitly site by cloning content and appearance from an existing site",
+        "operationId": "CloneSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteCloneRequest"
+              },
+              "example": {
+                "uri": "bit.ly/m/mysite-copy"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/draft": {
+      "delete": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Discard a Site Draft",
+        "description": "Discards a given site\u0027s in-progress draft",
+        "operationId": "DiscardSiteDraft",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "SUCCESS"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/{groupGuid}/sites": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Bitly Sites for Group",
+        "description": "Gets all active Bitly Sites owned by the provided Group GUID",
+        "operationId": "GetSitesForGroup",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/GroupGUID"
+          },
+          {
+            "$ref": "#/components/parameters/SearchAfter"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/SitesURLParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySites"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/redirects/{domain}/{keyword}": {
+      "delete": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Delete a redirect for a site",
+        "description": "Deletes a redirect for a site",
+        "operationId": "DeleteSiteRedirect",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "name": "domain",
+            "in": "path",
+            "description": "The custom domain the redirect is configured on",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "es.pn"
+          },
+          {
+            "name": "keyword",
+            "in": "path",
+            "description": "The keyword (back-half) of the redirect to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "promo"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "SUCCESS"
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/containers": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Creates a container",
+        "description": "Creates a container which contains a set of other content",
+        "operationId": "CreateContainer",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteBlockContainerRequest"
+              },
+              "examples": {
+                "Grid": {
+                  "value": {
+                    "type": "grid"
+                  }
+                },
+                "Carousel": {
+                  "value": {
+                    "type": "carousel"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteBlock"
+                },
+                "example": {
+                  "site_id": "M0000guid01",
+                  "block_id": "L0000guid01",
+                  "type": "grid",
+                  "content": {},
+                  "sort_order": 1,
+                  "is_active": true,
+                  "is_pinned": false,
+                  "container_id": "root"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/blocks": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Create a block on the provided Site ID",
+        "description": "Creates a block of the given type on the provided Site ID (excluding grid and carousel; see Creates a container to create those)",
+        "operationId": "CreateSiteBlock",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteBlockCreateRequest"
+              },
+              "examples": {
+                "Bitlink": {
+                  "value": {
+                    "type": "bitlink",
+                    "content": {
+                      "bitlink_id": "bit.ly/GzmMT6",
+                      "link_title": "Short links, big results",
+                      "description": "my description"
+                    },
+                    "is_active": true
+                  }
+                },
+                "TextBlock": {
+                  "value": {
+                    "type": "text_block",
+                    "content": {
+                      "text": "Hello, world!"
+                    },
+                    "appearance": {
+                      "background_color": "#fcba03",
+                      "text_color": "#e30b2c",
+                      "alignment": "center",
+                      "font_size": "medium"
+                    },
+                    "is_active": true
+                  }
+                },
+                "Social": {
+                  "value": {
+                    "type": "social",
+                    "content": {
+                      "url": "facebook.com/profile",
+                      "channel": "facebook"
+                    },
+                    "is_active": true
+                  }
+                },
+                "YouTube": {
+                  "value": {
+                    "type": "youtubeVideo",
+                    "content": {
+                      "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                      "thumbnail_url": "https://i.ytimg.com",
+                      "link_title": "My Video"
+                    },
+                    "is_active": true
+                  }
+                },
+                "Image": {
+                  "value": {
+                    "type": "image",
+                    "content": {
+                      "image_guid": "Ia1bcd234eF",
+                      "image_url": "https://example.com/image.png",
+                      "aspect_ratio": "1:1",
+                      "link_title": "My Image"
+                    },
+                    "is_active": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteBlock"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/blocks/{blockId}": {
+      "patch": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Update a block on the provided Site ID",
+        "description": "Updates a block on the provided Site ID. The block type is derived from the stored block and cannot be changed.",
+        "operationId": "UpdateSiteBlock",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/BlockID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteBlockRequest"
+              },
+              "example": {
+                "content": {
+                  "text": "Updated text content"
+                },
+                "appearance": {
+                  "alignment": "center",
+                  "font_size": "large"
+                },
+                "is_active": true,
+                "is_pinned": true
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteBlock"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Delete Site Block",
+        "description": "Deletes a block of any type from a given site - does not deactivate. Does not delete the link tied to the block. Deleting a container block (grid or carousel) also deletes the blocks it contains.",
+        "operationId": "DeleteSiteBlock",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/BlockID"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NO_CONTENT"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{launchpadId}/buttons/youtubeVideo/prevalidate": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Prevalidate a youtube video button",
+        "description": "constructs the content blob required to create a YouTube video button",
+        "operationId": "PrevalidateYouTubeVideoButton",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/LaunchpadGUID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrevalidateYouTubeVideoRequest"
+              },
+              "example": {
+                "video_id": "dQw4w9WgXcQ"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/YoutubeVideoRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/images": {
+      "post": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Create a microsite image for a site",
+        "description": "Takes a previously uploaded image and attaches it to a site",
+        "operationId": "CreateSiteImage",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteImageUpload"
+              },
+              "example": {
+                "image_guid": "Ia1bcd234eF",
+                "url": "https://example.com/image.png",
+                "image_use": "profile",
+                "crop": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageUploadResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/overview": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Overview Metrics for Sites",
+        "description": "Returns total button clicks and page views for the requested Sites.",
+        "operationId": "GetAggregateSitesOverview",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAggregateSitesOverview200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/views/over_time": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Views Over Time",
+        "description": "Returns view counts over time for the requested Sites, grouped by the provided time unit.",
+        "operationId": "GetAggregateSiteViewsOverTime",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinks"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/views/cities": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Views by City",
+        "description": "Returns the city origins of view traffic for the requested Sites.",
+        "operationId": "GetAggregateSiteViewsByCity",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinksByCitiesFacet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/views/countries": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Views by Country",
+        "description": "Returns the country origins of view traffic for the requested Sites.",
+        "operationId": "GetAggregateSiteViewsByCountry",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinksByFacet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/views/devices": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Views by Device",
+        "description": "Returns the device types generating view traffic for the requested Sites.",
+        "operationId": "GetAggregateSiteViewsByDevice",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinksByFacet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/views/referrers": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Views by Referrer",
+        "description": "Returns referrer view counts for the requested Sites.",
+        "operationId": "GetAggregateSiteViewsByReferrer",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinksByFacet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/clicks/over_time": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Button Clicks Over Time",
+        "description": "Returns button click counts over time for the requested Sites, grouped by the provided time unit.",
+        "operationId": "GetSiteClicksOverTime",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinks"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/clicks/cities": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Button Clicks by City",
+        "description": "Returns the city origins of button click traffic for the requested Sites.",
+        "operationId": "GetSiteClicksByCities",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinksByCitiesFacet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/clicks/countries": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Button Clicks by Country",
+        "description": "Returns the country origins of button click traffic for the requested Sites.",
+        "operationId": "GetSiteClicksByCountries",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinksByFacet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/clicks/devices": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Button Clicks by Device",
+        "description": "Returns the device types generating button click traffic for the requested Sites.",
+        "operationId": "GetSiteClicksByDevices",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinksByFacet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/clicks/top": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Top Performing Site Buttons by Clicks",
+        "description": "Returns the top performing buttons by click count for the requested Sites.",
+        "operationId": "GetSiteFilteredTopPageButtons",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "brand_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SortedButtons"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/countries": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Metrics for a Site by Country",
+        "description": "Returns the country origins of view traffic for the specified Site.",
+        "operationId": "GetMetricsForSitesByCountries",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteViewMetrics"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/cities": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Metrics for a Site by City",
+        "description": "Returns the city origins of view traffic for the specified Site.",
+        "operationId": "GetMetricsForSiteByCities",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteCityViewMetrics"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/devices": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Metrics for a Site by Device Type",
+        "description": "Returns the device types generating view traffic to the specified site.",
+        "operationId": "GetMetricsForSiteByDevices",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteViewMetrics"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/referrers": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Metrics for a Site by Referrers",
+        "description": "Returns referrer view counts for the specified site.",
+        "operationId": "GetMetricsForSiteByReferrers",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteViewMetrics"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aggregate/sites/digital_business_card_downloads/over_time": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Site Digital Business Card Downloads Over Time",
+        "description": "Returns digital business card download counts over time for the requested Sites, grouped by the provided time unit.",
+        "operationId": "GetLaunchpadDigitalBusinessCardDownloadsOverTime",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SitesForMetrics"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "report_guid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AggregateClicksForBitlinks"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/link_performance": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Link Performance counts for a Site",
+        "description": "Returns the click counts for all active and inactive links that were associated with a site",
+        "operationId": "GetLinkPerformanceForSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteLinkPerformance"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/views": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get Views for a Site",
+        "description": "Returns the view counts for the specified link in an array based on a date.",
+        "operationId": "GetViewsForSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteViewMetrics"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/views/summary": {
+      "get": {
+        "tags": [
+          "Bitly Sites"
+        ],
+        "summary": "Get a Views Summary for a Site",
+        "description": "Returns the view counts for the specified site rolled up into a single field.",
+        "operationId": "GetViewsSummaryForSite",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/SiteID"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnitOptional"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/Size"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteViewsSummary"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/qr-codes": {
       "post": {
         "tags": [
@@ -9562,6 +12660,26 @@
           }
         }
       },
+      "MicrositePagination": {
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "string",
+            "description": "A hyperlink to the next set of results."
+          },
+          "search_after": {
+            "type": "string",
+            "description": "The identifier of where to begin searching for the next set of results.",
+            "example": "bryhzW:Mo81ihn1syE"
+          },
+          "size": {
+            "type": "integer",
+            "description": "The number of results returned from this query.",
+            "example": 50
+          }
+        },
+        "description": "Specifies how to query the next set of results."
+      },
       "QrPagination": {
         "type": "object",
         "properties": {
@@ -10293,6 +13411,32 @@
         },
         "description": "Response shape for top bitlinks and decoupled QR codes in a group, ranked together by engagement count. \u0060links\u0060 and \u0060qr_codes\u0060 are independent lists (a link and a decoupled QR code are never the same entity); \u0060sorted_engagements\u0060 is the unified descending-by-engagement ordering across both, with each entry\u0027s id referencing either a bitlink or a QR code guid. Coupled QRCs are listed by their bitlink ID.\n"
       },
+      "SortedButtons": {
+        "type": "object",
+        "properties": {
+          "info": {
+            "type": "string"
+          },
+          "sorted_buttons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClickLink"
+            }
+          },
+          "buttons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortedButtonsButtonsItem"
+            }
+          },
+          "page_views": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortedButtonsPageViewsItem"
+            }
+          }
+        }
+      },
       "DeeplinkRule": {
         "type": "object",
         "properties": {
@@ -10634,6 +13778,54 @@
           }
         }
       },
+      "LaunchpadButtonTypeEnum": {
+        "enum": [
+          "bitlink",
+          "youtubeVideo",
+          "image",
+          "carousel",
+          "grid",
+          "digital_business_card",
+          "text_block"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Available button types for Launchpad content",
+        "x-ms-enum": {
+          "name": "LaunchpadButtonTypeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bitlink",
+              "name": "Bitlink"
+            },
+            {
+              "value": "youtubeVideo",
+              "name": "YoutubeVideo"
+            },
+            {
+              "value": "image",
+              "name": "Image"
+            },
+            {
+              "value": "carousel",
+              "name": "Carousel"
+            },
+            {
+              "value": "grid",
+              "name": "Grid"
+            },
+            {
+              "value": "digital_business_card",
+              "name": "DigitalBusinessCard"
+            },
+            {
+              "value": "text_block",
+              "name": "TextBlock"
+            }
+          ]
+        }
+      },
       "ClicksSummary": {
         "type": "object",
         "properties": {
@@ -10665,6 +13857,204 @@
           },
           "unit_reference": {
             "type": "string"
+          }
+        }
+      },
+      "SiteViewMetrics": {
+        "type": "object",
+        "properties": {
+          "site_views": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViewMetric"
+            }
+          },
+          "units": {
+            "type": "integer"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/SiteViewMetricsUnit"
+          },
+          "unit_reference": {
+            "type": "string"
+          },
+          "facet": {
+            "$ref": "#/components/schemas/SiteViewMetricsFacet"
+          }
+        }
+      },
+      "SiteCityViewMetrics": {
+        "type": "object",
+        "properties": {
+          "unit": {
+            "type": "string",
+            "x-faker": "internet.userName"
+          },
+          "units": {
+            "type": "integer",
+            "x-faker": {
+              "datatype.number": {
+                "min": 1,
+                "max": 100
+              }
+            }
+          },
+          "facet": {
+            "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
+          },
+          "unit_reference": {
+            "type": "string",
+            "x-faker": "date.past"
+          },
+          "site_views": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViewMetric"
+            }
+          },
+          "other_metrics": {
+            "$ref": "#/components/schemas/OtherViewMetrics"
+          }
+        }
+      },
+      "SiteViewsSummary": {
+        "type": "object",
+        "properties": {
+          "total_views": {
+            "type": "integer"
+          },
+          "units": {
+            "type": "integer"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/SiteViewsSummaryUnit"
+          },
+          "unit_reference": {
+            "type": "string"
+          }
+        }
+      },
+      "SiteButtonTypeEnum": {
+        "enum": [
+          "bitlink",
+          "youtubeVideo",
+          "image",
+          "carousel",
+          "grid",
+          "digital_business_card"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Available button types for Site content",
+        "x-ms-enum": {
+          "name": "SiteButtonTypeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bitlink",
+              "name": "Bitlink"
+            },
+            {
+              "value": "youtubeVideo",
+              "name": "YoutubeVideo"
+            },
+            {
+              "value": "image",
+              "name": "Image"
+            },
+            {
+              "value": "carousel",
+              "name": "Carousel"
+            },
+            {
+              "value": "grid",
+              "name": "Grid"
+            },
+            {
+              "value": "digital_business_card",
+              "name": "DigitalBusinessCard"
+            }
+          ]
+        }
+      },
+      "SiteClicks": {
+        "type": "object",
+        "properties": {
+          "clicks": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "long_url": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SiteButtonTypeEnum"
+          },
+          "bitlink_id": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "keyword": {
+            "type": "string"
+          }
+        }
+      },
+      "SitesPagination": {
+        "type": "object",
+        "properties": {
+          "prev": {
+            "type": "string"
+          },
+          "next": {
+            "type": "string"
+          },
+          "page": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "size": {
+            "type": "integer"
+          }
+        }
+      },
+      "SiteLinkPerformance": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "link_clicks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteClicks"
+            }
+          },
+          "performance_start": {
+            "type": "string"
+          },
+          "performance_end": {
+            "type": "string"
+          },
+          "units": {
+            "type": "integer"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/SiteLinkPerformanceUnit"
+          },
+          "unit_reference": {
+            "type": "string"
+          },
+          "page": {
+            "$ref": "#/components/schemas/SitesPagination"
           }
         }
       },
@@ -10832,6 +14222,17 @@
           }
         }
       },
+      "OtherViewMetrics": {
+        "type": "object",
+        "properties": {
+          "other_city_views": {
+            "type": "integer"
+          },
+          "no_city_views": {
+            "type": "integer"
+          }
+        }
+      },
       "ClickMetric": {
         "type": "object",
         "properties": {
@@ -10844,6 +14245,17 @@
             "type": "string",
             "example": "bit.ly",
             "x-faker": "internet.domainName"
+          }
+        }
+      },
+      "ViewMetric": {
+        "type": "object",
+        "properties": {
+          "views": {
+            "type": "integer"
+          },
+          "value": {
+            "type": "string"
           }
         }
       },
@@ -10875,7 +14287,7 @@
             }
           },
           "facet": {
-            "$ref": "#/components/schemas/BaseMetricsFacet"
+            "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10900,7 +14312,7 @@
             }
           },
           "facet": {
-            "$ref": "#/components/schemas/BaseMetricsFacet"
+            "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10931,7 +14343,7 @@
             }
           },
           "facet": {
-            "$ref": "#/components/schemas/BaseMetricsFacet"
+            "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10962,7 +14374,7 @@
             }
           },
           "facet": {
-            "$ref": "#/components/schemas/BaseMetricsFacet"
+            "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -10993,7 +14405,7 @@
             }
           },
           "facet": {
-            "$ref": "#/components/schemas/BaseMetricsFacet"
+            "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
           },
           "unit_reference": {
             "type": "string",
@@ -11141,6 +14553,123 @@
             "items": {
               "$ref": "#/components/schemas/ReferrersByDomain"
             }
+          }
+        }
+      },
+      "AggregateClicksForBitlinks": {
+        "type": "object",
+        "properties": {
+          "unit_reference": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "units": {
+            "type": "number"
+          },
+          "info": {
+            "type": "string"
+          },
+          "clicks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClicksForAggregate"
+            }
+          }
+        }
+      },
+      "AggregateClicksForBitlinksByCitiesFacet": {
+        "type": "object",
+        "properties": {
+          "unit_reference": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "units": {
+            "type": "number"
+          },
+          "info": {
+            "type": "string"
+          },
+          "facet": {
+            "type": "string"
+          },
+          "totals_for_time_period": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClicksByCitiesFacet"
+            }
+          }
+        }
+      },
+      "AggregateClicksForBitlinksByFacet": {
+        "type": "object",
+        "properties": {
+          "unit_reference": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "units": {
+            "type": "number"
+          },
+          "info": {
+            "type": "string"
+          },
+          "facet": {
+            "type": "string"
+          },
+          "totals_for_time_period": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClicksByFacet"
+            }
+          }
+        }
+      },
+      "ClicksForAggregate": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "integer"
+          },
+          "clicks": {
+            "type": "integer"
+          }
+        }
+      },
+      "ClicksByFacet": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "clicks": {
+            "type": "number"
+          }
+        }
+      },
+      "ClicksByCitiesFacet": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "clicks": {
+            "type": "number"
+          },
+          "region": {
+            "type": "string"
+          },
+          "subregion": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
           }
         }
       },
@@ -11911,6 +15440,1733 @@
           }
         }
       },
+      "SiteRedirects": {
+        "type": "object",
+        "properties": {
+          "redirect_guid": {
+            "type": "string",
+            "example": "E0000guid01"
+          },
+          "microsite_guid": {
+            "type": "string",
+            "example": "M1234567890"
+          },
+          "uri": {
+            "type": "string",
+            "example": "bit.ly/m/newKeyword"
+          },
+          "domain": {
+            "type": "string",
+            "example": "bit.ly"
+          },
+          "keyword": {
+            "type": "string",
+            "example": "newKeyword"
+          },
+          "redirect_uri": {
+            "type": "string",
+            "example": "bit.ly/m/oldKeyword"
+          },
+          "redirect_domain": {
+            "type": "string",
+            "example": "bit.ly"
+          },
+          "redirect_keyword": {
+            "type": "string",
+            "example": "oldKeyword"
+          },
+          "status": {
+            "type": "string",
+            "example": "active"
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          }
+        }
+      },
+      "SiteBannerType": {
+        "enum": [
+          "none",
+          "hero",
+          "rounded_up",
+          "gradient",
+          "square",
+          "frame"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of banner type options on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteBannerType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "hero",
+              "name": "Hero"
+            },
+            {
+              "value": "rounded_up",
+              "name": "RoundedUp"
+            },
+            {
+              "value": "gradient",
+              "name": "Gradient"
+            },
+            {
+              "value": "square",
+              "name": "Square"
+            },
+            {
+              "value": "frame",
+              "name": "Frame"
+            }
+          ]
+        }
+      },
+      "SiteProfileImageSize": {
+        "enum": [
+          "xs",
+          "sm",
+          "med",
+          "lg",
+          "xl"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of profile image sizes on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteProfileImageSize",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "xs",
+              "name": "Xs"
+            },
+            {
+              "value": "sm",
+              "name": "Sm"
+            },
+            {
+              "value": "med",
+              "name": "Med"
+            },
+            {
+              "value": "lg",
+              "name": "Lg"
+            },
+            {
+              "value": "xl",
+              "name": "Xl"
+            }
+          ]
+        }
+      },
+      "SiteProfileImageBorderSize": {
+        "enum": [
+          "none",
+          "xs",
+          "sm",
+          "med",
+          "lg"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of profile image border sizes on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteProfileImageBorderSize",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "xs",
+              "name": "Xs"
+            },
+            {
+              "value": "sm",
+              "name": "Sm"
+            },
+            {
+              "value": "med",
+              "name": "Med"
+            },
+            {
+              "value": "lg",
+              "name": "Lg"
+            }
+          ]
+        }
+      },
+      "SiteProfileImageType": {
+        "enum": [
+          "single",
+          "repeating"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of the profile image type options on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteProfileImageType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "single",
+              "name": "Single"
+            },
+            {
+              "value": "repeating",
+              "name": "Repeating"
+            }
+          ]
+        }
+      },
+      "SiteProfileImageLocation": {
+        "enum": [
+          "left",
+          "center",
+          "right"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of the profile image locations available on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteProfileImageLocation",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "left",
+              "name": "Left"
+            },
+            {
+              "value": "center",
+              "name": "Center"
+            },
+            {
+              "value": "right",
+              "name": "Right"
+            }
+          ]
+        }
+      },
+      "SiteTextLocation": {
+        "enum": [
+          "top",
+          "contain",
+          "bottom"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of the available text locations on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteTextLocation",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "top",
+              "name": "Top"
+            },
+            {
+              "value": "contain",
+              "name": "Contain"
+            },
+            {
+              "value": "bottom",
+              "name": "Bottom"
+            }
+          ]
+        }
+      },
+      "SiteProfileImageShape": {
+        "enum": [
+          "round",
+          "rounded_square",
+          "square"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of profile image shapes on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteProfileImageShape",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "round",
+              "name": "Round"
+            },
+            {
+              "value": "rounded_square",
+              "name": "RoundedSquare"
+            },
+            {
+              "value": "square",
+              "name": "Square"
+            }
+          ]
+        }
+      },
+      "SiteTextSizeEnum": {
+        "enum": [
+          "xs",
+          "sm",
+          "med",
+          "lg"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of text sizes on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteTextSizeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "xs",
+              "name": "Xs"
+            },
+            {
+              "value": "sm",
+              "name": "Sm"
+            },
+            {
+              "value": "med",
+              "name": "Med"
+            },
+            {
+              "value": "lg",
+              "name": "Lg"
+            }
+          ]
+        }
+      },
+      "SiteTextAlignmentEnum": {
+        "enum": [
+          "start",
+          "center"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of text alignment values on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteTextAlignmentEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "start",
+              "name": "Start"
+            },
+            {
+              "value": "center",
+              "name": "Center"
+            }
+          ]
+        }
+      },
+      "SiteTextBorderTypeEnum": {
+        "enum": [
+          "none",
+          "below",
+          "above_and_below"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of border type values on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteTextBorderTypeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "below",
+              "name": "Below"
+            },
+            {
+              "value": "above_and_below",
+              "name": "AboveAndBelow"
+            }
+          ]
+        }
+      },
+      "SiteStylePreference": {
+        "enum": [
+          "custom",
+          "theme",
+          "image"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of style preference values on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteStylePreference",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "custom",
+              "name": "Custom"
+            },
+            {
+              "value": "theme",
+              "name": "Theme"
+            },
+            {
+              "value": "image",
+              "name": "Image"
+            }
+          ]
+        }
+      },
+      "SiteTextWeightEnum": {
+        "enum": [
+          "regular",
+          "bold",
+          "semi_bold"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Enum of text sizes on a Bitly Site",
+        "x-ms-enum": {
+          "name": "SiteTextWeightEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "regular",
+              "name": "Regular"
+            },
+            {
+              "value": "bold",
+              "name": "Bold"
+            },
+            {
+              "value": "semi_bold",
+              "name": "SemiBold"
+            }
+          ]
+        }
+      },
+      "SiteBlockTypeEnum": {
+        "enum": [
+          "bitlink",
+          "youtubeVideo",
+          "image",
+          "carousel",
+          "grid",
+          "social",
+          "digital_business_card",
+          "text_block"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Available block types for Site blocks",
+        "x-ms-enum": {
+          "name": "SiteBlockTypeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bitlink",
+              "name": "Bitlink"
+            },
+            {
+              "value": "youtubeVideo",
+              "name": "YoutubeVideo"
+            },
+            {
+              "value": "image",
+              "name": "Image"
+            },
+            {
+              "value": "carousel",
+              "name": "Carousel"
+            },
+            {
+              "value": "grid",
+              "name": "Grid"
+            },
+            {
+              "value": "social",
+              "name": "Social"
+            },
+            {
+              "value": "digital_business_card",
+              "name": "DigitalBusinessCard"
+            },
+            {
+              "value": "text_block",
+              "name": "TextBlock"
+            }
+          ]
+        }
+      },
+      "SiteContainerTypeEnum": {
+        "enum": [
+          "carousel",
+          "grid"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Available container types",
+        "x-ms-enum": {
+          "name": "SiteContainerTypeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "carousel",
+              "name": "Carousel"
+            },
+            {
+              "value": "grid",
+              "name": "Grid"
+            }
+          ]
+        }
+      },
+      "SiteBlockCreateTypeEnum": {
+        "enum": [
+          "bitlink",
+          "social",
+          "youtubeVideo",
+          "image",
+          "digital_business_card",
+          "text_block"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Block types that can be created directly (grid and carousel are created as containers)",
+        "x-ms-enum": {
+          "name": "SiteBlockCreateTypeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bitlink",
+              "name": "Bitlink"
+            },
+            {
+              "value": "social",
+              "name": "Social"
+            },
+            {
+              "value": "youtubeVideo",
+              "name": "YoutubeVideo"
+            },
+            {
+              "value": "image",
+              "name": "Image"
+            },
+            {
+              "value": "digital_business_card",
+              "name": "DigitalBusinessCard"
+            },
+            {
+              "value": "text_block",
+              "name": "TextBlock"
+            }
+          ]
+        }
+      },
+      "SiteImageAlignment": {
+        "enum": [
+          "stretch",
+          "fit",
+          "repeat"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Available image alignment types for Site background images",
+        "x-ms-enum": {
+          "name": "SiteImageAlignment",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "stretch",
+              "name": "Stretch"
+            },
+            {
+              "value": "fit",
+              "name": "Fit"
+            },
+            {
+              "value": "repeat",
+              "name": "Repeat"
+            }
+          ]
+        }
+      },
+      "SiteBlockCommon": {
+        "type": "object",
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "example": "M1234567890"
+          },
+          "block_id": {
+            "type": "string",
+            "example": "L1234567890"
+          },
+          "sort_order": {
+            "type": "integer"
+          },
+          "schedule_start": {
+            "type": "string"
+          },
+          "schedule_end": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_pinned": {
+            "type": "boolean"
+          },
+          "is_sample": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SiteBlockTypeEnum"
+          }
+        }
+      },
+      "SiteBlockContent": {
+        "type": "object",
+        "properties": {
+          "link_title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "bitlink_id": {
+            "type": "string"
+          },
+          "image_guid": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "crop": {
+            "type": "string",
+            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "link_info": {
+            "$ref": "#/components/schemas/PageLinkInfo"
+          },
+          "thumbnail_url": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "channel_url": {
+            "type": "string"
+          },
+          "digital_business_card_id": {
+            "type": "string"
+          },
+          "layout": {
+            "$ref": "#/components/schemas/DigitalBusinessCardLayout"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "job_title": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "pronouns": {
+            "type": "string"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DigitalBusinessCardContact"
+            }
+          },
+          "download_enabled": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "BlockContentYoutube": {
+        "type": "object",
+        "properties": {
+          "thumbnail_url": {
+            "type": "string"
+          }
+        }
+      },
+      "BlockContentSocial": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "channel_url": {
+            "type": "string"
+          }
+        }
+      },
+      "BlockContentDigitalBusinessCard": {
+        "type": "object",
+        "properties": {
+          "digital_business_card_id": {
+            "type": "string"
+          },
+          "layout": {
+            "$ref": "#/components/schemas/DigitalBusinessCardLayout"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "job_title": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "pronouns": {
+            "type": "string"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DigitalBusinessCardContact"
+            }
+          },
+          "download_enabled": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "Template": {
+        "type": "object",
+        "properties": {
+          "template_guid": {
+            "type": "string",
+            "example": "T1234567890"
+          },
+          "content": {
+            "$ref": "#/components/schemas/BitlySiteContent"
+          },
+          "appearance": {
+            "$ref": "#/components/schemas/BitlySiteAppearance"
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteBlock"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_paid": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ApplyTemplateRequest": {
+        "type": "object",
+        "properties": {
+          "template_guid": {
+            "type": "string",
+            "example": "T1234567890"
+          }
+        }
+      },
+      "SiteBlock": {
+        "required": [
+          "is_active"
+        ],
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string",
+            "example": "L1234567890"
+          },
+          "scheme": {
+            "type": "string",
+            "example": "https"
+          },
+          "content": {
+            "$ref": "#/components/schemas/SiteBlockContent"
+          },
+          "appearance": {
+            "$ref": "#/components/schemas/TextBlockAppearance"
+          },
+          "site_id": {
+            "type": "string",
+            "example": "M1234567890"
+          },
+          "block_id": {
+            "type": "string",
+            "example": "L1234567890"
+          },
+          "sort_order": {
+            "type": "integer"
+          },
+          "schedule_start": {
+            "type": "string"
+          },
+          "schedule_end": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_pinned": {
+            "type": "boolean"
+          },
+          "is_sample": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SiteBlockTypeEnum"
+          }
+        }
+      },
+      "SiteBlocks": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SiteBlock"
+        }
+      },
+      "SiteBlockContainerRequest": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SiteContainerTypeEnum"
+          }
+        }
+      },
+      "ImageCommon": {
+        "type": "object",
+        "properties": {
+          "image_guid": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "crop": {
+            "type": "string",
+            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+          }
+        }
+      },
+      "BitlinkContent": {
+        "type": "object",
+        "properties": {
+          "bitlink_id": {
+            "type": "string",
+            "description": "The bitlink ID (domain/hash) of the short link displayed on this block",
+            "example": "bit.ly/GzmMT6"
+          },
+          "link_title": {
+            "type": "string",
+            "description": "Display title of the bitlink block, up to 255 characters",
+            "example": "Short links, big results"
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional subtitle shown on the bitlink block, up to 255 characters",
+            "example": "my description"
+          },
+          "is_pinned": {
+            "type": "boolean",
+            "description": "Whether this bitlink block is pinned to the top of the site"
+          },
+          "image_url": {
+            "type": "string",
+            "description": "Public URL of the thumbnail image shown on this bitlink block"
+          },
+          "image_guid": {
+            "type": "string",
+            "description": "GUID of the uploaded thumbnail image for this bitlink block"
+          },
+          "crop": {
+            "type": "string",
+            "description": "JSON-encoded crop rectangle for the thumbnail image, with Min and Max coordinates in the range 0-1",
+            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+          }
+        }
+      },
+      "PageLinkInfo": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "description": "The fully qualified short URL (e.g., \u0022https://bit.ly/abc123\u0022)"
+          },
+          "long_url": {
+            "type": "string",
+            "description": "The destination URL that the short link redirects to"
+          },
+          "expiration_at": {
+            "type": "integer",
+            "description": "Unix timestamp when the link expires, if set",
+            "format": "int64"
+          },
+          "has_override": {
+            "type": "boolean",
+            "description": "Indicates if this link has a custom backhalf override"
+          },
+          "is_override": {
+            "type": "boolean",
+            "description": "Indicates if this link IS an override of another link"
+          },
+          "is_deleted": {
+            "type": "boolean",
+            "description": "Indicates if the link has been deleted"
+          },
+          "dynamic_routing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicRoutingRule"
+            },
+            "description": "Dynamic routing rules for this link. Only present when at least one rule is configured."
+          }
+        },
+        "description": "Versioned bitlink data from decodes_api for rendering links on Sites and Launchpads"
+      },
+      "SiteContentUnion": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/BitlinkContent"
+          },
+          {
+            "$ref": "#/components/schemas/YoutubeVideoRequest"
+          },
+          {
+            "$ref": "#/components/schemas/SocialContent"
+          },
+          {
+            "$ref": "#/components/schemas/ImageContent"
+          },
+          {
+            "$ref": "#/components/schemas/DigitalBusinessCardContent"
+          },
+          {
+            "$ref": "#/components/schemas/TextBlockContent"
+          }
+        ],
+        "properties": {
+          "bitlink_id": {
+            "type": "string",
+            "description": "The bitlink ID (domain/hash) of the short link displayed on this block",
+            "example": "bit.ly/GzmMT6"
+          },
+          "link_title": {
+            "type": "string",
+            "description": "Display title of the bitlink block, up to 255 characters",
+            "example": "Short links, big results"
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional subtitle shown on the bitlink block, up to 255 characters",
+            "example": "my description"
+          },
+          "is_pinned": {
+            "type": "boolean",
+            "description": "Whether this bitlink block is pinned to the top of the site"
+          },
+          "image_url": {
+            "type": "string",
+            "description": "Public URL of the thumbnail image shown on this bitlink block"
+          },
+          "image_guid": {
+            "type": "string",
+            "description": "GUID of the uploaded thumbnail image for this bitlink block"
+          },
+          "crop": {
+            "type": "string",
+            "description": "JSON-encoded crop rectangle for the thumbnail image, with Min and Max coordinates in the range 0-1",
+            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+          },
+          "video_url": {
+            "type": "string",
+            "example": "youtube.com/embed/"
+          },
+          "thumbnail_url": {
+            "type": "string",
+            "example": "https://i.ytimg.com"
+          },
+          "domain": {
+            "type": "string",
+            "example": "bit.ly"
+          },
+          "url": {
+            "type": "string",
+            "example": "facebook.com/profile"
+          },
+          "channel": {
+            "type": "string",
+            "example": "facebook"
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "example": "1:1"
+          },
+          "digital_business_card_id": {
+            "type": "string"
+          },
+          "layout": {
+            "$ref": "#/components/schemas/DigitalBusinessCardLayout"
+          },
+          "first_name": {
+            "type": "string",
+            "example": "Jane"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Doe"
+          },
+          "pronouns": {
+            "type": "string",
+            "example": "she/them"
+          },
+          "company": {
+            "type": "string",
+            "example": "Bitly"
+          },
+          "job_title": {
+            "type": "string",
+            "example": "Developer"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DigitalBusinessCardContact"
+            }
+          },
+          "download_enabled": {
+            "type": "boolean",
+            "example": true
+          },
+          "file": {
+            "$ref": "#/components/schemas/DigitalBusinessCardContentFile"
+          },
+          "text": {
+            "type": "string",
+            "example": "Hello, world!"
+          }
+        }
+      },
+      "SiteBlockRequest": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "$ref": "#/components/schemas/SiteContentUnion"
+          },
+          "appearance": {
+            "$ref": "#/components/schemas/TextBlockAppearanceRequest"
+          },
+          "schedule_start": {
+            "type": "string"
+          },
+          "schedule_end": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_pinned": {
+            "type": "boolean"
+          },
+          "parent": {
+            "type": "string"
+          }
+        }
+      },
+      "SiteBlockCreateRequest": {
+        "required": [
+          "type",
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "$ref": "#/components/schemas/SiteContentUnion"
+          },
+          "appearance": {
+            "$ref": "#/components/schemas/TextBlockAppearanceRequest"
+          },
+          "schedule_start": {
+            "type": "string"
+          },
+          "schedule_end": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_pinned": {
+            "type": "boolean"
+          },
+          "parent": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SiteBlockCreateTypeEnum"
+          }
+        }
+      },
+      "YoutubeVideoRequest": {
+        "type": "object",
+        "properties": {
+          "video_url": {
+            "type": "string",
+            "example": "youtube.com/embed/"
+          },
+          "thumbnail_url": {
+            "type": "string",
+            "example": "https://i.ytimg.com"
+          },
+          "link_title": {
+            "type": "string",
+            "example": "myvideo"
+          },
+          "domain": {
+            "type": "string",
+            "example": "bit.ly"
+          }
+        }
+      },
+      "SocialContent": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "example": "facebook.com/profile"
+          },
+          "channel": {
+            "type": "string",
+            "example": "facebook"
+          }
+        }
+      },
+      "DigitalBusinessCardLayout": {
+        "enum": [
+          "button",
+          "card",
+          "inline"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "example": "button",
+        "x-ms-enum": {
+          "name": "DigitalBusinessCardLayout",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "button",
+              "name": "Button"
+            },
+            {
+              "value": "card",
+              "name": "Card"
+            },
+            {
+              "value": "inline",
+              "name": "Inline"
+            }
+          ]
+        }
+      },
+      "DigitalBusinessCardContent": {
+        "type": "object",
+        "properties": {
+          "digital_business_card_id": {
+            "type": "string"
+          },
+          "link_title": {
+            "type": "string",
+            "example": "My Contact Info"
+          },
+          "layout": {
+            "$ref": "#/components/schemas/DigitalBusinessCardLayout"
+          },
+          "first_name": {
+            "type": "string",
+            "example": "Jane"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Doe"
+          },
+          "pronouns": {
+            "type": "string",
+            "example": "she/them"
+          },
+          "company": {
+            "type": "string",
+            "example": "Bitly"
+          },
+          "job_title": {
+            "type": "string",
+            "example": "Developer"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DigitalBusinessCardContact"
+            }
+          },
+          "download_enabled": {
+            "type": "boolean",
+            "example": true
+          },
+          "file": {
+            "$ref": "#/components/schemas/DigitalBusinessCardContentFile"
+          }
+        }
+      },
+      "DigitalBusinessCardContact": {
+        "required": [
+          "contact_method",
+          "value",
+          "sort_order"
+        ],
+        "type": "object",
+        "properties": {
+          "contact_method": {
+            "$ref": "#/components/schemas/DigitalBusinessCardContactContactMethod"
+          },
+          "method_type": {
+            "$ref": "#/components/schemas/DigitalBusinessCardContactMethodType"
+          },
+          "value": {
+            "type": "string",
+            "example": "chauncey@bit.ly"
+          },
+          "sort_order": {
+            "type": "integer",
+            "example": 1
+          },
+          "bitlink_id": {
+            "type": "string",
+            "example": "bit.ly/123"
+          }
+        }
+      },
+      "TextBlockContent": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "example": "Hello, world!"
+          }
+        }
+      },
+      "TextBlockAppearanceRequestAlignmentEnum": {
+        "enum": [
+          "left",
+          "center",
+          "right",
+          "justified"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TextBlockAppearanceRequestAlignmentEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "left",
+              "name": "Left"
+            },
+            {
+              "value": "center",
+              "name": "Center"
+            },
+            {
+              "value": "right",
+              "name": "Right"
+            },
+            {
+              "value": "justified",
+              "name": "Justified"
+            }
+          ]
+        }
+      },
+      "TextBlockAppearanceRequestFontSizeEnum": {
+        "enum": [
+          "small",
+          "medium",
+          "large",
+          "extra_large"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TextBlockAppearanceRequestFontSizeEnum",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "small",
+              "name": "Small"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "large",
+              "name": "Large"
+            },
+            {
+              "value": "extra_large",
+              "name": "ExtraLarge"
+            }
+          ]
+        }
+      },
+      "TextBlockAppearance": {
+        "type": "object",
+        "properties": {
+          "background_color": {
+            "type": "string",
+            "example": "#fcba03"
+          },
+          "text_color": {
+            "type": "string",
+            "example": "#e30b2c"
+          },
+          "alignment": {
+            "$ref": "#/components/schemas/TextBlockAppearanceRequestAlignmentEnum"
+          },
+          "text_block_style": {
+            "$ref": "#/components/schemas/TextBlockStyle"
+          },
+          "font_size": {
+            "$ref": "#/components/schemas/TextBlockAppearanceRequestFontSizeEnum"
+          }
+        }
+      },
+      "TextBlockAppearanceRequest": {
+        "type": "object",
+        "properties": {
+          "background_color": {
+            "type": "string",
+            "example": "#fcba03"
+          },
+          "text_color": {
+            "type": "string",
+            "example": "#e30b2c"
+          },
+          "alignment": {
+            "$ref": "#/components/schemas/TextBlockAppearanceRequestAlignmentEnum"
+          },
+          "font_size": {
+            "$ref": "#/components/schemas/TextBlockAppearanceRequestFontSizeEnum"
+          },
+          "text_block_style": {
+            "$ref": "#/components/schemas/TextBlockStyle"
+          }
+        }
+      },
+      "TextBlockStyle": {
+        "type": "object",
+        "properties": {
+          "bold": {
+            "type": "boolean"
+          },
+          "italic": {
+            "type": "boolean"
+          },
+          "underline": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ImageContent": {
+        "type": "object",
+        "properties": {
+          "image_guid": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "crop": {
+            "type": "string",
+            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "example": "1:1"
+          },
+          "link_title": {
+            "type": "string",
+            "example": "my image"
+          },
+          "description": {
+            "type": "string",
+            "example": "more about my image"
+          },
+          "bitlink_id": {
+            "type": "string",
+            "example": "bit.ly/123"
+          }
+        }
+      },
+      "CreateLaunchpad": {
+        "required": [
+          "group_guid",
+          "domain",
+          "keyword"
+        ],
+        "type": "object",
+        "properties": {
+          "group_guid": {
+            "type": "string",
+            "example": "B1234567890"
+          },
+          "domain": {
+            "type": "string",
+            "example": "bit.ly"
+          },
+          "keyword": {
+            "type": "string",
+            "example": "bitlySocial"
+          },
+          "uri": {
+            "type": "string",
+            "example": "bit.ly/m/bitlySocial"
+          }
+        },
+        "description": "@deprecated LL-2507"
+      },
+      "SiteCloneRequest": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string",
+            "example": "bit.ly/m/bitlySocial"
+          }
+        }
+      },
+      "UpdateSiteBody": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string",
+            "description": "The domain and keyword the site is served from. Changing it creates a redirect from the previous URI.",
+            "example": "bit.ly/m/bitlySocial"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name displayed on the site. An empty value clears the current one.",
+            "example": "Bitly Social"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description displayed on the site. An empty value clears the current one.",
+            "example": "All of our social links in one place"
+          },
+          "qr_code_id": {
+            "type": "string",
+            "description": "The ID of the QR code to attach to the site. Only allowed when the site does not already have a QR code attached.",
+            "example": "Qabc123"
+          }
+        }
+      },
+      "BitlySiteContent": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "BitlySiteHeaderAppearance": {
+        "type": "object",
+        "properties": {
+          "banner_type": {
+            "$ref": "#/components/schemas/SiteBannerType"
+          },
+          "profile_image_size": {
+            "$ref": "#/components/schemas/SiteProfileImageSize"
+          },
+          "profile_image_shape": {
+            "$ref": "#/components/schemas/SiteProfileImageShape"
+          },
+          "profile_image_border_size": {
+            "$ref": "#/components/schemas/SiteProfileImageBorderSize"
+          },
+          "profile_image_type": {
+            "$ref": "#/components/schemas/SiteProfileImageType"
+          },
+          "profile_image_location": {
+            "$ref": "#/components/schemas/SiteProfileImageLocation"
+          },
+          "profile_image_overflow": {
+            "type": "boolean"
+          },
+          "text_location": {
+            "$ref": "#/components/schemas/SiteTextLocation"
+          },
+          "title_size": {
+            "$ref": "#/components/schemas/SiteTextSizeEnum"
+          },
+          "title_alignment": {
+            "$ref": "#/components/schemas/SiteTextAlignmentEnum"
+          },
+          "title_weight": {
+            "$ref": "#/components/schemas/SiteTextWeightEnum"
+          },
+          "title_border_type": {
+            "$ref": "#/components/schemas/SiteTextBorderTypeEnum"
+          },
+          "description_size": {
+            "$ref": "#/components/schemas/SiteTextSizeEnum"
+          },
+          "description_alignment": {
+            "$ref": "#/components/schemas/SiteTextAlignmentEnum"
+          },
+          "description_weight": {
+            "$ref": "#/components/schemas/SiteTextWeightEnum"
+          },
+          "description_border_type": {
+            "$ref": "#/components/schemas/SiteTextBorderTypeEnum"
+          },
+          "header_background_color": {
+            "type": "string"
+          },
+          "banner_image_url": {
+            "type": "string"
+          },
+          "header_style_preference": {
+            "$ref": "#/components/schemas/SiteStylePreference"
+          },
+          "banner_image_alignment": {
+            "$ref": "#/components/schemas/SiteImageAlignment"
+          }
+        }
+      },
+      "BitlySiteAppearance": {
+        "type": "object",
+        "properties": {
+          "layout_v2": {
+            "type": "integer"
+          },
+          "header_appearance": {
+            "$ref": "#/components/schemas/BitlySiteHeaderAppearance"
+          },
+          "theme_id": {
+            "type": "integer"
+          },
+          "hide_bitly_logo": {
+            "type": "boolean"
+          },
+          "layout": {
+            "type": "string"
+          },
+          "font": {
+            "type": "string"
+          },
+          "style_preference": {
+            "$ref": "#/components/schemas/SiteStylePreference"
+          },
+          "background_color": {
+            "type": "string"
+          },
+          "bottom_background_color": {
+            "type": "string"
+          },
+          "text_color": {
+            "type": "string"
+          },
+          "description_color": {
+            "type": "string"
+          },
+          "background_preference": {
+            "type": "string"
+          },
+          "background_image_alignment": {
+            "$ref": "#/components/schemas/SiteImageAlignment"
+          },
+          "background_image_url": {
+            "type": "string"
+          },
+          "background_image_guid": {
+            "type": "string"
+          },
+          "avatar_image_url": {
+            "type": "string"
+          },
+          "avatar_image_guid": {
+            "type": "string"
+          },
+          "default_button_background_color": {
+            "type": "string"
+          },
+          "default_button_text_color": {
+            "type": "string"
+          },
+          "default_button_shape": {
+            "type": "string"
+          },
+          "default_button_shadow": {
+            "type": "string"
+          },
+          "default_social_icon_color": {
+            "type": "string"
+          },
+          "default_social_icon_layout": {
+            "type": "string"
+          },
+          "default_social_icon_position": {
+            "type": "string"
+          }
+        }
+      },
+      "BitlySite": {
+        "type": "object",
+        "properties": {
+          "site_guid": {
+            "type": "string"
+          },
+          "group_guid": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "is_edited": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          },
+          "content": {
+            "$ref": "#/components/schemas/BitlySiteContent"
+          },
+          "appearance": {
+            "$ref": "#/components/schemas/BitlySiteAppearance"
+          },
+          "button_count": {
+            "type": "integer"
+          },
+          "last_published": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "qr_code_id": {
+            "type": "string"
+          },
+          "redirects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteRedirects"
+            }
+          }
+        }
+      },
+      "BitlySites": {
+        "required": [
+          "group_guid",
+          "sites"
+        ],
+        "type": "object",
+        "properties": {
+          "group_guid": {
+            "type": "string"
+          },
+          "sites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BitlySite"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/MicrositePagination"
+          }
+        }
+      },
+      "PrevalidateYouTubeVideoRequest": {
+        "type": "object",
+        "properties": {
+          "video_id": {
+            "type": "string"
+          }
+        }
+      },
+      "SiteImageUpload": {
+        "type": "object",
+        "properties": {
+          "image_guid": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "image_use": {
+            "$ref": "#/components/schemas/SiteImageUploadImageUse"
+          },
+          "crop": {
+            "type": "string",
+            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+          }
+        }
+      },
+      "ImageUploadResponse": {
+        "type": "object",
+        "properties": {
+          "image_url": {
+            "type": "string"
+          },
+          "image_guid": {
+            "type": "string"
+          }
+        }
+      },
       "BulkUpdateRequest": {
         "required": [
           "action"
@@ -12046,6 +17302,10 @@
             "type": "string",
             "description": "The bitlink associated with the qr code. Not all qr codes are associated with one."
           },
+          "domain": {
+            "type": "string",
+            "description": "The short domain the qr code redirects from. Present for both bitlink and long_url qr codes."
+          },
           "long_urls": {
             "type": "array",
             "items": {
@@ -12133,6 +17393,10 @@
           "bitlink_id": {
             "type": "string",
             "description": "The bitlink ID associated with the qr code. Not all qr codes are associated with one."
+          },
+          "domain": {
+            "type": "string",
+            "description": "The short domain the qr code redirects from. Present for both bitlink and long_url qr codes."
           },
           "is_gs1": {
             "type": "boolean",
@@ -13392,6 +18656,20 @@
           }
         }
       },
+      "SiteCityViewMetricsAllOf2": {
+        "type": "object",
+        "properties": {
+          "site_views": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViewMetric"
+            }
+          },
+          "other_metrics": {
+            "$ref": "#/components/schemas/OtherViewMetrics"
+          }
+        }
+      },
       "MetricsAllOf2": {
         "type": "object",
         "properties": {
@@ -13576,10 +18854,138 @@
           }
         }
       },
+      "SiteBlockCreateRequestAllOf2": {
+        "required": [
+          "type",
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SiteBlockCreateTypeEnum"
+          }
+        }
+      },
+      "ImageContentAllOf2": {
+        "type": "object",
+        "properties": {
+          "aspect_ratio": {
+            "type": "string",
+            "example": "1:1"
+          },
+          "link_title": {
+            "type": "string",
+            "example": "my image"
+          },
+          "description": {
+            "type": "string",
+            "example": "more about my image"
+          },
+          "bitlink_id": {
+            "type": "string",
+            "example": "bit.ly/123"
+          }
+        }
+      },
+      "BitlySiteAllOf1": {
+        "type": "object",
+        "properties": {
+          "site_guid": {
+            "type": "string"
+          },
+          "group_guid": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "is_edited": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          },
+          "content": {
+            "$ref": "#/components/schemas/BitlySiteContent"
+          },
+          "appearance": {
+            "$ref": "#/components/schemas/BitlySiteAppearance"
+          },
+          "button_count": {
+            "type": "integer"
+          },
+          "last_published": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "qr_code_id": {
+            "type": "string"
+          },
+          "redirects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteRedirects"
+            }
+          }
+        }
+      },
+      "SortedButtonsButtonsItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "button_type": {
+            "$ref": "#/components/schemas/LaunchpadButtonTypeEnum"
+          },
+          "title": {
+            "type": "string"
+          },
+          "microsite_guid": {
+            "type": "string"
+          }
+        }
+      },
+      "SortedButtonsPageViewsItem": {
+        "type": "object",
+        "properties": {
+          "microsite_guid": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "views": {
+            "type": "number"
+          }
+        }
+      },
       "HasReferencesReferences": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
+        }
+      },
+      "DigitalBusinessCardContentFile": {
+        "required": [
+          "file_name",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "file_name": {
+            "type": "string",
+            "example": "JaneDoe.vcf"
+          },
+          "data": {
+            "type": "string",
+            "example": "BEGIN:VCARD\\nVERSION:3.0\\nFN:Jane Doe\\nORG:Bitly\\nTITLE:Developer\\nTEL;TYPE=WORK,VOICE:555-555-5555\\nEMAIL:"
+          }
         }
       },
       "QrCodeFrameRequestColors": {
@@ -13644,6 +19050,26 @@
       },
       "GetGroupMetricsByReferrer200CsvResponse": {
         "type": "string"
+      },
+      "GetTemplates200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Template"
+        }
+      },
+      "GetAggregateSitesOverview200Response": {
+        "type": "object",
+        "properties": {
+          "views": {
+            "type": "number"
+          },
+          "clicks": {
+            "type": "number"
+          },
+          "info": {
+            "type": "string"
+          }
+        }
       },
       "CreateStaticQrCodePublic200SvgXmlResponse": {
         "type": "string"
@@ -13774,6 +19200,12 @@
       },
       "GetGroupMetricsByReferrer200CsvResponseSchema": {
         "type": "string"
+      },
+      "GetTemplates200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Template"
+        }
       },
       "CreateStaticQrCodePublic200SvgXmlResponseSchema": {
         "type": "string"
@@ -14133,7 +19565,76 @@
           ]
         }
       },
-      "BaseMetricsFacet": {
+      "SiteViewMetricsUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SiteViewMetricsUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "SiteViewMetricsFacet": {
+        "enum": [
+          "views",
+          "countries",
+          "referrers",
+          "devices"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SiteViewMetricsFacet",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "views",
+              "name": "Views"
+            },
+            {
+              "value": "countries",
+              "name": "Countries"
+            },
+            {
+              "value": "referrers",
+              "name": "Referrers"
+            },
+            {
+              "value": "devices",
+              "name": "Devices"
+            }
+          ]
+        }
+      },
+      "SiteCityViewMetricsFacet": {
         "enum": [
           "countries",
           "cities",
@@ -14148,7 +19649,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "BaseMetricsFacet",
+          "name": "SiteCityViewMetricsFacet",
           "modelAsString": false,
           "values": [
             {
@@ -14186,6 +19687,80 @@
             {
               "value": "destinations",
               "name": "Destinations"
+            }
+          ]
+        }
+      },
+      "SiteViewsSummaryUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SiteViewsSummaryUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "SiteLinkPerformanceUnit": {
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SiteLinkPerformanceUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minute",
+              "name": "Minute"
+            },
+            {
+              "value": "hour",
+              "name": "Hour"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
             }
           ]
         }
@@ -14323,6 +19898,167 @@
             {
               "value": "qr_codes_list",
               "name": "QrCodesList"
+            }
+          ]
+        }
+      },
+      "DigitalBusinessCardContactContactMethod": {
+        "enum": [
+          "email",
+          "phone",
+          "location",
+          "note",
+          "website"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "DigitalBusinessCardContactContactMethod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "phone",
+              "name": "Phone"
+            },
+            {
+              "value": "location",
+              "name": "Location"
+            },
+            {
+              "value": "note",
+              "name": "Note"
+            },
+            {
+              "value": "website",
+              "name": "Website"
+            }
+          ]
+        }
+      },
+      "DigitalBusinessCardContactMethodType": {
+        "enum": [
+          "no_label",
+          "email",
+          "work",
+          "personal",
+          "home",
+          "other",
+          "mobile",
+          "direct",
+          "main",
+          "fax",
+          "office",
+          "address",
+          "company",
+          "homepage"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "DigitalBusinessCardContactMethodType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "no_label",
+              "name": "NoLabel"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "work",
+              "name": "Work"
+            },
+            {
+              "value": "personal",
+              "name": "Personal"
+            },
+            {
+              "value": "home",
+              "name": "Home"
+            },
+            {
+              "value": "other",
+              "name": "Other"
+            },
+            {
+              "value": "mobile",
+              "name": "Mobile"
+            },
+            {
+              "value": "direct",
+              "name": "Direct"
+            },
+            {
+              "value": "main",
+              "name": "Main"
+            },
+            {
+              "value": "fax",
+              "name": "Fax"
+            },
+            {
+              "value": "office",
+              "name": "Office"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "company",
+              "name": "Company"
+            },
+            {
+              "value": "homepage",
+              "name": "Homepage"
+            }
+          ]
+        }
+      },
+      "SiteImageUploadImageUse": {
+        "enum": [
+          "profile",
+          "background",
+          "banner",
+          "profile_life",
+          "background_live",
+          "banner_live"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SiteImageUploadImageUse",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "profile",
+              "name": "Profile"
+            },
+            {
+              "value": "background",
+              "name": "Background"
+            },
+            {
+              "value": "banner",
+              "name": "Banner"
+            },
+            {
+              "value": "profile_life",
+              "name": "ProfileLife"
+            },
+            {
+              "value": "background_live",
+              "name": "BackgroundLive"
+            },
+            {
+              "value": "banner_live",
+              "name": "BannerLive"
             }
           ]
         }
@@ -14842,6 +20578,40 @@
           ]
         }
       },
+      "TemplateCategory": {
+        "enum": [
+          "Link-in-bio",
+          "Products and services",
+          "Promotions",
+          "Digital business card",
+          "Image gallery",
+          "Recommended"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TemplateCategory",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "Link-in-bio",
+              "name": "LinkInBio"
+            },
+            {
+              "value": "Products and services",
+              "name": "ProductsAndServices"
+            },
+            {
+              "value": "Digital business card",
+              "name": "DigitalBusinessCard"
+            },
+            {
+              "value": "Image gallery",
+              "name": "ImageGallery"
+            }
+          ]
+        }
+      },
       "CreateStaticQrCodePublicAcceptParameter": {
         "enum": [
           "application/json",
@@ -15014,6 +20784,16 @@
         },
         "example": 10
       },
+      "Page": {
+        "name": "page",
+        "in": "query",
+        "description": "Integer specifying the numbered result at which to start",
+        "schema": {
+          "type": "integer",
+          "default": 1
+        },
+        "example": 1
+      },
       "CreatedBefore": {
         "name": "created_before",
         "in": "query",
@@ -15099,6 +20879,20 @@
         "schema": {
           "$ref": "#/components/schemas/TagType"
         }
+      },
+      "SitesForMetrics": {
+        "name": "site",
+        "in": "query",
+        "description": "Filter by given Bitly Site guids",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "example": [
+          "M0123456789"
+        ]
       },
       "LaunchpadIDs": {
         "name": "launchpad_ids",
@@ -15400,6 +21194,53 @@
           "type": "string"
         },
         "example": "/organizations/{organization_guid}"
+      },
+      "LaunchpadGUID": {
+        "name": "launchpad_id",
+        "in": "path",
+        "description": "A GUID for a Bitly Link Launchpad",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "Sa1bcd234eF"
+      },
+      "SiteID": {
+        "name": "site_id",
+        "in": "path",
+        "description": "A GUID for a Bitly Site",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "M0000guid01"
+      },
+      "BlockID": {
+        "name": "block_id",
+        "in": "path",
+        "description": "A GUID for a Bitly Site content block",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "La1bcd234eF"
+      },
+      "TemplateCategory": {
+        "name": "category",
+        "in": "query",
+        "description": "A filter option for template categories",
+        "schema": {
+          "$ref": "#/components/schemas/TemplateCategory"
+        },
+        "example": "Digital business card"
+      },
+      "SitesURLParam": {
+        "name": "sites_url_param",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        },
+        "example": "https://example.com"
       }
     },
     "securitySchemes": {
@@ -15474,6 +21315,10 @@
     {
       "name": "Launchpads",
       "description": "A link launchpad is a customizable page that contains a collection of links. These endpoints allow for the customization of the links associated with this site and the appearance of the site itself.\n"
+    },
+    {
+      "name": "Bitly Sites",
+      "description": "Bitly Sites are customizable landing pages that contain a collection of links, images, and other content. These endpoints allow for creating, updating, publishing, deleting, and getting metrics for Bitly Sites.\n"
     },
     {
       "name": "Images",

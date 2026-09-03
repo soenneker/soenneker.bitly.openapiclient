@@ -6,6 +6,7 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
+using Soenneker.Bitly.OpenApiClient.Aggregate;
 using Soenneker.Bitly.OpenApiClient.Apps;
 using Soenneker.Bitly.OpenApiClient.Bitlinks;
 using Soenneker.Bitly.OpenApiClient.Bsds;
@@ -17,6 +18,8 @@ using Soenneker.Bitly.OpenApiClient.Groups;
 using Soenneker.Bitly.OpenApiClient.Organizations;
 using Soenneker.Bitly.OpenApiClient.QrCodes;
 using Soenneker.Bitly.OpenApiClient.Shorten;
+using Soenneker.Bitly.OpenApiClient.Site_templates;
+using Soenneker.Bitly.OpenApiClient.Sites;
 using Soenneker.Bitly.OpenApiClient.User;
 using Soenneker.Bitly.OpenApiClient.Webhooks;
 using System.Collections.Generic;
@@ -31,6 +34,11 @@ namespace Soenneker.Bitly.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BitlyOpenApiClient : BaseRequestBuilder
     {
+        /// <summary>The aggregate property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Aggregate.AggregateRequestBuilder Aggregate
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Aggregate.AggregateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The apps property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Apps.AppsRequestBuilder Apps
         {
@@ -85,6 +93,16 @@ namespace Soenneker.Bitly.OpenApiClient
         public global::Soenneker.Bitly.OpenApiClient.Shorten.ShortenRequestBuilder Shorten
         {
             get => new global::Soenneker.Bitly.OpenApiClient.Shorten.ShortenRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The site_templates property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Site_templates.Site_templatesRequestBuilder Site_templates
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Site_templates.Site_templatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sites property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Sites.SitesRequestBuilder Sites
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user property</summary>
         public global::Soenneker.Bitly.OpenApiClient.User.UserRequestBuilder User
