@@ -195,8 +195,10 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Bitlinks
             /// <summary>Timestamp as an integer unix epoch (seconds only)</summary>
             [QueryParameter("created_before")]
             public int? CreatedBefore { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("custom_bitlink")]
             public global::Soenneker.Bitly.OpenApiClient.Models.FilterCustomBitlink? CustomBitlink { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter to only Bitlinks that contain deeplinks</summary>
             [QueryParameter("deeplinks")]
             public global::Soenneker.Bitly.OpenApiClient.Models.Deeplinks? Deeplinks { get; set; }

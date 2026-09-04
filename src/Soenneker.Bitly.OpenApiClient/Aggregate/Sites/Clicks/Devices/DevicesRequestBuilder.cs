@@ -98,12 +98,16 @@ namespace Soenneker.Bitly.OpenApiClient.Aggregate.Sites.Clicks.Devices
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("report_guid")]
             public string? ReportGuid { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("report_guid")]
             public string ReportGuid { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Filter by given Bitly Site guids</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

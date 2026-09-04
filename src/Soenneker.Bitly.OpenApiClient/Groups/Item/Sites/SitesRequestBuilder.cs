@@ -106,12 +106,16 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Sites
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sites_url_param")]
             public string? SitesUrlParam { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sites_url_param")]
             public string SitesUrlParam { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The quantity of items to be be returned</summary>
             [QueryParameter("size")]

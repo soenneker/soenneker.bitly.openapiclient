@@ -201,12 +201,16 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.QrCodes
             public global::Soenneker.Bitly.OpenApiClient.Models.FilterIsGs1? IsGs1 { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("qrc_type")]
             public global::Soenneker.Bitly.OpenApiClient.Models.FilterQrCodeTypeItem[]? QrcType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("qrc_type")]
             public global::Soenneker.Bitly.OpenApiClient.Models.FilterQrCodeTypeItem[] QrcType { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The value that you would like to search</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
