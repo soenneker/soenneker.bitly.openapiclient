@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic;
 using Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Cities;
 using Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Clicks;
 using Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Countries;
@@ -26,6 +27,11 @@ namespace Soenneker.Bitly.OpenApiClient.Bitlinks.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithBitlinkItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agentic_traffic property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic.Agentic_trafficRequestBuilder Agentic_traffic
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic.Agentic_trafficRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The cities property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Cities.CitiesRequestBuilder Cities
         {

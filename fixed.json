@@ -1098,6 +1098,128 @@
         }
       }
     },
+    "/bitlinks/{bitlink}/agentic_traffic": {
+      "get": {
+        "tags": [
+          "Bitlinks"
+        ],
+        "summary": "Get Agentic Traffic for a Bitlink",
+        "description": "Returns agentic traffic (AI agents and assistants) for the specified link over time, broken down by agent.",
+        "operationId": "GetAgenticTrafficForBitlink",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Bitlink"
+          },
+          {
+            "$ref": "#/components/parameters/TimeUnit"
+          },
+          {
+            "$ref": "#/components/parameters/UnitAmount"
+          },
+          {
+            "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClickMetrics"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAgenticTrafficForBitlink200CsvResponseSchema"
+                },
+                "example": "Agent, Clicks\nChatGPT, 25\n"
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "GONE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Gone"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/bitlinks/{bitlink}/countries": {
       "get": {
         "tags": [
@@ -19024,6 +19146,9 @@
       "GetEngagements200CsvResponse": {
         "type": "string"
       },
+      "GetAgenticTrafficForBitlink200CsvResponse": {
+        "type": "string"
+      },
       "GetMetricsForBitlinkByCountries200CsvResponse": {
         "type": "string"
       },
@@ -19172,6 +19297,9 @@
         "type": "string"
       },
       "GetEngagements200CsvResponseSchema": {
+        "type": "string"
+      },
+      "GetAgenticTrafficForBitlink200CsvResponseSchema": {
         "type": "string"
       },
       "GetMetricsForBitlinkByCountries200CsvResponseSchema": {
@@ -19644,7 +19772,8 @@
           "referring_domains",
           "referring_networks",
           "shorten_counts",
-          "destinations"
+          "destinations",
+          "agents"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -19687,6 +19816,10 @@
             {
               "value": "destinations",
               "name": "Destinations"
+            },
+            {
+              "value": "agents",
+              "name": "Agents"
             }
           ]
         }

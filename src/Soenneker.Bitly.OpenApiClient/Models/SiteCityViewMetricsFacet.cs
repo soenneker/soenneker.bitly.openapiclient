@@ -44,5 +44,9 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         #pragma warning disable CS1591
         Destinations,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agents")]
+        #pragma warning disable CS1591
+        Agents,
+        #pragma warning restore CS1591
     }
 }
