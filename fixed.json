@@ -2155,7 +2155,12 @@
         "operationId": "UpdateCustomBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/CustomBitlink"
+            "name": "customBitlink",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2270,7 +2275,12 @@
         "operationId": "GetCustomBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/CustomBitlink"
+            "name": "customBitlink",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2367,9 +2377,6 @@
         "operationId": "GetCustomBitlinkMetricsByDestination",
         "parameters": [
           {
-            "$ref": "#/components/parameters/CustomBitlink"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -2377,6 +2384,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "customBitlink",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2473,9 +2488,6 @@
         "operationId": "GetClicksForCustomBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/CustomBitlink"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -2483,6 +2495,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "customBitlink",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2686,7 +2706,12 @@
         "operationId": "UpdateGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2781,7 +2806,12 @@
         "operationId": "GetGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2858,10 +2888,15 @@
         "operationId": "GetGroupTags",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "$ref": "#/components/parameters/TagType"
           },
           {
-            "$ref": "#/components/parameters/TagType"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2948,9 +2983,6 @@
         "operationId": "GetBitlinksByGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/Size"
           },
           {
@@ -3006,6 +3038,14 @@
           },
           {
             "$ref": "#/components/parameters/EncodingLogin"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3070,7 +3110,12 @@
         "operationId": "UpdateBitlinksByGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3167,9 +3212,6 @@
         "operationId": "GetTopLinksAndQrCodesByEngagements",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -3180,6 +3222,14 @@
           },
           {
             "$ref": "#/components/parameters/SortedSize"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3256,9 +3306,6 @@
         "operationId": "GetSortedBitlinks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/Sort"
           },
           {
@@ -3272,6 +3319,14 @@
           },
           {
             "$ref": "#/components/parameters/SortedSize"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3348,7 +3403,12 @@
         "operationId": "GetGroupPreferences",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3413,7 +3473,12 @@
         "operationId": "UpdateGroupPreferences",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3520,9 +3585,6 @@
         "operationId": "GetGroupShortenCounts",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3530,6 +3592,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3606,9 +3676,6 @@
         "operationId": "GetGroupMetricsByCountries",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3619,6 +3686,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3701,9 +3776,6 @@
         "operationId": "GetGroupMetricsByCities",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3714,6 +3786,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3806,9 +3886,6 @@
         "operationId": "GetGroupMetricsByDevices",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3819,6 +3896,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3911,9 +3996,6 @@
         "operationId": "GetGroupMetricsByReferringNetworks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3924,6 +4006,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3990,9 +4080,6 @@
         "operationId": "GetGroupMetricsByReferrer",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4003,6 +4090,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4085,9 +4180,6 @@
         "operationId": "GetGroupTopMetrics",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4098,6 +4190,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4164,9 +4264,6 @@
         "operationId": "GetGroupMetricsOverTime",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4174,6 +4271,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4240,9 +4345,6 @@
         "operationId": "GetGroupClicks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4250,6 +4352,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4336,7 +4446,12 @@
         "operationId": "PostCreateGroupExport",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -4505,7 +4620,12 @@
         "operationId": "GetOrganization",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OrganizationGUID"
+            "name": "organizationGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4572,9 +4692,6 @@
         "operationId": "GetOrganizationShortenCounts",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OrganizationGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4582,6 +4699,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "organizationGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4648,7 +4773,12 @@
         "operationId": "GetOrganizationShortenCountsByGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OrganizationGUID"
+            "name": "organizationGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5074,7 +5204,12 @@
         "operationId": "GetCampaign",
         "parameters": [
           {
-            "$ref": "#/components/parameters/CampaignGUID"
+            "name": "campaignGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5159,7 +5294,12 @@
         "operationId": "UpdateCampaign",
         "parameters": [
           {
-            "$ref": "#/components/parameters/CampaignGUID"
+            "name": "campaignGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -5466,7 +5606,12 @@
         "operationId": "GetChannel",
         "parameters": [
           {
-            "$ref": "#/components/parameters/ChannelGUID"
+            "name": "channelGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5551,7 +5696,12 @@
         "operationId": "UpdateChannel",
         "parameters": [
           {
-            "$ref": "#/components/parameters/ChannelGUID"
+            "name": "channelGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -5665,7 +5815,12 @@
         "operationId": "GetOAuthApp",
         "parameters": [
           {
-            "$ref": "#/components/parameters/ClientID"
+            "name": "clientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5802,7 +5957,12 @@
         "operationId": "GetWebhooks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OrganizationGUID"
+            "name": "organizationGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6001,7 +6161,12 @@
         "operationId": "GetWebhook",
         "parameters": [
           {
-            "$ref": "#/components/parameters/WebhookGUID"
+            "name": "webhookGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6096,7 +6261,12 @@
         "operationId": "UpdateWebhook",
         "parameters": [
           {
-            "$ref": "#/components/parameters/WebhookGUID"
+            "name": "webhookGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -6211,7 +6381,12 @@
         "operationId": "DeleteWebhook",
         "parameters": [
           {
-            "$ref": "#/components/parameters/WebhookGUID"
+            "name": "webhookGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6291,7 +6466,12 @@
         "operationId": "VerifyWebhook",
         "parameters": [
           {
-            "$ref": "#/components/parameters/WebhookGUID"
+            "name": "webhookGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6378,7 +6558,12 @@
         "operationId": "GetPlanLimits",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OrganizationGUID"
+            "name": "organizationGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6657,7 +6842,12 @@
         "operationId": "ApplyTemplate",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -6746,7 +6936,12 @@
         "operationId": "UpdateSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -6837,7 +7032,12 @@
         "operationId": "GetSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6912,7 +7112,12 @@
         "operationId": "DeleteSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6982,7 +7187,12 @@
         "operationId": "UpdateSiteAppearance",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -7076,7 +7286,12 @@
         "operationId": "PublishSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -7143,7 +7358,12 @@
         "operationId": "CloneSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -7233,7 +7453,12 @@
         "operationId": "DiscardSiteDraft",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -7303,9 +7528,6 @@
         "operationId": "GetSitesForGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/SearchAfter"
           },
           {
@@ -7313,6 +7535,14 @@
           },
           {
             "$ref": "#/components/parameters/SitesURLParam"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -7369,9 +7599,6 @@
         "operationId": "DeleteSiteRedirect",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "name": "domain",
             "in": "path",
             "description": "The custom domain the redirect is configured on",
@@ -7390,6 +7617,14 @@
               "type": "string"
             },
             "example": "promo"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -7409,7 +7644,12 @@
         "operationId": "CreateContainer",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -7528,7 +7768,12 @@
         "operationId": "CreateSiteBlock",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -7676,10 +7921,20 @@
         "operationId": "UpdateSiteBlock",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/BlockID"
+            "name": "blockId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -7785,10 +8040,20 @@
         "operationId": "DeleteSiteBlock",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/BlockID"
+            "name": "blockId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -7858,7 +8123,12 @@
         "operationId": "PrevalidateYouTubeVideoButton",
         "parameters": [
           {
-            "$ref": "#/components/parameters/LaunchpadGUID"
+            "name": "launchpadId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -7938,7 +8208,12 @@
         "operationId": "CreateSiteImage",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -8901,9 +9176,6 @@
         "operationId": "GetMetricsForSitesByCountries",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -8914,6 +9186,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -8990,9 +9270,6 @@
         "operationId": "GetMetricsForSiteByCities",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -9003,6 +9280,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9089,9 +9374,6 @@
         "operationId": "GetMetricsForSiteByDevices",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -9102,6 +9384,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9188,9 +9478,6 @@
         "operationId": "GetMetricsForSiteByReferrers",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -9201,6 +9488,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9360,9 +9655,6 @@
         "operationId": "GetLinkPerformanceForSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -9376,6 +9668,14 @@
           },
           {
             "$ref": "#/components/parameters/Page"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9442,9 +9742,6 @@
         "operationId": "GetViewsForSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -9455,6 +9752,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9521,9 +9826,6 @@
         "operationId": "GetViewsSummaryForSite",
         "parameters": [
           {
-            "$ref": "#/components/parameters/SiteID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -9534,6 +9836,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10095,14 +10405,19 @@
             "example": "image/svg\u002Bxml"
           },
           {
-            "$ref": "#/components/parameters/QRCodeID"
-          },
-          {
             "name": "format",
             "in": "query",
             "description": "The format type of the image. If there is an image format in the header it takes precedence.",
             "schema": {
               "$ref": "#/components/schemas/GetQrCodeImagePublicFormatParameter"
+            }
+          },
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -10449,7 +10764,12 @@
         "operationId": "GetQrCodeByIdPublic",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10524,7 +10844,12 @@
         "operationId": "DeleteQrCode",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10611,9 +10936,6 @@
         "operationId": "ListQrMinimal",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/FilterHasRenderCustomizations"
           },
           {
@@ -10657,6 +10979,14 @@
           },
           {
             "$ref": "#/components/parameters/Tags"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10711,7 +11041,12 @@
         "operationId": "UpdateQrCodesByGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -10828,9 +11163,6 @@
         "operationId": "GetScanMetricsForQrCode",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -10838,6 +11170,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10924,9 +11264,6 @@
         "operationId": "GetScanMetricsSummaryForQrCode",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -10934,6 +11271,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11020,9 +11365,6 @@
         "operationId": "GetScanMetricsForQrCodeByCountries",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -11033,6 +11375,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11125,9 +11475,6 @@
         "operationId": "GetScanMetricsForQrCodeByCities",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -11138,6 +11485,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11240,9 +11595,6 @@
         "operationId": "GetScanMetricsForQrCodeByDevicesOs",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -11253,6 +11605,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11355,9 +11715,6 @@
         "operationId": "GetScanMetricsForQrCodeByBrowser",
         "parameters": [
           {
-            "$ref": "#/components/parameters/QRCodeID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -11368,6 +11725,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "qrcodeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11711,10 +12076,15 @@
         "operationId": "GetGroupFeatureUsage",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "$ref": "#/components/parameters/Name"
           },
           {
-            "$ref": "#/components/parameters/Name"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11781,9 +12151,6 @@
         "operationId": "GetGroupHistoricalUsage",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/Name"
           },
           {
@@ -11794,6 +12161,14 @@
           },
           {
             "$ref": "#/components/parameters/TimeUnitDWM"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11860,7 +12235,12 @@
         "operationId": "GetGroupAgenticTrafficRollup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11917,9 +12297,6 @@
         "operationId": "GetGroupLinkClicksOverTime",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -11927,6 +12304,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11993,9 +12378,6 @@
         "operationId": "GetGroupLinkClicksByDevice",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12006,6 +12388,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12072,9 +12462,6 @@
         "operationId": "GetGroupLinkClicksByReferrer",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12085,6 +12472,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12151,9 +12546,6 @@
         "operationId": "GetGroupLinkClicksByCountry",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12164,6 +12556,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12230,9 +12630,6 @@
         "operationId": "GetGroupLinkClicksByCity",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12243,6 +12640,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12309,9 +12714,6 @@
         "operationId": "GetGroupTopLinkClicks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12322,6 +12724,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12388,9 +12798,6 @@
         "operationId": "GetGroupCodeScansOverTime",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12398,6 +12805,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12464,9 +12879,6 @@
         "operationId": "GetGroupCodeScansByCountry",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12474,6 +12886,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12540,9 +12960,6 @@
         "operationId": "GetGroupCodeScansByCity",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12550,6 +12967,14 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12616,9 +13041,6 @@
         "operationId": "GetGroupTopCodeScans",
         "parameters": [
           {
-            "$ref": "#/components/parameters/GroupGUID"
-          },
-          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12633,6 +13055,14 @@
             "description": "When true, ranks results by decoupled QR scan count and returns a TopLinksAndQRCodes response with links and QR codes partitioned into separate lists and a unified sorted_engagements ordering.\n",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "groupGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
