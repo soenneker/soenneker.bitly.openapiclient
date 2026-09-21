@@ -7032,6 +7032,14 @@
         "operationId": "GetSite",
         "parameters": [
           {
+            "name": "include_blocks",
+            "in": "query",
+            "description": "When true, the response includes a blocks array holding the site\u0027s draft content blocks, ordered by container and then by sort order within that container. Blocks nested inside a grid or carousel carry that container\u0027s ID in container_id. The array is omitted entirely when this parameter is not set, and is an empty array when the site has no blocks.\n",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "siteId",
             "in": "path",
             "required": true,
@@ -7046,7 +7054,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BitlySite"
+                  "$ref": "#/components/schemas/BitlySiteWithBlocks"
                 }
               }
             }
@@ -17661,6 +17669,61 @@
           }
         }
       },
+      "BitlySiteWithBlocks": {
+        "type": "object",
+        "properties": {
+          "site_guid": {
+            "type": "string"
+          },
+          "group_guid": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "is_edited": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          },
+          "content": {
+            "$ref": "#/components/schemas/BitlySiteContent"
+          },
+          "appearance": {
+            "$ref": "#/components/schemas/BitlySiteAppearance"
+          },
+          "button_count": {
+            "type": "integer"
+          },
+          "last_published": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "qr_code_id": {
+            "type": "string"
+          },
+          "redirects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteRedirects"
+            }
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteBlock"
+            },
+            "description": "The site\u0027s draft content blocks, ordered by container and then by sort order within that container. Blocks nested inside a grid or carousel carry that container\u0027s ID in container_id. The field is absent unless include_blocks is true, and is an empty array when the site has no blocks.\n\nBlocks taken down by a Bitly admin are not returned. Every other draft block is, including ones that do not appear on the published site: check is_active for blocks that are hidden or scheduled, and is_sample for template placeholders that are still missing their destination. A block with is_sample true never renders on the published site, regardless of is_active.\n"
+          }
+        },
+        "description": "A Bitly Site plus its content blocks. Returned by getSite; the blocks field is only present when the request sets include_blocks to true.\n"
+      },
       "BitlySites": {
         "required": [
           "group_guid",
@@ -19483,6 +19546,18 @@
             "items": {
               "$ref": "#/components/schemas/SiteRedirects"
             }
+          }
+        }
+      },
+      "BitlySiteWithBlocksAllOf2": {
+        "type": "object",
+        "properties": {
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteBlock"
+            },
+            "description": "The site\u0027s draft content blocks, ordered by container and then by sort order within that container. Blocks nested inside a grid or carousel carry that container\u0027s ID in container_id. The field is absent unless include_blocks is true, and is an empty array when the site has no blocks.\n\nBlocks taken down by a Bitly admin are not returned. Every other draft block is, including ones that do not appear on the published site: check is_active for blocks that are hidden or scheduled, and is_sample for template placeholders that are still missing their destination. A block with is_sample true never renders on the published site, regardless of is_active.\n"
           }
         }
       },

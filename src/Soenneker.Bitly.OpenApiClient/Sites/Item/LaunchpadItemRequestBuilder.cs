@@ -118,7 +118,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LaunchpadItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}", pathParameters)
+        public LaunchpadItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}{?include_blocks*}", pathParameters)
         {
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LaunchpadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}", rawUrl)
+        public LaunchpadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}{?include_blocks*}", rawUrl)
         {
         }
         /// <summary>
@@ -162,7 +162,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item
         /// <summary>
         /// Retrieves a Bitly Site by ID
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BitlySite"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteWithBlocks"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
@@ -172,11 +172,11 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.BitlySite?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteWithBlocks?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder.LaunchpadItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.BitlySite> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteWithBlocks> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder.LaunchpadItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -188,7 +188,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.BitlySite>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.BitlySite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteWithBlocks>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteWithBlocks.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a Bitly Site&apos;s URI, display name, description and attached QR code. Changing the URI also creates a redirect from the previous URI.
@@ -249,11 +249,11 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder.LaunchpadItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder.LaunchpadItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -291,6 +291,16 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item
         public global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieves a Bitly Site by ID
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class LaunchpadItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>When true, the response includes a blocks array holding the site&apos;s draft content blocks, ordered by container and then by sort order within that container. Blocks nested inside a grid or carousel carry that container&apos;s ID in container_id. The array is omitted entirely when this parameter is not set, and is an empty array when the site has no blocks.</summary>
+            [QueryParameter("include_blocks")]
+            public bool? IncludeBlocks { get; set; }
         }
     }
 }
