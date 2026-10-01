@@ -3,97 +3,95 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Bitly.OpenApiClient.Channels.Item.Bitlinks;
+using Soenneker.Bitly.OpenApiClient.Custom_domains.Item.Dns;
 using Soenneker.Bitly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Bitly.OpenApiClient.Channels.Item
+namespace Soenneker.Bitly.OpenApiClient.Custom_domains.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \channels\{channelGuid}
+    /// Builds and executes requests for operations under \custom_domains\{customDomain}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithChannelGuItemRequestBuilder : BaseRequestBuilder
+    public partial class WithCustomDomainItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The bitlinks property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Channels.Item.Bitlinks.BitlinksRequestBuilder Bitlinks
+        /// <summary>The dns property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.Dns.DnsRequestBuilder Dns
         {
-            get => new global::Soenneker.Bitly.OpenApiClient.Channels.Item.Bitlinks.BitlinksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithChannelGuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/channels/{channelGuid}", pathParameters)
+        public WithCustomDomainItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_domains/{customDomain}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithChannelGuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/channels/{channelGuid}", rawUrl)
+        public WithCustomDomainItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/custom_domains/{customDomain}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns a channel&apos;s details.
+        /// Get one custom domain, with its verification state, group assignments, and SSL status. Any member of a group the domain is assigned to can call it, and so can an administrator of the organization that holds it, which is the only way to read a domain that still waits on DNS verification.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Channel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.UpgradeRequired">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.Forbidden">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.NotFound">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.Channel?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.Channel> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "402", global::Soenneker.Bitly.OpenApiClient.Models.UpgradeRequired.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Bitly.OpenApiClient.Models.BadRequest.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Bitly.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.Channel>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing channel.
+        /// Change the settings of a custom domain. Send only the settings to change. An empty root_redirect or wildcard_redirect clears that redirect. The domain must be verified, because a domain that waits on DNS has no settings yet. Organization admins only.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Channel"/></returns>
-        /// <param name="body">The request body</param>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody"/></returns>
+        /// <param name="body">The settings to change on a custom domain. Send only the settings to change.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.UpgradeRequired">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.Forbidden">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.NotFound">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.UnprocessableEntity">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.Channel?> PatchAsync(global::Soenneker.Bitly.OpenApiClient.Models.ChannelModify body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody?> PatchAsync(global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.Channel> PatchAsync(global::Soenneker.Bitly.OpenApiClient.Models.ChannelModify body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody> PatchAsync(global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -101,18 +99,16 @@ namespace Soenneker.Bitly.OpenApiClient.Channels.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Bitly.OpenApiClient.Models.BadRequest.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Bitly.OpenApiClient.Models.UpgradeRequired.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Bitly.OpenApiClient.Models.UnprocessableEntity.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.Channel>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a channel&apos;s details.
+        /// Get one custom domain, with its verification state, group assignments, and SSL status. Any member of a group the domain is assigned to can call it, and so can an administrator of the organization that holds it, which is the only way to read a domain that still waits on DNS verification.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,18 +127,18 @@ namespace Soenneker.Bitly.OpenApiClient.Channels.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing channel.
+        /// Change the settings of a custom domain. Send only the settings to change. An empty root_redirect or wildcard_redirect clears that redirect. The domain must be verified, because a domain that waits on DNS has no settings yet. Organization admins only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The settings to change on a custom domain. Send only the settings to change.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.ChannelModify body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.ChannelModify body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -155,11 +151,11 @@ namespace Soenneker.Bitly.OpenApiClient.Channels.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Bitly.OpenApiClient.Channels.Item.WithChannelGuItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

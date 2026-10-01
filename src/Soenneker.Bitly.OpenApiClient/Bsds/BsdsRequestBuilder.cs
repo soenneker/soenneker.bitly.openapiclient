@@ -34,7 +34,7 @@ namespace Soenneker.Bitly.OpenApiClient.Bsds
         {
         }
         /// <summary>
-        /// Fetch all Branded Short Domains
+        /// Fetch the names of the custom domains the authenticated user can shorten links with, across every organization and group they belong to. The list holds verified domains only, and any member of a group can call it. For setup and verification state, use GET /custom_domains, which returns each domain with its validation_status and group assignments and requires an organization admin.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BsDsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Bitly.OpenApiClient.Bsds
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.BsDsResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.BsDsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetch all Branded Short Domains
+        /// Fetch the names of the custom domains the authenticated user can shorten links with, across every organization and group they belong to. The list holds verified domains only, and any member of a group can call it. For setup and verification state, use GET /custom_domains, which returns each domain with its validation_status and group assignments and requires an organization admin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

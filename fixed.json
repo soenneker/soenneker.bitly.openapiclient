@@ -4835,6 +4835,470 @@
         }
       }
     },
+    "/custom_domains/{customDomain}": {
+      "get": {
+        "tags": [
+          "BSDs"
+        ],
+        "summary": "Get a custom domain",
+        "description": "Get one custom domain, with its verification state, group assignments, and SSL status. Any member of a group the domain is assigned to can call it, and so can an administrator of the organization that holds it, which is the only way to read a domain that still waits on DNS verification.",
+        "operationId": "GetCustomDomain",
+        "parameters": [
+          {
+            "name": "customDomain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDomainBody"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TOO_MANY_REQUESTS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "BSDs"
+        ],
+        "summary": "Edit a custom domain",
+        "description": "Change the settings of a custom domain. Send only the settings to change. An empty root_redirect or wildcard_redirect clears that redirect. The domain must be verified, because a domain that waits on DNS has no settings yet. Organization admins only.",
+        "operationId": "EditCustomDomain",
+        "parameters": [
+          {
+            "name": "customDomain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DomainUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS. The domain with the new settings applied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDomainBody"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/custom_domains": {
+      "get": {
+        "tags": [
+          "BSDs"
+        ],
+        "summary": "Get custom domains for an organization",
+        "description": "Get the custom domains of an organization, each with its verification state and group assignments. Without the organization_guid filter, the response covers every organization where the caller is an admin. Organizations where the caller is not an admin are left out.",
+        "operationId": "GetCustomDomains",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OrganizationGUIDFilter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDomains"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TOO_MANY_REQUESTS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "BSDs"
+        ],
+        "summary": "Add a custom domain you own",
+        "description": "Add a domain you already own to an organization and queue it for DNS verification. Set prevalidate to true to check the domain without adding it. The caller must be an organization admin. Verification runs asynchronously and takes up to 24 hours, so read GET /custom_domains for the validation_status when your user returns. The request fails when another Bitly account already holds the domain.",
+        "operationId": "ValidateCustomDomain",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DomainValidateBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS. The domain is already on the organization, so it was queued for another DNS check and nothing was created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DomainValidate"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "CREATED. The domain was added and queued for DNS verification",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DomainValidate"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "ACCEPTED. prevalidate was true, so the domain was checked and nothing was created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DomainValidate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CONFLICT. Another account holds the domain, or the organization is at its custom domain limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Conflict"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/custom_domains/{customDomain}/dns": {
+      "get": {
+        "tags": [
+          "Custom Domains"
+        ],
+        "summary": "Get the DNS records for a custom domain",
+        "description": "Get the records to create at your registrar, the records that resolve today, and whether they match. A root domain needs the A records. A subdomain needs the CNAME record.",
+        "operationId": "GetCustomDomainDns",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OrganizationGUIDRequired"
+          },
+          {
+            "name": "customDomain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DomainDns"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TOO_MANY_REQUESTS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/user": {
       "patch": {
         "tags": [
@@ -5808,6 +6272,138 @@
         }
       }
     },
+    "/channels/{channelGuid}/bitlinks": {
+      "post": {
+        "tags": [
+          "Campaigns"
+        ],
+        "summary": "Add Bitlinks to a Channel",
+        "description": "Adds the given bitlinks to a channel without affecting any bitlinks already associated with it, unlike Update a Channel which replaces the channel\u0027s entire bitlink membership. All bitlinks in a single request are associated with the same campaign_guid. If the given campaign has not already been associated with this channel, that association is created on first use before the bitlinks are added. The request is all-or-nothing: every bitlink is validated first, and if any are invalid, nothing is added.\n",
+        "operationId": "AddChannelBitlinks",
+        "parameters": [
+          {
+            "name": "channelGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddChannelBitlinksRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddChannelBitlinksResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CONFLICT",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Conflict"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/apps/{clientId}": {
       "get": {
         "summary": "Retrieve OAuth App",
@@ -5882,8 +6478,8 @@
         "tags": [
           "BSDs"
         ],
-        "summary": "Get BSDs",
-        "description": "Fetch all Branded Short Domains",
+        "summary": "Get the custom domains you can shorten with",
+        "description": "Fetch the names of the custom domains the authenticated user can shorten links with, across every organization and group they belong to. The list holds verified domains only, and any member of a group can call it. For setup and verification state, use GET /custom_domains, which returns each domain with its validation_status and group assignments and requires an organization admin.",
         "operationId": "GetBsDs",
         "responses": {
           "200": {
@@ -5940,6 +6536,269 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/domains": {
+      "get": {
+        "tags": [
+          "Custom Domains"
+        ],
+        "summary": "Search for a domain to register",
+        "description": "Search the domains Bitly can register for an organization. The results hold available domains, and input_domain reports the status of the exact name you searched for. Register one with POST /domains.",
+        "operationId": "SearchAvailableDomains",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DomainSearchQuery"
+          },
+          {
+            "$ref": "#/components/parameters/DomainSearchLimit"
+          },
+          {
+            "$ref": "#/components/parameters/OrganizationGUIDFilter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BsdSearchResults"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TOO_MANY_REQUESTS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "BSDs"
+        ],
+        "summary": "Register a domain for an organization",
+        "description": "Register a domain that the organization\u0027s plan includes, and configure its DNS. Send the agreement_keys from GET /domains/{domain}/agreements. The caller must be an organization admin. Once the organization reaches the number of domains its plan includes, the request fails with ALREADY_RECEIVED_COMPLIMENTARY_DOMAIN. A domain priced at or above the complimentary limit fails with DOMAIN_NOT_COMPLIMENTARY. A blocked or trademarked name, or a domain over 32 characters, fails with DOMAIN_NOT_ALLOWED. A TLD that GET /domains does not offer fails with INVALID_ARG_DOMAIN. Pick a domain from GET /domains to avoid these errors. DNS verification takes up to 48 hours, so read GET /custom_domains for the validation_status when your user returns.",
+        "operationId": "PurchaseBsd",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PurchaseBsdBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PurchaseBsdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CONFLICT",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Conflict"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "TIMEOUT",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timeout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/domains/{domain}/agreements": {
+      "get": {
+        "tags": [
+          "BSDs"
+        ],
+        "summary": "Get Purchase Agreements",
+        "description": "Get the registrar agreements that a user must accept before Bitly registers a domain. Pass each agreement_key to POST /domains.",
+        "operationId": "FetchDomainAgreements",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Domain"
+          },
+          {
+            "$ref": "#/components/parameters/OrganizationGUIDFilter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DomainAgreements"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TOO_MANY_REQUESTS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "TIMEOUT",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timeout"
                 }
               }
             }
@@ -15420,6 +16279,63 @@
           }
         }
       },
+      "AddChannelBitlinksRequest": {
+        "required": [
+          "campaign_guid",
+          "bitlinks"
+        ],
+        "type": "object",
+        "properties": {
+          "campaign_guid": {
+            "type": "string",
+            "description": "The campaign to associate the given bitlinks with on this channel. All bitlinks in the request are associated with this single campaign_guid."
+          },
+          "bitlinks": {
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Bitlink IDs to add to the channel, up to 100 per request. Bitlinks already associated with the channel are left untouched."
+          }
+        },
+        "example": {
+          "campaign_guid": "Ca1bcd2EFGh",
+          "bitlinks": [
+            "bit.ly/1234abcd",
+            "bit.ly/5678efgh"
+          ]
+        }
+      },
+      "AddChannelBitlinksResponse": {
+        "type": "object",
+        "properties": {
+          "channel_guid": {
+            "type": "string",
+            "description": "The GUID of the channel the bitlinks were added to."
+          },
+          "campaign_guid": {
+            "type": "string",
+            "description": "The GUID of the campaign the bitlinks are associated with on this channel."
+          },
+          "bitlinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Bitlink IDs now associated with the channel."
+          }
+        },
+        "example": {
+          "channel_guid": "Ha1bc2DefGh",
+          "campaign_guid": "Ca1bcd2EFGh",
+          "bitlinks": [
+            "bit.ly/1234abcd",
+            "bit.ly/5678efgh"
+          ]
+        }
+      },
       "OAuthApp": {
         "required": [
           "name",
@@ -15461,6 +16377,219 @@
             }
           }
         }
+      },
+      "BsdSearchResult": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string"
+          }
+        }
+      },
+      "BsdSearchResults": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BsdSearchResult"
+            }
+          },
+          "input_domain": {
+            "$ref": "#/components/schemas/InputDomain"
+          }
+        }
+      },
+      "InputDomain": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "DomainValidateBody": {
+        "required": [
+          "organization_guid",
+          "custom_domain"
+        ],
+        "type": "object",
+        "properties": {
+          "organization_guid": {
+            "type": "string"
+          },
+          "custom_domain": {
+            "type": "string"
+          },
+          "group_guids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "prevalidate": {
+            "type": "boolean",
+            "description": "Check the domain without adding it. The response says whether the domain can be used, and no custom domain is created. Use this to catch a typo or a domain another account holds before you commit."
+          }
+        },
+        "description": "custom domain in validation queue"
+      },
+      "DomainValidate": {
+        "required": [
+          "organization_guid",
+          "custom_domain"
+        ],
+        "type": "object",
+        "properties": {
+          "organization_guid": {
+            "type": "string"
+          },
+          "custom_domain": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "subdomain": {
+            "type": "string"
+          },
+          "group_guids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "prevalidate": {
+            "type": "boolean"
+          }
+        },
+        "description": "custom domain in validation queue"
+      },
+      "DomainUpdate": {
+        "type": "object",
+        "properties": {
+          "root_redirect": {
+            "type": "string"
+          },
+          "wildcard_redirect": {
+            "type": "string"
+          },
+          "https_enabled": {
+            "type": "boolean"
+          },
+          "hsts_enabled": {
+            "type": "boolean"
+          },
+          "upgrade_insecure_requests": {
+            "type": "boolean"
+          }
+        },
+        "description": "The settings to change on a custom domain. Send only the settings to change."
+      },
+      "CustomDomainBody": {
+        "type": "object",
+        "properties": {
+          "custom_domain": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "group_guids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ssl_configuration_error": {
+            "type": "string"
+          },
+          "configuration_last_check_ts": {
+            "type": "string"
+          },
+          "root_redirect": {
+            "type": "string"
+          },
+          "https_bitlinks": {
+            "type": "boolean"
+          },
+          "ssl_autoconfigure_error": {
+            "type": "boolean"
+          },
+          "https_enabled": {
+            "type": "boolean"
+          },
+          "hsts_enabled": {
+            "type": "boolean"
+          },
+          "created": {
+            "type": "string",
+            "description": "ISO_TIMESTAMP"
+          },
+          "wildcard_redirect": {
+            "type": "string"
+          },
+          "validation_status": {
+            "$ref": "#/components/schemas/CustomDomainBodyValidationStatus"
+          },
+          "validation_error": {
+            "type": "string"
+          },
+          "deeplink_apps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MinimalDeeplinkApp"
+            }
+          },
+          "upgrade_insecure_requests": {
+            "type": "boolean"
+          },
+          "ssl_cert": {
+            "$ref": "#/components/schemas/PublicSslCert"
+          }
+        },
+        "description": "information about given custom domain"
+      },
+      "CustomDomains": {
+        "type": "object",
+        "properties": {
+          "custom_domains": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomDomainBody"
+            }
+          }
+        }
+      },
+      "PublicSslCert": {
+        "type": "object",
+        "properties": {
+          "valid_end": {
+            "type": "string"
+          },
+          "custom_cert": {
+            "type": "boolean"
+          },
+          "issuer": {
+            "type": "string"
+          }
+        },
+        "description": "SSL Certification"
+      },
+      "MinimalDeeplinkApp": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string"
+          },
+          "os": {
+            "$ref": "#/components/schemas/MobileOs"
+          }
+        },
+        "description": "Deep Linking object"
       },
       "MobileOs": {
         "enum": [
@@ -15615,6 +16744,115 @@
               "$ref": "#/components/schemas/HistoricalFeatureUsage"
             },
             "description": "an array of all of the group\u0027s historical feature usage"
+          }
+        }
+      },
+      "PurchaseBsdBody": {
+        "type": "object",
+        "properties": {
+          "agreement_keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "domain": {
+            "type": "string"
+          },
+          "organization_guid": {
+            "type": "string"
+          }
+        }
+      },
+      "PurchaseBsdResponse": {
+        "type": "object",
+        "properties": {
+          "custom_domain": {
+            "type": "string",
+            "description": "the custom domain the registration created"
+          },
+          "organization_guid": {
+            "type": "string"
+          },
+          "validation_status": {
+            "$ref": "#/components/schemas/PendingValidationStatus"
+          }
+        }
+      },
+      "DomainAgreements": {
+        "type": "object",
+        "properties": {
+          "domain_agreements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DomainAgreement"
+            }
+          }
+        }
+      },
+      "DomainDns": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "the requested domain"
+          },
+          "dns_provider": {
+            "$ref": "#/components/schemas/DomainDnsDnsProvider"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainDnsType"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "the records returned by the lookup"
+          },
+          "required_records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DomainDnsRequiredRecordsItem"
+            },
+            "description": "The records to create at your registrar for the domain to verify. A root domain needs the A records. A subdomain needs the CNAME record."
+          },
+          "records_valid": {
+            "type": "boolean",
+            "description": "whether the returned records represent a valid configuration"
+          }
+        },
+        "example": {
+          "dns_provider": "namecheap",
+          "domain": "my.domain.com",
+          "type": "CNAME",
+          "records": [
+            "cname.bitly.com"
+          ],
+          "required_records": [
+            {
+              "type": "CNAME",
+              "host": "my",
+              "value": "cname.bitly.com"
+            }
+          ],
+          "records_valid": true
+        }
+      },
+      "DomainAgreement": {
+        "type": "object",
+        "properties": {
+          "agreement_key": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
           }
         }
       },
@@ -18946,6 +20184,27 @@
         },
         "description": "UNPROCESSABLE_ENTITY"
       },
+      "TooManyRequests": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldError"
+            }
+          }
+        },
+        "description": "TOO_MANY_REQUESTS"
+      },
       "MonthlyLimitExceeded": {
         "type": "object",
         "properties": {
@@ -19134,6 +20393,27 @@
         "example": {
           "code": "DNS_CONFIGURATION_ERROR"
         }
+      },
+      "Timeout": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldError"
+            }
+          }
+        },
+        "description": "TIMEOUT"
       },
       "Gone": {
         "type": "object",
@@ -19596,6 +20876,22 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
+        }
+      },
+      "DomainDnsRequiredRecordsItem": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/DomainDnsRequiredRecordsItemType"
+          },
+          "host": {
+            "type": "string",
+            "description": "the record name at your registrar, where @ means the root of the zone"
+          },
+          "value": {
+            "type": "string",
+            "description": "what the record points to"
+          }
         }
       },
       "DigitalBusinessCardContentFile": {
@@ -20457,6 +21753,109 @@
           ]
         }
       },
+      "CustomDomainBodyValidationStatus": {
+        "enum": [
+          "ok",
+          "pending",
+          "error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CustomDomainBodyValidationStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ok",
+              "name": "Ok"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            }
+          ]
+        }
+      },
+      "PendingValidationStatus": {
+        "enum": [
+          "pending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "a registration always starts pending, because Bitly configures the DNS after it",
+        "x-ms-enum": {
+          "name": "PendingValidationStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            }
+          ]
+        }
+      },
+      "DomainDnsDnsProvider": {
+        "enum": [
+          "unknown",
+          "godaddy",
+          "cloudflare",
+          "namecheap"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "the detected DNS provider for the requested domain",
+        "example": "godaddy",
+        "x-ms-enum": {
+          "name": "DomainDnsDnsProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unknown",
+              "name": "Unknown"
+            },
+            {
+              "value": "godaddy",
+              "name": "Godaddy"
+            },
+            {
+              "value": "cloudflare",
+              "name": "Cloudflare"
+            },
+            {
+              "value": "namecheap",
+              "name": "Namecheap"
+            }
+          ]
+        }
+      },
+      "DomainDnsType": {
+        "enum": [
+          "A",
+          "CNAME",
+          "unknown"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "the type of DNS record returned",
+        "x-ms-enum": {
+          "name": "DomainDnsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "CNAME",
+              "name": "Cname"
+            },
+            {
+              "value": "unknown",
+              "name": "Unknown"
+            }
+          ]
+        }
+      },
       "GroupExportRequestBodyExportType": {
         "enum": [
           "link_engagements_batch",
@@ -20829,6 +22228,25 @@
             {
               "value": "radial",
               "name": "Radial"
+            }
+          ]
+        }
+      },
+      "DomainDnsRequiredRecordsItemType": {
+        "enum": [
+          "A",
+          "CNAME"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "the DNS record type to create",
+        "x-ms-enum": {
+          "name": "DomainDnsRequiredRecordsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "CNAME",
+              "name": "Cname"
             }
           ]
         }
@@ -21343,6 +22761,16 @@
         },
         "example": "Oa1bcd234eF"
       },
+      "OrganizationGUIDRequired": {
+        "name": "organization_guid",
+        "in": "query",
+        "description": "A GUID for a Bitly organization",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "Oa1bcd234eF"
+      },
       "QRCodeID": {
         "name": "qrcode_id",
         "in": "path",
@@ -21774,6 +23202,26 @@
         },
         "example": "1234a56b789cd0e123456fg7h8901j123km45n6p"
       },
+      "DomainSearchQuery": {
+        "name": "query",
+        "in": "query",
+        "description": "the domain name to search for, up to 32 characters",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "acme"
+      },
+      "DomainSearchLimit": {
+        "name": "limit",
+        "in": "query",
+        "description": "limit the amount of results returned, 25 maximum",
+        "schema": {
+          "type": "integer",
+          "default": 25
+        },
+        "example": 10
+      },
       "Query": {
         "name": "query",
         "in": "query",
@@ -21823,6 +23271,26 @@
           "type": "string"
         },
         "example": "2023-10-04"
+      },
+      "Domain": {
+        "name": "domain",
+        "in": "path",
+        "description": "a web domain",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "bit.ly"
+      },
+      "CustomDomain": {
+        "name": "custom_domain",
+        "in": "path",
+        "description": "a custom domain on your account",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "chauncey.ly"
       },
       "Path": {
         "name": "path",
@@ -21909,6 +23377,10 @@
     {
       "name": "BSDs",
       "description": "Branded short domains (BSDs) are the custom domains used to brand your links. A BSD can be added to a Bitly organization and may be assigned to one or more groups. They can contain up to 32 characters.\n"
+    },
+    {
+      "name": "Custom Domains",
+      "description": "Set up a custom domain, the domain that replaces bit.ly in your short links. Register a domain that your plan includes, where Bitly configures the DNS for you. Or add a domain you already own, then create the DNS records Bitly returns at your registrar. DNS verification runs asynchronously in both cases, and takes 24 to 48 hours, so read the domain for its validation_status when your user returns.\n"
     },
     {
       "name": "Bitlinks",

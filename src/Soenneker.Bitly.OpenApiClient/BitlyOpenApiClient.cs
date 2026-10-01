@@ -13,6 +13,8 @@ using Soenneker.Bitly.OpenApiClient.Bsds;
 using Soenneker.Bitly.OpenApiClient.Campaigns;
 using Soenneker.Bitly.OpenApiClient.Channels;
 using Soenneker.Bitly.OpenApiClient.Custom_bitlinks;
+using Soenneker.Bitly.OpenApiClient.Custom_domains;
+using Soenneker.Bitly.OpenApiClient.Domains;
 using Soenneker.Bitly.OpenApiClient.Expand;
 using Soenneker.Bitly.OpenApiClient.Groups;
 using Soenneker.Bitly.OpenApiClient.Organizations;
@@ -68,6 +70,16 @@ namespace Soenneker.Bitly.OpenApiClient
         public global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Custom_bitlinksRequestBuilder Custom_bitlinks
         {
             get => new global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Custom_bitlinksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The custom_domains property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Custom_domains.Custom_domainsRequestBuilder Custom_domains
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Custom_domains.Custom_domainsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The domains property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Domains.DomainsRequestBuilder Domains
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The expand property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Expand.ExpandRequestBuilder Expand
