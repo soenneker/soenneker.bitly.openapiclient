@@ -321,7 +321,14 @@
         "operationId": "DeleteBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           }
         ],
         "responses": {
@@ -406,7 +413,14 @@
         "operationId": "UpdateBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           }
         ],
         "requestBody": {
@@ -553,7 +567,14 @@
         "operationId": "GetBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           }
         ],
         "responses": {
@@ -732,7 +753,14 @@
         "operationId": "GetClicksForBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -824,7 +852,14 @@
         "operationId": "GetClicksSummaryForBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -910,7 +945,14 @@
         "operationId": "GetEngagements",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1012,7 +1054,14 @@
         "operationId": "GetEngagementsSummary",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1108,7 +1157,14 @@
         "operationId": "GetAgenticTrafficForBitlink",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1230,7 +1286,14 @@
         "operationId": "GetMetricsForBitlinkByCountries",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1345,7 +1408,14 @@
         "operationId": "GetMetricsForBitlinkByCities",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1470,7 +1540,14 @@
         "operationId": "GetMetricsForBitlinkByDevices",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1595,7 +1672,14 @@
         "operationId": "GetMetricsForBitlinkByReferrers",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1710,7 +1794,14 @@
         "operationId": "GetMetricsForBitlinkByReferrerName",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1815,7 +1906,14 @@
         "operationId": "GetMetricsForBitlinkByReferringDomains",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -1924,7 +2022,14 @@
         "operationId": "GetMetricsForBitlinkByReferrersByDomains",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Bitlink"
+            "name": "bitlink",
+            "in": "path",
+            "description": "A Bitlink made of the domain and hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly/12a4b6c"
           },
           {
             "$ref": "#/components/parameters/TimeUnit"
@@ -2157,10 +2262,12 @@
           {
             "name": "customBitlink",
             "in": "path",
+            "description": "A Custom Bitlink made of the domain and keyword",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "chauncey.ly/chauncey"
           }
         ],
         "requestBody": {
@@ -2277,10 +2384,12 @@
           {
             "name": "customBitlink",
             "in": "path",
+            "description": "A Custom Bitlink made of the domain and keyword",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "chauncey.ly/chauncey"
           }
         ],
         "responses": {
@@ -2377,6 +2486,16 @@
         "operationId": "GetCustomBitlinkMetricsByDestination",
         "parameters": [
           {
+            "name": "customBitlink",
+            "in": "path",
+            "description": "A Custom Bitlink made of the domain and keyword",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "chauncey.ly/chauncey"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -2384,14 +2503,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "customBitlink",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -2488,6 +2599,16 @@
         "operationId": "GetClicksForCustomBitlink",
         "parameters": [
           {
+            "name": "customBitlink",
+            "in": "path",
+            "description": "A Custom Bitlink made of the domain and keyword",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "chauncey.ly/chauncey"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -2495,14 +2616,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "customBitlink",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -2708,10 +2821,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "requestBody": {
@@ -2808,10 +2923,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "responses": {
@@ -2888,15 +3005,17 @@
         "operationId": "GetGroupTags",
         "parameters": [
           {
-            "$ref": "#/components/parameters/TagType"
-          },
-          {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
+            "$ref": "#/components/parameters/TagType"
           }
         ],
         "responses": {
@@ -2983,6 +3102,16 @@
         "operationId": "GetBitlinksByGroup",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/Size"
           },
           {
@@ -3038,14 +3167,6 @@
           },
           {
             "$ref": "#/components/parameters/EncodingLogin"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3112,10 +3233,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "requestBody": {
@@ -3212,6 +3335,16 @@
         "operationId": "GetTopLinksAndQrCodesByEngagements",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -3222,14 +3355,6 @@
           },
           {
             "$ref": "#/components/parameters/SortedSize"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3306,7 +3431,24 @@
         "operationId": "GetSortedBitlinks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Sort"
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
+            "name": "sort",
+            "in": "path",
+            "description": "The type of sorting that you would like to do",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ClicksSort"
+            },
+            "example": "clicks"
           },
           {
             "$ref": "#/components/parameters/TimeUnitOptional"
@@ -3319,14 +3461,6 @@
           },
           {
             "$ref": "#/components/parameters/SortedSize"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3405,10 +3539,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "responses": {
@@ -3475,10 +3611,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "requestBody": {
@@ -3585,6 +3723,16 @@
         "operationId": "GetGroupShortenCounts",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3592,14 +3740,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3676,6 +3816,16 @@
         "operationId": "GetGroupMetricsByCountries",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3686,14 +3836,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3776,6 +3918,16 @@
         "operationId": "GetGroupMetricsByCities",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3786,14 +3938,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3886,6 +4030,16 @@
         "operationId": "GetGroupMetricsByDevices",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -3896,14 +4050,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3996,6 +4142,16 @@
         "operationId": "GetGroupMetricsByReferringNetworks",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4006,14 +4162,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4080,6 +4228,16 @@
         "operationId": "GetGroupMetricsByReferrer",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4090,14 +4248,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4180,6 +4330,16 @@
         "operationId": "GetGroupTopMetrics",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4190,14 +4350,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4264,6 +4416,16 @@
         "operationId": "GetGroupMetricsOverTime",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4271,14 +4433,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4345,6 +4499,16 @@
         "operationId": "GetGroupClicks",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4352,14 +4516,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4448,10 +4604,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "requestBody": {
@@ -4622,10 +4780,12 @@
           {
             "name": "organizationGuid",
             "in": "path",
+            "description": "A GUID for a Bitly organization",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Oa1bcd234eF"
           }
         ],
         "responses": {
@@ -4692,6 +4852,16 @@
         "operationId": "GetOrganizationShortenCounts",
         "parameters": [
           {
+            "name": "organizationGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Oa1bcd234eF"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -4699,14 +4869,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "organizationGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4775,10 +4937,12 @@
           {
             "name": "organizationGuid",
             "in": "path",
+            "description": "A GUID for a Bitly organization",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Oa1bcd234eF"
           }
         ],
         "responses": {
@@ -4847,10 +5011,12 @@
           {
             "name": "customDomain",
             "in": "path",
+            "description": "a custom domain on your account",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "chauncey.ly"
           }
         ],
         "responses": {
@@ -4937,10 +5103,12 @@
           {
             "name": "customDomain",
             "in": "path",
+            "description": "a custom domain on your account",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "chauncey.ly"
           }
         ],
         "requestBody": {
@@ -5234,15 +5402,17 @@
         "operationId": "GetCustomDomainDns",
         "parameters": [
           {
-            "$ref": "#/components/parameters/OrganizationGUIDRequired"
-          },
-          {
             "name": "customDomain",
             "in": "path",
+            "description": "a custom domain on your account",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "chauncey.ly"
+          },
+          {
+            "$ref": "#/components/parameters/OrganizationGUIDRequired"
           }
         ],
         "responses": {
@@ -5670,10 +5840,12 @@
           {
             "name": "campaignGuid",
             "in": "path",
+            "description": "A GUID for a Bitly campaign",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ca1bcd2EFGh"
           }
         ],
         "responses": {
@@ -5760,10 +5932,12 @@
           {
             "name": "campaignGuid",
             "in": "path",
+            "description": "A GUID for a Bitly campaign",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ca1bcd2EFGh"
           }
         ],
         "requestBody": {
@@ -6072,10 +6246,12 @@
           {
             "name": "channelGuid",
             "in": "path",
+            "description": "A GUID for a Bitly Channel",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ha1bc2DefGh"
           }
         ],
         "responses": {
@@ -6162,10 +6338,12 @@
           {
             "name": "channelGuid",
             "in": "path",
+            "description": "A GUID for a Bitly Channel",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ha1bc2DefGh"
           }
         ],
         "requestBody": {
@@ -6284,10 +6462,12 @@
           {
             "name": "channelGuid",
             "in": "path",
+            "description": "A GUID for a Bitly Channel",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ha1bc2DefGh"
           }
         ],
         "requestBody": {
@@ -6413,10 +6593,12 @@
           {
             "name": "clientId",
             "in": "path",
+            "description": "The client ID of an OAuth app",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "1234a56b789cd0e123456fg7h8901j123km45n6p"
           }
         ],
         "responses": {
@@ -6736,7 +6918,14 @@
         "operationId": "FetchDomainAgreements",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Domain"
+            "name": "domain",
+            "in": "path",
+            "description": "a web domain",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "bit.ly"
           },
           {
             "$ref": "#/components/parameters/OrganizationGUIDFilter"
@@ -6818,10 +7007,12 @@
           {
             "name": "organizationGuid",
             "in": "path",
+            "description": "A GUID for a Bitly organization",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Oa1bcd234eF"
           }
         ],
         "responses": {
@@ -7022,10 +7213,12 @@
           {
             "name": "webhookGuid",
             "in": "path",
+            "description": "A GUID for a Bitly webhook",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Wa1bcDefG23"
           }
         ],
         "responses": {
@@ -7122,10 +7315,12 @@
           {
             "name": "webhookGuid",
             "in": "path",
+            "description": "A GUID for a Bitly webhook",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Wa1bcDefG23"
           }
         ],
         "requestBody": {
@@ -7242,10 +7437,12 @@
           {
             "name": "webhookGuid",
             "in": "path",
+            "description": "A GUID for a Bitly webhook",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Wa1bcDefG23"
           }
         ],
         "responses": {
@@ -7327,10 +7524,12 @@
           {
             "name": "webhookGuid",
             "in": "path",
+            "description": "A GUID for a Bitly webhook",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Wa1bcDefG23"
           }
         ],
         "responses": {
@@ -7419,10 +7618,12 @@
           {
             "name": "organizationGuid",
             "in": "path",
+            "description": "A GUID for a Bitly organization",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Oa1bcd234eF"
           }
         ],
         "responses": {
@@ -7703,10 +7904,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "requestBody": {
@@ -7797,10 +8000,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "requestBody": {
@@ -7891,19 +8096,21 @@
         "operationId": "GetSite",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "name": "include_blocks",
             "in": "query",
             "description": "When true, the response includes a blocks array holding the site\u0027s draft content blocks, ordered by container and then by sort order within that container. Blocks nested inside a grid or carousel carry that container\u0027s ID in container_id. The array is omitted entirely when this parameter is not set, and is an empty array when the site has no blocks.\n",
             "schema": {
               "type": "boolean"
-            }
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -7981,10 +8188,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "responses": {
@@ -8056,10 +8265,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "requestBody": {
@@ -8155,10 +8366,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "responses": {
@@ -8227,10 +8440,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "requestBody": {
@@ -8322,10 +8537,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "responses": {
@@ -8395,6 +8612,16 @@
         "operationId": "GetSitesForGroup",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/SearchAfter"
           },
           {
@@ -8402,14 +8629,6 @@
           },
           {
             "$ref": "#/components/parameters/SitesURLParam"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -8466,6 +8685,16 @@
         "operationId": "DeleteSiteRedirect",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "name": "domain",
             "in": "path",
             "description": "The custom domain the redirect is configured on",
@@ -8484,14 +8713,6 @@
               "type": "string"
             },
             "example": "promo"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -8513,10 +8734,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "requestBody": {
@@ -8637,10 +8860,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "requestBody": {
@@ -8790,18 +9015,22 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           },
           {
             "name": "blockId",
             "in": "path",
+            "description": "A GUID for a Bitly Site content block",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "La1bcd234eF"
           }
         ],
         "requestBody": {
@@ -8909,18 +9138,22 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           },
           {
             "name": "blockId",
             "in": "path",
+            "description": "A GUID for a Bitly Site content block",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "La1bcd234eF"
           }
         ],
         "responses": {
@@ -8980,7 +9213,7 @@
         }
       }
     },
-    "/sites/{launchpadId}/buttons/youtubeVideo/prevalidate": {
+    "/sites/{siteId}/buttons/youtubeVideo/prevalidate": {
       "post": {
         "tags": [
           "Bitly Sites"
@@ -8990,12 +9223,14 @@
         "operationId": "PrevalidateYouTubeVideoButton",
         "parameters": [
           {
-            "name": "launchpadId",
+            "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Link Launchpad",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Sa1bcd234eF"
           }
         ],
         "requestBody": {
@@ -9077,10 +9312,12 @@
           {
             "name": "siteId",
             "in": "path",
+            "description": "A GUID for a Bitly Site",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "M0000guid01"
           }
         ],
         "requestBody": {
@@ -10043,6 +10280,16 @@
         "operationId": "GetMetricsForSitesByCountries",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -10053,14 +10300,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -10137,6 +10376,16 @@
         "operationId": "GetMetricsForSiteByCities",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -10147,14 +10396,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -10241,6 +10482,16 @@
         "operationId": "GetMetricsForSiteByDevices",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -10251,14 +10502,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -10345,6 +10588,16 @@
         "operationId": "GetMetricsForSiteByReferrers",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -10355,14 +10608,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -10522,6 +10767,16 @@
         "operationId": "GetLinkPerformanceForSite",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -10535,14 +10790,6 @@
           },
           {
             "$ref": "#/components/parameters/Page"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -10609,6 +10856,16 @@
         "operationId": "GetViewsForSite",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -10619,14 +10876,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -10693,6 +10942,16 @@
         "operationId": "GetViewsSummaryForSite",
         "parameters": [
           {
+            "name": "siteId",
+            "in": "path",
+            "description": "A GUID for a Bitly Site",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "M0000guid01"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnitOptional"
           },
           {
@@ -10703,14 +10962,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "siteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -11272,19 +11523,21 @@
             "example": "image/svg\u002Bxml"
           },
           {
+            "name": "qrcodeId",
+            "in": "path",
+            "description": "The QR Code ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Qabcde12345"
+          },
+          {
             "name": "format",
             "in": "query",
             "description": "The format type of the image. If there is an image format in the header it takes precedence.",
             "schema": {
               "$ref": "#/components/schemas/GetQrCodeImagePublicFormatParameter"
-            }
-          },
-          {
-            "name": "qrcodeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -11633,10 +11886,12 @@
           {
             "name": "qrcodeId",
             "in": "path",
+            "description": "The QR Code ID",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Qabcde12345"
           }
         ],
         "responses": {
@@ -11713,10 +11968,12 @@
           {
             "name": "qrcodeId",
             "in": "path",
+            "description": "The QR Code ID",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Qabcde12345"
           }
         ],
         "responses": {
@@ -11803,6 +12060,16 @@
         "operationId": "ListQrMinimal",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/FilterHasRenderCustomizations"
           },
           {
@@ -11846,14 +12113,6 @@
           },
           {
             "$ref": "#/components/parameters/Tags"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -11910,10 +12169,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "requestBody": {
@@ -12030,6 +12291,16 @@
         "operationId": "GetScanMetricsForQrCode",
         "parameters": [
           {
+            "name": "qrcodeId",
+            "in": "path",
+            "description": "The QR Code ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Qabcde12345"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12037,14 +12308,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "qrcodeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -12131,6 +12394,16 @@
         "operationId": "GetScanMetricsSummaryForQrCode",
         "parameters": [
           {
+            "name": "qrcodeId",
+            "in": "path",
+            "description": "The QR Code ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Qabcde12345"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12138,14 +12411,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "qrcodeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -12232,6 +12497,16 @@
         "operationId": "GetScanMetricsForQrCodeByCountries",
         "parameters": [
           {
+            "name": "qrcodeId",
+            "in": "path",
+            "description": "The QR Code ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Qabcde12345"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12242,14 +12517,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "qrcodeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -12342,6 +12609,16 @@
         "operationId": "GetScanMetricsForQrCodeByCities",
         "parameters": [
           {
+            "name": "qrcodeId",
+            "in": "path",
+            "description": "The QR Code ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Qabcde12345"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12352,14 +12629,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "qrcodeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -12462,6 +12731,16 @@
         "operationId": "GetScanMetricsForQrCodeByDevicesOs",
         "parameters": [
           {
+            "name": "qrcodeId",
+            "in": "path",
+            "description": "The QR Code ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Qabcde12345"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12472,14 +12751,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "qrcodeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -12582,6 +12853,16 @@
         "operationId": "GetScanMetricsForQrCodeByBrowser",
         "parameters": [
           {
+            "name": "qrcodeId",
+            "in": "path",
+            "description": "The QR Code ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Qabcde12345"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -12592,14 +12873,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "qrcodeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -12943,15 +13216,17 @@
         "operationId": "GetGroupFeatureUsage",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Name"
-          },
-          {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
+            "$ref": "#/components/parameters/Name"
           }
         ],
         "responses": {
@@ -13018,6 +13293,16 @@
         "operationId": "GetGroupHistoricalUsage",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/Name"
           },
           {
@@ -13028,14 +13313,6 @@
           },
           {
             "$ref": "#/components/parameters/TimeUnitDWM"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13104,10 +13381,12 @@
           {
             "name": "groupGuid",
             "in": "path",
+            "description": "A GUID for a Bitly group",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "Ba1bc23dE4F"
           }
         ],
         "responses": {
@@ -13164,6 +13443,16 @@
         "operationId": "GetGroupLinkClicksOverTime",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13171,14 +13460,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13245,6 +13526,16 @@
         "operationId": "GetGroupLinkClicksByDevice",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13255,14 +13546,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13329,6 +13612,16 @@
         "operationId": "GetGroupLinkClicksByReferrer",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13339,14 +13632,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13413,6 +13698,16 @@
         "operationId": "GetGroupLinkClicksByCountry",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13423,14 +13718,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13497,6 +13784,16 @@
         "operationId": "GetGroupLinkClicksByCity",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13507,14 +13804,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13581,6 +13870,16 @@
         "operationId": "GetGroupTopLinkClicks",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13591,14 +13890,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13665,6 +13956,16 @@
         "operationId": "GetGroupCodeScansOverTime",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13672,14 +13973,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13746,6 +14039,16 @@
         "operationId": "GetGroupCodeScansByCountry",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13753,14 +14056,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13827,6 +14122,16 @@
         "operationId": "GetGroupCodeScansByCity",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13834,14 +14139,6 @@
           },
           {
             "$ref": "#/components/parameters/UnitReferenceTimeStamp"
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -13908,6 +14205,16 @@
         "operationId": "GetGroupTopCodeScans",
         "parameters": [
           {
+            "name": "groupGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Ba1bc23dE4F"
+          },
+          {
             "$ref": "#/components/parameters/TimeUnit"
           },
           {
@@ -13922,14 +14229,6 @@
             "description": "When true, ranks results by decoupled QR scan count and returns a TopLinksAndQRCodes response with links and QR codes partitioned into separate lists and a unified sorted_engagements ordering.\n",
             "schema": {
               "type": "boolean"
-            }
-          },
-          {
-            "name": "groupGuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -13997,7 +14296,6 @@
           "promote_install"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "InstallPreference",
           "modelAsString": false,
@@ -14409,7 +14707,15 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DeletedLink"
-            }
+            },
+            "example": [
+              {
+                "id": "bit.ly/12a4b6c"
+              },
+              {
+                "id": "chauncey.ly/documentation"
+              }
+            ]
           }
         }
       },
@@ -14919,7 +15225,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "the unit of time queried for (minute, hour, day, week, month)",
         "x-ms-enum": {
           "name": "TimeUnit",
@@ -14955,7 +15260,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "the unit of time queried for (day, week, month)",
         "x-ms-enum": {
           "name": "TimeUnitDwm",
@@ -15208,7 +15512,6 @@
           "text_block"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Available button types for Launchpad content",
         "x-ms-enum": {
           "name": "LaunchpadButtonTypeEnum",
@@ -15363,7 +15666,6 @@
           "digital_business_card"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Available button types for Site content",
         "x-ms-enum": {
           "name": "SiteButtonTypeEnum",
@@ -16597,7 +16899,6 @@
           "android"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MobileOs",
           "modelAsString": false,
@@ -17295,7 +17596,6 @@
           "frame"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of banner type options on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteBannerType",
@@ -17337,7 +17637,6 @@
           "xl"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of profile image sizes on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteProfileImageSize",
@@ -17375,7 +17674,6 @@
           "lg"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of profile image border sizes on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteProfileImageBorderSize",
@@ -17410,7 +17708,6 @@
           "repeating"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of the profile image type options on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteProfileImageType",
@@ -17434,7 +17731,6 @@
           "right"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of the profile image locations available on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteProfileImageLocation",
@@ -17462,7 +17758,6 @@
           "bottom"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of the available text locations on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteTextLocation",
@@ -17490,7 +17785,6 @@
           "square"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of profile image shapes on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteProfileImageShape",
@@ -17519,7 +17813,6 @@
           "lg"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of text sizes on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteTextSizeEnum",
@@ -17550,7 +17843,6 @@
           "center"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of text alignment values on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteTextAlignmentEnum",
@@ -17574,7 +17866,6 @@
           "above_and_below"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of border type values on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteTextBorderTypeEnum",
@@ -17602,7 +17893,6 @@
           "image"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of style preference values on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteStylePreference",
@@ -17630,7 +17920,6 @@
           "semi_bold"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Enum of text sizes on a Bitly Site",
         "x-ms-enum": {
           "name": "SiteTextWeightEnum",
@@ -17663,7 +17952,6 @@
           "text_block"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Available block types for Site blocks",
         "x-ms-enum": {
           "name": "SiteBlockTypeEnum",
@@ -17710,7 +17998,6 @@
           "grid"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Available container types",
         "x-ms-enum": {
           "name": "SiteContainerTypeEnum",
@@ -17737,7 +18024,6 @@
           "text_block"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Block types that can be created directly (grid and carousel are created as containers)",
         "x-ms-enum": {
           "name": "SiteBlockCreateTypeEnum",
@@ -17777,7 +18063,6 @@
           "repeat"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Available image alignment types for Site background images",
         "x-ms-enum": {
           "name": "SiteImageAlignment",
@@ -18164,7 +18449,6 @@
         "description": "Versioned bitlink data from decodes_api for rendering links on Sites and Launchpads"
       },
       "SiteContentUnion": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/BitlinkContent"
@@ -18184,108 +18468,7 @@
           {
             "$ref": "#/components/schemas/TextBlockContent"
           }
-        ],
-        "properties": {
-          "bitlink_id": {
-            "type": "string",
-            "description": "The bitlink ID (domain/hash) of the short link displayed on this block",
-            "example": "bit.ly/GzmMT6"
-          },
-          "link_title": {
-            "type": "string",
-            "description": "Display title of the bitlink block, up to 255 characters",
-            "example": "Short links, big results"
-          },
-          "description": {
-            "type": "string",
-            "description": "Optional subtitle shown on the bitlink block, up to 255 characters",
-            "example": "my description"
-          },
-          "is_pinned": {
-            "type": "boolean",
-            "description": "Whether this bitlink block is pinned to the top of the site"
-          },
-          "image_url": {
-            "type": "string",
-            "description": "Public URL of the thumbnail image shown on this bitlink block"
-          },
-          "image_guid": {
-            "type": "string",
-            "description": "GUID of the uploaded thumbnail image for this bitlink block"
-          },
-          "crop": {
-            "type": "string",
-            "description": "JSON-encoded crop rectangle for the thumbnail image, with Min and Max coordinates in the range 0-1",
-            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
-          },
-          "video_url": {
-            "type": "string",
-            "example": "youtube.com/embed/"
-          },
-          "thumbnail_url": {
-            "type": "string",
-            "example": "https://i.ytimg.com"
-          },
-          "domain": {
-            "type": "string",
-            "example": "bit.ly"
-          },
-          "url": {
-            "type": "string",
-            "example": "facebook.com/profile"
-          },
-          "channel": {
-            "type": "string",
-            "example": "facebook"
-          },
-          "aspect_ratio": {
-            "type": "string",
-            "example": "1:1"
-          },
-          "digital_business_card_id": {
-            "type": "string"
-          },
-          "layout": {
-            "$ref": "#/components/schemas/DigitalBusinessCardLayout"
-          },
-          "first_name": {
-            "type": "string",
-            "example": "Jane"
-          },
-          "last_name": {
-            "type": "string",
-            "example": "Doe"
-          },
-          "pronouns": {
-            "type": "string",
-            "example": "she/them"
-          },
-          "company": {
-            "type": "string",
-            "example": "Bitly"
-          },
-          "job_title": {
-            "type": "string",
-            "example": "Developer"
-          },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DigitalBusinessCardContact"
-            }
-          },
-          "download_enabled": {
-            "type": "boolean",
-            "example": true
-          },
-          "file": {
-            "$ref": "#/components/schemas/DigitalBusinessCardContentFile"
-          },
-          "text": {
-            "type": "string",
-            "example": "Hello, world!"
-          }
-        }
+        ]
       },
       "SiteBlockRequest": {
         "type": "object",
@@ -18387,7 +18570,6 @@
           "inline"
         ],
         "type": "string",
-        "additionalProperties": false,
         "example": "button",
         "x-ms-enum": {
           "name": "DigitalBusinessCardLayout",
@@ -18501,7 +18683,6 @@
           "justified"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TextBlockAppearanceRequestAlignmentEnum",
           "modelAsString": false,
@@ -18533,7 +18714,6 @@
           "extra_large"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TextBlockAppearanceRequestFontSizeEnum",
           "modelAsString": false,
@@ -19906,7 +20086,6 @@
           "text"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The type of dynamic/static content the QR serves, e.g. Link In Bio page, micro site, bitlink, email, text, Wifi, etc.",
         "x-ms-enum": {
           "name": "QrCodeTypeEnum",
@@ -19953,7 +20132,6 @@
           "android"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Platform (OS) values for use in dynamic routing rules (os_match / os_exclude)",
         "x-ms-enum": {
           "name": "DynamicRoutingPlatformEnum",
@@ -19977,7 +20155,6 @@
           "desktop"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Device type values for use in dynamic routing rules (device_match / device_exclude)",
         "x-ms-enum": {
           "name": "DynamicRoutingDeviceEnum",
@@ -20013,7 +20190,6 @@
           "instagram"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "QrCodeFrameType",
           "modelAsString": false,
@@ -20080,7 +20256,6 @@
           "diamond"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "QrCodeDotPatternType",
           "modelAsString": false,
@@ -21054,7 +21229,6 @@
         }
       },
       "GetGroupTopCodeScans200Response": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/SortedLinks"
@@ -21062,33 +21236,7 @@
           {
             "$ref": "#/components/schemas/TopLinksAndQrCodes"
           }
-        ],
-        "properties": {
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BitlinkBody"
-            }
-          },
-          "sorted_links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ClickLink"
-            }
-          },
-          "qr_codes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QrCodeMinimal"
-            }
-          },
-          "sorted_engagements": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EngagementSubtotal"
-            }
-          }
-        }
+        ]
       },
       "ExamplePayload": {
         "type": "object",
@@ -21232,7 +21380,6 @@
           "any"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "SSO authentication requirement for this organization. Possible values: \u0022none\u0022, \u0022any\u0022. Omitted when no auth requirements are configured.\n",
         "x-ms-enum": {
           "name": "OrganizationRequireSso",
@@ -21255,7 +21402,6 @@
           "sms"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Two-factor authentication requirement for this organization. Possible values: \u0022none\u0022, \u0022sms\u0022. Omitted when no auth requirements are configured.\n",
         "x-ms-enum": {
           "name": "OrganizationRequire2Fa",
@@ -21281,7 +21427,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ClicksUnit",
           "modelAsString": false,
@@ -21318,7 +21463,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TotalEngagementsUnit",
           "modelAsString": false,
@@ -21355,7 +21499,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TotalEngagementsSummaryUnit",
           "modelAsString": false,
@@ -21392,7 +21535,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "BitlinkScansUnit",
           "modelAsString": false,
@@ -21429,7 +21571,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ClicksSummaryUnit",
           "modelAsString": false,
@@ -21466,7 +21607,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "BitlinkScansSummaryUnit",
           "modelAsString": false,
@@ -21503,7 +21643,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SiteViewMetricsUnit",
           "modelAsString": false,
@@ -21539,7 +21678,6 @@
           "devices"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SiteViewMetricsFacet",
           "modelAsString": false,
@@ -21577,7 +21715,6 @@
           "agents"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SiteCityViewMetricsFacet",
           "modelAsString": false,
@@ -21634,7 +21771,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SiteViewsSummaryUnit",
           "modelAsString": false,
@@ -21671,7 +21807,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SiteLinkPerformanceUnit",
           "modelAsString": false,
@@ -21708,7 +21843,6 @@
           "destinations"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "BaseScanMetricsFacet",
           "modelAsString": false,
@@ -21741,7 +21875,6 @@
           "referrers_by_domains"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ReferrersByDomainsFacet",
           "modelAsString": false,
@@ -21760,7 +21893,6 @@
           "error"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CustomDomainBodyValidationStatus",
           "modelAsString": false,
@@ -21785,7 +21917,6 @@
           "pending"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "a registration always starts pending, because Bitly configures the DNS after it",
         "x-ms-enum": {
           "name": "PendingValidationStatus",
@@ -21806,7 +21937,6 @@
           "namecheap"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "the detected DNS provider for the requested domain",
         "example": "godaddy",
         "x-ms-enum": {
@@ -21839,7 +21969,6 @@
           "unknown"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "the type of DNS record returned",
         "x-ms-enum": {
           "name": "DomainDnsType",
@@ -21863,7 +21992,6 @@
           "qr_codes_list"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Which export shape to produce.",
         "x-ms-enum": {
           "name": "GroupExportRequestBodyExportType",
@@ -21891,7 +22019,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Filter by archive state.",
         "x-ms-enum": {
           "name": "GroupExportFilterArchived",
@@ -21919,7 +22046,6 @@
           "qr_codes_list"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GroupExportResponseExportType",
           "modelAsString": false,
@@ -21948,7 +22074,6 @@
           "website"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DigitalBusinessCardContactContactMethod",
           "modelAsString": false,
@@ -21994,7 +22119,6 @@
           "homepage"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DigitalBusinessCardContactMethodType",
           "modelAsString": false,
@@ -22068,7 +22192,6 @@
           "banner_live"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SiteImageUploadImageUse",
           "modelAsString": false,
@@ -22106,7 +22229,6 @@
           "edit_tags"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "archive or edit_tags",
         "x-ms-enum": {
           "name": "BulkUpdateRequestAction",
@@ -22129,7 +22251,6 @@
           "edit_tags"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "archive or edit_tags",
         "x-ms-enum": {
           "name": "QrcBulkUpdateRequestAction",
@@ -22159,7 +22280,6 @@
           "concave"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The shape one of the QR code\u0027s corners should take",
         "x-ms-enum": {
           "name": "QrCodeCornerShape",
@@ -22211,7 +22331,6 @@
           "radial"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The style of the gradient. Can be either linear or radial.",
         "x-ms-enum": {
           "name": "QrCodeGradientStyle",
@@ -22238,7 +22357,6 @@
           "CNAME"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "the DNS record type to create",
         "x-ms-enum": {
           "name": "DomainDnsRequiredRecordsItemType",
@@ -22263,7 +22381,6 @@
           "shorten_counts"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetGroupLinkClicksByDevice200ResponseFacet",
           "modelAsString": false,
@@ -22310,7 +22427,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "Archived",
           "modelAsString": false,
@@ -22337,7 +22453,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "Deeplinks",
           "modelAsString": false,
@@ -22364,7 +22479,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainDeeplinks",
           "modelAsString": false,
@@ -22390,7 +22504,6 @@
           "qr_code"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TagType",
           "modelAsString": false,
@@ -22413,7 +22526,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterCustomBitlink",
           "modelAsString": false,
@@ -22440,7 +22552,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterHasRenderCustomizations",
           "modelAsString": false,
@@ -22467,7 +22578,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterIsGs1",
           "modelAsString": false,
@@ -22494,7 +22604,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterHasQrCodes",
           "modelAsString": false,
@@ -22521,7 +22630,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterIsExpired",
           "modelAsString": false,
@@ -22548,7 +22656,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterHasExpiration",
           "modelAsString": false,
@@ -22575,7 +22682,6 @@
           "both"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterHasDynamicRouting",
           "modelAsString": false,
@@ -22601,7 +22707,6 @@
           "long_url"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterQrCodeTypeItem",
           "modelAsString": false,
@@ -22622,7 +22727,6 @@
           "clicks"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ClicksSort",
           "modelAsString": false,
@@ -22644,7 +22748,6 @@
           "Recommended"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TemplateCategory",
           "modelAsString": false,
@@ -22675,7 +22778,6 @@
           "image/png"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CreateStaticQrCodePublicAcceptParameter",
           "modelAsString": false,
@@ -22701,7 +22803,6 @@
           "png"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CreateStaticQrCodePublicFormatParameter",
           "modelAsString": false,
@@ -22723,7 +22824,6 @@
           "png"
         ],
         "type": "string",
-        "additionalProperties": false,
         "example": "svg",
         "x-ms-enum": {
           "name": "GetQrCodeImagePublicFormatParameter",

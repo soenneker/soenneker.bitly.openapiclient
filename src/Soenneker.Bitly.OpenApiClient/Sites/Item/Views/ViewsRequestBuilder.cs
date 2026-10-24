@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Views
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{launchpad-id}\views
+    /// Builds and executes requests for operations under \sites\{siteId}\views
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ViewsRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Views
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/views?units={units}{&size*,unit*,unit_reference*}", pathParameters)
+        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/views?units={units}{&size*,unit*,unit_reference*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Views
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/views?units={units}{&size*,unit*,unit_reference*}", rawUrl)
+        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/views?units={units}{&size*,unit*,unit_reference*}", rawUrl)
         {
         }
         /// <summary>

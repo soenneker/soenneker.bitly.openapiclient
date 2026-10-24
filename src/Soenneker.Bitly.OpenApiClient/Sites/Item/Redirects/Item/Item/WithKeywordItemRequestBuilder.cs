@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Redirects.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{launchpad-id}\redirects\{domain}\{keyword}
+    /// Builds and executes requests for operations under \sites\{siteId}\redirects\{domain}\{keyword}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithKeywordItemRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Redirects.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithKeywordItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/redirects/{domain}/{keyword}", pathParameters)
+        public WithKeywordItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/redirects/{domain}/{keyword}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Redirects.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithKeywordItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/redirects/{domain}/{keyword}", rawUrl)
+        public WithKeywordItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/redirects/{domain}/{keyword}", rawUrl)
         {
         }
         /// <summary>

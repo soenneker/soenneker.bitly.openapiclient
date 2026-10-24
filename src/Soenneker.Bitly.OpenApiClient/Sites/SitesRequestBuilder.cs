@@ -19,15 +19,15 @@ namespace Soenneker.Bitly.OpenApiClient.Sites
     public partial class SitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.sites.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder"/></returns>
-        public global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder this[string position]
+        /// <param name="position">A GUID for a Bitly Site</param>
+        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Sites.Item.WithSiteItemRequestBuilder"/></returns>
+        public global::Soenneker.Bitly.OpenApiClient.Sites.Item.WithSiteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("launchpad%2Did", position);
-                return new global::Soenneker.Bitly.OpenApiClient.Sites.Item.LaunchpadItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("siteId", position);
+                return new global::Soenneker.Bitly.OpenApiClient.Sites.Item.WithSiteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

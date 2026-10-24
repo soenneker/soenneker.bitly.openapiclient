@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Organizations
     public partial class OrganizationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.organizations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A GUID for a Bitly organization</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Organizations.Item.WithOrganizationGuItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Organizations.Item.WithOrganizationGuItemRequestBuilder this[string position]
         {

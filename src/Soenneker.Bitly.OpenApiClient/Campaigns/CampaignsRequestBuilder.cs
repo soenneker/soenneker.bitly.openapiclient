@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Campaigns
     public partial class CampaignsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.campaigns.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A GUID for a Bitly campaign</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaignGuItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Campaigns.Item.WithCampaignGuItemRequestBuilder this[string position]
         {

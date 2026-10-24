@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Buttons.YoutubeVideo
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{launchpad-id}\buttons\youtubeVideo
+    /// Builds and executes requests for operations under \sites\{siteId}\buttons\youtubeVideo
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class YoutubeVideoRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Buttons.YoutubeVideo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public YoutubeVideoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/buttons/youtubeVideo", pathParameters)
+        public YoutubeVideoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/buttons/youtubeVideo", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Buttons.YoutubeVideo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public YoutubeVideoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/buttons/youtubeVideo", rawUrl)
+        public YoutubeVideoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/buttons/youtubeVideo", rawUrl)
         {
         }
     }

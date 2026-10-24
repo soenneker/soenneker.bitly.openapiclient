@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_domains
     public partial class Custom_domainsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.custom_domains.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">a custom domain on your account</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder this[string position]
         {

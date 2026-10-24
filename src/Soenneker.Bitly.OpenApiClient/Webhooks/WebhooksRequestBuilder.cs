@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Webhooks
     public partial class WebhooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.webhooks.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A GUID for a Bitly webhook</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhookGuItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Webhooks.Item.WithWebhookGuItemRequestBuilder this[string position]
         {

@@ -16,7 +16,7 @@ namespace Soenneker.Bitly.OpenApiClient.Apps
     public partial class AppsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.apps.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The client ID of an OAuth app</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Apps.Item.WithClientItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Apps.Item.WithClientItemRequestBuilder this[string position]
         {

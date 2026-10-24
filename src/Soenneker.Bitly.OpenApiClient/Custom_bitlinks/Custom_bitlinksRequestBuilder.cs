@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks
     public partial class Custom_bitlinksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.custom_bitlinks.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A Custom Bitlink made of the domain and keyword</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustomBitlinkItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.WithCustomBitlinkItemRequestBuilder this[string position]
         {

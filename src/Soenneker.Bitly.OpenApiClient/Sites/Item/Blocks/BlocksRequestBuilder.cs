@@ -13,13 +13,13 @@ using System;
 namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Blocks
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{launchpad-id}\blocks
+    /// Builds and executes requests for operations under \sites\{siteId}\blocks
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BlocksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.sites.item.blocks.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A GUID for a Bitly Site content block</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Sites.Item.Blocks.Item.WithBlockItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Sites.Item.Blocks.Item.WithBlockItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Blocks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BlocksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/blocks", pathParameters)
+        public BlocksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/blocks", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Blocks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BlocksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{launchpad%2Did}/blocks", rawUrl)
+        public BlocksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/blocks", rawUrl)
         {
         }
         /// <summary>

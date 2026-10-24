@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups
     public partial class GroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.groups.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A GUID for a Bitly group</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroupGuItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Groups.Item.WithGroupGuItemRequestBuilder this[string position]
         {
