@@ -59,6 +59,8 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_domains.Item.Dns
                 { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.DomainDns>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.DomainDns.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

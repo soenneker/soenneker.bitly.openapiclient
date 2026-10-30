@@ -36,7 +36,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Device_os
         /// <summary>
         /// Returns the device os generating scan traffic for the specified QR Code.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.ScanMetrics"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
@@ -48,11 +48,11 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Device_os
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.ScanMetrics?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Device_os.Device_osRequestBuilder.Device_osRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Device_os.Device_osRequestBuilder.Device_osRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.ScanMetrics> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Device_os.Device_osRequestBuilder.Device_osRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Device_os.Device_osRequestBuilder.Device_osRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -65,8 +65,10 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Scans.Device_os
                 { "410", global::Soenneker.Bitly.OpenApiClient.Models.Gone.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.ScanMetrics>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.ScanMetrics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the device os generating scan traffic for the specified QR Code.

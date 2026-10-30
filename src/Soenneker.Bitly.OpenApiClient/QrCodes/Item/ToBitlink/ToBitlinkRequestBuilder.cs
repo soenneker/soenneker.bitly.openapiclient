@@ -61,6 +61,8 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.ToBitlink
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

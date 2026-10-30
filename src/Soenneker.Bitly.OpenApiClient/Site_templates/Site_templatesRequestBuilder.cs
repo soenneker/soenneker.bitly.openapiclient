@@ -57,6 +57,8 @@ namespace Soenneker.Bitly.OpenApiClient.Site_templates
                 { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Bitly.OpenApiClient.Models.Template>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.Template.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

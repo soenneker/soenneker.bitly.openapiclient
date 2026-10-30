@@ -61,6 +61,8 @@ namespace Soenneker.Bitly.OpenApiClient.Sites.Item.Buttons.YoutubeVideo.Prevalid
                 { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Bitly.OpenApiClient.Models.UnprocessableEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.YoutubeVideoRequest>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.YoutubeVideoRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

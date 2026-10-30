@@ -61,6 +61,8 @@ namespace Soenneker.Bitly.OpenApiClient.Domains.Item.Agreements
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Bitly.OpenApiClient.Models.Timeout.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreements>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreements.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,36 +11,56 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class QrcBulkUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("add_tags") is { } nullNodeAddTags && nullNodeAddTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddTags = null;
+            if (parseNode.GetChildNode("archive") is { } nullNodeArchive && nullNodeArchive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archive = null;
+            if (parseNode.GetChildNode("qr_code_ids") is { } nullNodeQrCodeIds && nullNodeQrCodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodeIds = null;
+            if (parseNode.GetChildNode("remove_tags") is { } nullNodeRemoveTags && nullNodeRemoveTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveTags = null;
+        }
+
         /// <summary>archive or edit_tags</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequestAction? Action { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequestAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The add_tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AddTags { get; set; }
+        public List<string>? AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_tags"); else _explicitNullProperties?.Remove("add_tags"); } }
+        private List<string>? _explicitNullValueAddTags = default!;
 #nullable restore
 #else
-        public List<string> AddTags { get; set; }
+        public List<string> AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_tags"); else _explicitNullProperties?.Remove("add_tags"); } }
+        private List<string> _explicitNullValueAddTags = default!;
 #endif
         /// <summary>The archive property</summary>
-        public bool? Archive { get; set; }
+        public bool? Archive { get => _explicitNullValueArchive; set { _explicitNullValueArchive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive"); else _explicitNullProperties?.Remove("archive"); } }
+        private bool? _explicitNullValueArchive = default!;
         /// <summary>this is limited to 100 QR code ids; Pages QR codes are not supported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? QrCodeIds { get; set; }
+        public List<string>? QrCodeIds { get => _explicitNullValueQrCodeIds; set { _explicitNullValueQrCodeIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_ids"); else _explicitNullProperties?.Remove("qr_code_ids"); } }
+        private List<string>? _explicitNullValueQrCodeIds = default!;
 #nullable restore
 #else
-        public List<string> QrCodeIds { get; set; }
+        public List<string> QrCodeIds { get => _explicitNullValueQrCodeIds; set { _explicitNullValueQrCodeIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_ids"); else _explicitNullProperties?.Remove("qr_code_ids"); } }
+        private List<string> _explicitNullValueQrCodeIds = default!;
 #endif
         /// <summary>The remove_tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemoveTags { get; set; }
+        public List<string>? RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_tags"); else _explicitNullProperties?.Remove("remove_tags"); } }
+        private List<string>? _explicitNullValueRemoveTags = default!;
 #nullable restore
 #else
-        public List<string> RemoveTags { get; set; }
+        public List<string> RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_tags"); else _explicitNullProperties?.Remove("remove_tags"); } }
+        private List<string> _explicitNullValueRemoveTags = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest"/> and sets the default values.
@@ -57,7 +77,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.QrcBulkUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteBoolValue("archive", Archive);
             writer.WriteCollectionOfPrimitiveValues<string>("qr_code_ids", QrCodeIds);
             writer.WriteCollectionOfPrimitiveValues<string>("remove_tags", RemoveTags);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -5,28 +5,20 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum TotalEngagementsUnit
+    public enum GetOrganizationBulkUploadsUploadTypeParameter
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "minute")]
+        [EnumMember(Value = "link")]
         #pragma warning disable CS1591
-        Minute,
+        Link,
         #pragma warning restore CS1591
-        [EnumMember(Value = "hour")]
+        [EnumMember(Value = "qr_code")]
         #pragma warning disable CS1591
-        Hour,
+        QrCode,
         #pragma warning restore CS1591
-        [EnumMember(Value = "day")]
+        [EnumMember(Value = "coupled_link")]
         #pragma warning disable CS1591
-        Day,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "week")]
-        #pragma warning disable CS1591
-        Week,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "month")]
-        #pragma warning disable CS1591
-        Month,
+        CoupledLink,
         #pragma warning restore CS1591
     }
 }

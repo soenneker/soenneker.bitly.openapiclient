@@ -11,61 +11,110 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BitlySiteHeaderAppearance : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("banner_image_alignment") is { } nullNodeBannerImageAlignment && nullNodeBannerImageAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BannerImageAlignment = null;
+            if (parseNode.GetChildNode("banner_image_url") is { } nullNodeBannerImageUrl && nullNodeBannerImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BannerImageUrl = null;
+            if (parseNode.GetChildNode("banner_type") is { } nullNodeBannerType && nullNodeBannerType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BannerType = null;
+            if (parseNode.GetChildNode("description_alignment") is { } nullNodeDescriptionAlignment && nullNodeDescriptionAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionAlignment = null;
+            if (parseNode.GetChildNode("description_border_type") is { } nullNodeDescriptionBorderType && nullNodeDescriptionBorderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionBorderType = null;
+            if (parseNode.GetChildNode("description_size") is { } nullNodeDescriptionSize && nullNodeDescriptionSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionSize = null;
+            if (parseNode.GetChildNode("description_weight") is { } nullNodeDescriptionWeight && nullNodeDescriptionWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionWeight = null;
+            if (parseNode.GetChildNode("header_background_color") is { } nullNodeHeaderBackgroundColor && nullNodeHeaderBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderBackgroundColor = null;
+            if (parseNode.GetChildNode("header_style_preference") is { } nullNodeHeaderStylePreference && nullNodeHeaderStylePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderStylePreference = null;
+            if (parseNode.GetChildNode("profile_image_border_size") is { } nullNodeProfileImageBorderSize && nullNodeProfileImageBorderSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImageBorderSize = null;
+            if (parseNode.GetChildNode("profile_image_location") is { } nullNodeProfileImageLocation && nullNodeProfileImageLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImageLocation = null;
+            if (parseNode.GetChildNode("profile_image_overflow") is { } nullNodeProfileImageOverflow && nullNodeProfileImageOverflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImageOverflow = null;
+            if (parseNode.GetChildNode("profile_image_shape") is { } nullNodeProfileImageShape && nullNodeProfileImageShape.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImageShape = null;
+            if (parseNode.GetChildNode("profile_image_size") is { } nullNodeProfileImageSize && nullNodeProfileImageSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImageSize = null;
+            if (parseNode.GetChildNode("profile_image_type") is { } nullNodeProfileImageType && nullNodeProfileImageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImageType = null;
+            if (parseNode.GetChildNode("text_location") is { } nullNodeTextLocation && nullNodeTextLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextLocation = null;
+            if (parseNode.GetChildNode("title_alignment") is { } nullNodeTitleAlignment && nullNodeTitleAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TitleAlignment = null;
+            if (parseNode.GetChildNode("title_border_type") is { } nullNodeTitleBorderType && nullNodeTitleBorderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TitleBorderType = null;
+            if (parseNode.GetChildNode("title_size") is { } nullNodeTitleSize && nullNodeTitleSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TitleSize = null;
+            if (parseNode.GetChildNode("title_weight") is { } nullNodeTitleWeight && nullNodeTitleWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TitleWeight = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Available image alignment types for Site background images</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteImageAlignment? BannerImageAlignment { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteImageAlignment? BannerImageAlignment { get => _explicitNullValueBannerImageAlignment; set { _explicitNullValueBannerImageAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banner_image_alignment"); else _explicitNullProperties?.Remove("banner_image_alignment"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteImageAlignment? _explicitNullValueBannerImageAlignment = default!;
         /// <summary>The banner_image_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BannerImageUrl { get; set; }
+        public string? BannerImageUrl { get => _explicitNullValueBannerImageUrl; set { _explicitNullValueBannerImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banner_image_url"); else _explicitNullProperties?.Remove("banner_image_url"); } }
+        private string? _explicitNullValueBannerImageUrl = default!;
 #nullable restore
 #else
-        public string BannerImageUrl { get; set; }
+        public string BannerImageUrl { get => _explicitNullValueBannerImageUrl; set { _explicitNullValueBannerImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banner_image_url"); else _explicitNullProperties?.Remove("banner_image_url"); } }
+        private string _explicitNullValueBannerImageUrl = default!;
 #endif
         /// <summary>Enum of banner type options on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteBannerType? BannerType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteBannerType? BannerType { get => _explicitNullValueBannerType; set { _explicitNullValueBannerType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banner_type"); else _explicitNullProperties?.Remove("banner_type"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteBannerType? _explicitNullValueBannerType = default!;
         /// <summary>Enum of text alignment values on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextAlignmentEnum? DescriptionAlignment { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextAlignmentEnum? DescriptionAlignment { get => _explicitNullValueDescriptionAlignment; set { _explicitNullValueDescriptionAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_alignment"); else _explicitNullProperties?.Remove("description_alignment"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextAlignmentEnum? _explicitNullValueDescriptionAlignment = default!;
         /// <summary>Enum of border type values on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextBorderTypeEnum? DescriptionBorderType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextBorderTypeEnum? DescriptionBorderType { get => _explicitNullValueDescriptionBorderType; set { _explicitNullValueDescriptionBorderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_border_type"); else _explicitNullProperties?.Remove("description_border_type"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextBorderTypeEnum? _explicitNullValueDescriptionBorderType = default!;
         /// <summary>Enum of text sizes on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextSizeEnum? DescriptionSize { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextSizeEnum? DescriptionSize { get => _explicitNullValueDescriptionSize; set { _explicitNullValueDescriptionSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_size"); else _explicitNullProperties?.Remove("description_size"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextSizeEnum? _explicitNullValueDescriptionSize = default!;
         /// <summary>Enum of text sizes on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextWeightEnum? DescriptionWeight { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextWeightEnum? DescriptionWeight { get => _explicitNullValueDescriptionWeight; set { _explicitNullValueDescriptionWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_weight"); else _explicitNullProperties?.Remove("description_weight"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextWeightEnum? _explicitNullValueDescriptionWeight = default!;
         /// <summary>The header_background_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderBackgroundColor { get; set; }
+        public string? HeaderBackgroundColor { get => _explicitNullValueHeaderBackgroundColor; set { _explicitNullValueHeaderBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_background_color"); else _explicitNullProperties?.Remove("header_background_color"); } }
+        private string? _explicitNullValueHeaderBackgroundColor = default!;
 #nullable restore
 #else
-        public string HeaderBackgroundColor { get; set; }
+        public string HeaderBackgroundColor { get => _explicitNullValueHeaderBackgroundColor; set { _explicitNullValueHeaderBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_background_color"); else _explicitNullProperties?.Remove("header_background_color"); } }
+        private string _explicitNullValueHeaderBackgroundColor = default!;
 #endif
         /// <summary>Enum of style preference values on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteStylePreference? HeaderStylePreference { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteStylePreference? HeaderStylePreference { get => _explicitNullValueHeaderStylePreference; set { _explicitNullValueHeaderStylePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_style_preference"); else _explicitNullProperties?.Remove("header_style_preference"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteStylePreference? _explicitNullValueHeaderStylePreference = default!;
         /// <summary>Enum of profile image border sizes on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageBorderSize? ProfileImageBorderSize { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageBorderSize? ProfileImageBorderSize { get => _explicitNullValueProfileImageBorderSize; set { _explicitNullValueProfileImageBorderSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_border_size"); else _explicitNullProperties?.Remove("profile_image_border_size"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageBorderSize? _explicitNullValueProfileImageBorderSize = default!;
         /// <summary>Enum of the profile image locations available on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageLocation? ProfileImageLocation { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageLocation? ProfileImageLocation { get => _explicitNullValueProfileImageLocation; set { _explicitNullValueProfileImageLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_location"); else _explicitNullProperties?.Remove("profile_image_location"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageLocation? _explicitNullValueProfileImageLocation = default!;
         /// <summary>The profile_image_overflow property</summary>
-        public bool? ProfileImageOverflow { get; set; }
+        public bool? ProfileImageOverflow { get => _explicitNullValueProfileImageOverflow; set { _explicitNullValueProfileImageOverflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_overflow"); else _explicitNullProperties?.Remove("profile_image_overflow"); } }
+        private bool? _explicitNullValueProfileImageOverflow = default!;
         /// <summary>Enum of profile image shapes on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageShape? ProfileImageShape { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageShape? ProfileImageShape { get => _explicitNullValueProfileImageShape; set { _explicitNullValueProfileImageShape = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_shape"); else _explicitNullProperties?.Remove("profile_image_shape"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageShape? _explicitNullValueProfileImageShape = default!;
         /// <summary>Enum of profile image sizes on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageSize? ProfileImageSize { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageSize? ProfileImageSize { get => _explicitNullValueProfileImageSize; set { _explicitNullValueProfileImageSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_size"); else _explicitNullProperties?.Remove("profile_image_size"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageSize? _explicitNullValueProfileImageSize = default!;
         /// <summary>Enum of the profile image type options on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageType? ProfileImageType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageType? ProfileImageType { get => _explicitNullValueProfileImageType; set { _explicitNullValueProfileImageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_type"); else _explicitNullProperties?.Remove("profile_image_type"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteProfileImageType? _explicitNullValueProfileImageType = default!;
         /// <summary>Enum of the available text locations on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextLocation? TextLocation { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextLocation? TextLocation { get => _explicitNullValueTextLocation; set { _explicitNullValueTextLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_location"); else _explicitNullProperties?.Remove("text_location"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextLocation? _explicitNullValueTextLocation = default!;
         /// <summary>Enum of text alignment values on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextAlignmentEnum? TitleAlignment { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextAlignmentEnum? TitleAlignment { get => _explicitNullValueTitleAlignment; set { _explicitNullValueTitleAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title_alignment"); else _explicitNullProperties?.Remove("title_alignment"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextAlignmentEnum? _explicitNullValueTitleAlignment = default!;
         /// <summary>Enum of border type values on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextBorderTypeEnum? TitleBorderType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextBorderTypeEnum? TitleBorderType { get => _explicitNullValueTitleBorderType; set { _explicitNullValueTitleBorderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title_border_type"); else _explicitNullProperties?.Remove("title_border_type"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextBorderTypeEnum? _explicitNullValueTitleBorderType = default!;
         /// <summary>Enum of text sizes on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextSizeEnum? TitleSize { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextSizeEnum? TitleSize { get => _explicitNullValueTitleSize; set { _explicitNullValueTitleSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title_size"); else _explicitNullProperties?.Remove("title_size"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextSizeEnum? _explicitNullValueTitleSize = default!;
         /// <summary>Enum of text sizes on a Bitly Site</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextWeightEnum? TitleWeight { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteTextWeightEnum? TitleWeight { get => _explicitNullValueTitleWeight; set { _explicitNullValueTitleWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title_weight"); else _explicitNullProperties?.Remove("title_weight"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.SiteTextWeightEnum? _explicitNullValueTitleWeight = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteHeaderAppearance"/> and sets the default values.
         /// </summary>
@@ -81,7 +130,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteHeaderAppearance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteHeaderAppearance();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.BitlySiteHeaderAppearance(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,6 +189,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteTextBorderTypeEnum>("title_border_type", TitleBorderType);
             writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteTextSizeEnum>("title_size", TitleSize);
             writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteTextWeightEnum>("title_weight", TitleWeight);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -36,7 +36,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image
         /// <summary>
         /// Get the image of a given QR Code. The Accept header controls how this is returned (options are &quot;application/json&quot;, &quot;image/svg+xml&quot;, and &quot;image/png&quot;).If the Accept header is &quot;application/json&quot; the format query parameter will determine the image format inside of the json (which will be base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag).To Return the QR Code image itself, set the Accept header to &quot;image/svg+xml&quot; or &quot;image/png&quot;, or remove the Accept header and set the format query parameter to “svg” or “png” (if no format is specified the default will be “svg”).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.PublicQrCodeImageResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
@@ -46,11 +46,11 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.PublicQrCodeImageResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image.ImageRequestBuilder.ImageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image.ImageRequestBuilder.ImageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.PublicQrCodeImageResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image.ImageRequestBuilder.ImageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image.ImageRequestBuilder.ImageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -61,8 +61,10 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item.Image
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Bitly.OpenApiClient.Models.Gone.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.PublicQrCodeImageResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.PublicQrCodeImageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the image of a given QR Code. The Accept header controls how this is returned (options are &quot;application/json&quot;, &quot;image/svg+xml&quot;, and &quot;image/png&quot;).If the Accept header is &quot;application/json&quot; the format query parameter will determine the image format inside of the json (which will be base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag).To Return the QR Code image itself, set the Accept header to &quot;image/svg+xml&quot; or &quot;image/png&quot;, or remove the Accept header and set the format query parameter to “svg” or “png” (if no format is specified the default will be “svg”).

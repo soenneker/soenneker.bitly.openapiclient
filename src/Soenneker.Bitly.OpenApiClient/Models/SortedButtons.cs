@@ -11,40 +11,59 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SortedButtons : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buttons") is { } nullNodeButtons && nullNodeButtons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Buttons = null;
+            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("page_views") is { } nullNodePageViews && nullNodePageViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageViews = null;
+            if (parseNode.GetChildNode("sorted_buttons") is { } nullNodeSortedButtonsProp && nullNodeSortedButtonsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortedButtonsProp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The buttons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsButtonsItem>? Buttons { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsButtonsItem>? Buttons { get => _explicitNullValueButtons; set { _explicitNullValueButtons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttons"); else _explicitNullProperties?.Remove("buttons"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsButtonsItem>? _explicitNullValueButtons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsButtonsItem> Buttons { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsButtonsItem> Buttons { get => _explicitNullValueButtons; set { _explicitNullValueButtons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttons"); else _explicitNullProperties?.Remove("buttons"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsButtonsItem> _explicitNullValueButtons = default!;
 #endif
         /// <summary>The info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Info { get; set; }
+        public string? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private string? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public string Info { get; set; }
+        public string Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private string _explicitNullValueInfo = default!;
 #endif
         /// <summary>The page_views property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsPageViewsItem>? PageViews { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsPageViewsItem>? PageViews { get => _explicitNullValuePageViews; set { _explicitNullValuePageViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_views"); else _explicitNullProperties?.Remove("page_views"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsPageViewsItem>? _explicitNullValuePageViews = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsPageViewsItem> PageViews { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsPageViewsItem> PageViews { get => _explicitNullValuePageViews; set { _explicitNullValuePageViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_views"); else _explicitNullProperties?.Remove("page_views"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsPageViewsItem> _explicitNullValuePageViews = default!;
 #endif
         /// <summary>The sorted_buttons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.ClickLink>? SortedButtonsProp { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.ClickLink>? SortedButtonsProp { get => _explicitNullValueSortedButtonsProp; set { _explicitNullValueSortedButtonsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorted_buttons"); else _explicitNullProperties?.Remove("sorted_buttons"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.ClickLink>? _explicitNullValueSortedButtonsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.ClickLink> SortedButtonsProp { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.ClickLink> SortedButtonsProp { get => _explicitNullValueSortedButtonsProp; set { _explicitNullValueSortedButtonsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorted_buttons"); else _explicitNullProperties?.Remove("sorted_buttons"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.ClickLink> _explicitNullValueSortedButtonsProp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.SortedButtons"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.SortedButtons CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.SortedButtons();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.SortedButtons(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("info", Info);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.SortedButtonsPageViewsItem>("page_views", PageViews);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.ClickLink>("sorted_buttons", SortedButtonsProp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

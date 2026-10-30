@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_domains
     public partial class Custom_domainsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.custom_domains.item collection</summary>
-        /// <param name="position">a custom domain on your account</param>
+        /// <param name="position">a custom domain on your account, in Unicode or punycode</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Custom_domains.Item.WithCustomDomainItemRequestBuilder this[string position]
         {
@@ -72,6 +72,8 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_domains
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomains>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.CustomDomains.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -111,6 +113,8 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_domains
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.DomainValidate>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.DomainValidate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

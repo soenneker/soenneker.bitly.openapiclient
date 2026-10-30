@@ -47,7 +47,7 @@ namespace Soenneker.Bitly.OpenApiClient.Bitlinks
         {
         }
         /// <summary>
-        /// Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - &quot;BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED&quot; occurs if you have shortened more links than your account is configured for for the month, and &quot;DNS_CONFIGURATION_ERROR&quot; occurs if you are attempting to shorten links against a custom domain which doesn&apos;t have DNS properly configured.
+        /// Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - &quot;DNS_CONFIGURATION_ERROR&quot; occurs if you are attempting to shorten links against a custom domain which doesn&apos;t have DNS properly configured.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody"/></returns>
         /// <param name="body">Either long_url (for new bitlinks) or bitlink_id (for adding keywords to existing bitlinks) must be provided, but not both.</param>
@@ -84,11 +84,13 @@ namespace Soenneker.Bitly.OpenApiClient.Bitlinks
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - &quot;BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED&quot; occurs if you have shortened more links than your account is configured for for the month, and &quot;DNS_CONFIGURATION_ERROR&quot; occurs if you are attempting to shorten links against a custom domain which doesn&apos;t have DNS properly configured.
+        /// Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - &quot;DNS_CONFIGURATION_ERROR&quot; occurs if you are attempting to shorten links against a custom domain which doesn&apos;t have DNS properly configured.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Either long_url (for new bitlinks) or bitlink_id (for adding keywords to existing bitlinks) must be provided, but not both.</param>

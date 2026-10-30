@@ -12,30 +12,49 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DomainUpdate : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hsts_enabled") is { } nullNodeHstsEnabled && nullNodeHstsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HstsEnabled = null;
+            if (parseNode.GetChildNode("https_enabled") is { } nullNodeHttpsEnabled && nullNodeHttpsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpsEnabled = null;
+            if (parseNode.GetChildNode("root_redirect") is { } nullNodeRootRedirect && nullNodeRootRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootRedirect = null;
+            if (parseNode.GetChildNode("upgrade_insecure_requests") is { } nullNodeUpgradeInsecureRequests && nullNodeUpgradeInsecureRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpgradeInsecureRequests = null;
+            if (parseNode.GetChildNode("wildcard_redirect") is { } nullNodeWildcardRedirect && nullNodeWildcardRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WildcardRedirect = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hsts_enabled property</summary>
-        public bool? HstsEnabled { get; set; }
+        public bool? HstsEnabled { get => _explicitNullValueHstsEnabled; set { _explicitNullValueHstsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hsts_enabled"); else _explicitNullProperties?.Remove("hsts_enabled"); } }
+        private bool? _explicitNullValueHstsEnabled = default!;
         /// <summary>The https_enabled property</summary>
-        public bool? HttpsEnabled { get; set; }
+        public bool? HttpsEnabled { get => _explicitNullValueHttpsEnabled; set { _explicitNullValueHttpsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("https_enabled"); else _explicitNullProperties?.Remove("https_enabled"); } }
+        private bool? _explicitNullValueHttpsEnabled = default!;
         /// <summary>The root_redirect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootRedirect { get; set; }
+        public string? RootRedirect { get => _explicitNullValueRootRedirect; set { _explicitNullValueRootRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_redirect"); else _explicitNullProperties?.Remove("root_redirect"); } }
+        private string? _explicitNullValueRootRedirect = default!;
 #nullable restore
 #else
-        public string RootRedirect { get; set; }
+        public string RootRedirect { get => _explicitNullValueRootRedirect; set { _explicitNullValueRootRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_redirect"); else _explicitNullProperties?.Remove("root_redirect"); } }
+        private string _explicitNullValueRootRedirect = default!;
 #endif
         /// <summary>The upgrade_insecure_requests property</summary>
-        public bool? UpgradeInsecureRequests { get; set; }
+        public bool? UpgradeInsecureRequests { get => _explicitNullValueUpgradeInsecureRequests; set { _explicitNullValueUpgradeInsecureRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upgrade_insecure_requests"); else _explicitNullProperties?.Remove("upgrade_insecure_requests"); } }
+        private bool? _explicitNullValueUpgradeInsecureRequests = default!;
         /// <summary>The wildcard_redirect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WildcardRedirect { get; set; }
+        public string? WildcardRedirect { get => _explicitNullValueWildcardRedirect; set { _explicitNullValueWildcardRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wildcard_redirect"); else _explicitNullProperties?.Remove("wildcard_redirect"); } }
+        private string? _explicitNullValueWildcardRedirect = default!;
 #nullable restore
 #else
-        public string WildcardRedirect { get; set; }
+        public string WildcardRedirect { get => _explicitNullValueWildcardRedirect; set { _explicitNullValueWildcardRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wildcard_redirect"); else _explicitNullProperties?.Remove("wildcard_redirect"); } }
+        private string _explicitNullValueWildcardRedirect = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate"/> and sets the default values.
@@ -52,7 +71,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.DomainUpdate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("root_redirect", RootRedirect);
             writer.WriteBoolValue("upgrade_insecure_requests", UpgradeInsecureRequests);
             writer.WriteStringValue("wildcard_redirect", WildcardRedirect);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

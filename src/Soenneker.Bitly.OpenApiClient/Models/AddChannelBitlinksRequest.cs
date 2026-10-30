@@ -11,24 +11,37 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AddChannelBitlinksRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bitlinks") is { } nullNodeBitlinks && nullNodeBitlinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlinks = null;
+            if (parseNode.GetChildNode("campaign_guid") is { } nullNodeCampaignGuid && nullNodeCampaignGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignGuid = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bitlink IDs to add to the channel, up to 100 per request. Bitlinks already associated with the channel are left untouched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Bitlinks { get; set; }
+        public List<string>? Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
+        private List<string>? _explicitNullValueBitlinks = default!;
 #nullable restore
 #else
-        public List<string> Bitlinks { get; set; }
+        public List<string> Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
+        private List<string> _explicitNullValueBitlinks = default!;
 #endif
         /// <summary>The campaign to associate the given bitlinks with on this channel. All bitlinks in the request are associated with this single campaign_guid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignGuid { get; set; }
+        public string? CampaignGuid { get => _explicitNullValueCampaignGuid; set { _explicitNullValueCampaignGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_guid"); else _explicitNullProperties?.Remove("campaign_guid"); } }
+        private string? _explicitNullValueCampaignGuid = default!;
 #nullable restore
 #else
-        public string CampaignGuid { get; set; }
+        public string CampaignGuid { get => _explicitNullValueCampaignGuid; set { _explicitNullValueCampaignGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_guid"); else _explicitNullProperties?.Remove("campaign_guid"); } }
+        private string _explicitNullValueCampaignGuid = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.AddChannelBitlinksRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.AddChannelBitlinksRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.AddChannelBitlinksRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.AddChannelBitlinksRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("bitlinks", Bitlinks);
             writer.WriteStringValue("campaign_guid", CampaignGuid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

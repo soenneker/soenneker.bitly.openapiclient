@@ -11,33 +11,54 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GroupExportRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bitlinks") is { } nullNodeBitlinks && nullNodeBitlinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlinks = null;
+            if (parseNode.GetChildNode("export_type") is { } nullNodeExportType && nullNodeExportType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExportType = null;
+            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("include_metrics") is { } nullNodeIncludeMetrics && nullNodeIncludeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeMetrics = null;
+            if (parseNode.GetChildNode("unix_from") is { } nullNodeUnixFrom && nullNodeUnixFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnixFrom = null;
+            if (parseNode.GetChildNode("unix_to") is { } nullNodeUnixTo && nullNodeUnixTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnixTo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Fully qualified bitlinks (e.g. &quot;bit.ly/abc&quot;). Used by export_type link_engagements_batch whenthe caller already knows the exact links. Mutually exclusive with filter (provide one or the other).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Bitlinks { get; set; }
+        public List<string>? Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
+        private List<string>? _explicitNullValueBitlinks = default!;
 #nullable restore
 #else
-        public List<string> Bitlinks { get; set; }
+        public List<string> Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
+        private List<string> _explicitNullValueBitlinks = default!;
 #endif
         /// <summary>Which export shape to produce.</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBodyExportType? ExportType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBodyExportType? ExportType { get => _explicitNullValueExportType; set { _explicitNullValueExportType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("export_type"); else _explicitNullProperties?.Remove("export_type"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBodyExportType? _explicitNullValueExportType = default!;
         /// <summary>Search constraints used to resolve links or QR codes for export. Required for links_list and qr_codes_list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter? Filter { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter Filter { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilter _explicitNullValueFilter = default!;
 #endif
         /// <summary>When true on links_list or qr_codes_list, append clicks, scans, and button_clicks columns and applythe 200-row cap. Requires unix_from and unix_to (or tier-default window behavior where applicable).</summary>
-        public bool? IncludeMetrics { get; set; }
+        public bool? IncludeMetrics { get => _explicitNullValueIncludeMetrics; set { _explicitNullValueIncludeMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_metrics"); else _explicitNullProperties?.Remove("include_metrics"); } }
+        private bool? _explicitNullValueIncludeMetrics = default!;
         /// <summary>Start of the metrics date range (Unix seconds, UTC). Clamped to the caller&apos;s tier data window.For link_engagements_batch, required together with unix_to unless the tier max-history default applies.For links_list or qr_codes_list, used when include_metrics is true.</summary>
-        public int? UnixFrom { get; set; }
+        public int? UnixFrom { get => _explicitNullValueUnixFrom; set { _explicitNullValueUnixFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unix_from"); else _explicitNullProperties?.Remove("unix_from"); } }
+        private int? _explicitNullValueUnixFrom = default!;
         /// <summary>End of the metrics date range (Unix seconds, UTC). See unix_from.</summary>
-        public int? UnixTo { get; set; }
+        public int? UnixTo { get => _explicitNullValueUnixTo; set { _explicitNullValueUnixTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unix_to"); else _explicitNullProperties?.Remove("unix_to"); } }
+        private int? _explicitNullValueUnixTo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBody"/> and sets the default values.
         /// </summary>
@@ -53,7 +74,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +105,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteBoolValue("include_metrics", IncludeMetrics);
             writer.WriteIntValue("unix_from", UnixFrom);
             writer.WriteIntValue("unix_to", UnixTo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

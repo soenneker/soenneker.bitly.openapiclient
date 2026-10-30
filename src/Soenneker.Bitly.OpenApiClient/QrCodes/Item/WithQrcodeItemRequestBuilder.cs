@@ -87,6 +87,8 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item
                 { "410", global::Soenneker.Bitly.OpenApiClient.Models.Gone.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.PublicDeleteQrCodeResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.PublicDeleteQrCodeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -118,6 +120,8 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Bitly.OpenApiClient.Models.Gone.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDetails>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -151,6 +155,8 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Item
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Bitly.OpenApiClient.Models.Gone.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

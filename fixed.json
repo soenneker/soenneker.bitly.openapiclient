@@ -27,7 +27,7 @@
           "Bitlinks"
         ],
         "summary": "Shorten a Link",
-        "description": "Converts a long url to a Bitlink. You may see errors returned from this endpoint - \u0022BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED\u0022 occurs if you have shortened more links than your account is configured for for the month, and \u0022DNS_CONFIGURATION_ERROR\u0022 occurs if you are attempting to shorten links against a custom domain which doesn\u0027t have DNS properly configured.",
+        "description": "Converts a long url to a Bitlink. You may see errors returned from this endpoint - \u0022DNS_CONFIGURATION_ERROR\u0022 occurs if you are attempting to shorten links against a custom domain which doesn\u0027t have DNS properly configured.",
         "operationId": "CreateBitlink",
         "requestBody": {
           "content": {
@@ -163,7 +163,7 @@
           "Bitlinks"
         ],
         "summary": "Create a Bitlink",
-        "description": "Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - \u0022BRANDED_LINK_MONTHLY_LIMIT_EXCEEDED\u0022 occurs if you have shortened more links than your account is configured for for the month, and \u0022DNS_CONFIGURATION_ERROR\u0022 occurs if you are attempting to shorten links against a custom domain which doesn\u0027t have DNS properly configured.",
+        "description": "Converts a long url to a Bitlink and sets additional parameters. You may see errors returned from this endpoint - \u0022DNS_CONFIGURATION_ERROR\u0022 occurs if you are attempting to shorten links against a custom domain which doesn\u0027t have DNS properly configured.",
         "operationId": "CreateFullBitlink",
         "requestBody": {
           "content": {
@@ -778,14 +778,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Clicks"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetClicksForBitlink200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Date, Clicks\n2023-07-10T00:00:00\u002B0000, 15\n"
+                "example": "Date, Clicks\n2023-07-10T00:00:00\u002B0000, 15\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetClicksForBitlink200CsvResponseSchema"
+                }
               }
             }
           },
@@ -970,14 +978,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/TotalEngagements"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEngagements200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Date, Engagements\n2006-01-02T15:04:05, 5\n"
+                "example": "Date, Engagements\n2006-01-02T15:04:05, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetEngagements200CsvResponseSchema"
+                }
               }
             }
           },
@@ -1182,14 +1198,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAgenticTrafficForBitlink200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Agent, Clicks\nChatGPT, 25\n"
+                "example": "Agent, Clicks\nChatGPT, 25\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetAgenticTrafficForBitlink200CsvResponseSchema"
+                }
               }
             }
           },
@@ -1314,14 +1338,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCountries200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Country, Clicks\nUS, 5\n"
+                "example": "Country, Clicks\nUS, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCountries200CsvResponseSchema"
+                }
               }
             }
           },
@@ -1436,14 +1468,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CityMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCities200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
+                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByCities200CsvResponseSchema"
+                }
               }
             }
           },
@@ -1568,14 +1608,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/DeviceMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByDevices200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Device Type, Clicks\nDesktop, 5\n"
+                "example": "Device Type, Clicks\nDesktop, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByDevices200CsvResponseSchema"
+                }
               }
             }
           },
@@ -1700,14 +1748,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrers200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Referrers, Domain/Sub-Domain, Clicks\nOther Sites, direct, 5\n"
+                "example": "Referrers, Domain/Sub-Domain, Clicks\nOther Sites, direct, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrers200CsvResponseSchema"
+                }
               }
             }
           },
@@ -1822,14 +1878,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrerName200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Referrer-Name,Clicks\ndirect,4\n"
+                "example": "Referrer-Name,Clicks\ndirect,4\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrerName200CsvResponseSchema"
+                }
               }
             }
           },
@@ -3844,14 +3908,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByCountries200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Country, Clicks\nUS, 5\n"
+                "example": "Country, Clicks\nUS, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetGroupMetricsByCountries200CsvResponseSchema"
+                }
               }
             }
           },
@@ -3946,14 +4018,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CityMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByCities200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
+                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetGroupMetricsByCities200CsvResponseSchema"
+                }
               }
             }
           },
@@ -4058,14 +4138,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/DeviceMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByDevices200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Device Type, Clicks\nDesktop, 5\n"
+                "example": "Device Type, Clicks\nDesktop, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetGroupMetricsByDevices200CsvResponseSchema"
+                }
               }
             }
           },
@@ -4256,14 +4344,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetGroupMetricsByReferrer200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Referrer,Clicks\ndirect,25\n"
+                "example": "Referrer,Clicks\ndirect,25\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetGroupMetricsByReferrer200CsvResponseSchema"
+                }
               }
             }
           },
@@ -5011,7 +5107,7 @@
           {
             "name": "customDomain",
             "in": "path",
-            "description": "a custom domain on your account",
+            "description": "a custom domain on your account, in Unicode or punycode",
             "required": true,
             "schema": {
               "type": "string"
@@ -5103,7 +5199,7 @@
           {
             "name": "customDomain",
             "in": "path",
-            "description": "a custom domain on your account",
+            "description": "a custom domain on your account, in Unicode or punycode",
             "required": true,
             "schema": {
               "type": "string"
@@ -5404,7 +5500,7 @@
           {
             "name": "customDomain",
             "in": "path",
-            "description": "a custom domain on your account",
+            "description": "a custom domain on your account, in Unicode or punycode",
             "required": true,
             "schema": {
               "type": "string"
@@ -6920,7 +7016,7 @@
           {
             "name": "domain",
             "in": "path",
-            "description": "a web domain",
+            "description": "a domain, in Unicode or punycode",
             "required": true,
             "schema": {
               "type": "string"
@@ -7710,6 +7806,316 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organizationGuid}/bulk_uploads": {
+      "post": {
+        "tags": [
+          "Bulk Upload"
+        ],
+        "summary": "Create a bulk upload",
+        "description": "Creates a bulk upload in a group of the organization and returns a signed URL and headers for the file upload.\n\nTo complete a bulk upload:\n1. Call this endpoint with the \u0060group_guid\u0060 for the new links. Set \u0060domain\u0060 to a custom domain of the group. Set \u0060upload_type\u0060 to the item that each row creates: \u0060link\u0060 for a link, \u0060qr_code\u0060 for a QR code, or \u0060coupled_link\u0060 for a link and its QR code. For \u0060qr_code\u0060 and \u0060coupled_link\u0060, also set \u0060template_id\u0060.\n2. Send the file in a \u0060PUT\u0060 request to \u0060upload_url\u0060. Include every header in \u0060headers\u0060 without changes, including \u0060Content-Type\u0060. The upload fails if any header is different. The file can be up to 25,000,000 bytes (25 MB), and a larger file gets \u0060400 EntityTooLarge\u0060. The URL is valid until \u0060upload_url_expires_at\u0060.\n\nProcessing is asynchronous. When it is complete, Bitly emails a report to the user\u0027s verified primary email address and to the organization admins. The report shows the result and the short link for each row. The request returns \u0060400 INVALID_EMAIL\u0060 if the user has no verified primary email address.\n\nFile format: the first row must contain the column headers. Each other row describes one item to create. \u0060Long URL\u0060 is the only required column. The optional columns are \u0060Title\u0060, \u0060Tags\u0060 (comma-separated if more than one), \u0060Backhalf\u0060, \u0060Expiration\u0060 (for example \u00602030-01-31T15:04:05\u002B0000\u0060), \u0060UTM Source\u0060, \u0060UTM Medium\u0060, \u0060UTM Campaign\u0060, \u0060UTM Term\u0060, \u0060UTM Content\u0060, and \u0060Current Bitly Short Link\u0060. A row with \u0060Current Bitly Short Link\u0060 changes the destination of that existing link and does not create a new link. A \u0060qr_code\u0060 upload ignores the \u0060Backhalf\u0060, \u0060Tags\u0060, and \u0060Current Bitly Short Link\u0060 columns. The maximum number of rows in one file depends on the plan. For examples, see [How do I shorten links in bulk?](https://support.bitly.com/hc/en-us/articles/360056277331) and [How do I create QR Codes in bulk?](https://support.bitly.com/hc/en-us/articles/25227111392397-How-do-I-create-QR-Codes-in-bulk).\n",
+        "operationId": "CreateOrganizationBulkUpload",
+        "parameters": [
+          {
+            "name": "organizationGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Oa1bcd234eF"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkUploadCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationBulkUpload"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "UPGRADE_REQUIRED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "UNPROCESSABLE_ENTITY",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnprocessableEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Bulk Upload"
+        ],
+        "summary": "Retrieve bulk uploads",
+        "description": "Returns the organization\u0027s bulk uploads from all of its groups, newest first. Every member of the organization can see them. A bulk upload appears in the list when processing starts. Use \u0060GET /organizations/{organization_guid}/bulk_uploads/{bulk_upload_id}\u0060 to check an upload before that.",
+        "operationId": "GetOrganizationBulkUploads",
+        "parameters": [
+          {
+            "name": "organizationGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Oa1bcd234eF"
+          },
+          {
+            "name": "upload_type",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/GetOrganizationBulkUploadsUploadTypeParameter"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The quantity of items to be returned",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "default": 50
+            }
+          },
+          {
+            "$ref": "#/components/parameters/SearchAfter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationBulkUploads"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "TEMPORARILY_UNAVAILABLE",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemporarilyUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organizationGuid}/bulk_uploads/{bulkUploadId}": {
+      "get": {
+        "tags": [
+          "Bulk Upload"
+        ],
+        "summary": "Retrieve a bulk upload",
+        "description": "Returns the status of one bulk upload. The status is \u0060pending\u0060 after the file is uploaded and before processing starts, then \u0060in_progress\u0060, and then \u0060success\u0060, \u0060partial_success\u0060, or \u0060failure\u0060. When processing is complete, \u0060report_url\u0060 links to the report. Every member of the organization can see the bulk uploads of all its groups. A bulk upload whose file was not uploaded returns 404.\n",
+        "operationId": "GetOrganizationBulkUpload",
+        "parameters": [
+          {
+            "name": "organizationGuid",
+            "in": "path",
+            "description": "A GUID for a Bitly organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Oa1bcd234eF"
+          },
+          {
+            "name": "bulkUploadId",
+            "in": "path",
+            "description": "The \u0060id\u0060 returned when the bulk upload was created.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationBulkUpload"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "MONTHLY_LIMIT_EXCEEDED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonthlyLimitExceeded"
                 }
               }
             }
@@ -11424,20 +11830,32 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PublicStaticQrCodeResponse"
                 }
               },
               "image/svg\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200SvgXmlResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
+                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200SvgXmlResponseSchema"
+                }
               },
               "image/png": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200PngResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "...png bytes..."
+                "example": "...png bytes...",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateStaticQrCodePublic200PngResponseSchema"
+                }
               }
             }
           },
@@ -11547,20 +11965,32 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PublicQrCodeImageResponse"
                 }
               },
               "image/svg\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetQrCodeImagePublic200SvgXmlResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
+                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetQrCodeImagePublic200SvgXmlResponseSchema"
+                }
               },
               "image/png": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetQrCodeImagePublic200PngResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "...png bytes..."
+                "example": "...png bytes...",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetQrCodeImagePublic200PngResponseSchema"
+                }
               }
             }
           },
@@ -12525,14 +12955,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ScanMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCountries200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Country, Scans\nUS, 5\n"
+                "example": "Country, Scans\nUS, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCountries200CsvResponseSchema"
+                }
               }
             }
           },
@@ -12637,14 +13075,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CityScanMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCities200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "City, Subregion, Region, Country, Scans\nNew York, , NY, US, 5\n"
+                "example": "City, Subregion, Region, Country, Scans\nNew York, , NY, US, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCities200CsvResponseSchema"
+                }
               }
             }
           },
@@ -12759,14 +13205,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ScanMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByDevicesOs200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Device OS, Scans\nApple, 5\n"
+                "example": "Device OS, Scans\nApple, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByDevicesOs200CsvResponseSchema"
+                }
               }
             }
           },
@@ -12881,14 +13335,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ScanMetrics"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByBrowser200CsvResponseSchema"
+                  "type": "string",
+                  "format": "binary"
                 },
-                "example": "Browser, Scans\nGoogle Chrome, 5\n"
+                "example": "Browser, Scans\nGoogle Chrome, 5\n",
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GetScanMetricsForQrCodeByBrowser200CsvResponseSchema"
+                }
               }
             }
           },
@@ -16684,7 +17146,8 @@
         "type": "object",
         "properties": {
           "domain": {
-            "type": "string"
+            "type": "string",
+            "description": "an available domain. An internationalized domain is returned in Unicode."
           }
         }
       },
@@ -16706,7 +17169,8 @@
         "type": "object",
         "properties": {
           "domain": {
-            "type": "string"
+            "type": "string",
+            "description": "the domain searched for. An internationalized domain is returned in Unicode."
           },
           "status": {
             "type": "string"
@@ -17058,7 +17522,8 @@
             }
           },
           "domain": {
-            "type": "string"
+            "type": "string",
+            "description": "the domain to register, in Unicode or punycode."
           },
           "organization_guid": {
             "type": "string"
@@ -17070,7 +17535,7 @@
         "properties": {
           "custom_domain": {
             "type": "string",
-            "description": "the custom domain the registration created"
+            "description": "the custom domain the registration created. An internationalized domain is returned in Unicode."
           },
           "organization_guid": {
             "type": "string"
@@ -17096,7 +17561,7 @@
         "properties": {
           "domain": {
             "type": "string",
-            "description": "the requested domain"
+            "description": "the requested domain. An internationalized domain is returned in Unicode."
           },
           "dns_provider": {
             "$ref": "#/components/schemas/DomainDnsDnsProvider"
@@ -17536,6 +18001,100 @@
           "truncated": {
             "type": "boolean",
             "description": "True when the match set exceeded the per-request row cap and only the first cap rows were exported."
+          }
+        }
+      },
+      "BulkUploadCreate": {
+        "required": [
+          "group_guid",
+          "filename",
+          "upload_type",
+          "domain"
+        ],
+        "type": "object",
+        "properties": {
+          "group_guid": {
+            "type": "string",
+            "description": "The group for the links and QR codes that the upload creates."
+          },
+          "filename": {
+            "type": "string",
+            "description": "Name of the CSV or XLSX file, with its extension."
+          },
+          "upload_type": {
+            "$ref": "#/components/schemas/BulkUploadCreateUploadType"
+          },
+          "domain": {
+            "type": "string",
+            "description": "A custom domain of the group."
+          },
+          "template_id": {
+            "type": "string",
+            "description": "QR code template. Required for \u0060qr_code\u0060 and \u0060coupled_link\u0060. Use \u0060QTDTmplWLogo\u0060 to include the Bitly logo, or \u0060QTDTmplNLogo\u0060 to exclude it."
+          }
+        }
+      },
+      "OrganizationBulkUploads": {
+        "type": "object",
+        "properties": {
+          "bulk_uploads": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationBulkUpload"
+            },
+            "description": "The organization\u0027s bulk uploads on this page, newest first."
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/BitlinksPagination"
+          }
+        }
+      },
+      "OrganizationBulkUpload": {
+        "required": [
+          "id",
+          "group_guid",
+          "upload_type",
+          "status",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The bulk upload ID. Use it to get the status of the bulk upload."
+          },
+          "group_guid": {
+            "type": "string",
+            "description": "The group for the links and QR codes that the upload creates."
+          },
+          "upload_type": {
+            "$ref": "#/components/schemas/OrganizationBulkUploadUploadType"
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain for the new short links. Present until processing starts."
+          },
+          "status": {
+            "$ref": "#/components/schemas/OrganizationBulkUploadStatus"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "For \u0060awaiting_upload\u0060, the time of the create request. For \u0060pending\u0060, the time the file was uploaded. For later statuses, the time processing started."
+          },
+          "upload_url": {
+            "type": "string",
+            "description": "Signed URL for the PUT request that uploads the file. Present only in the create response."
+          },
+          "headers": {
+            "$ref": "#/components/schemas/OrganizationBulkUploadHeadersProperty"
+          },
+          "upload_url_expires_at": {
+            "type": "string",
+            "description": "Time the upload URL expires. Present only in the create response."
+          },
+          "report_url": {
+            "type": "string",
+            "description": "Link to the report. Present when processing is complete and a report exists."
           }
         }
       },
@@ -21069,6 +21628,13 @@
           }
         }
       },
+      "OrganizationBulkUploadHeaders": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Headers to send without changes in the PUT request to \u0060upload_url\u0060. Present only in the create response."
+      },
       "DigitalBusinessCardContentFile": {
         "required": [
           "file_name",
@@ -21362,6 +21928,13 @@
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "OrganizationBulkUploadHeadersProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Headers to send without changes in the PUT request to \u0060upload_url\u0060. Present only in the create response."
       },
       "GetGroupLinkClicksByDevice200ResponseMetricsItem": {
         "type": "object",
@@ -22061,6 +22634,102 @@
             {
               "value": "qr_codes_list",
               "name": "QrCodesList"
+            }
+          ]
+        }
+      },
+      "BulkUploadCreateUploadType": {
+        "enum": [
+          "link",
+          "qr_code",
+          "coupled_link"
+        ],
+        "type": "string",
+        "description": "The item that each row creates. \u0060link\u0060 creates a link, \u0060qr_code\u0060 creates a QR code, and \u0060coupled_link\u0060 creates a link and its QR code.",
+        "x-ms-enum": {
+          "name": "BulkUploadCreateUploadType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "link",
+              "name": "Link"
+            },
+            {
+              "value": "qr_code",
+              "name": "QrCode"
+            },
+            {
+              "value": "coupled_link",
+              "name": "CoupledLink"
+            }
+          ]
+        }
+      },
+      "OrganizationBulkUploadUploadType": {
+        "enum": [
+          "link",
+          "qr_code",
+          "coupled_link"
+        ],
+        "type": "string",
+        "description": "The item that each row creates. \u0060link\u0060 creates a link, \u0060qr_code\u0060 creates a QR code, and \u0060coupled_link\u0060 creates a link and its QR code.",
+        "x-ms-enum": {
+          "name": "OrganizationBulkUploadUploadType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "link",
+              "name": "Link"
+            },
+            {
+              "value": "qr_code",
+              "name": "QrCode"
+            },
+            {
+              "value": "coupled_link",
+              "name": "CoupledLink"
+            }
+          ]
+        }
+      },
+      "OrganizationBulkUploadStatus": {
+        "enum": [
+          "awaiting_upload",
+          "pending",
+          "in_progress",
+          "partial_success",
+          "success",
+          "failure"
+        ],
+        "type": "string",
+        "description": "\u0060awaiting_upload\u0060 until the file is uploaded, \u0060pending\u0060 until processing starts, and \u0060in_progress\u0060 during processing. Then \u0060success\u0060, \u0060partial_success\u0060 when some rows failed, or \u0060failure\u0060 when no rows were processed.",
+        "x-ms-enum": {
+          "name": "OrganizationBulkUploadStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "awaiting_upload",
+              "name": "AwaitingUpload"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "in_progress",
+              "name": "InProgress"
+            },
+            {
+              "value": "partial_success",
+              "name": "PartialSuccess"
+            },
+            {
+              "value": "success",
+              "name": "Success"
+            },
+            {
+              "value": "failure",
+              "name": "Failure"
             }
           ]
         }
@@ -22771,6 +23440,32 @@
           ]
         }
       },
+      "GetOrganizationBulkUploadsUploadTypeParameter": {
+        "enum": [
+          "link",
+          "qr_code",
+          "coupled_link"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetOrganizationBulkUploadsUploadTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "link",
+              "name": "Link"
+            },
+            {
+              "value": "qr_code",
+              "name": "QrCode"
+            },
+            {
+              "value": "coupled_link",
+              "name": "CoupledLink"
+            }
+          ]
+        }
+      },
       "CreateStaticQrCodePublicAcceptParameter": {
         "enum": [
           "application/json",
@@ -23305,7 +24000,7 @@
       "DomainSearchQuery": {
         "name": "query",
         "in": "query",
-        "description": "the domain name to search for, up to 32 characters",
+        "description": "the domain name to search for, in Unicode or punycode, up to 32 bytes. Punycode may be up to 42 bytes when its Unicode form is within 32 bytes.",
         "required": true,
         "schema": {
           "type": "string"
@@ -23372,10 +24067,10 @@
         },
         "example": "2023-10-04"
       },
-      "Domain": {
+      "RegistrableDomain": {
         "name": "domain",
         "in": "path",
-        "description": "a web domain",
+        "description": "a domain, in Unicode or punycode",
         "required": true,
         "schema": {
           "type": "string"
@@ -23385,7 +24080,7 @@
       "CustomDomain": {
         "name": "custom_domain",
         "in": "path",
-        "description": "a custom domain on your account",
+        "description": "a custom domain on your account, in Unicode or punycode",
         "required": true,
         "schema": {
           "type": "string"
@@ -23519,8 +24214,8 @@
       "description": "Invitations allow new users to be invited to a Bitly organization via email or username. These endpoints handle both creation, retrieval, and deletion of invitations tied to an organization.\n"
     },
     {
-      "name": "Bulk Shorten",
-      "description": "Bulk Shorten references the capability for users to upload a csv of links they would like to shorten and optionally customize.\n"
+      "name": "Bulk Upload",
+      "description": "Bulk Upload lets users upload a CSV or XLSX file to create links, QR codes, or both in one request.\n"
     },
     {
       "name": "Launchpads",

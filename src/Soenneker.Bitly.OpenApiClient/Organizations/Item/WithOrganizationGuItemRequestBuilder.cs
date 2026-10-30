@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Bitly.OpenApiClient.Models;
+using Soenneker.Bitly.OpenApiClient.Organizations.Item.Bulk_uploads;
 using Soenneker.Bitly.OpenApiClient.Organizations.Item.Plan_limits;
 using Soenneker.Bitly.OpenApiClient.Organizations.Item.Shorten_counts;
 using Soenneker.Bitly.OpenApiClient.Organizations.Item.Shorten_counts_by_group;
@@ -21,6 +22,11 @@ namespace Soenneker.Bitly.OpenApiClient.Organizations.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithOrganizationGuItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulk_uploads property</summary>
+        public global::Soenneker.Bitly.OpenApiClient.Organizations.Item.Bulk_uploads.Bulk_uploadsRequestBuilder Bulk_uploads
+        {
+            get => new global::Soenneker.Bitly.OpenApiClient.Organizations.Item.Bulk_uploads.Bulk_uploadsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The plan_limits property</summary>
         public global::Soenneker.Bitly.OpenApiClient.Organizations.Item.Plan_limits.Plan_limitsRequestBuilder Plan_limits
         {
@@ -83,6 +89,8 @@ namespace Soenneker.Bitly.OpenApiClient.Organizations.Item
                 { "404", global::Soenneker.Bitly.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.Organization>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -36,7 +36,7 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Static
         /// <summary>
         /// Generate a static QR code image without creating or saving a QR code resource. SVG and PNG output are supported via the Accept headerContact your Account Manager to discuss enabling this feature for your account.The `render_customizations` field supports basic appearance options. Customizations that require the rasterize API are not supported: `gradient`, `background_gradient`, `frame`, `text`, and `logo`.The Accept header controls the response format:- `application/json` (default): Returns a JSON object with the image as a base64-encoded byte string.- `image/svg+xml`: Returns the raw SVG image.- `image/png`: Returns the raw PNG image.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.PublicStaticQrCodeResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Request body for generating a static QR code image. Customizations such as gradient, background_gradient, frame, text and logo are not supported.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,11 +48,11 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Static
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.PublicStaticQrCodeResponse?> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateStaticQrCodeRequest body, Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Static.StaticRequestBuilder.StaticRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateStaticQrCodeRequest body, Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Static.StaticRequestBuilder.StaticRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.PublicStaticQrCodeResponse> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateStaticQrCodeRequest body, Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Static.StaticRequestBuilder.StaticRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.Bitly.OpenApiClient.Models.PublicCreateStaticQrCodeRequest body, Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.QrCodes.Static.StaticRequestBuilder.StaticRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -65,8 +65,10 @@ namespace Soenneker.Bitly.OpenApiClient.QrCodes.Static
                 { "422", global::Soenneker.Bitly.OpenApiClient.Models.UnprocessableEntity.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.PublicStaticQrCodeResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.PublicStaticQrCodeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Generate a static QR code image without creating or saving a QR code resource. SVG and PNG output are supported via the Accept headerContact your Account Manager to discuss enabling this feature for your account.The `render_customizations` field supports basic appearance options. Customizations that require the rasterize API are not supported: `gradient`, `background_gradient`, `frame`, `text`, and `logo`.The Accept header controls the response format:- `application/json` (default): Returns a JSON object with the image as a base64-encoded byte string.- `image/svg+xml`: Returns the raw SVG image.- `image/png`: Returns the raw PNG image.

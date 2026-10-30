@@ -12,80 +12,114 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DynamicRoutingRule : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("country_exclude") is { } nullNodeCountryExclude && nullNodeCountryExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryExclude = null;
+            if (parseNode.GetChildNode("country_match") is { } nullNodeCountryMatch && nullNodeCountryMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryMatch = null;
+            if (parseNode.GetChildNode("device_exclude") is { } nullNodeDeviceExclude && nullNodeDeviceExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceExclude = null;
+            if (parseNode.GetChildNode("device_match") is { } nullNodeDeviceMatch && nullNodeDeviceMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceMatch = null;
+            if (parseNode.GetChildNode("long_url") is { } nullNodeLongUrl && nullNodeLongUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongUrl = null;
+            if (parseNode.GetChildNode("os_exclude") is { } nullNodeOsExclude && nullNodeOsExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsExclude = null;
+            if (parseNode.GetChildNode("os_match") is { } nullNodeOsMatch && nullNodeOsMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsMatch = null;
+            if (parseNode.GetChildNode("region_exclude") is { } nullNodeRegionExclude && nullNodeRegionExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionExclude = null;
+            if (parseNode.GetChildNode("region_match") is { } nullNodeRegionMatch && nullNodeRegionMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionMatch = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ISO 3166-1 alpha-2 country codes that must NOT match for this rule to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CountryExclude { get; set; }
+        public List<string>? CountryExclude { get => _explicitNullValueCountryExclude; set { _explicitNullValueCountryExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_exclude"); else _explicitNullProperties?.Remove("country_exclude"); } }
+        private List<string>? _explicitNullValueCountryExclude = default!;
 #nullable restore
 #else
-        public List<string> CountryExclude { get; set; }
+        public List<string> CountryExclude { get => _explicitNullValueCountryExclude; set { _explicitNullValueCountryExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_exclude"); else _explicitNullProperties?.Remove("country_exclude"); } }
+        private List<string> _explicitNullValueCountryExclude = default!;
 #endif
         /// <summary>ISO 3166-1 alpha-2 country codes that trigger this rule (e.g., [&quot;US&quot;, &quot;CA&quot;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CountryMatch { get; set; }
+        public List<string>? CountryMatch { get => _explicitNullValueCountryMatch; set { _explicitNullValueCountryMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_match"); else _explicitNullProperties?.Remove("country_match"); } }
+        private List<string>? _explicitNullValueCountryMatch = default!;
 #nullable restore
 #else
-        public List<string> CountryMatch { get; set; }
+        public List<string> CountryMatch { get => _explicitNullValueCountryMatch; set { _explicitNullValueCountryMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_match"); else _explicitNullProperties?.Remove("country_match"); } }
+        private List<string> _explicitNullValueCountryMatch = default!;
 #endif
         /// <summary>Device types that must NOT match for this rule to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?>? DeviceExclude { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?>? DeviceExclude { get => _explicitNullValueDeviceExclude; set { _explicitNullValueDeviceExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_exclude"); else _explicitNullProperties?.Remove("device_exclude"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?>? _explicitNullValueDeviceExclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?> DeviceExclude { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?> DeviceExclude { get => _explicitNullValueDeviceExclude; set { _explicitNullValueDeviceExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_exclude"); else _explicitNullProperties?.Remove("device_exclude"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?> _explicitNullValueDeviceExclude = default!;
 #endif
         /// <summary>Device types that trigger this rule (e.g., [&quot;mobile&quot;, &quot;tablet&quot;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?>? DeviceMatch { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?>? DeviceMatch { get => _explicitNullValueDeviceMatch; set { _explicitNullValueDeviceMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_match"); else _explicitNullProperties?.Remove("device_match"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?>? _explicitNullValueDeviceMatch = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?> DeviceMatch { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?> DeviceMatch { get => _explicitNullValueDeviceMatch; set { _explicitNullValueDeviceMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_match"); else _explicitNullProperties?.Remove("device_match"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingDeviceEnum?> _explicitNullValueDeviceMatch = default!;
 #endif
         /// <summary>The destination URL for requests matching this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LongUrl { get; set; }
+        public string? LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
+        private string? _explicitNullValueLongUrl = default!;
 #nullable restore
 #else
-        public string LongUrl { get; set; }
+        public string LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
+        private string _explicitNullValueLongUrl = default!;
 #endif
         /// <summary>Operating systems that must NOT match for this rule to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?>? OsExclude { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?>? OsExclude { get => _explicitNullValueOsExclude; set { _explicitNullValueOsExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_exclude"); else _explicitNullProperties?.Remove("os_exclude"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?>? _explicitNullValueOsExclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?> OsExclude { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?> OsExclude { get => _explicitNullValueOsExclude; set { _explicitNullValueOsExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_exclude"); else _explicitNullProperties?.Remove("os_exclude"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?> _explicitNullValueOsExclude = default!;
 #endif
         /// <summary>Operating systems that trigger this rule (e.g., [&quot;ios&quot;, &quot;android&quot;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?>? OsMatch { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?>? OsMatch { get => _explicitNullValueOsMatch; set { _explicitNullValueOsMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_match"); else _explicitNullProperties?.Remove("os_match"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?>? _explicitNullValueOsMatch = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?> OsMatch { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?> OsMatch { get => _explicitNullValueOsMatch; set { _explicitNullValueOsMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_match"); else _explicitNullProperties?.Remove("os_match"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum?> _explicitNullValueOsMatch = default!;
 #endif
         /// <summary>ISO 3166-2 region codes that must NOT match for this rule to apply (e.g., [&quot;US-CA&quot;, &quot;CA-ON&quot;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RegionExclude { get; set; }
+        public List<string>? RegionExclude { get => _explicitNullValueRegionExclude; set { _explicitNullValueRegionExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_exclude"); else _explicitNullProperties?.Remove("region_exclude"); } }
+        private List<string>? _explicitNullValueRegionExclude = default!;
 #nullable restore
 #else
-        public List<string> RegionExclude { get; set; }
+        public List<string> RegionExclude { get => _explicitNullValueRegionExclude; set { _explicitNullValueRegionExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_exclude"); else _explicitNullProperties?.Remove("region_exclude"); } }
+        private List<string> _explicitNullValueRegionExclude = default!;
 #endif
         /// <summary>ISO 3166-2 region codes that trigger this rule (e.g., [&quot;US-CA&quot;, &quot;CA-ON&quot;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RegionMatch { get; set; }
+        public List<string>? RegionMatch { get => _explicitNullValueRegionMatch; set { _explicitNullValueRegionMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_match"); else _explicitNullProperties?.Remove("region_match"); } }
+        private List<string>? _explicitNullValueRegionMatch = default!;
 #nullable restore
 #else
-        public List<string> RegionMatch { get; set; }
+        public List<string> RegionMatch { get => _explicitNullValueRegionMatch; set { _explicitNullValueRegionMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_match"); else _explicitNullProperties?.Remove("region_match"); } }
+        private List<string> _explicitNullValueRegionMatch = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule"/> and sets the default values.
@@ -102,7 +136,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,6 +173,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingPlatformEnum>("os_match", OsMatch);
             writer.WriteCollectionOfPrimitiveValues<string>("region_exclude", RegionExclude);
             writer.WriteCollectionOfPrimitiveValues<string>("region_match", RegionMatch);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

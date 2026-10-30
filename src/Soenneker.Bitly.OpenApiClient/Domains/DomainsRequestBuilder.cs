@@ -19,7 +19,7 @@ namespace Soenneker.Bitly.OpenApiClient.Domains
     public partial class DomainsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Bitly.OpenApiClient.domains.item collection</summary>
-        /// <param name="position">a web domain</param>
+        /// <param name="position">a domain, in Unicode or punycode</param>
         /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Domains.Item.WithDomainItemRequestBuilder"/></returns>
         public global::Soenneker.Bitly.OpenApiClient.Domains.Item.WithDomainItemRequestBuilder this[string position]
         {
@@ -72,6 +72,8 @@ namespace Soenneker.Bitly.OpenApiClient.Domains
                 { "403", global::Soenneker.Bitly.OpenApiClient.Models.Forbidden.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.BsdSearchResults>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.BsdSearchResults.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -111,6 +113,8 @@ namespace Soenneker.Bitly.OpenApiClient.Domains
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Bitly.OpenApiClient.Models.Timeout.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.PurchaseBsdResponse>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.PurchaseBsdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -183,7 +187,7 @@ namespace Soenneker.Bitly.OpenApiClient.Domains
             [QueryParameter("organization_guid")]
             public string OrganizationGuid { get; set; }
 #endif
-            /// <summary>the domain name to search for, up to 32 characters</summary>
+            /// <summary>the domain name to search for, in Unicode or punycode, up to 32 bytes. Punycode may be up to 42 bytes when its Unicode form is within 32 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

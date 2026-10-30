@@ -12,102 +12,153 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomDomainBody : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("configuration_last_check_ts") is { } nullNodeConfigurationLastCheckTs && nullNodeConfigurationLastCheckTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationLastCheckTs = null;
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("custom_domain") is { } nullNodeCustomDomain && nullNodeCustomDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDomain = null;
+            if (parseNode.GetChildNode("deeplink_apps") is { } nullNodeDeeplinkApps && nullNodeDeeplinkApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeeplinkApps = null;
+            if (parseNode.GetChildNode("group_guids") is { } nullNodeGroupGuids && nullNodeGroupGuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupGuids = null;
+            if (parseNode.GetChildNode("hsts_enabled") is { } nullNodeHstsEnabled && nullNodeHstsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HstsEnabled = null;
+            if (parseNode.GetChildNode("https_bitlinks") is { } nullNodeHttpsBitlinks && nullNodeHttpsBitlinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpsBitlinks = null;
+            if (parseNode.GetChildNode("https_enabled") is { } nullNodeHttpsEnabled && nullNodeHttpsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpsEnabled = null;
+            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("root_redirect") is { } nullNodeRootRedirect && nullNodeRootRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootRedirect = null;
+            if (parseNode.GetChildNode("ssl_autoconfigure_error") is { } nullNodeSslAutoconfigureError && nullNodeSslAutoconfigureError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SslAutoconfigureError = null;
+            if (parseNode.GetChildNode("ssl_cert") is { } nullNodeSslCert && nullNodeSslCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SslCert = null;
+            if (parseNode.GetChildNode("ssl_configuration_error") is { } nullNodeSslConfigurationError && nullNodeSslConfigurationError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SslConfigurationError = null;
+            if (parseNode.GetChildNode("upgrade_insecure_requests") is { } nullNodeUpgradeInsecureRequests && nullNodeUpgradeInsecureRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpgradeInsecureRequests = null;
+            if (parseNode.GetChildNode("validation_error") is { } nullNodeValidationError && nullNodeValidationError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationError = null;
+            if (parseNode.GetChildNode("validation_status") is { } nullNodeValidationStatus && nullNodeValidationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationStatus = null;
+            if (parseNode.GetChildNode("wildcard_redirect") is { } nullNodeWildcardRedirect && nullNodeWildcardRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WildcardRedirect = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration_last_check_ts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationLastCheckTs { get; set; }
+        public string? ConfigurationLastCheckTs { get => _explicitNullValueConfigurationLastCheckTs; set { _explicitNullValueConfigurationLastCheckTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_last_check_ts"); else _explicitNullProperties?.Remove("configuration_last_check_ts"); } }
+        private string? _explicitNullValueConfigurationLastCheckTs = default!;
 #nullable restore
 #else
-        public string ConfigurationLastCheckTs { get; set; }
+        public string ConfigurationLastCheckTs { get => _explicitNullValueConfigurationLastCheckTs; set { _explicitNullValueConfigurationLastCheckTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_last_check_ts"); else _explicitNullProperties?.Remove("configuration_last_check_ts"); } }
+        private string _explicitNullValueConfigurationLastCheckTs = default!;
 #endif
         /// <summary>ISO_TIMESTAMP</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Created { get; set; }
+        public string? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private string? _explicitNullValueCreated = default!;
 #nullable restore
 #else
-        public string Created { get; set; }
+        public string Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private string _explicitNullValueCreated = default!;
 #endif
         /// <summary>The custom_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomDomain { get; set; }
+        public string? CustomDomain { get => _explicitNullValueCustomDomain; set { _explicitNullValueCustomDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domain"); else _explicitNullProperties?.Remove("custom_domain"); } }
+        private string? _explicitNullValueCustomDomain = default!;
 #nullable restore
 #else
-        public string CustomDomain { get; set; }
+        public string CustomDomain { get => _explicitNullValueCustomDomain; set { _explicitNullValueCustomDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domain"); else _explicitNullProperties?.Remove("custom_domain"); } }
+        private string _explicitNullValueCustomDomain = default!;
 #endif
         /// <summary>The deeplink_apps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.MinimalDeeplinkApp>? DeeplinkApps { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.MinimalDeeplinkApp>? DeeplinkApps { get => _explicitNullValueDeeplinkApps; set { _explicitNullValueDeeplinkApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deeplink_apps"); else _explicitNullProperties?.Remove("deeplink_apps"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.MinimalDeeplinkApp>? _explicitNullValueDeeplinkApps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.MinimalDeeplinkApp> DeeplinkApps { get; set; }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.MinimalDeeplinkApp> DeeplinkApps { get => _explicitNullValueDeeplinkApps; set { _explicitNullValueDeeplinkApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deeplink_apps"); else _explicitNullProperties?.Remove("deeplink_apps"); } }
+        private List<global::Soenneker.Bitly.OpenApiClient.Models.MinimalDeeplinkApp> _explicitNullValueDeeplinkApps = default!;
 #endif
         /// <summary>The group_guids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupGuids { get; set; }
+        public List<string>? GroupGuids { get => _explicitNullValueGroupGuids; set { _explicitNullValueGroupGuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guids"); else _explicitNullProperties?.Remove("group_guids"); } }
+        private List<string>? _explicitNullValueGroupGuids = default!;
 #nullable restore
 #else
-        public List<string> GroupGuids { get; set; }
+        public List<string> GroupGuids { get => _explicitNullValueGroupGuids; set { _explicitNullValueGroupGuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guids"); else _explicitNullProperties?.Remove("group_guids"); } }
+        private List<string> _explicitNullValueGroupGuids = default!;
 #endif
         /// <summary>The hsts_enabled property</summary>
-        public bool? HstsEnabled { get; set; }
+        public bool? HstsEnabled { get => _explicitNullValueHstsEnabled; set { _explicitNullValueHstsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hsts_enabled"); else _explicitNullProperties?.Remove("hsts_enabled"); } }
+        private bool? _explicitNullValueHstsEnabled = default!;
         /// <summary>The https_bitlinks property</summary>
-        public bool? HttpsBitlinks { get; set; }
+        public bool? HttpsBitlinks { get => _explicitNullValueHttpsBitlinks; set { _explicitNullValueHttpsBitlinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("https_bitlinks"); else _explicitNullProperties?.Remove("https_bitlinks"); } }
+        private bool? _explicitNullValueHttpsBitlinks = default!;
         /// <summary>The https_enabled property</summary>
-        public bool? HttpsEnabled { get; set; }
+        public bool? HttpsEnabled { get => _explicitNullValueHttpsEnabled; set { _explicitNullValueHttpsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("https_enabled"); else _explicitNullProperties?.Remove("https_enabled"); } }
+        private bool? _explicitNullValueHttpsEnabled = default!;
         /// <summary>The is_active property</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        private bool? _explicitNullValueIsActive = default!;
         /// <summary>The root_redirect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootRedirect { get; set; }
+        public string? RootRedirect { get => _explicitNullValueRootRedirect; set { _explicitNullValueRootRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_redirect"); else _explicitNullProperties?.Remove("root_redirect"); } }
+        private string? _explicitNullValueRootRedirect = default!;
 #nullable restore
 #else
-        public string RootRedirect { get; set; }
+        public string RootRedirect { get => _explicitNullValueRootRedirect; set { _explicitNullValueRootRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_redirect"); else _explicitNullProperties?.Remove("root_redirect"); } }
+        private string _explicitNullValueRootRedirect = default!;
 #endif
         /// <summary>The ssl_autoconfigure_error property</summary>
-        public bool? SslAutoconfigureError { get; set; }
+        public bool? SslAutoconfigureError { get => _explicitNullValueSslAutoconfigureError; set { _explicitNullValueSslAutoconfigureError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl_autoconfigure_error"); else _explicitNullProperties?.Remove("ssl_autoconfigure_error"); } }
+        private bool? _explicitNullValueSslAutoconfigureError = default!;
         /// <summary>SSL Certification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.PublicSslCert? SslCert { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.PublicSslCert? SslCert { get => _explicitNullValueSslCert; set { _explicitNullValueSslCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl_cert"); else _explicitNullProperties?.Remove("ssl_cert"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.PublicSslCert? _explicitNullValueSslCert = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.PublicSslCert SslCert { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.PublicSslCert SslCert { get => _explicitNullValueSslCert; set { _explicitNullValueSslCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl_cert"); else _explicitNullProperties?.Remove("ssl_cert"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.PublicSslCert _explicitNullValueSslCert = default!;
 #endif
         /// <summary>The ssl_configuration_error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslConfigurationError { get; set; }
+        public string? SslConfigurationError { get => _explicitNullValueSslConfigurationError; set { _explicitNullValueSslConfigurationError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl_configuration_error"); else _explicitNullProperties?.Remove("ssl_configuration_error"); } }
+        private string? _explicitNullValueSslConfigurationError = default!;
 #nullable restore
 #else
-        public string SslConfigurationError { get; set; }
+        public string SslConfigurationError { get => _explicitNullValueSslConfigurationError; set { _explicitNullValueSslConfigurationError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl_configuration_error"); else _explicitNullProperties?.Remove("ssl_configuration_error"); } }
+        private string _explicitNullValueSslConfigurationError = default!;
 #endif
         /// <summary>The upgrade_insecure_requests property</summary>
-        public bool? UpgradeInsecureRequests { get; set; }
+        public bool? UpgradeInsecureRequests { get => _explicitNullValueUpgradeInsecureRequests; set { _explicitNullValueUpgradeInsecureRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upgrade_insecure_requests"); else _explicitNullProperties?.Remove("upgrade_insecure_requests"); } }
+        private bool? _explicitNullValueUpgradeInsecureRequests = default!;
         /// <summary>The validation_error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidationError { get; set; }
+        public string? ValidationError { get => _explicitNullValueValidationError; set { _explicitNullValueValidationError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_error"); else _explicitNullProperties?.Remove("validation_error"); } }
+        private string? _explicitNullValueValidationError = default!;
 #nullable restore
 #else
-        public string ValidationError { get; set; }
+        public string ValidationError { get => _explicitNullValueValidationError; set { _explicitNullValueValidationError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_error"); else _explicitNullProperties?.Remove("validation_error"); } }
+        private string _explicitNullValueValidationError = default!;
 #endif
         /// <summary>The validation_status property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBodyValidationStatus? ValidationStatus { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBodyValidationStatus? ValidationStatus { get => _explicitNullValueValidationStatus; set { _explicitNullValueValidationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_status"); else _explicitNullProperties?.Remove("validation_status"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBodyValidationStatus? _explicitNullValueValidationStatus = default!;
         /// <summary>The wildcard_redirect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WildcardRedirect { get; set; }
+        public string? WildcardRedirect { get => _explicitNullValueWildcardRedirect; set { _explicitNullValueWildcardRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wildcard_redirect"); else _explicitNullProperties?.Remove("wildcard_redirect"); } }
+        private string? _explicitNullValueWildcardRedirect = default!;
 #nullable restore
 #else
-        public string WildcardRedirect { get; set; }
+        public string WildcardRedirect { get => _explicitNullValueWildcardRedirect; set { _explicitNullValueWildcardRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wildcard_redirect"); else _explicitNullProperties?.Remove("wildcard_redirect"); } }
+        private string _explicitNullValueWildcardRedirect = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody"/> and sets the default values.
@@ -124,7 +175,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -177,6 +228,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteStringValue("validation_error", ValidationError);
             writer.WriteEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBodyValidationStatus>("validation_status", ValidationStatus);
             writer.WriteStringValue("wildcard_redirect", WildcardRedirect);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

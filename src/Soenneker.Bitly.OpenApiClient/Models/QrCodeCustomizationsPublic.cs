@@ -12,90 +12,129 @@ namespace Soenneker.Bitly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QrCodeCustomizationsPublic : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("background_color") is { } nullNodeBackgroundColor && nullNodeBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundColor = null;
+            if (parseNode.GetChildNode("background_gradient") is { } nullNodeBackgroundGradient && nullNodeBackgroundGradient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundGradient = null;
+            if (parseNode.GetChildNode("branding") is { } nullNodeBranding && nullNodeBranding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branding = null;
+            if (parseNode.GetChildNode("corners") is { } nullNodeCorners && nullNodeCorners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corners = null;
+            if (parseNode.GetChildNode("dot_pattern_color") is { } nullNodeDotPatternColor && nullNodeDotPatternColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DotPatternColor = null;
+            if (parseNode.GetChildNode("dot_pattern_type") is { } nullNodeDotPatternType && nullNodeDotPatternType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DotPatternType = null;
+            if (parseNode.GetChildNode("frame") is { } nullNodeFrame && nullNodeFrame.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frame = null;
+            if (parseNode.GetChildNode("gradient") is { } nullNodeGradient && nullNodeGradient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gradient = null;
+            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("spec_settings") is { } nullNodeSpecSettings && nullNodeSpecSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpecSettings = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The QR code&apos;s background color in hex code format with values for alpha channel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundColor { get; set; }
+        public string? BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string? _explicitNullValueBackgroundColor = default!;
 #nullable restore
 #else
-        public string BackgroundColor { get; set; }
+        public string BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string _explicitNullValueBackgroundColor = default!;
 #endif
         /// <summary>The background_gradient property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient? BackgroundGradient { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient? BackgroundGradient { get => _explicitNullValueBackgroundGradient; set { _explicitNullValueBackgroundGradient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_gradient"); else _explicitNullProperties?.Remove("background_gradient"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient? _explicitNullValueBackgroundGradient = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient BackgroundGradient { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient BackgroundGradient { get => _explicitNullValueBackgroundGradient; set { _explicitNullValueBackgroundGradient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_gradient"); else _explicitNullProperties?.Remove("background_gradient"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient _explicitNullValueBackgroundGradient = default!;
 #endif
         /// <summary>The branding property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding? Branding { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding? Branding { get => _explicitNullValueBranding; set { _explicitNullValueBranding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branding"); else _explicitNullProperties?.Remove("branding"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding? _explicitNullValueBranding = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding Branding { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding Branding { get => _explicitNullValueBranding; set { _explicitNullValueBranding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branding"); else _explicitNullProperties?.Remove("branding"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding _explicitNullValueBranding = default!;
 #endif
         /// <summary>An object representing all three corners of the QR code. The corners corresponding to each property are: corner_1 = top left, corner_2 = top right, and corner_3 = bottom right</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorners? Corners { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorners? Corners { get => _explicitNullValueCorners; set { _explicitNullValueCorners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corners"); else _explicitNullProperties?.Remove("corners"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorners? _explicitNullValueCorners = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorners Corners { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorners Corners { get => _explicitNullValueCorners; set { _explicitNullValueCorners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corners"); else _explicitNullProperties?.Remove("corners"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorners _explicitNullValueCorners = default!;
 #endif
         /// <summary>The QR code&apos;s dot pattern color in hex code format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DotPatternColor { get; set; }
+        public string? DotPatternColor { get => _explicitNullValueDotPatternColor; set { _explicitNullValueDotPatternColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dot_pattern_color"); else _explicitNullProperties?.Remove("dot_pattern_color"); } }
+        private string? _explicitNullValueDotPatternColor = default!;
 #nullable restore
 #else
-        public string DotPatternColor { get; set; }
+        public string DotPatternColor { get => _explicitNullValueDotPatternColor; set { _explicitNullValueDotPatternColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dot_pattern_color"); else _explicitNullProperties?.Remove("dot_pattern_color"); } }
+        private string _explicitNullValueDotPatternColor = default!;
 #endif
         /// <summary>The dot_pattern_type property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDotPatternType? DotPatternType { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDotPatternType? DotPatternType { get => _explicitNullValueDotPatternType; set { _explicitNullValueDotPatternType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dot_pattern_type"); else _explicitNullProperties?.Remove("dot_pattern_type"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDotPatternType? _explicitNullValueDotPatternType = default!;
         /// <summary>The frame property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeFrameRequest? Frame { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeFrameRequest? Frame { get => _explicitNullValueFrame; set { _explicitNullValueFrame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame"); else _explicitNullProperties?.Remove("frame"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeFrameRequest? _explicitNullValueFrame = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeFrameRequest Frame { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeFrameRequest Frame { get => _explicitNullValueFrame; set { _explicitNullValueFrame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame"); else _explicitNullProperties?.Remove("frame"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeFrameRequest _explicitNullValueFrame = default!;
 #endif
         /// <summary>The gradient property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient? Gradient { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient? Gradient { get => _explicitNullValueGradient; set { _explicitNullValueGradient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gradient"); else _explicitNullProperties?.Remove("gradient"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient? _explicitNullValueGradient = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient Gradient { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient Gradient { get => _explicitNullValueGradient; set { _explicitNullValueGradient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gradient"); else _explicitNullProperties?.Remove("gradient"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient _explicitNullValueGradient = default!;
 #endif
         /// <summary>The logo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeLogoPublic? Logo { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeLogoPublic? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeLogoPublic? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeLogoPublic Logo { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeLogoPublic Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeLogoPublic _explicitNullValueLogo = default!;
 #endif
         /// <summary>The QR code&apos;s editable spec settings, which for now is just the error correction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic? SpecSettings { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic? SpecSettings { get => _explicitNullValueSpecSettings; set { _explicitNullValueSpecSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spec_settings"); else _explicitNullProperties?.Remove("spec_settings"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic? _explicitNullValueSpecSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic SpecSettings { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic SpecSettings { get => _explicitNullValueSpecSettings; set { _explicitNullValueSpecSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spec_settings"); else _explicitNullProperties?.Remove("spec_settings"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic _explicitNullValueSpecSettings = default!;
 #endif
         /// <summary>Contains the center, top, and bottom text to be used in the QR code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeText? Text { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeText? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeText? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeText Text { get; set; }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeText Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeText _explicitNullValueText = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic"/> and sets the default values.
@@ -112,7 +151,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         public static global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,6 +192,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeLogoPublic>("logo", Logo);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic>("spec_settings", SpecSettings);
             writer.WriteObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeText>("text", Text);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

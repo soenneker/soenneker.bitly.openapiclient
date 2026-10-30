@@ -36,7 +36,7 @@ namespace Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic
         /// <summary>
         /// Returns agentic traffic (AI agents and assistants) for the specified link over time, broken down by agent.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Bitly.OpenApiClient.Models.ClickMetrics"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.BadRequest">When receiving a 400 status code</exception>
@@ -49,11 +49,11 @@ namespace Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic
         /// <exception cref="global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.ClickMetrics?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic.Agentic_trafficRequestBuilder.Agentic_trafficRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic.Agentic_trafficRequestBuilder.Agentic_trafficRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Bitly.OpenApiClient.Models.ClickMetrics> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic.Agentic_trafficRequestBuilder.Agentic_trafficRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic.Agentic_trafficRequestBuilder.Agentic_trafficRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,8 +67,10 @@ namespace Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Agentic_traffic
                 { "429", global::Soenneker.Bitly.OpenApiClient.Models.MonthlyLimitExceeded.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Bitly.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Bitly.OpenApiClient.Models.TemporarilyUnavailable.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Bitly.OpenApiClient.Models.ClickMetrics>(requestInfo, global::Soenneker.Bitly.OpenApiClient.Models.ClickMetrics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns agentic traffic (AI agents and assistants) for the specified link over time, broken down by agent.
