@@ -17,9 +17,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_domain") is { } nullNodeCustomDomain && nullNodeCustomDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDomain = null;
-            if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
-            if (parseNode.GetChildNode("validation_status") is { } nullNodeValidationStatus && nullNodeValidationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationStatus = null;
+            if (parseNode.GetChildNode("custom_domain") is null) { _explicitNullValueCustomDomain = default!; _explicitNullProperties?.Remove("custom_domain"); }
+            else if (parseNode.GetChildNode("custom_domain") is { } nullNodeCustomDomain && nullNodeCustomDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDomain = null;
+            if (parseNode.GetChildNode("organization_guid") is null) { _explicitNullValueOrganizationGuid = default!; _explicitNullProperties?.Remove("organization_guid"); }
+            else if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
+            if (parseNode.GetChildNode("validation_status") is null) { _explicitNullValueValidationStatus = default!; _explicitNullProperties?.Remove("validation_status"); }
+            else if (parseNode.GetChildNode("validation_status") is { } nullNodeValidationStatus && nullNodeValidationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>the custom domain the registration created. An internationalized domain is returned in Unicode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomDomain { get => _explicitNullValueCustomDomain; set { _explicitNullValueCustomDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domain"); else _explicitNullProperties?.Remove("custom_domain"); } }
+        public string? CustomDomain { get => _explicitNullValueCustomDomain; set { _explicitNullValueCustomDomain = value; AdditionalData?.Remove("custom_domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domain"); else _explicitNullProperties?.Remove("custom_domain"); } }
         private string? _explicitNullValueCustomDomain = default!;
 #nullable restore
 #else
-        public string CustomDomain { get => _explicitNullValueCustomDomain; set { _explicitNullValueCustomDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domain"); else _explicitNullProperties?.Remove("custom_domain"); } }
+        public string CustomDomain { get => _explicitNullValueCustomDomain; set { _explicitNullValueCustomDomain = value; AdditionalData?.Remove("custom_domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domain"); else _explicitNullProperties?.Remove("custom_domain"); } }
         private string _explicitNullValueCustomDomain = default!;
 #endif
         /// <summary>The organization_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string? _explicitNullValueOrganizationGuid = default!;
 #nullable restore
 #else
-        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string _explicitNullValueOrganizationGuid = default!;
 #endif
         /// <summary>a registration always starts pending, because Bitly configures the DNS after it</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.PendingValidationStatus? ValidationStatus { get => _explicitNullValueValidationStatus; set { _explicitNullValueValidationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_status"); else _explicitNullProperties?.Remove("validation_status"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.PendingValidationStatus? ValidationStatus { get => _explicitNullValueValidationStatus; set { _explicitNullValueValidationStatus = value; AdditionalData?.Remove("validation_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_status"); else _explicitNullProperties?.Remove("validation_status"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.PendingValidationStatus? _explicitNullValueValidationStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.PurchaseBsdResponse"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "custom_domain", n => { CustomDomain = n.GetStringValue(); } },
                 { "organization_guid", n => { OrganizationGuid = n.GetStringValue(); } },
-                { "validation_status", n => { ValidationStatus = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.PendingValidationStatus>(); } },
+                { "validation_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.PendingValidationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueValidationStatus = default; _explicitNullProperties?.Remove("validation_status"); AdditionalData["validation_status"] = unknown; } else { ValidationStatus = parsed; AdditionalData.Remove("validation_status"); } } },
             };
         }
         /// <summary>

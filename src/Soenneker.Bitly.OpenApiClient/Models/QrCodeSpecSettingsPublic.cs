@@ -18,13 +18,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("error_correction") is { } nullNodeErrorCorrection && nullNodeErrorCorrection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCorrection = null;
+            if (parseNode.GetChildNode("error_correction") is null) { _explicitNullValueErrorCorrection = default!; _explicitNullProperties?.Remove("error_correction"); }
+            else if (parseNode.GetChildNode("error_correction") is { } nullNodeErrorCorrection && nullNodeErrorCorrection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCorrection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of error correction that the QR code was generated with</summary>
-        public int? ErrorCorrection { get => _explicitNullValueErrorCorrection; set { _explicitNullValueErrorCorrection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_correction"); else _explicitNullProperties?.Remove("error_correction"); } }
+        public int? ErrorCorrection { get => _explicitNullValueErrorCorrection; set { _explicitNullValueErrorCorrection = value; AdditionalData?.Remove("error_correction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_correction"); else _explicitNullProperties?.Remove("error_correction"); } }
         private int? _explicitNullValueErrorCorrection = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrCodeSpecSettingsPublic"/> and sets the default values.

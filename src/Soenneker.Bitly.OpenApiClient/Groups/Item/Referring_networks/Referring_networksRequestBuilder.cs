@@ -78,7 +78,7 @@ namespace Soenneker.Bitly.OpenApiClient.Groups.Item.Referring_networks
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Groups.Item.Referring_networks.Referring_networksRequestBuilder.Referring_networksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api-ssl.bitly.com/v4", "/groups/{groupGuid}/referring_networks", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

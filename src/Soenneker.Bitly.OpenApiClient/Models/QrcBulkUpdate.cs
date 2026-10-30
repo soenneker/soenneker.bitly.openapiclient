@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("qr_code_ids") is { } nullNodeQrCodeIds && nullNodeQrCodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodeIds = null;
+            if (parseNode.GetChildNode("qr_code_ids") is null) { _explicitNullValueQrCodeIds = default!; _explicitNullProperties?.Remove("qr_code_ids"); }
+            else if (parseNode.GetChildNode("qr_code_ids") is { } nullNodeQrCodeIds && nullNodeQrCodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodeIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The qr_code_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? QrCodeIds { get => _explicitNullValueQrCodeIds; set { _explicitNullValueQrCodeIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_ids"); else _explicitNullProperties?.Remove("qr_code_ids"); } }
+        public List<string>? QrCodeIds { get => _explicitNullValueQrCodeIds; set { _explicitNullValueQrCodeIds = value; AdditionalData?.Remove("qr_code_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_ids"); else _explicitNullProperties?.Remove("qr_code_ids"); } }
         private List<string>? _explicitNullValueQrCodeIds = default!;
 #nullable restore
 #else
-        public List<string> QrCodeIds { get => _explicitNullValueQrCodeIds; set { _explicitNullValueQrCodeIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_ids"); else _explicitNullProperties?.Remove("qr_code_ids"); } }
+        public List<string> QrCodeIds { get => _explicitNullValueQrCodeIds; set { _explicitNullValueQrCodeIds = value; AdditionalData?.Remove("qr_code_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_ids"); else _explicitNullProperties?.Remove("qr_code_ids"); } }
         private List<string> _explicitNullValueQrCodeIds = default!;
 #endif
         /// <summary>

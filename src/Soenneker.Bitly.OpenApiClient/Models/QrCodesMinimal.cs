@@ -18,8 +18,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
-            if (parseNode.GetChildNode("qr_codes") is { } nullNodeQrCodes && nullNodeQrCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodes = null;
+            if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
+            else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("qr_codes") is null) { _explicitNullValueQrCodes = default!; _explicitNullProperties?.Remove("qr_codes"); }
+            else if (parseNode.GetChildNode("qr_codes") is { } nullNodeQrCodes && nullNodeQrCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>This object specifies how to query the next set of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrPagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrPagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>The qr_codes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>? QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>? QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; AdditionalData?.Remove("qr_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>? _explicitNullValueQrCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal> QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal> QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; AdditionalData?.Remove("qr_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal> _explicitNullValueQrCodes = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bsds") is { } nullNodeBsds && nullNodeBsds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bsds = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
+            if (parseNode.GetChildNode("bsds") is null) { _explicitNullValueBsds = default!; _explicitNullProperties?.Remove("bsds"); }
+            else if (parseNode.GetChildNode("bsds") is { } nullNodeBsds && nullNodeBsds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bsds = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("organization_guid") is null) { _explicitNullValueOrganizationGuid = default!; _explicitNullProperties?.Remove("organization_guid"); }
+            else if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The bsds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
+        public List<string>? Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; AdditionalData?.Remove("bsds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
         private List<string>? _explicitNullValueBsds = default!;
 #nullable restore
 #else
-        public List<string> Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
+        public List<string> Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; AdditionalData?.Remove("bsds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
         private List<string> _explicitNullValueBsds = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The organization_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string? _explicitNullValueOrganizationGuid = default!;
 #nullable restore
 #else
-        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string _explicitNullValueOrganizationGuid = default!;
 #endif
         /// <summary>

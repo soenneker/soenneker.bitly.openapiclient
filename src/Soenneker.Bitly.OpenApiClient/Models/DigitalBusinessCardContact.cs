@@ -17,11 +17,16 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitlink_id") is { } nullNodeBitlinkId && nullNodeBitlinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkId = null;
-            if (parseNode.GetChildNode("contact_method") is { } nullNodeContactMethod && nullNodeContactMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactMethod = null;
-            if (parseNode.GetChildNode("method_type") is { } nullNodeMethodType && nullNodeMethodType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MethodType = null;
-            if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("bitlink_id") is null) { _explicitNullValueBitlinkId = default!; _explicitNullProperties?.Remove("bitlink_id"); }
+            else if (parseNode.GetChildNode("bitlink_id") is { } nullNodeBitlinkId && nullNodeBitlinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkId = null;
+            if (parseNode.GetChildNode("contact_method") is null) { _explicitNullValueContactMethod = default!; _explicitNullProperties?.Remove("contact_method"); }
+            else if (parseNode.GetChildNode("contact_method") is { } nullNodeContactMethod && nullNodeContactMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactMethod = null;
+            if (parseNode.GetChildNode("method_type") is null) { _explicitNullValueMethodType = default!; _explicitNullProperties?.Remove("method_type"); }
+            else if (parseNode.GetChildNode("method_type") is { } nullNodeMethodType && nullNodeMethodType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MethodType = null;
+            if (parseNode.GetChildNode("sort_order") is null) { _explicitNullValueSortOrder = default!; _explicitNullProperties?.Remove("sort_order"); }
+            else if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,30 +34,30 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The bitlink_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
+        public string? BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; AdditionalData?.Remove("bitlink_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
         private string? _explicitNullValueBitlinkId = default!;
 #nullable restore
 #else
-        public string BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
+        public string BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; AdditionalData?.Remove("bitlink_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
         private string _explicitNullValueBitlinkId = default!;
 #endif
         /// <summary>The contact_method property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactContactMethod? ContactMethod { get => _explicitNullValueContactMethod; set { _explicitNullValueContactMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_method"); else _explicitNullProperties?.Remove("contact_method"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactContactMethod? ContactMethod { get => _explicitNullValueContactMethod; set { _explicitNullValueContactMethod = value; AdditionalData?.Remove("contact_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_method"); else _explicitNullProperties?.Remove("contact_method"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactContactMethod? _explicitNullValueContactMethod = default!;
         /// <summary>The method_type property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactMethodType? MethodType { get => _explicitNullValueMethodType; set { _explicitNullValueMethodType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method_type"); else _explicitNullProperties?.Remove("method_type"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactMethodType? MethodType { get => _explicitNullValueMethodType; set { _explicitNullValueMethodType = value; AdditionalData?.Remove("method_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method_type"); else _explicitNullProperties?.Remove("method_type"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactMethodType? _explicitNullValueMethodType = default!;
         /// <summary>The sort_order property</summary>
-        public int? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        public int? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private int? _explicitNullValueSortOrder = default!;
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
@@ -81,8 +86,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bitlink_id", n => { BitlinkId = n.GetStringValue(); } },
-                { "contact_method", n => { ContactMethod = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactContactMethod>(); } },
-                { "method_type", n => { MethodType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactMethodType>(); } },
+                { "contact_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactContactMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContactMethod = default; _explicitNullProperties?.Remove("contact_method"); AdditionalData["contact_method"] = unknown; } else { ContactMethod = parsed; AdditionalData.Remove("contact_method"); } } },
+                { "method_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactMethodType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMethodType = default; _explicitNullProperties?.Remove("method_type"); AdditionalData["method_type"] = unknown; } else { MethodType = parsed; AdditionalData.Remove("method_type"); } } },
                 { "sort_order", n => { SortOrder = n.GetIntValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };

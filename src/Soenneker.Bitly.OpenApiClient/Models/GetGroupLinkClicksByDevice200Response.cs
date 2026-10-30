@@ -17,50 +17,55 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("facet") is { } nullNodeFacet && nullNodeFacet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facet = null;
-            if (parseNode.GetChildNode("metrics") is { } nullNodeMetrics && nullNodeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metrics = null;
-            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
-            if (parseNode.GetChildNode("unit_reference") is { } nullNodeUnitReference && nullNodeUnitReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitReference = null;
-            if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
+            if (parseNode.GetChildNode("facet") is null) { _explicitNullValueFacet = default!; _explicitNullProperties?.Remove("facet"); }
+            else if (parseNode.GetChildNode("facet") is { } nullNodeFacet && nullNodeFacet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facet = null;
+            if (parseNode.GetChildNode("metrics") is null) { _explicitNullValueMetrics = default!; _explicitNullProperties?.Remove("metrics"); }
+            else if (parseNode.GetChildNode("metrics") is { } nullNodeMetrics && nullNodeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metrics = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("unit_reference") is null) { _explicitNullValueUnitReference = default!; _explicitNullProperties?.Remove("unit_reference"); }
+            else if (parseNode.GetChildNode("unit_reference") is { } nullNodeUnitReference && nullNodeUnitReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitReference = null;
+            if (parseNode.GetChildNode("units") is null) { _explicitNullValueUnits = default!; _explicitNullProperties?.Remove("units"); }
+            else if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The facet property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseFacet? Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseFacet? Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; AdditionalData?.Remove("facet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseFacet? _explicitNullValueFacet = default!;
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem>? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem>? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; AdditionalData?.Remove("metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem>? _explicitNullValueMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem> Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem> Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; AdditionalData?.Remove("metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem> _explicitNullValueMetrics = default!;
 #endif
         /// <summary>The unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string? _explicitNullValueUnit = default!;
 #nullable restore
 #else
-        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string _explicitNullValueUnit = default!;
 #endif
         /// <summary>The unit_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
+        public string? UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; AdditionalData?.Remove("unit_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
         private string? _explicitNullValueUnitReference = default!;
 #nullable restore
 #else
-        public string UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
+        public string UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; AdditionalData?.Remove("unit_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
         private string _explicitNullValueUnitReference = default!;
 #endif
         /// <summary>The units property</summary>
-        public int? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        public int? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; AdditionalData?.Remove("units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
         private int? _explicitNullValueUnits = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200Response"/> and sets the default values.
@@ -87,7 +92,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "facet", n => { Facet = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseFacet>(); } },
+                { "facet", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseFacet>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFacet = default; _explicitNullProperties?.Remove("facet"); AdditionalData["facet"] = unknown; } else { Facet = parsed; AdditionalData.Remove("facet"); } } },
                 { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem>(global::Soenneker.Bitly.OpenApiClient.Models.GetGroupLinkClicksByDevice200ResponseMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },

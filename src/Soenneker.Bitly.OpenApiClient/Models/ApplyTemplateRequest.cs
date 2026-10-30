@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("template_guid") is { } nullNodeTemplateGuid && nullNodeTemplateGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateGuid = null;
+            if (parseNode.GetChildNode("template_guid") is null) { _explicitNullValueTemplateGuid = default!; _explicitNullProperties?.Remove("template_guid"); }
+            else if (parseNode.GetChildNode("template_guid") is { } nullNodeTemplateGuid && nullNodeTemplateGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateGuid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The template_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateGuid { get => _explicitNullValueTemplateGuid; set { _explicitNullValueTemplateGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_guid"); else _explicitNullProperties?.Remove("template_guid"); } }
+        public string? TemplateGuid { get => _explicitNullValueTemplateGuid; set { _explicitNullValueTemplateGuid = value; AdditionalData?.Remove("template_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_guid"); else _explicitNullProperties?.Remove("template_guid"); } }
         private string? _explicitNullValueTemplateGuid = default!;
 #nullable restore
 #else
-        public string TemplateGuid { get => _explicitNullValueTemplateGuid; set { _explicitNullValueTemplateGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_guid"); else _explicitNullProperties?.Remove("template_guid"); } }
+        public string TemplateGuid { get => _explicitNullValueTemplateGuid; set { _explicitNullValueTemplateGuid = value; AdditionalData?.Remove("template_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_guid"); else _explicitNullProperties?.Remove("template_guid"); } }
         private string _explicitNullValueTemplateGuid = default!;
 #endif
         /// <summary>

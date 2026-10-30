@@ -17,17 +17,19 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("no_city_views") is { } nullNodeNoCityViews && nullNodeNoCityViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoCityViews = null;
-            if (parseNode.GetChildNode("other_city_views") is { } nullNodeOtherCityViews && nullNodeOtherCityViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherCityViews = null;
+            if (parseNode.GetChildNode("no_city_views") is null) { _explicitNullValueNoCityViews = default!; _explicitNullProperties?.Remove("no_city_views"); }
+            else if (parseNode.GetChildNode("no_city_views") is { } nullNodeNoCityViews && nullNodeNoCityViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoCityViews = null;
+            if (parseNode.GetChildNode("other_city_views") is null) { _explicitNullValueOtherCityViews = default!; _explicitNullProperties?.Remove("other_city_views"); }
+            else if (parseNode.GetChildNode("other_city_views") is { } nullNodeOtherCityViews && nullNodeOtherCityViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherCityViews = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The no_city_views property</summary>
-        public int? NoCityViews { get => _explicitNullValueNoCityViews; set { _explicitNullValueNoCityViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_city_views"); else _explicitNullProperties?.Remove("no_city_views"); } }
+        public int? NoCityViews { get => _explicitNullValueNoCityViews; set { _explicitNullValueNoCityViews = value; AdditionalData?.Remove("no_city_views"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_city_views"); else _explicitNullProperties?.Remove("no_city_views"); } }
         private int? _explicitNullValueNoCityViews = default!;
         /// <summary>The other_city_views property</summary>
-        public int? OtherCityViews { get => _explicitNullValueOtherCityViews; set { _explicitNullValueOtherCityViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_city_views"); else _explicitNullProperties?.Remove("other_city_views"); } }
+        public int? OtherCityViews { get => _explicitNullValueOtherCityViews; set { _explicitNullValueOtherCityViews = value; AdditionalData?.Remove("other_city_views"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_city_views"); else _explicitNullProperties?.Remove("other_city_views"); } }
         private int? _explicitNullValueOtherCityViews = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.OtherViewMetrics"/> and sets the default values.

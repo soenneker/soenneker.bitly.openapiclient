@@ -17,8 +17,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domain_preference") is { } nullNodeDomainPreference && nullNodeDomainPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainPreference = null;
-            if (parseNode.GetChildNode("group_guid") is { } nullNodeGroupGuid && nullNodeGroupGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupGuid = null;
+            if (parseNode.GetChildNode("domain_preference") is null) { _explicitNullValueDomainPreference = default!; _explicitNullProperties?.Remove("domain_preference"); }
+            else if (parseNode.GetChildNode("domain_preference") is { } nullNodeDomainPreference && nullNodeDomainPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainPreference = null;
+            if (parseNode.GetChildNode("group_guid") is null) { _explicitNullValueGroupGuid = default!; _explicitNullProperties?.Remove("group_guid"); }
+            else if (parseNode.GetChildNode("group_guid") is { } nullNodeGroupGuid && nullNodeGroupGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupGuid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The domain_preference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainPreference { get => _explicitNullValueDomainPreference; set { _explicitNullValueDomainPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_preference"); else _explicitNullProperties?.Remove("domain_preference"); } }
+        public string? DomainPreference { get => _explicitNullValueDomainPreference; set { _explicitNullValueDomainPreference = value; AdditionalData?.Remove("domain_preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_preference"); else _explicitNullProperties?.Remove("domain_preference"); } }
         private string? _explicitNullValueDomainPreference = default!;
 #nullable restore
 #else
-        public string DomainPreference { get => _explicitNullValueDomainPreference; set { _explicitNullValueDomainPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_preference"); else _explicitNullProperties?.Remove("domain_preference"); } }
+        public string DomainPreference { get => _explicitNullValueDomainPreference; set { _explicitNullValueDomainPreference = value; AdditionalData?.Remove("domain_preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_preference"); else _explicitNullProperties?.Remove("domain_preference"); } }
         private string _explicitNullValueDomainPreference = default!;
 #endif
         /// <summary>The group_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
+        public string? GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; AdditionalData?.Remove("group_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
         private string? _explicitNullValueGroupGuid = default!;
 #nullable restore
 #else
-        public string GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
+        public string GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; AdditionalData?.Remove("group_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
         private string _explicitNullValueGroupGuid = default!;
 #endif
         /// <summary>

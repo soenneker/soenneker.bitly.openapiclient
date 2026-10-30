@@ -18,9 +18,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
-            if (parseNode.GetChildNode("qr_codes") is { } nullNodeQrCodes && nullNodeQrCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodes = null;
-            if (parseNode.GetChildNode("sorted_engagements") is { } nullNodeSortedEngagements && nullNodeSortedEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortedEngagements = null;
+            if (parseNode.GetChildNode("links") is null) { _explicitNullValueLinks = default!; _explicitNullProperties?.Remove("links"); }
+            else if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("qr_codes") is null) { _explicitNullValueQrCodes = default!; _explicitNullProperties?.Remove("qr_codes"); }
+            else if (parseNode.GetChildNode("qr_codes") is { } nullNodeQrCodes && nullNodeQrCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodes = null;
+            if (parseNode.GetChildNode("sorted_engagements") is null) { _explicitNullValueSortedEngagements = default!; _explicitNullProperties?.Remove("sorted_engagements"); }
+            else if (parseNode.GetChildNode("sorted_engagements") is { } nullNodeSortedEngagements && nullNodeSortedEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortedEngagements = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody>? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody> _explicitNullValueLinks = default!;
 #endif
         /// <summary>The qr_codes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>? QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>? QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; AdditionalData?.Remove("qr_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal>? _explicitNullValueQrCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal> QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal> QrCodes { get => _explicitNullValueQrCodes; set { _explicitNullValueQrCodes = value; AdditionalData?.Remove("qr_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_codes"); else _explicitNullProperties?.Remove("qr_codes"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeMinimal> _explicitNullValueQrCodes = default!;
 #endif
         /// <summary>The sorted_engagements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.EngagementSubtotal>? SortedEngagements { get => _explicitNullValueSortedEngagements; set { _explicitNullValueSortedEngagements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorted_engagements"); else _explicitNullProperties?.Remove("sorted_engagements"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.EngagementSubtotal>? SortedEngagements { get => _explicitNullValueSortedEngagements; set { _explicitNullValueSortedEngagements = value; AdditionalData?.Remove("sorted_engagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorted_engagements"); else _explicitNullProperties?.Remove("sorted_engagements"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.EngagementSubtotal>? _explicitNullValueSortedEngagements = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.EngagementSubtotal> SortedEngagements { get => _explicitNullValueSortedEngagements; set { _explicitNullValueSortedEngagements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorted_engagements"); else _explicitNullProperties?.Remove("sorted_engagements"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.EngagementSubtotal> SortedEngagements { get => _explicitNullValueSortedEngagements; set { _explicitNullValueSortedEngagements = value; AdditionalData?.Remove("sorted_engagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorted_engagements"); else _explicitNullProperties?.Remove("sorted_engagements"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.EngagementSubtotal> _explicitNullValueSortedEngagements = default!;
 #endif
         /// <summary>

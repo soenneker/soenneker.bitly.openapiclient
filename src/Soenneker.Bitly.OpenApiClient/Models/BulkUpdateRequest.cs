@@ -17,49 +17,54 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("add_tags") is { } nullNodeAddTags && nullNodeAddTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddTags = null;
-            if (parseNode.GetChildNode("archive") is { } nullNodeArchive && nullNodeArchive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archive = null;
-            if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
-            if (parseNode.GetChildNode("remove_tags") is { } nullNodeRemoveTags && nullNodeRemoveTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveTags = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("add_tags") is null) { _explicitNullValueAddTags = default!; _explicitNullProperties?.Remove("add_tags"); }
+            else if (parseNode.GetChildNode("add_tags") is { } nullNodeAddTags && nullNodeAddTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddTags = null;
+            if (parseNode.GetChildNode("archive") is null) { _explicitNullValueArchive = default!; _explicitNullProperties?.Remove("archive"); }
+            else if (parseNode.GetChildNode("archive") is { } nullNodeArchive && nullNodeArchive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archive = null;
+            if (parseNode.GetChildNode("links") is null) { _explicitNullValueLinks = default!; _explicitNullProperties?.Remove("links"); }
+            else if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("remove_tags") is null) { _explicitNullValueRemoveTags = default!; _explicitNullProperties?.Remove("remove_tags"); }
+            else if (parseNode.GetChildNode("remove_tags") is { } nullNodeRemoveTags && nullNodeRemoveTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveTags = null;
         }
 
         /// <summary>archive or edit_tags</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The add_tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_tags"); else _explicitNullProperties?.Remove("add_tags"); } }
+        public List<string>? AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; AdditionalData?.Remove("add_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_tags"); else _explicitNullProperties?.Remove("add_tags"); } }
         private List<string>? _explicitNullValueAddTags = default!;
 #nullable restore
 #else
-        public List<string> AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_tags"); else _explicitNullProperties?.Remove("add_tags"); } }
+        public List<string> AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; AdditionalData?.Remove("add_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_tags"); else _explicitNullProperties?.Remove("add_tags"); } }
         private List<string> _explicitNullValueAddTags = default!;
 #endif
         /// <summary>The archive property</summary>
-        public bool? Archive { get => _explicitNullValueArchive; set { _explicitNullValueArchive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive"); else _explicitNullProperties?.Remove("archive"); } }
+        public bool? Archive { get => _explicitNullValueArchive; set { _explicitNullValueArchive = value; AdditionalData?.Remove("archive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive"); else _explicitNullProperties?.Remove("archive"); } }
         private bool? _explicitNullValueArchive = default!;
         /// <summary>this is limited to 100 bitlink ids</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        public List<string>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
         private List<string>? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public List<string> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        public List<string> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
         private List<string> _explicitNullValueLinks = default!;
 #endif
         /// <summary>The remove_tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_tags"); else _explicitNullProperties?.Remove("remove_tags"); } }
+        public List<string>? RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; AdditionalData?.Remove("remove_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_tags"); else _explicitNullProperties?.Remove("remove_tags"); } }
         private List<string>? _explicitNullValueRemoveTags = default!;
 #nullable restore
 #else
-        public List<string> RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_tags"); else _explicitNullProperties?.Remove("remove_tags"); } }
+        public List<string> RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; AdditionalData?.Remove("remove_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_tags"); else _explicitNullProperties?.Remove("remove_tags"); } }
         private List<string> _explicitNullValueRemoveTags = default!;
 #endif
         /// <summary>
@@ -87,7 +92,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.BulkUpdateRequestAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "add_tags", n => { AddTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "archive", n => { Archive = n.GetBoolValue(); } },
                 { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

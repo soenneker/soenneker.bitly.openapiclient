@@ -17,32 +17,36 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("total_clicks") is { } nullNodeTotalClicks && nullNodeTotalClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalClicks = null;
-            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
-            if (parseNode.GetChildNode("unit_reference") is { } nullNodeUnitReference && nullNodeUnitReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitReference = null;
-            if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
+            if (parseNode.GetChildNode("total_clicks") is null) { _explicitNullValueTotalClicks = default!; _explicitNullProperties?.Remove("total_clicks"); }
+            else if (parseNode.GetChildNode("total_clicks") is { } nullNodeTotalClicks && nullNodeTotalClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalClicks = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("unit_reference") is null) { _explicitNullValueUnitReference = default!; _explicitNullProperties?.Remove("unit_reference"); }
+            else if (parseNode.GetChildNode("unit_reference") is { } nullNodeUnitReference && nullNodeUnitReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitReference = null;
+            if (parseNode.GetChildNode("units") is null) { _explicitNullValueUnits = default!; _explicitNullProperties?.Remove("units"); }
+            else if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total_clicks property</summary>
-        public int? TotalClicks { get => _explicitNullValueTotalClicks; set { _explicitNullValueTotalClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_clicks"); else _explicitNullProperties?.Remove("total_clicks"); } }
+        public int? TotalClicks { get => _explicitNullValueTotalClicks; set { _explicitNullValueTotalClicks = value; AdditionalData?.Remove("total_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_clicks"); else _explicitNullProperties?.Remove("total_clicks"); } }
         private int? _explicitNullValueTotalClicks = default!;
         /// <summary>The unit property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit? _explicitNullValueUnit = default!;
         /// <summary>The unit_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
+        public string? UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; AdditionalData?.Remove("unit_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
         private string? _explicitNullValueUnitReference = default!;
 #nullable restore
 #else
-        public string UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
+        public string UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; AdditionalData?.Remove("unit_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
         private string _explicitNullValueUnitReference = default!;
 #endif
         /// <summary>The units property</summary>
-        public int? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        public int? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; AdditionalData?.Remove("units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
         private int? _explicitNullValueUnits = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummary"/> and sets the default values.
@@ -70,7 +74,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "total_clicks", n => { TotalClicks = n.GetIntValue(); } },
-                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit>(); } },
+                { "unit", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksSummaryUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUnit = default; _explicitNullProperties?.Remove("unit"); AdditionalData["unit"] = unknown; } else { Unit = parsed; AdditionalData.Remove("unit"); } } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
                 { "units", n => { Units = n.GetIntValue(); } },
             };

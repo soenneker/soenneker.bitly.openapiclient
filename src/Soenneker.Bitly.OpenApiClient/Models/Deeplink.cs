@@ -17,10 +17,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_id") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
-            if (parseNode.GetChildNode("app_uri_path") is { } nullNodeAppUriPath && nullNodeAppUriPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUriPath = null;
-            if (parseNode.GetChildNode("install_type") is { } nullNodeInstallType && nullNodeInstallType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallType = null;
-            if (parseNode.GetChildNode("install_url") is { } nullNodeInstallUrl && nullNodeInstallUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallUrl = null;
+            if (parseNode.GetChildNode("app_id") is null) { _explicitNullValueAppId = default!; _explicitNullProperties?.Remove("app_id"); }
+            else if (parseNode.GetChildNode("app_id") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
+            if (parseNode.GetChildNode("app_uri_path") is null) { _explicitNullValueAppUriPath = default!; _explicitNullProperties?.Remove("app_uri_path"); }
+            else if (parseNode.GetChildNode("app_uri_path") is { } nullNodeAppUriPath && nullNodeAppUriPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUriPath = null;
+            if (parseNode.GetChildNode("install_type") is null) { _explicitNullValueInstallType = default!; _explicitNullProperties?.Remove("install_type"); }
+            else if (parseNode.GetChildNode("install_type") is { } nullNodeInstallType && nullNodeInstallType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallType = null;
+            if (parseNode.GetChildNode("install_url") is null) { _explicitNullValueInstallUrl = default!; _explicitNullProperties?.Remove("install_url"); }
+            else if (parseNode.GetChildNode("install_url") is { } nullNodeInstallUrl && nullNodeInstallUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The app_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
+        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("app_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
         private string? _explicitNullValueAppId = default!;
 #nullable restore
 #else
-        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
+        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("app_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
         private string _explicitNullValueAppId = default!;
 #endif
         /// <summary>The app_uri_path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
+        public string? AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; AdditionalData?.Remove("app_uri_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
         private string? _explicitNullValueAppUriPath = default!;
 #nullable restore
 #else
-        public string AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
+        public string AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; AdditionalData?.Remove("app_uri_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
         private string _explicitNullValueAppUriPath = default!;
 #endif
         /// <summary>The install_type property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference? InstallType { get => _explicitNullValueInstallType; set { _explicitNullValueInstallType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_type"); else _explicitNullProperties?.Remove("install_type"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference? InstallType { get => _explicitNullValueInstallType; set { _explicitNullValueInstallType = value; AdditionalData?.Remove("install_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_type"); else _explicitNullProperties?.Remove("install_type"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference? _explicitNullValueInstallType = default!;
         /// <summary>The install_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
+        public string? InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; AdditionalData?.Remove("install_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
         private string? _explicitNullValueInstallUrl = default!;
 #nullable restore
 #else
-        public string InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
+        public string InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; AdditionalData?.Remove("install_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
         private string _explicitNullValueInstallUrl = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "app_id", n => { AppId = n.GetStringValue(); } },
                 { "app_uri_path", n => { AppUriPath = n.GetStringValue(); } },
-                { "install_type", n => { InstallType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference>(); } },
+                { "install_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInstallType = default; _explicitNullProperties?.Remove("install_type"); AdditionalData["install_type"] = unknown; } else { InstallType = parsed; AdditionalData.Remove("install_type"); } } },
                 { "install_url", n => { InstallUrl = n.GetStringValue(); } },
             };
         }

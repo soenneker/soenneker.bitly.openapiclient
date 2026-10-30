@@ -17,13 +17,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitly_brand") is { } nullNodeBitlyBrand && nullNodeBitlyBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlyBrand = null;
+            if (parseNode.GetChildNode("bitly_brand") is null) { _explicitNullValueBitlyBrand = default!; _explicitNullProperties?.Remove("bitly_brand"); }
+            else if (parseNode.GetChildNode("bitly_brand") is { } nullNodeBitlyBrand && nullNodeBitlyBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlyBrand = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A boolean that determines if the QR code should have the bitly brand in its bottom right corner</summary>
-        public bool? BitlyBrand { get => _explicitNullValueBitlyBrand; set { _explicitNullValueBitlyBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitly_brand"); else _explicitNullProperties?.Remove("bitly_brand"); } }
+        public bool? BitlyBrand { get => _explicitNullValueBitlyBrand; set { _explicitNullValueBitlyBrand = value; AdditionalData?.Remove("bitly_brand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitly_brand"); else _explicitNullProperties?.Remove("bitly_brand"); } }
         private bool? _explicitNullValueBitlyBrand = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding"/> and sets the default values.

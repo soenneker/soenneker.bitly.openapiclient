@@ -17,54 +17,60 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dns_provider") is { } nullNodeDnsProvider && nullNodeDnsProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsProvider = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("records") is { } nullNodeRecords && nullNodeRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Records = null;
-            if (parseNode.GetChildNode("records_valid") is { } nullNodeRecordsValid && nullNodeRecordsValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordsValid = null;
-            if (parseNode.GetChildNode("required_records") is { } nullNodeRequiredRecords && nullNodeRequiredRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredRecords = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("dns_provider") is null) { _explicitNullValueDnsProvider = default!; _explicitNullProperties?.Remove("dns_provider"); }
+            else if (parseNode.GetChildNode("dns_provider") is { } nullNodeDnsProvider && nullNodeDnsProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsProvider = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("records") is null) { _explicitNullValueRecords = default!; _explicitNullProperties?.Remove("records"); }
+            else if (parseNode.GetChildNode("records") is { } nullNodeRecords && nullNodeRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Records = null;
+            if (parseNode.GetChildNode("records_valid") is null) { _explicitNullValueRecordsValid = default!; _explicitNullProperties?.Remove("records_valid"); }
+            else if (parseNode.GetChildNode("records_valid") is { } nullNodeRecordsValid && nullNodeRecordsValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordsValid = null;
+            if (parseNode.GetChildNode("required_records") is null) { _explicitNullValueRequiredRecords = default!; _explicitNullProperties?.Remove("required_records"); }
+            else if (parseNode.GetChildNode("required_records") is { } nullNodeRequiredRecords && nullNodeRequiredRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredRecords = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>the detected DNS provider for the requested domain</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsDnsProvider? DnsProvider { get => _explicitNullValueDnsProvider; set { _explicitNullValueDnsProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_provider"); else _explicitNullProperties?.Remove("dns_provider"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsDnsProvider? DnsProvider { get => _explicitNullValueDnsProvider; set { _explicitNullValueDnsProvider = value; AdditionalData?.Remove("dns_provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_provider"); else _explicitNullProperties?.Remove("dns_provider"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsDnsProvider? _explicitNullValueDnsProvider = default!;
         /// <summary>the requested domain. An internationalized domain is returned in Unicode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>the records returned by the lookup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        public List<string>? Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; AdditionalData?.Remove("records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
         private List<string>? _explicitNullValueRecords = default!;
 #nullable restore
 #else
-        public List<string> Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        public List<string> Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; AdditionalData?.Remove("records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
         private List<string> _explicitNullValueRecords = default!;
 #endif
         /// <summary>whether the returned records represent a valid configuration</summary>
-        public bool? RecordsValid { get => _explicitNullValueRecordsValid; set { _explicitNullValueRecordsValid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records_valid"); else _explicitNullProperties?.Remove("records_valid"); } }
+        public bool? RecordsValid { get => _explicitNullValueRecordsValid; set { _explicitNullValueRecordsValid = value; AdditionalData?.Remove("records_valid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records_valid"); else _explicitNullProperties?.Remove("records_valid"); } }
         private bool? _explicitNullValueRecordsValid = default!;
         /// <summary>The records to create at your registrar for the domain to verify. A root domain needs the A records. A subdomain needs the CNAME record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem>? RequiredRecords { get => _explicitNullValueRequiredRecords; set { _explicitNullValueRequiredRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_records"); else _explicitNullProperties?.Remove("required_records"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem>? RequiredRecords { get => _explicitNullValueRequiredRecords; set { _explicitNullValueRequiredRecords = value; AdditionalData?.Remove("required_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_records"); else _explicitNullProperties?.Remove("required_records"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem>? _explicitNullValueRequiredRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem> RequiredRecords { get => _explicitNullValueRequiredRecords; set { _explicitNullValueRequiredRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_records"); else _explicitNullProperties?.Remove("required_records"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem> RequiredRecords { get => _explicitNullValueRequiredRecords; set { _explicitNullValueRequiredRecords = value; AdditionalData?.Remove("required_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_records"); else _explicitNullProperties?.Remove("required_records"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem> _explicitNullValueRequiredRecords = default!;
 #endif
         /// <summary>the type of DNS record returned</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.DomainDns"/> and sets the default values.
@@ -91,12 +97,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dns_provider", n => { DnsProvider = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsDnsProvider>(); } },
+                { "dns_provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsDnsProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDnsProvider = default; _explicitNullProperties?.Remove("dns_provider"); AdditionalData["dns_provider"] = unknown; } else { DnsProvider = parsed; AdditionalData.Remove("dns_provider"); } } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "records", n => { Records = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "records_valid", n => { RecordsValid = n.GetBoolValue(); } },
                 { "required_records", n => { RequiredRecords = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem>(global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsRequiredRecordsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DomainDnsType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

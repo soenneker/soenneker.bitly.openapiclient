@@ -84,7 +84,7 @@ namespace Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Referrers_by_domains
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Bitlinks.Item.Referrers_by_domains.Referrers_by_domainsRequestBuilder.Referrers_by_domainsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api-ssl.bitly.com/v4", "/bitlinks/{bitlink}/referrers_by_domains", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

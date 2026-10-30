@@ -17,17 +17,19 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("no_city_clicks") is { } nullNodeNoCityClicks && nullNodeNoCityClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoCityClicks = null;
-            if (parseNode.GetChildNode("other_city_clicks") is { } nullNodeOtherCityClicks && nullNodeOtherCityClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherCityClicks = null;
+            if (parseNode.GetChildNode("no_city_clicks") is null) { _explicitNullValueNoCityClicks = default!; _explicitNullProperties?.Remove("no_city_clicks"); }
+            else if (parseNode.GetChildNode("no_city_clicks") is { } nullNodeNoCityClicks && nullNodeNoCityClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoCityClicks = null;
+            if (parseNode.GetChildNode("other_city_clicks") is null) { _explicitNullValueOtherCityClicks = default!; _explicitNullProperties?.Remove("other_city_clicks"); }
+            else if (parseNode.GetChildNode("other_city_clicks") is { } nullNodeOtherCityClicks && nullNodeOtherCityClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherCityClicks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The no_city_clicks property</summary>
-        public int? NoCityClicks { get => _explicitNullValueNoCityClicks; set { _explicitNullValueNoCityClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_city_clicks"); else _explicitNullProperties?.Remove("no_city_clicks"); } }
+        public int? NoCityClicks { get => _explicitNullValueNoCityClicks; set { _explicitNullValueNoCityClicks = value; AdditionalData?.Remove("no_city_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_city_clicks"); else _explicitNullProperties?.Remove("no_city_clicks"); } }
         private int? _explicitNullValueNoCityClicks = default!;
         /// <summary>The other_city_clicks property</summary>
-        public int? OtherCityClicks { get => _explicitNullValueOtherCityClicks; set { _explicitNullValueOtherCityClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_city_clicks"); else _explicitNullProperties?.Remove("other_city_clicks"); } }
+        public int? OtherCityClicks { get => _explicitNullValueOtherCityClicks; set { _explicitNullValueOtherCityClicks = value; AdditionalData?.Remove("other_city_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_city_clicks"); else _explicitNullProperties?.Remove("other_city_clicks"); } }
         private int? _explicitNullValueOtherCityClicks = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.OtherMetrics"/> and sets the default values.

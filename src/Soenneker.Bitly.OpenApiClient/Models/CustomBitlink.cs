@@ -17,9 +17,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitlink") is { } nullNodeBitlink && nullNodeBitlink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlink = null;
-            if (parseNode.GetChildNode("bitlink_history") is { } nullNodeBitlinkHistory && nullNodeBitlinkHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkHistory = null;
-            if (parseNode.GetChildNode("custom_bitlink") is { } nullNodeCustomBitlinkProp && nullNodeCustomBitlinkProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomBitlinkProp = null;
+            if (parseNode.GetChildNode("bitlink") is null) { _explicitNullValueBitlink = default!; _explicitNullProperties?.Remove("bitlink"); }
+            else if (parseNode.GetChildNode("bitlink") is { } nullNodeBitlink && nullNodeBitlink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlink = null;
+            if (parseNode.GetChildNode("bitlink_history") is null) { _explicitNullValueBitlinkHistory = default!; _explicitNullProperties?.Remove("bitlink_history"); }
+            else if (parseNode.GetChildNode("bitlink_history") is { } nullNodeBitlinkHistory && nullNodeBitlinkHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkHistory = null;
+            if (parseNode.GetChildNode("custom_bitlink") is null) { _explicitNullValueCustomBitlinkProp = default!; _explicitNullProperties?.Remove("custom_bitlink"); }
+            else if (parseNode.GetChildNode("custom_bitlink") is { } nullNodeCustomBitlinkProp && nullNodeCustomBitlinkProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomBitlinkProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The bitlink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody? Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody? Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; AdditionalData?.Remove("bitlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody? _explicitNullValueBitlink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; AdditionalData?.Remove("bitlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.BitlinkBody _explicitNullValueBitlink = default!;
 #endif
         /// <summary>The bitlink_history property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomBitlinkHistory>? BitlinkHistory { get => _explicitNullValueBitlinkHistory; set { _explicitNullValueBitlinkHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_history"); else _explicitNullProperties?.Remove("bitlink_history"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomBitlinkHistory>? BitlinkHistory { get => _explicitNullValueBitlinkHistory; set { _explicitNullValueBitlinkHistory = value; AdditionalData?.Remove("bitlink_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_history"); else _explicitNullProperties?.Remove("bitlink_history"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.CustomBitlinkHistory>? _explicitNullValueBitlinkHistory = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomBitlinkHistory> BitlinkHistory { get => _explicitNullValueBitlinkHistory; set { _explicitNullValueBitlinkHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_history"); else _explicitNullProperties?.Remove("bitlink_history"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomBitlinkHistory> BitlinkHistory { get => _explicitNullValueBitlinkHistory; set { _explicitNullValueBitlinkHistory = value; AdditionalData?.Remove("bitlink_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_history"); else _explicitNullProperties?.Remove("bitlink_history"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.CustomBitlinkHistory> _explicitNullValueBitlinkHistory = default!;
 #endif
         /// <summary>The custom_bitlink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomBitlinkProp { get => _explicitNullValueCustomBitlinkProp; set { _explicitNullValueCustomBitlinkProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_bitlink"); else _explicitNullProperties?.Remove("custom_bitlink"); } }
+        public string? CustomBitlinkProp { get => _explicitNullValueCustomBitlinkProp; set { _explicitNullValueCustomBitlinkProp = value; AdditionalData?.Remove("custom_bitlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_bitlink"); else _explicitNullProperties?.Remove("custom_bitlink"); } }
         private string? _explicitNullValueCustomBitlinkProp = default!;
 #nullable restore
 #else
-        public string CustomBitlinkProp { get => _explicitNullValueCustomBitlinkProp; set { _explicitNullValueCustomBitlinkProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_bitlink"); else _explicitNullProperties?.Remove("custom_bitlink"); } }
+        public string CustomBitlinkProp { get => _explicitNullValueCustomBitlinkProp; set { _explicitNullValueCustomBitlinkProp = value; AdditionalData?.Remove("custom_bitlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_bitlink"); else _explicitNullProperties?.Remove("custom_bitlink"); } }
         private string _explicitNullValueCustomBitlinkProp = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("platform_limits") is { } nullNodePlatformLimitsProp && nullNodePlatformLimitsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformLimitsProp = null;
+            if (parseNode.GetChildNode("platform_limits") is null) { _explicitNullValuePlatformLimitsProp = default!; _explicitNullProperties?.Remove("platform_limits"); }
+            else if (parseNode.GetChildNode("platform_limits") is { } nullNodePlatformLimitsProp && nullNodePlatformLimitsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformLimitsProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The platform_limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlatformLimit>? PlatformLimitsProp { get => _explicitNullValuePlatformLimitsProp; set { _explicitNullValuePlatformLimitsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlatformLimit>? PlatformLimitsProp { get => _explicitNullValuePlatformLimitsProp; set { _explicitNullValuePlatformLimitsProp = value; AdditionalData?.Remove("platform_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.PlatformLimit>? _explicitNullValuePlatformLimitsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlatformLimit> PlatformLimitsProp { get => _explicitNullValuePlatformLimitsProp; set { _explicitNullValuePlatformLimitsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlatformLimit> PlatformLimitsProp { get => _explicitNullValuePlatformLimitsProp; set { _explicitNullValuePlatformLimitsProp = value; AdditionalData?.Remove("platform_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.PlatformLimit> _explicitNullValuePlatformLimitsProp = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bottom") is { } nullNodeBottom && nullNodeBottom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bottom = null;
-            if (parseNode.GetChildNode("center") is { } nullNodeCenter && nullNodeCenter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Center = null;
-            if (parseNode.GetChildNode("top") is { } nullNodeTop && nullNodeTop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Top = null;
+            if (parseNode.GetChildNode("bottom") is null) { _explicitNullValueBottom = default!; _explicitNullProperties?.Remove("bottom"); }
+            else if (parseNode.GetChildNode("bottom") is { } nullNodeBottom && nullNodeBottom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bottom = null;
+            if (parseNode.GetChildNode("center") is null) { _explicitNullValueCenter = default!; _explicitNullProperties?.Remove("center"); }
+            else if (parseNode.GetChildNode("center") is { } nullNodeCenter && nullNodeCenter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Center = null;
+            if (parseNode.GetChildNode("top") is null) { _explicitNullValueTop = default!; _explicitNullProperties?.Remove("top"); }
+            else if (parseNode.GetChildNode("top") is { } nullNodeTop && nullNodeTop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Top = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>An object describing text with color</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Bottom { get => _explicitNullValueBottom; set { _explicitNullValueBottom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bottom"); else _explicitNullProperties?.Remove("bottom"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Bottom { get => _explicitNullValueBottom; set { _explicitNullValueBottom = value; AdditionalData?.Remove("bottom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bottom"); else _explicitNullProperties?.Remove("bottom"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Text? _explicitNullValueBottom = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text Bottom { get => _explicitNullValueBottom; set { _explicitNullValueBottom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bottom"); else _explicitNullProperties?.Remove("bottom"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Text Bottom { get => _explicitNullValueBottom; set { _explicitNullValueBottom = value; AdditionalData?.Remove("bottom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bottom"); else _explicitNullProperties?.Remove("bottom"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Text _explicitNullValueBottom = default!;
 #endif
         /// <summary>An object describing text with color</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Center { get => _explicitNullValueCenter; set { _explicitNullValueCenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("center"); else _explicitNullProperties?.Remove("center"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Center { get => _explicitNullValueCenter; set { _explicitNullValueCenter = value; AdditionalData?.Remove("center"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("center"); else _explicitNullProperties?.Remove("center"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Text? _explicitNullValueCenter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text Center { get => _explicitNullValueCenter; set { _explicitNullValueCenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("center"); else _explicitNullProperties?.Remove("center"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Text Center { get => _explicitNullValueCenter; set { _explicitNullValueCenter = value; AdditionalData?.Remove("center"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("center"); else _explicitNullProperties?.Remove("center"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Text _explicitNullValueCenter = default!;
 #endif
         /// <summary>An object describing text with color</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Top { get => _explicitNullValueTop; set { _explicitNullValueTop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top"); else _explicitNullProperties?.Remove("top"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Text? Top { get => _explicitNullValueTop; set { _explicitNullValueTop = value; AdditionalData?.Remove("top"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top"); else _explicitNullProperties?.Remove("top"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Text? _explicitNullValueTop = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Text Top { get => _explicitNullValueTop; set { _explicitNullValueTop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top"); else _explicitNullProperties?.Remove("top"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Text Top { get => _explicitNullValueTop; set { _explicitNullValueTop = value; AdditionalData?.Remove("top"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top"); else _explicitNullProperties?.Remove("top"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Text _explicitNullValueTop = default!;
 #endif
         /// <summary>

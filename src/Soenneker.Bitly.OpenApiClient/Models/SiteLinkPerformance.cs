@@ -17,14 +17,22 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("link_clicks") is { } nullNodeLinkClicks && nullNodeLinkClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkClicks = null;
-            if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
-            if (parseNode.GetChildNode("performance_end") is { } nullNodePerformanceEnd && nullNodePerformanceEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceEnd = null;
-            if (parseNode.GetChildNode("performance_start") is { } nullNodePerformanceStart && nullNodePerformanceStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceStart = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
-            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
-            if (parseNode.GetChildNode("unit_reference") is { } nullNodeUnitReference && nullNodeUnitReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitReference = null;
-            if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
+            if (parseNode.GetChildNode("link_clicks") is null) { _explicitNullValueLinkClicks = default!; _explicitNullProperties?.Remove("link_clicks"); }
+            else if (parseNode.GetChildNode("link_clicks") is { } nullNodeLinkClicks && nullNodeLinkClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkClicks = null;
+            if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
+            else if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("performance_end") is null) { _explicitNullValuePerformanceEnd = default!; _explicitNullProperties?.Remove("performance_end"); }
+            else if (parseNode.GetChildNode("performance_end") is { } nullNodePerformanceEnd && nullNodePerformanceEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceEnd = null;
+            if (parseNode.GetChildNode("performance_start") is null) { _explicitNullValuePerformanceStart = default!; _explicitNullProperties?.Remove("performance_start"); }
+            else if (parseNode.GetChildNode("performance_start") is { } nullNodePerformanceStart && nullNodePerformanceStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceStart = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("unit_reference") is null) { _explicitNullValueUnitReference = default!; _explicitNullProperties?.Remove("unit_reference"); }
+            else if (parseNode.GetChildNode("unit_reference") is { } nullNodeUnitReference && nullNodeUnitReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitReference = null;
+            if (parseNode.GetChildNode("units") is null) { _explicitNullValueUnits = default!; _explicitNullProperties?.Remove("units"); }
+            else if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,61 +40,61 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The link_clicks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks>? LinkClicks { get => _explicitNullValueLinkClicks; set { _explicitNullValueLinkClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_clicks"); else _explicitNullProperties?.Remove("link_clicks"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks>? LinkClicks { get => _explicitNullValueLinkClicks; set { _explicitNullValueLinkClicks = value; AdditionalData?.Remove("link_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_clicks"); else _explicitNullProperties?.Remove("link_clicks"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks>? _explicitNullValueLinkClicks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks> LinkClicks { get => _explicitNullValueLinkClicks; set { _explicitNullValueLinkClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_clicks"); else _explicitNullProperties?.Remove("link_clicks"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks> LinkClicks { get => _explicitNullValueLinkClicks; set { _explicitNullValueLinkClicks = value; AdditionalData?.Remove("link_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_clicks"); else _explicitNullProperties?.Remove("link_clicks"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks> _explicitNullValueLinkClicks = default!;
 #endif
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination? _explicitNullValuePage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination _explicitNullValuePage = default!;
 #endif
         /// <summary>The performance_end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PerformanceEnd { get => _explicitNullValuePerformanceEnd; set { _explicitNullValuePerformanceEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_end"); else _explicitNullProperties?.Remove("performance_end"); } }
+        public string? PerformanceEnd { get => _explicitNullValuePerformanceEnd; set { _explicitNullValuePerformanceEnd = value; AdditionalData?.Remove("performance_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_end"); else _explicitNullProperties?.Remove("performance_end"); } }
         private string? _explicitNullValuePerformanceEnd = default!;
 #nullable restore
 #else
-        public string PerformanceEnd { get => _explicitNullValuePerformanceEnd; set { _explicitNullValuePerformanceEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_end"); else _explicitNullProperties?.Remove("performance_end"); } }
+        public string PerformanceEnd { get => _explicitNullValuePerformanceEnd; set { _explicitNullValuePerformanceEnd = value; AdditionalData?.Remove("performance_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_end"); else _explicitNullProperties?.Remove("performance_end"); } }
         private string _explicitNullValuePerformanceEnd = default!;
 #endif
         /// <summary>The performance_start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PerformanceStart { get => _explicitNullValuePerformanceStart; set { _explicitNullValuePerformanceStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_start"); else _explicitNullProperties?.Remove("performance_start"); } }
+        public string? PerformanceStart { get => _explicitNullValuePerformanceStart; set { _explicitNullValuePerformanceStart = value; AdditionalData?.Remove("performance_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_start"); else _explicitNullProperties?.Remove("performance_start"); } }
         private string? _explicitNullValuePerformanceStart = default!;
 #nullable restore
 #else
-        public string PerformanceStart { get => _explicitNullValuePerformanceStart; set { _explicitNullValuePerformanceStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_start"); else _explicitNullProperties?.Remove("performance_start"); } }
+        public string PerformanceStart { get => _explicitNullValuePerformanceStart; set { _explicitNullValuePerformanceStart = value; AdditionalData?.Remove("performance_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_start"); else _explicitNullProperties?.Remove("performance_start"); } }
         private string _explicitNullValuePerformanceStart = default!;
 #endif
         /// <summary>The total property</summary>
-        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private int? _explicitNullValueTotal = default!;
         /// <summary>The unit property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteLinkPerformanceUnit? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteLinkPerformanceUnit? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.SiteLinkPerformanceUnit? _explicitNullValueUnit = default!;
         /// <summary>The unit_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
+        public string? UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; AdditionalData?.Remove("unit_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
         private string? _explicitNullValueUnitReference = default!;
 #nullable restore
 #else
-        public string UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
+        public string UnitReference { get => _explicitNullValueUnitReference; set { _explicitNullValueUnitReference = value; AdditionalData?.Remove("unit_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_reference"); else _explicitNullProperties?.Remove("unit_reference"); } }
         private string _explicitNullValueUnitReference = default!;
 #endif
         /// <summary>The units property</summary>
-        public int? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        public int? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; AdditionalData?.Remove("units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
         private int? _explicitNullValueUnits = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.SiteLinkPerformance"/> and sets the default values.
@@ -118,7 +126,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "performance_end", n => { PerformanceEnd = n.GetStringValue(); } },
                 { "performance_start", n => { PerformanceStart = n.GetStringValue(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
-                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteLinkPerformanceUnit>(); } },
+                { "unit", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteLinkPerformanceUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUnit = default; _explicitNullProperties?.Remove("unit"); AdditionalData["unit"] = unknown; } else { Unit = parsed; AdditionalData.Remove("unit"); } } },
                 { "unit_reference", n => { UnitReference = n.GetStringValue(); } },
                 { "units", n => { Units = n.GetIntValue(); } },
             };

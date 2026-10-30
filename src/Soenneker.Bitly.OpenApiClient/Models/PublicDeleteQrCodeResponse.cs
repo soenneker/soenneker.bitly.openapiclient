@@ -18,8 +18,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("links_deleted") is { } nullNodeLinksDeleted && nullNodeLinksDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinksDeleted = null;
-            if (parseNode.GetChildNode("qrcodes_deleted") is { } nullNodeQrcodesDeleted && nullNodeQrcodesDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrcodesDeleted = null;
+            if (parseNode.GetChildNode("links_deleted") is null) { _explicitNullValueLinksDeleted = default!; _explicitNullProperties?.Remove("links_deleted"); }
+            else if (parseNode.GetChildNode("links_deleted") is { } nullNodeLinksDeleted && nullNodeLinksDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinksDeleted = null;
+            if (parseNode.GetChildNode("qrcodes_deleted") is null) { _explicitNullValueQrcodesDeleted = default!; _explicitNullProperties?.Remove("qrcodes_deleted"); }
+            else if (parseNode.GetChildNode("qrcodes_deleted") is { } nullNodeQrcodesDeleted && nullNodeQrcodesDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrcodesDeleted = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The links_deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedLink>? LinksDeleted { get => _explicitNullValueLinksDeleted; set { _explicitNullValueLinksDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links_deleted"); else _explicitNullProperties?.Remove("links_deleted"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedLink>? LinksDeleted { get => _explicitNullValueLinksDeleted; set { _explicitNullValueLinksDeleted = value; AdditionalData?.Remove("links_deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links_deleted"); else _explicitNullProperties?.Remove("links_deleted"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedLink>? _explicitNullValueLinksDeleted = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedLink> LinksDeleted { get => _explicitNullValueLinksDeleted; set { _explicitNullValueLinksDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links_deleted"); else _explicitNullProperties?.Remove("links_deleted"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedLink> LinksDeleted { get => _explicitNullValueLinksDeleted; set { _explicitNullValueLinksDeleted = value; AdditionalData?.Remove("links_deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links_deleted"); else _explicitNullProperties?.Remove("links_deleted"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedLink> _explicitNullValueLinksDeleted = default!;
 #endif
         /// <summary>The qrcodes_deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedQrCode>? QrcodesDeleted { get => _explicitNullValueQrcodesDeleted; set { _explicitNullValueQrcodesDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcodes_deleted"); else _explicitNullProperties?.Remove("qrcodes_deleted"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedQrCode>? QrcodesDeleted { get => _explicitNullValueQrcodesDeleted; set { _explicitNullValueQrcodesDeleted = value; AdditionalData?.Remove("qrcodes_deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcodes_deleted"); else _explicitNullProperties?.Remove("qrcodes_deleted"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedQrCode>? _explicitNullValueQrcodesDeleted = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedQrCode> QrcodesDeleted { get => _explicitNullValueQrcodesDeleted; set { _explicitNullValueQrcodesDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcodes_deleted"); else _explicitNullProperties?.Remove("qrcodes_deleted"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedQrCode> QrcodesDeleted { get => _explicitNullValueQrcodesDeleted; set { _explicitNullValueQrcodesDeleted = value; AdditionalData?.Remove("qrcodes_deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcodes_deleted"); else _explicitNullProperties?.Remove("qrcodes_deleted"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DeletedQrCode> _explicitNullValueQrcodesDeleted = default!;
 #endif
         /// <summary>

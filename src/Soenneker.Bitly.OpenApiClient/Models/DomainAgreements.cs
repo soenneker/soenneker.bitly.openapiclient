@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domain_agreements") is { } nullNodeDomainAgreementsProp && nullNodeDomainAgreementsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainAgreementsProp = null;
+            if (parseNode.GetChildNode("domain_agreements") is null) { _explicitNullValueDomainAgreementsProp = default!; _explicitNullProperties?.Remove("domain_agreements"); }
+            else if (parseNode.GetChildNode("domain_agreements") is { } nullNodeDomainAgreementsProp && nullNodeDomainAgreementsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainAgreementsProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The domain_agreements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreement>? DomainAgreementsProp { get => _explicitNullValueDomainAgreementsProp; set { _explicitNullValueDomainAgreementsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_agreements"); else _explicitNullProperties?.Remove("domain_agreements"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreement>? DomainAgreementsProp { get => _explicitNullValueDomainAgreementsProp; set { _explicitNullValueDomainAgreementsProp = value; AdditionalData?.Remove("domain_agreements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_agreements"); else _explicitNullProperties?.Remove("domain_agreements"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreement>? _explicitNullValueDomainAgreementsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreement> DomainAgreementsProp { get => _explicitNullValueDomainAgreementsProp; set { _explicitNullValueDomainAgreementsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_agreements"); else _explicitNullProperties?.Remove("domain_agreements"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreement> DomainAgreementsProp { get => _explicitNullValueDomainAgreementsProp; set { _explicitNullValueDomainAgreementsProp = value; AdditionalData?.Remove("domain_agreements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_agreements"); else _explicitNullProperties?.Remove("domain_agreements"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DomainAgreement> _explicitNullValueDomainAgreementsProp = default!;
 #endif
         /// <summary>

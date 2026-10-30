@@ -17,8 +17,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitlinks") is { } nullNodeBitlinks && nullNodeBitlinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlinks = null;
-            if (parseNode.GetChildNode("campaign_guid") is { } nullNodeCampaignGuid && nullNodeCampaignGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignGuid = null;
+            if (parseNode.GetChildNode("bitlinks") is null) { _explicitNullValueBitlinks = default!; _explicitNullProperties?.Remove("bitlinks"); }
+            else if (parseNode.GetChildNode("bitlinks") is { } nullNodeBitlinks && nullNodeBitlinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlinks = null;
+            if (parseNode.GetChildNode("campaign_guid") is null) { _explicitNullValueCampaignGuid = default!; _explicitNullProperties?.Remove("campaign_guid"); }
+            else if (parseNode.GetChildNode("campaign_guid") is { } nullNodeCampaignGuid && nullNodeCampaignGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignGuid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>Bitlink IDs to add to the channel, up to 100 per request. Bitlinks already associated with the channel are left untouched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
+        public List<string>? Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; AdditionalData?.Remove("bitlinks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
         private List<string>? _explicitNullValueBitlinks = default!;
 #nullable restore
 #else
-        public List<string> Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
+        public List<string> Bitlinks { get => _explicitNullValueBitlinks; set { _explicitNullValueBitlinks = value; AdditionalData?.Remove("bitlinks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlinks"); else _explicitNullProperties?.Remove("bitlinks"); } }
         private List<string> _explicitNullValueBitlinks = default!;
 #endif
         /// <summary>The campaign to associate the given bitlinks with on this channel. All bitlinks in the request are associated with this single campaign_guid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignGuid { get => _explicitNullValueCampaignGuid; set { _explicitNullValueCampaignGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_guid"); else _explicitNullProperties?.Remove("campaign_guid"); } }
+        public string? CampaignGuid { get => _explicitNullValueCampaignGuid; set { _explicitNullValueCampaignGuid = value; AdditionalData?.Remove("campaign_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_guid"); else _explicitNullProperties?.Remove("campaign_guid"); } }
         private string? _explicitNullValueCampaignGuid = default!;
 #nullable restore
 #else
-        public string CampaignGuid { get => _explicitNullValueCampaignGuid; set { _explicitNullValueCampaignGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_guid"); else _explicitNullProperties?.Remove("campaign_guid"); } }
+        public string CampaignGuid { get => _explicitNullValueCampaignGuid; set { _explicitNullValueCampaignGuid = value; AdditionalData?.Remove("campaign_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_guid"); else _explicitNullProperties?.Remove("campaign_guid"); } }
         private string _explicitNullValueCampaignGuid = default!;
 #endif
         /// <summary>

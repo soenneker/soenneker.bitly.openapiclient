@@ -17,16 +17,26 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_guid") is { } nullNodeAppGuid && nullNodeAppGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppGuid = null;
-            if (parseNode.GetChildNode("app_uri_path") is { } nullNodeAppUriPath && nullNodeAppUriPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUriPath = null;
-            if (parseNode.GetChildNode("bitlink") is { } nullNodeBitlink && nullNodeBitlink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlink = null;
-            if (parseNode.GetChildNode("brand_guid") is { } nullNodeBrandGuid && nullNodeBrandGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandGuid = null;
-            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
-            if (parseNode.GetChildNode("guid") is { } nullNodeGuid && nullNodeGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guid = null;
-            if (parseNode.GetChildNode("install_type") is { } nullNodeInstallType && nullNodeInstallType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallType = null;
-            if (parseNode.GetChildNode("install_url") is { } nullNodeInstallUrl && nullNodeInstallUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallUrl = null;
-            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
-            if (parseNode.GetChildNode("os") is { } nullNodeOs && nullNodeOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Os = null;
+            if (parseNode.GetChildNode("app_guid") is null) { _explicitNullValueAppGuid = default!; _explicitNullProperties?.Remove("app_guid"); }
+            else if (parseNode.GetChildNode("app_guid") is { } nullNodeAppGuid && nullNodeAppGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppGuid = null;
+            if (parseNode.GetChildNode("app_uri_path") is null) { _explicitNullValueAppUriPath = default!; _explicitNullProperties?.Remove("app_uri_path"); }
+            else if (parseNode.GetChildNode("app_uri_path") is { } nullNodeAppUriPath && nullNodeAppUriPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUriPath = null;
+            if (parseNode.GetChildNode("bitlink") is null) { _explicitNullValueBitlink = default!; _explicitNullProperties?.Remove("bitlink"); }
+            else if (parseNode.GetChildNode("bitlink") is { } nullNodeBitlink && nullNodeBitlink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bitlink = null;
+            if (parseNode.GetChildNode("brand_guid") is null) { _explicitNullValueBrandGuid = default!; _explicitNullProperties?.Remove("brand_guid"); }
+            else if (parseNode.GetChildNode("brand_guid") is { } nullNodeBrandGuid && nullNodeBrandGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandGuid = null;
+            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
+            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("guid") is null) { _explicitNullValueGuid = default!; _explicitNullProperties?.Remove("guid"); }
+            else if (parseNode.GetChildNode("guid") is { } nullNodeGuid && nullNodeGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guid = null;
+            if (parseNode.GetChildNode("install_type") is null) { _explicitNullValueInstallType = default!; _explicitNullProperties?.Remove("install_type"); }
+            else if (parseNode.GetChildNode("install_type") is { } nullNodeInstallType && nullNodeInstallType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallType = null;
+            if (parseNode.GetChildNode("install_url") is null) { _explicitNullValueInstallUrl = default!; _explicitNullProperties?.Remove("install_url"); }
+            else if (parseNode.GetChildNode("install_url") is { } nullNodeInstallUrl && nullNodeInstallUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallUrl = null;
+            if (parseNode.GetChildNode("modified") is null) { _explicitNullValueModified = default!; _explicitNullProperties?.Remove("modified"); }
+            else if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("os") is null) { _explicitNullValueOs = default!; _explicitNullProperties?.Remove("os"); }
+            else if (parseNode.GetChildNode("os") is { } nullNodeOs && nullNodeOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Os = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,88 +44,88 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The app_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppGuid { get => _explicitNullValueAppGuid; set { _explicitNullValueAppGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_guid"); else _explicitNullProperties?.Remove("app_guid"); } }
+        public string? AppGuid { get => _explicitNullValueAppGuid; set { _explicitNullValueAppGuid = value; AdditionalData?.Remove("app_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_guid"); else _explicitNullProperties?.Remove("app_guid"); } }
         private string? _explicitNullValueAppGuid = default!;
 #nullable restore
 #else
-        public string AppGuid { get => _explicitNullValueAppGuid; set { _explicitNullValueAppGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_guid"); else _explicitNullProperties?.Remove("app_guid"); } }
+        public string AppGuid { get => _explicitNullValueAppGuid; set { _explicitNullValueAppGuid = value; AdditionalData?.Remove("app_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_guid"); else _explicitNullProperties?.Remove("app_guid"); } }
         private string _explicitNullValueAppGuid = default!;
 #endif
         /// <summary>The app_uri_path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
+        public string? AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; AdditionalData?.Remove("app_uri_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
         private string? _explicitNullValueAppUriPath = default!;
 #nullable restore
 #else
-        public string AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
+        public string AppUriPath { get => _explicitNullValueAppUriPath; set { _explicitNullValueAppUriPath = value; AdditionalData?.Remove("app_uri_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uri_path"); else _explicitNullProperties?.Remove("app_uri_path"); } }
         private string _explicitNullValueAppUriPath = default!;
 #endif
         /// <summary>The bitlink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
+        public string? Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; AdditionalData?.Remove("bitlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
         private string? _explicitNullValueBitlink = default!;
 #nullable restore
 #else
-        public string Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
+        public string Bitlink { get => _explicitNullValueBitlink; set { _explicitNullValueBitlink = value; AdditionalData?.Remove("bitlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink"); else _explicitNullProperties?.Remove("bitlink"); } }
         private string _explicitNullValueBitlink = default!;
 #endif
         /// <summary>The brand_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrandGuid { get => _explicitNullValueBrandGuid; set { _explicitNullValueBrandGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_guid"); else _explicitNullProperties?.Remove("brand_guid"); } }
+        public string? BrandGuid { get => _explicitNullValueBrandGuid; set { _explicitNullValueBrandGuid = value; AdditionalData?.Remove("brand_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_guid"); else _explicitNullProperties?.Remove("brand_guid"); } }
         private string? _explicitNullValueBrandGuid = default!;
 #nullable restore
 #else
-        public string BrandGuid { get => _explicitNullValueBrandGuid; set { _explicitNullValueBrandGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_guid"); else _explicitNullProperties?.Remove("brand_guid"); } }
+        public string BrandGuid { get => _explicitNullValueBrandGuid; set { _explicitNullValueBrandGuid = value; AdditionalData?.Remove("brand_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_guid"); else _explicitNullProperties?.Remove("brand_guid"); } }
         private string _explicitNullValueBrandGuid = default!;
 #endif
         /// <summary>ISO timestamp</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        public string? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
         private string? _explicitNullValueCreated = default!;
 #nullable restore
 #else
-        public string Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        public string Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
         private string _explicitNullValueCreated = default!;
 #endif
         /// <summary>The guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Guid { get => _explicitNullValueGuid; set { _explicitNullValueGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guid"); else _explicitNullProperties?.Remove("guid"); } }
+        public string? Guid { get => _explicitNullValueGuid; set { _explicitNullValueGuid = value; AdditionalData?.Remove("guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guid"); else _explicitNullProperties?.Remove("guid"); } }
         private string? _explicitNullValueGuid = default!;
 #nullable restore
 #else
-        public string Guid { get => _explicitNullValueGuid; set { _explicitNullValueGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guid"); else _explicitNullProperties?.Remove("guid"); } }
+        public string Guid { get => _explicitNullValueGuid; set { _explicitNullValueGuid = value; AdditionalData?.Remove("guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guid"); else _explicitNullProperties?.Remove("guid"); } }
         private string _explicitNullValueGuid = default!;
 #endif
         /// <summary>The install_type property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference? InstallType { get => _explicitNullValueInstallType; set { _explicitNullValueInstallType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_type"); else _explicitNullProperties?.Remove("install_type"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference? InstallType { get => _explicitNullValueInstallType; set { _explicitNullValueInstallType = value; AdditionalData?.Remove("install_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_type"); else _explicitNullProperties?.Remove("install_type"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference? _explicitNullValueInstallType = default!;
         /// <summary>The install_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
+        public string? InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; AdditionalData?.Remove("install_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
         private string? _explicitNullValueInstallUrl = default!;
 #nullable restore
 #else
-        public string InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
+        public string InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; AdditionalData?.Remove("install_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_url"); else _explicitNullProperties?.Remove("install_url"); } }
         private string _explicitNullValueInstallUrl = default!;
 #endif
         /// <summary>ISO timestamp</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public string? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private string? _explicitNullValueModified = default!;
 #nullable restore
 #else
-        public string Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public string Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private string _explicitNullValueModified = default!;
 #endif
         /// <summary>The os property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.MobileOs? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.MobileOs? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; AdditionalData?.Remove("os"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.MobileOs? _explicitNullValueOs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule"/> and sets the default values.
@@ -148,10 +158,10 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "brand_guid", n => { BrandGuid = n.GetStringValue(); } },
                 { "created", n => { Created = n.GetStringValue(); } },
                 { "guid", n => { Guid = n.GetStringValue(); } },
-                { "install_type", n => { InstallType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference>(); } },
+                { "install_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.InstallPreference>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInstallType = default; _explicitNullProperties?.Remove("install_type"); AdditionalData["install_type"] = unknown; } else { InstallType = parsed; AdditionalData.Remove("install_type"); } } },
                 { "install_url", n => { InstallUrl = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetStringValue(); } },
-                { "os", n => { Os = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.MobileOs>(); } },
+                { "os", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.MobileOs>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOs = default; _explicitNullProperties?.Remove("os"); AdditionalData["os"] = unknown; } else { Os = parsed; AdditionalData.Remove("os"); } } },
             };
         }
         /// <summary>

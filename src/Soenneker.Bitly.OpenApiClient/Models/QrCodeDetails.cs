@@ -17,170 +17,186 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
-            if (parseNode.GetChildNode("bitlink_id") is { } nullNodeBitlinkId && nullNodeBitlinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkId = null;
-            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("dynamic_routing") is { } nullNodeDynamicRouting && nullNodeDynamicRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicRouting = null;
-            if (parseNode.GetChildNode("expiration_at") is { } nullNodeExpirationAt && nullNodeExpirationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationAt = null;
-            if (parseNode.GetChildNode("group_guid") is { } nullNodeGroupGuid && nullNodeGroupGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupGuid = null;
-            if (parseNode.GetChildNode("gs1") is { } nullNodeGs1 && nullNodeGs1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gs1 = null;
-            if (parseNode.GetChildNode("long_urls") is { } nullNodeLongUrls && nullNodeLongUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongUrls = null;
-            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
-            if (parseNode.GetChildNode("qrcode_id") is { } nullNodeQrcodeId && nullNodeQrcodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrcodeId = null;
-            if (parseNode.GetChildNode("qr_code_type") is { } nullNodeQrCodeType && nullNodeQrCodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodeType = null;
-            if (parseNode.GetChildNode("render_customizations") is { } nullNodeRenderCustomizations && nullNodeRenderCustomizations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderCustomizations = null;
-            if (parseNode.GetChildNode("serialized_content") is { } nullNodeSerializedContent && nullNodeSerializedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SerializedContent = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
-            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("archived") is null) { _explicitNullValueArchived = default!; _explicitNullProperties?.Remove("archived"); }
+            else if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
+            if (parseNode.GetChildNode("bitlink_id") is null) { _explicitNullValueBitlinkId = default!; _explicitNullProperties?.Remove("bitlink_id"); }
+            else if (parseNode.GetChildNode("bitlink_id") is { } nullNodeBitlinkId && nullNodeBitlinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkId = null;
+            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
+            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("dynamic_routing") is null) { _explicitNullValueDynamicRouting = default!; _explicitNullProperties?.Remove("dynamic_routing"); }
+            else if (parseNode.GetChildNode("dynamic_routing") is { } nullNodeDynamicRouting && nullNodeDynamicRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicRouting = null;
+            if (parseNode.GetChildNode("expiration_at") is null) { _explicitNullValueExpirationAt = default!; _explicitNullProperties?.Remove("expiration_at"); }
+            else if (parseNode.GetChildNode("expiration_at") is { } nullNodeExpirationAt && nullNodeExpirationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationAt = null;
+            if (parseNode.GetChildNode("group_guid") is null) { _explicitNullValueGroupGuid = default!; _explicitNullProperties?.Remove("group_guid"); }
+            else if (parseNode.GetChildNode("group_guid") is { } nullNodeGroupGuid && nullNodeGroupGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupGuid = null;
+            if (parseNode.GetChildNode("gs1") is null) { _explicitNullValueGs1 = default!; _explicitNullProperties?.Remove("gs1"); }
+            else if (parseNode.GetChildNode("gs1") is { } nullNodeGs1 && nullNodeGs1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gs1 = null;
+            if (parseNode.GetChildNode("long_urls") is null) { _explicitNullValueLongUrls = default!; _explicitNullProperties?.Remove("long_urls"); }
+            else if (parseNode.GetChildNode("long_urls") is { } nullNodeLongUrls && nullNodeLongUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongUrls = null;
+            if (parseNode.GetChildNode("modified") is null) { _explicitNullValueModified = default!; _explicitNullProperties?.Remove("modified"); }
+            else if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("qrcode_id") is null) { _explicitNullValueQrcodeId = default!; _explicitNullProperties?.Remove("qrcode_id"); }
+            else if (parseNode.GetChildNode("qrcode_id") is { } nullNodeQrcodeId && nullNodeQrcodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrcodeId = null;
+            if (parseNode.GetChildNode("qr_code_type") is null) { _explicitNullValueQrCodeType = default!; _explicitNullProperties?.Remove("qr_code_type"); }
+            else if (parseNode.GetChildNode("qr_code_type") is { } nullNodeQrCodeType && nullNodeQrCodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodeType = null;
+            if (parseNode.GetChildNode("render_customizations") is null) { _explicitNullValueRenderCustomizations = default!; _explicitNullProperties?.Remove("render_customizations"); }
+            else if (parseNode.GetChildNode("render_customizations") is { } nullNodeRenderCustomizations && nullNodeRenderCustomizations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderCustomizations = null;
+            if (parseNode.GetChildNode("serialized_content") is null) { _explicitNullValueSerializedContent = default!; _explicitNullProperties?.Remove("serialized_content"); }
+            else if (parseNode.GetChildNode("serialized_content") is { } nullNodeSerializedContent && nullNodeSerializedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SerializedContent = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archived property</summary>
-        public bool? Archived { get => _explicitNullValueArchived; set { _explicitNullValueArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived"); else _explicitNullProperties?.Remove("archived"); } }
+        public bool? Archived { get => _explicitNullValueArchived; set { _explicitNullValueArchived = value; AdditionalData?.Remove("archived"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived"); else _explicitNullProperties?.Remove("archived"); } }
         private bool? _explicitNullValueArchived = default!;
         /// <summary>The bitlink associated with the qr code. Not all qr codes are associated with one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
+        public string? BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; AdditionalData?.Remove("bitlink_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
         private string? _explicitNullValueBitlinkId = default!;
 #nullable restore
 #else
-        public string BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
+        public string BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; AdditionalData?.Remove("bitlink_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
         private string _explicitNullValueBitlinkId = default!;
 #endif
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        public string? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
         private string? _explicitNullValueCreated = default!;
 #nullable restore
 #else
-        public string Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        public string Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
         private string _explicitNullValueCreated = default!;
 #endif
         /// <summary>The short domain the qr code redirects from. Present for both bitlink and long_url qr codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Dynamic routing rules for this QR code. Only present when at least one rule is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; AdditionalData?.Remove("dynamic_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? _explicitNullValueDynamicRouting = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; AdditionalData?.Remove("dynamic_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> _explicitNullValueDynamicRouting = default!;
 #endif
         /// <summary>Optional expiration timestamp for the QR code&apos;s bitlink (e.g., 2025-01-28T14:30:00+0000)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
+        public string? ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; AdditionalData?.Remove("expiration_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
         private string? _explicitNullValueExpirationAt = default!;
 #nullable restore
 #else
-        public string ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
+        public string ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; AdditionalData?.Remove("expiration_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
         private string _explicitNullValueExpirationAt = default!;
 #endif
         /// <summary>The group_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
+        public string? GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; AdditionalData?.Remove("group_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
         private string? _explicitNullValueGroupGuid = default!;
 #nullable restore
 #else
-        public string GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
+        public string GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; AdditionalData?.Remove("group_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
         private string _explicitNullValueGroupGuid = default!;
 #endif
         /// <summary>Contains GS1 related metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata? Gs1 { get => _explicitNullValueGs1; set { _explicitNullValueGs1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gs1"); else _explicitNullProperties?.Remove("gs1"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata? Gs1 { get => _explicitNullValueGs1; set { _explicitNullValueGs1 = value; AdditionalData?.Remove("gs1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gs1"); else _explicitNullProperties?.Remove("gs1"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata? _explicitNullValueGs1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata Gs1 { get => _explicitNullValueGs1; set { _explicitNullValueGs1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gs1"); else _explicitNullProperties?.Remove("gs1"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata Gs1 { get => _explicitNullValueGs1; set { _explicitNullValueGs1 = value; AdditionalData?.Remove("gs1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gs1"); else _explicitNullProperties?.Remove("gs1"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata _explicitNullValueGs1 = default!;
 #endif
         /// <summary>A list of destination URLs that the qr code leads to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LongUrls { get => _explicitNullValueLongUrls; set { _explicitNullValueLongUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_urls"); else _explicitNullProperties?.Remove("long_urls"); } }
+        public List<string>? LongUrls { get => _explicitNullValueLongUrls; set { _explicitNullValueLongUrls = value; AdditionalData?.Remove("long_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_urls"); else _explicitNullProperties?.Remove("long_urls"); } }
         private List<string>? _explicitNullValueLongUrls = default!;
 #nullable restore
 #else
-        public List<string> LongUrls { get => _explicitNullValueLongUrls; set { _explicitNullValueLongUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_urls"); else _explicitNullProperties?.Remove("long_urls"); } }
+        public List<string> LongUrls { get => _explicitNullValueLongUrls; set { _explicitNullValueLongUrls = value; AdditionalData?.Remove("long_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_urls"); else _explicitNullProperties?.Remove("long_urls"); } }
         private List<string> _explicitNullValueLongUrls = default!;
 #endif
         /// <summary>The modified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public string? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private string? _explicitNullValueModified = default!;
 #nullable restore
 #else
-        public string Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public string Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private string _explicitNullValueModified = default!;
 #endif
         /// <summary>The qrcode_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QrcodeId { get => _explicitNullValueQrcodeId; set { _explicitNullValueQrcodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcode_id"); else _explicitNullProperties?.Remove("qrcode_id"); } }
+        public string? QrcodeId { get => _explicitNullValueQrcodeId; set { _explicitNullValueQrcodeId = value; AdditionalData?.Remove("qrcode_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcode_id"); else _explicitNullProperties?.Remove("qrcode_id"); } }
         private string? _explicitNullValueQrcodeId = default!;
 #nullable restore
 #else
-        public string QrcodeId { get => _explicitNullValueQrcodeId; set { _explicitNullValueQrcodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcode_id"); else _explicitNullProperties?.Remove("qrcode_id"); } }
+        public string QrcodeId { get => _explicitNullValueQrcodeId; set { _explicitNullValueQrcodeId = value; AdditionalData?.Remove("qrcode_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrcode_id"); else _explicitNullProperties?.Remove("qrcode_id"); } }
         private string _explicitNullValueQrcodeId = default!;
 #endif
         /// <summary>The type of dynamic/static content the QR serves, e.g. Link In Bio page, micro site, bitlink, email, text, Wifi, etc.</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeTypeEnum? QrCodeType { get => _explicitNullValueQrCodeType; set { _explicitNullValueQrCodeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_type"); else _explicitNullProperties?.Remove("qr_code_type"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeTypeEnum? QrCodeType { get => _explicitNullValueQrCodeType; set { _explicitNullValueQrCodeType = value; AdditionalData?.Remove("qr_code_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qr_code_type"); else _explicitNullProperties?.Remove("qr_code_type"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeTypeEnum? _explicitNullValueQrCodeType = default!;
         /// <summary>Options for customizing a QR Code&apos;s appearance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic? RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic? RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; AdditionalData?.Remove("render_customizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic? _explicitNullValueRenderCustomizations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; AdditionalData?.Remove("render_customizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic _explicitNullValueRenderCustomizations = default!;
 #endif
         /// <summary>The serialized string of the QR code&apos;s content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerializedContent { get => _explicitNullValueSerializedContent; set { _explicitNullValueSerializedContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialized_content"); else _explicitNullProperties?.Remove("serialized_content"); } }
+        public string? SerializedContent { get => _explicitNullValueSerializedContent; set { _explicitNullValueSerializedContent = value; AdditionalData?.Remove("serialized_content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialized_content"); else _explicitNullProperties?.Remove("serialized_content"); } }
         private string? _explicitNullValueSerializedContent = default!;
 #nullable restore
 #else
-        public string SerializedContent { get => _explicitNullValueSerializedContent; set { _explicitNullValueSerializedContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialized_content"); else _explicitNullProperties?.Remove("serialized_content"); } }
+        public string SerializedContent { get => _explicitNullValueSerializedContent; set { _explicitNullValueSerializedContent = value; AdditionalData?.Remove("serialized_content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialized_content"); else _explicitNullProperties?.Remove("serialized_content"); } }
         private string _explicitNullValueSerializedContent = default!;
 #endif
         /// <summary>A list of tags associated with QR code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
@@ -218,7 +234,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "gs1", n => { Gs1 = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata>(global::Soenneker.Bitly.OpenApiClient.Models.Gs1Metadata.CreateFromDiscriminatorValue); } },
                 { "long_urls", n => { LongUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "modified", n => { Modified = n.GetStringValue(); } },
-                { "qr_code_type", n => { QrCodeType = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeTypeEnum>(); } },
+                { "qr_code_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeTypeEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueQrCodeType = default; _explicitNullProperties?.Remove("qr_code_type"); AdditionalData["qr_code_type"] = unknown; } else { QrCodeType = parsed; AdditionalData.Remove("qr_code_type"); } } },
                 { "qrcode_id", n => { QrcodeId = n.GetStringValue(); } },
                 { "render_customizations", n => { RenderCustomizations = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic>(global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsPublic.CreateFromDiscriminatorValue); } },
                 { "serialized_content", n => { SerializedContent = n.GetStringValue(); } },

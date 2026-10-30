@@ -18,9 +18,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("group_guid") is { } nullNodeGroupGuid && nullNodeGroupGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupGuid = null;
-            if (parseNode.GetChildNode("render_customizations") is { } nullNodeRenderCustomizations && nullNodeRenderCustomizations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderCustomizations = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("group_guid") is null) { _explicitNullValueGroupGuid = default!; _explicitNullProperties?.Remove("group_guid"); }
+            else if (parseNode.GetChildNode("group_guid") is { } nullNodeGroupGuid && nullNodeGroupGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupGuid = null;
+            if (parseNode.GetChildNode("render_customizations") is null) { _explicitNullValueRenderCustomizations = default!; _explicitNullProperties?.Remove("render_customizations"); }
+            else if (parseNode.GetChildNode("render_customizations") is { } nullNodeRenderCustomizations && nullNodeRenderCustomizations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderCustomizations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The raw content to encode in the QR code (e.g. a URL).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string _explicitNullValueContent = default!;
 #endif
         /// <summary>The group (brand) GUID used for access control and analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
+        public string? GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; AdditionalData?.Remove("group_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
         private string? _explicitNullValueGroupGuid = default!;
 #nullable restore
 #else
-        public string GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
+        public string GroupGuid { get => _explicitNullValueGroupGuid; set { _explicitNullValueGroupGuid = value; AdditionalData?.Remove("group_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_guid"); else _explicitNullProperties?.Remove("group_guid"); } }
         private string _explicitNullValueGroupGuid = default!;
 #endif
         /// <summary>Appearance options for a static QR code. gradient, background_gradient, frame, text, and logo are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsStaticPublic? RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsStaticPublic? RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; AdditionalData?.Remove("render_customizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsStaticPublic? _explicitNullValueRenderCustomizations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsStaticPublic RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsStaticPublic RenderCustomizations { get => _explicitNullValueRenderCustomizations; set { _explicitNullValueRenderCustomizations = value; AdditionalData?.Remove("render_customizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_customizations"); else _explicitNullProperties?.Remove("render_customizations"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCustomizationsStaticPublic _explicitNullValueRenderCustomizations = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("corner_1") is { } nullNodeCorner1 && nullNodeCorner1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corner1 = null;
-            if (parseNode.GetChildNode("corner_2") is { } nullNodeCorner2 && nullNodeCorner2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corner2 = null;
-            if (parseNode.GetChildNode("corner_3") is { } nullNodeCorner3 && nullNodeCorner3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corner3 = null;
+            if (parseNode.GetChildNode("corner_1") is null) { _explicitNullValueCorner1 = default!; _explicitNullProperties?.Remove("corner_1"); }
+            else if (parseNode.GetChildNode("corner_1") is { } nullNodeCorner1 && nullNodeCorner1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corner1 = null;
+            if (parseNode.GetChildNode("corner_2") is null) { _explicitNullValueCorner2 = default!; _explicitNullProperties?.Remove("corner_2"); }
+            else if (parseNode.GetChildNode("corner_2") is { } nullNodeCorner2 && nullNodeCorner2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corner2 = null;
+            if (parseNode.GetChildNode("corner_3") is null) { _explicitNullValueCorner3 = default!; _explicitNullProperties?.Remove("corner_3"); }
+            else if (parseNode.GetChildNode("corner_3") is { } nullNodeCorner3 && nullNodeCorner3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corner3 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>Represents one corner, both inner and outer, of a QR code, with color and shape values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? Corner1 { get => _explicitNullValueCorner1; set { _explicitNullValueCorner1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_1"); else _explicitNullProperties?.Remove("corner_1"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? Corner1 { get => _explicitNullValueCorner1; set { _explicitNullValueCorner1 = value; AdditionalData?.Remove("corner_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_1"); else _explicitNullProperties?.Remove("corner_1"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? _explicitNullValueCorner1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner Corner1 { get => _explicitNullValueCorner1; set { _explicitNullValueCorner1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_1"); else _explicitNullProperties?.Remove("corner_1"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner Corner1 { get => _explicitNullValueCorner1; set { _explicitNullValueCorner1 = value; AdditionalData?.Remove("corner_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_1"); else _explicitNullProperties?.Remove("corner_1"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner _explicitNullValueCorner1 = default!;
 #endif
         /// <summary>Represents one corner, both inner and outer, of a QR code, with color and shape values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? Corner2 { get => _explicitNullValueCorner2; set { _explicitNullValueCorner2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_2"); else _explicitNullProperties?.Remove("corner_2"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? Corner2 { get => _explicitNullValueCorner2; set { _explicitNullValueCorner2 = value; AdditionalData?.Remove("corner_2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_2"); else _explicitNullProperties?.Remove("corner_2"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? _explicitNullValueCorner2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner Corner2 { get => _explicitNullValueCorner2; set { _explicitNullValueCorner2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_2"); else _explicitNullProperties?.Remove("corner_2"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner Corner2 { get => _explicitNullValueCorner2; set { _explicitNullValueCorner2 = value; AdditionalData?.Remove("corner_2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_2"); else _explicitNullProperties?.Remove("corner_2"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner _explicitNullValueCorner2 = default!;
 #endif
         /// <summary>Represents one corner, both inner and outer, of a QR code, with color and shape values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? Corner3 { get => _explicitNullValueCorner3; set { _explicitNullValueCorner3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_3"); else _explicitNullProperties?.Remove("corner_3"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? Corner3 { get => _explicitNullValueCorner3; set { _explicitNullValueCorner3 = value; AdditionalData?.Remove("corner_3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_3"); else _explicitNullProperties?.Remove("corner_3"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner? _explicitNullValueCorner3 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner Corner3 { get => _explicitNullValueCorner3; set { _explicitNullValueCorner3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_3"); else _explicitNullProperties?.Remove("corner_3"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner Corner3 { get => _explicitNullValueCorner3; set { _explicitNullValueCorner3 = value; AdditionalData?.Remove("corner_3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corner_3"); else _explicitNullProperties?.Remove("corner_3"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner _explicitNullValueCorner3 = default!;
 #endif
         /// <summary>

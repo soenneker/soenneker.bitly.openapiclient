@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("image_guid") is { } nullNodeImageGuid && nullNodeImageGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageGuid = null;
+            if (parseNode.GetChildNode("image_guid") is null) { _explicitNullValueImageGuid = default!; _explicitNullProperties?.Remove("image_guid"); }
+            else if (parseNode.GetChildNode("image_guid") is { } nullNodeImageGuid && nullNodeImageGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageGuid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>A GUID for an image uploaded to Bitly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
+        public string? ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; AdditionalData?.Remove("image_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
         private string? _explicitNullValueImageGuid = default!;
 #nullable restore
 #else
-        public string ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
+        public string ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; AdditionalData?.Remove("image_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
         private string _explicitNullValueImageGuid = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("organizations") is { } nullNodeOrganizationsProp && nullNodeOrganizationsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationsProp = null;
+            if (parseNode.GetChildNode("organizations") is null) { _explicitNullValueOrganizationsProp = default!; _explicitNullProperties?.Remove("organizations"); }
+            else if (parseNode.GetChildNode("organizations") is { } nullNodeOrganizationsProp && nullNodeOrganizationsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationsProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The organizations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.Organization>? OrganizationsProp { get => _explicitNullValueOrganizationsProp; set { _explicitNullValueOrganizationsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizations"); else _explicitNullProperties?.Remove("organizations"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.Organization>? OrganizationsProp { get => _explicitNullValueOrganizationsProp; set { _explicitNullValueOrganizationsProp = value; AdditionalData?.Remove("organizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizations"); else _explicitNullProperties?.Remove("organizations"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.Organization>? _explicitNullValueOrganizationsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.Organization> OrganizationsProp { get => _explicitNullValueOrganizationsProp; set { _explicitNullValueOrganizationsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizations"); else _explicitNullProperties?.Remove("organizations"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.Organization> OrganizationsProp { get => _explicitNullValueOrganizationsProp; set { _explicitNullValueOrganizationsProp = value; AdditionalData?.Remove("organizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizations"); else _explicitNullProperties?.Remove("organizations"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.Organization> _explicitNullValueOrganizationsProp = default!;
 #endif
         /// <summary>

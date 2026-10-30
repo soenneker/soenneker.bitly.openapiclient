@@ -17,78 +17,85 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
-            if (parseNode.GetChildNode("deeplinks") is { } nullNodeDeeplinks && nullNodeDeeplinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deeplinks = null;
-            if (parseNode.GetChildNode("dynamic_routing") is { } nullNodeDynamicRouting && nullNodeDynamicRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicRouting = null;
-            if (parseNode.GetChildNode("expiration_at") is { } nullNodeExpirationAt && nullNodeExpirationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationAt = null;
-            if (parseNode.GetChildNode("long_url") is { } nullNodeLongUrl && nullNodeLongUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongUrl = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
-            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("archived") is null) { _explicitNullValueArchived = default!; _explicitNullProperties?.Remove("archived"); }
+            else if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
+            if (parseNode.GetChildNode("deeplinks") is null) { _explicitNullValueDeeplinks = default!; _explicitNullProperties?.Remove("deeplinks"); }
+            else if (parseNode.GetChildNode("deeplinks") is { } nullNodeDeeplinks && nullNodeDeeplinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deeplinks = null;
+            if (parseNode.GetChildNode("dynamic_routing") is null) { _explicitNullValueDynamicRouting = default!; _explicitNullProperties?.Remove("dynamic_routing"); }
+            else if (parseNode.GetChildNode("dynamic_routing") is { } nullNodeDynamicRouting && nullNodeDynamicRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicRouting = null;
+            if (parseNode.GetChildNode("expiration_at") is null) { _explicitNullValueExpirationAt = default!; _explicitNullProperties?.Remove("expiration_at"); }
+            else if (parseNode.GetChildNode("expiration_at") is { } nullNodeExpirationAt && nullNodeExpirationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationAt = null;
+            if (parseNode.GetChildNode("long_url") is null) { _explicitNullValueLongUrl = default!; _explicitNullProperties?.Remove("long_url"); }
+            else if (parseNode.GetChildNode("long_url") is { } nullNodeLongUrl && nullNodeLongUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongUrl = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archived property</summary>
-        public bool? Archived { get => _explicitNullValueArchived; set { _explicitNullValueArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived"); else _explicitNullProperties?.Remove("archived"); } }
+        public bool? Archived { get => _explicitNullValueArchived; set { _explicitNullValueArchived = value; AdditionalData?.Remove("archived"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived"); else _explicitNullProperties?.Remove("archived"); } }
         private bool? _explicitNullValueArchived = default!;
         /// <summary>The deeplinks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule>? Deeplinks { get => _explicitNullValueDeeplinks; set { _explicitNullValueDeeplinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deeplinks"); else _explicitNullProperties?.Remove("deeplinks"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule>? Deeplinks { get => _explicitNullValueDeeplinks; set { _explicitNullValueDeeplinks = value; AdditionalData?.Remove("deeplinks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deeplinks"); else _explicitNullProperties?.Remove("deeplinks"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule>? _explicitNullValueDeeplinks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule> Deeplinks { get => _explicitNullValueDeeplinks; set { _explicitNullValueDeeplinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deeplinks"); else _explicitNullProperties?.Remove("deeplinks"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule> Deeplinks { get => _explicitNullValueDeeplinks; set { _explicitNullValueDeeplinks = value; AdditionalData?.Remove("deeplinks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deeplinks"); else _explicitNullProperties?.Remove("deeplinks"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DeeplinkRule> _explicitNullValueDeeplinks = default!;
 #endif
         /// <summary>Dynamic routing rules for this bitlink. Providing this field replaces all existing rules. Send an empty array to clear all rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; AdditionalData?.Remove("dynamic_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule>? _explicitNullValueDynamicRouting = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> DynamicRouting { get => _explicitNullValueDynamicRouting; set { _explicitNullValueDynamicRouting = value; AdditionalData?.Remove("dynamic_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_routing"); else _explicitNullProperties?.Remove("dynamic_routing"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.DynamicRoutingRule> _explicitNullValueDynamicRouting = default!;
 #endif
         /// <summary>Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00+0000). Minimum expiration time is 5 minutes from now and maximum is 1 year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
+        public string? ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; AdditionalData?.Remove("expiration_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
         private string? _explicitNullValueExpirationAt = default!;
 #nullable restore
 #else
-        public string ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
+        public string ExpirationAt { get => _explicitNullValueExpirationAt; set { _explicitNullValueExpirationAt = value; AdditionalData?.Remove("expiration_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_at"); else _explicitNullProperties?.Remove("expiration_at"); } }
         private string _explicitNullValueExpirationAt = default!;
 #endif
         /// <summary>The long_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
+        public string? LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; AdditionalData?.Remove("long_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
         private string? _explicitNullValueLongUrl = default!;
 #nullable restore
 #else
-        public string LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
+        public string LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; AdditionalData?.Remove("long_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
         private string _explicitNullValueLongUrl = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bsds") is { } nullNodeBsds && nullNodeBsds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bsds = null;
+            if (parseNode.GetChildNode("bsds") is null) { _explicitNullValueBsds = default!; _explicitNullProperties?.Remove("bsds"); }
+            else if (parseNode.GetChildNode("bsds") is { } nullNodeBsds && nullNodeBsds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bsds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The bsds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
+        public List<string>? Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; AdditionalData?.Remove("bsds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
         private List<string>? _explicitNullValueBsds = default!;
 #nullable restore
 #else
-        public List<string> Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
+        public List<string> Bsds { get => _explicitNullValueBsds; set { _explicitNullValueBsds = value; AdditionalData?.Remove("bsds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsds"); else _explicitNullProperties?.Remove("bsds"); } }
         private List<string> _explicitNullValueBsds = default!;
 #endif
         /// <summary>

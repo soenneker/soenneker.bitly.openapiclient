@@ -17,10 +17,14 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("crop") is { } nullNodeCrop && nullNodeCrop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crop = null;
-            if (parseNode.GetChildNode("image_guid") is { } nullNodeImageGuid && nullNodeImageGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageGuid = null;
-            if (parseNode.GetChildNode("image_use") is { } nullNodeImageUse && nullNodeImageUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUse = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("crop") is null) { _explicitNullValueCrop = default!; _explicitNullProperties?.Remove("crop"); }
+            else if (parseNode.GetChildNode("crop") is { } nullNodeCrop && nullNodeCrop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crop = null;
+            if (parseNode.GetChildNode("image_guid") is null) { _explicitNullValueImageGuid = default!; _explicitNullProperties?.Remove("image_guid"); }
+            else if (parseNode.GetChildNode("image_guid") is { } nullNodeImageGuid && nullNodeImageGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageGuid = null;
+            if (parseNode.GetChildNode("image_use") is null) { _explicitNullValueImageUse = default!; _explicitNullProperties?.Remove("image_use"); }
+            else if (parseNode.GetChildNode("image_use") is { } nullNodeImageUse && nullNodeImageUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUse = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The crop property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Crop { get => _explicitNullValueCrop; set { _explicitNullValueCrop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop"); else _explicitNullProperties?.Remove("crop"); } }
+        public string? Crop { get => _explicitNullValueCrop; set { _explicitNullValueCrop = value; AdditionalData?.Remove("crop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop"); else _explicitNullProperties?.Remove("crop"); } }
         private string? _explicitNullValueCrop = default!;
 #nullable restore
 #else
-        public string Crop { get => _explicitNullValueCrop; set { _explicitNullValueCrop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop"); else _explicitNullProperties?.Remove("crop"); } }
+        public string Crop { get => _explicitNullValueCrop; set { _explicitNullValueCrop = value; AdditionalData?.Remove("crop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop"); else _explicitNullProperties?.Remove("crop"); } }
         private string _explicitNullValueCrop = default!;
 #endif
         /// <summary>The image_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
+        public string? ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; AdditionalData?.Remove("image_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
         private string? _explicitNullValueImageGuid = default!;
 #nullable restore
 #else
-        public string ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
+        public string ImageGuid { get => _explicitNullValueImageGuid; set { _explicitNullValueImageGuid = value; AdditionalData?.Remove("image_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_guid"); else _explicitNullProperties?.Remove("image_guid"); } }
         private string _explicitNullValueImageGuid = default!;
 #endif
         /// <summary>The image_use property</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.SiteImageUploadImageUse? ImageUse { get => _explicitNullValueImageUse; set { _explicitNullValueImageUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_use"); else _explicitNullProperties?.Remove("image_use"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.SiteImageUploadImageUse? ImageUse { get => _explicitNullValueImageUse; set { _explicitNullValueImageUse = value; AdditionalData?.Remove("image_use"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_use"); else _explicitNullProperties?.Remove("image_use"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.SiteImageUploadImageUse? _explicitNullValueImageUse = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "crop", n => { Crop = n.GetStringValue(); } },
                 { "image_guid", n => { ImageGuid = n.GetStringValue(); } },
-                { "image_use", n => { ImageUse = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteImageUploadImageUse>(); } },
+                { "image_use", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteImageUploadImageUse>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueImageUse = default; _explicitNullProperties?.Remove("image_use"); AdditionalData["image_use"] = unknown; } else { ImageUse = parsed; AdditionalData.Remove("image_use"); } } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }

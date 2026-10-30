@@ -17,9 +17,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitlink_id") is { } nullNodeBitlinkId && nullNodeBitlinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkId = null;
-            if (parseNode.GetChildNode("long_url") is { } nullNodeLongUrl && nullNodeLongUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongUrl = null;
-            if (parseNode.GetChildNode("site_id") is { } nullNodeSiteId && nullNodeSiteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteId = null;
+            if (parseNode.GetChildNode("bitlink_id") is null) { _explicitNullValueBitlinkId = default!; _explicitNullProperties?.Remove("bitlink_id"); }
+            else if (parseNode.GetChildNode("bitlink_id") is { } nullNodeBitlinkId && nullNodeBitlinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitlinkId = null;
+            if (parseNode.GetChildNode("long_url") is null) { _explicitNullValueLongUrl = default!; _explicitNullProperties?.Remove("long_url"); }
+            else if (parseNode.GetChildNode("long_url") is { } nullNodeLongUrl && nullNodeLongUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongUrl = null;
+            if (parseNode.GetChildNode("site_id") is null) { _explicitNullValueSiteId = default!; _explicitNullProperties?.Remove("site_id"); }
+            else if (parseNode.GetChildNode("site_id") is { } nullNodeSiteId && nullNodeSiteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The bitlink_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
+        public string? BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; AdditionalData?.Remove("bitlink_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
         private string? _explicitNullValueBitlinkId = default!;
 #nullable restore
 #else
-        public string BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
+        public string BitlinkId { get => _explicitNullValueBitlinkId; set { _explicitNullValueBitlinkId = value; AdditionalData?.Remove("bitlink_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitlink_id"); else _explicitNullProperties?.Remove("bitlink_id"); } }
         private string _explicitNullValueBitlinkId = default!;
 #endif
         /// <summary>The long_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
+        public string? LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; AdditionalData?.Remove("long_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
         private string? _explicitNullValueLongUrl = default!;
 #nullable restore
 #else
-        public string LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
+        public string LongUrl { get => _explicitNullValueLongUrl; set { _explicitNullValueLongUrl = value; AdditionalData?.Remove("long_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long_url"); else _explicitNullProperties?.Remove("long_url"); } }
         private string _explicitNullValueLongUrl = default!;
 #endif
         /// <summary>The site_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
+        public string? SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; AdditionalData?.Remove("site_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
         private string? _explicitNullValueSiteId = default!;
 #nullable restore
 #else
-        public string SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
+        public string SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; AdditionalData?.Remove("site_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
         private string _explicitNullValueSiteId = default!;
 #endif
         /// <summary>

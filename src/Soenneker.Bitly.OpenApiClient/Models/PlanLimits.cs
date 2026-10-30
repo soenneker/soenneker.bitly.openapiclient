@@ -17,9 +17,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
-            if (parseNode.GetChildNode("plan_limits") is { } nullNodePlanLimitsProp && nullNodePlanLimitsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanLimitsProp = null;
-            if (parseNode.GetChildNode("references") is { } nullNodeReferences && nullNodeReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) References = null;
+            if (parseNode.GetChildNode("organization_guid") is null) { _explicitNullValueOrganizationGuid = default!; _explicitNullProperties?.Remove("organization_guid"); }
+            else if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
+            if (parseNode.GetChildNode("plan_limits") is null) { _explicitNullValuePlanLimitsProp = default!; _explicitNullProperties?.Remove("plan_limits"); }
+            else if (parseNode.GetChildNode("plan_limits") is { } nullNodePlanLimitsProp && nullNodePlanLimitsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanLimitsProp = null;
+            if (parseNode.GetChildNode("references") is null) { _explicitNullValueReferences = default!; _explicitNullProperties?.Remove("references"); }
+            else if (parseNode.GetChildNode("references") is { } nullNodeReferences && nullNodeReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) References = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The organization_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string? _explicitNullValueOrganizationGuid = default!;
 #nullable restore
 #else
-        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string _explicitNullValueOrganizationGuid = default!;
 #endif
         /// <summary>The plan_limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>? PlanLimitsProp { get => _explicitNullValuePlanLimitsProp; set { _explicitNullValuePlanLimitsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan_limits"); else _explicitNullProperties?.Remove("plan_limits"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>? PlanLimitsProp { get => _explicitNullValuePlanLimitsProp; set { _explicitNullValuePlanLimitsProp = value; AdditionalData?.Remove("plan_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan_limits"); else _explicitNullProperties?.Remove("plan_limits"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit>? _explicitNullValuePlanLimitsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit> PlanLimitsProp { get => _explicitNullValuePlanLimitsProp; set { _explicitNullValuePlanLimitsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan_limits"); else _explicitNullProperties?.Remove("plan_limits"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit> PlanLimitsProp { get => _explicitNullValuePlanLimitsProp; set { _explicitNullValuePlanLimitsProp = value; AdditionalData?.Remove("plan_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan_limits"); else _explicitNullProperties?.Remove("plan_limits"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.PlanLimit> _explicitNullValuePlanLimitsProp = default!;
 #endif
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences? References { get => _explicitNullValueReferences; set { _explicitNullValueReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("references"); else _explicitNullProperties?.Remove("references"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences? References { get => _explicitNullValueReferences; set { _explicitNullValueReferences = value; AdditionalData?.Remove("references"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("references"); else _explicitNullProperties?.Remove("references"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences? _explicitNullValueReferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences References { get => _explicitNullValueReferences; set { _explicitNullValueReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("references"); else _explicitNullProperties?.Remove("references"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences References { get => _explicitNullValueReferences; set { _explicitNullValueReferences = value; AdditionalData?.Remove("references"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("references"); else _explicitNullProperties?.Remove("references"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.PlanLimitsReferences _explicitNullValueReferences = default!;
 #endif
         /// <summary>

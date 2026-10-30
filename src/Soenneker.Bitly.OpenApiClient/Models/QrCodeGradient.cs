@@ -17,32 +17,36 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("angle") is { } nullNodeAngle && nullNodeAngle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Angle = null;
-            if (parseNode.GetChildNode("colors") is { } nullNodeColors && nullNodeColors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colors = null;
-            if (parseNode.GetChildNode("exclude_corners") is { } nullNodeExcludeCorners && nullNodeExcludeCorners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeCorners = null;
-            if (parseNode.GetChildNode("style") is { } nullNodeStyle && nullNodeStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Style = null;
+            if (parseNode.GetChildNode("angle") is null) { _explicitNullValueAngle = default!; _explicitNullProperties?.Remove("angle"); }
+            else if (parseNode.GetChildNode("angle") is { } nullNodeAngle && nullNodeAngle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Angle = null;
+            if (parseNode.GetChildNode("colors") is null) { _explicitNullValueColors = default!; _explicitNullProperties?.Remove("colors"); }
+            else if (parseNode.GetChildNode("colors") is { } nullNodeColors && nullNodeColors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colors = null;
+            if (parseNode.GetChildNode("exclude_corners") is null) { _explicitNullValueExcludeCorners = default!; _explicitNullProperties?.Remove("exclude_corners"); }
+            else if (parseNode.GetChildNode("exclude_corners") is { } nullNodeExcludeCorners && nullNodeExcludeCorners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeCorners = null;
+            if (parseNode.GetChildNode("style") is null) { _explicitNullValueStyle = default!; _explicitNullProperties?.Remove("style"); }
+            else if (parseNode.GetChildNode("style") is { } nullNodeStyle && nullNodeStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Style = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The angle by which the gradient will be rotated. Only applies to linear gradients.</summary>
-        public double? Angle { get => _explicitNullValueAngle; set { _explicitNullValueAngle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("angle"); else _explicitNullProperties?.Remove("angle"); } }
+        public double? Angle { get => _explicitNullValueAngle; set { _explicitNullValueAngle = value; AdditionalData?.Remove("angle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("angle"); else _explicitNullProperties?.Remove("angle"); } }
         private double? _explicitNullValueAngle = default!;
         /// <summary>The list of hex colors and their offsets to be used in the gradient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.GradientColor>? Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.GradientColor>? Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; AdditionalData?.Remove("colors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.GradientColor>? _explicitNullValueColors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.GradientColor> Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.GradientColor> Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; AdditionalData?.Remove("colors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.GradientColor> _explicitNullValueColors = default!;
 #endif
         /// <summary>Ignore gradient mask on corners</summary>
-        public bool? ExcludeCorners { get => _explicitNullValueExcludeCorners; set { _explicitNullValueExcludeCorners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_corners"); else _explicitNullProperties?.Remove("exclude_corners"); } }
+        public bool? ExcludeCorners { get => _explicitNullValueExcludeCorners; set { _explicitNullValueExcludeCorners = value; AdditionalData?.Remove("exclude_corners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_corners"); else _explicitNullProperties?.Remove("exclude_corners"); } }
         private bool? _explicitNullValueExcludeCorners = default!;
         /// <summary>The style of the gradient. Can be either linear or radial.</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradientStyle? Style { get => _explicitNullValueStyle; set { _explicitNullValueStyle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("style"); else _explicitNullProperties?.Remove("style"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradientStyle? Style { get => _explicitNullValueStyle; set { _explicitNullValueStyle = value; AdditionalData?.Remove("style"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("style"); else _explicitNullProperties?.Remove("style"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradientStyle? _explicitNullValueStyle = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradient"/> and sets the default values.
@@ -72,7 +76,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
                 { "angle", n => { Angle = n.GetDoubleValue(); } },
                 { "colors", n => { Colors = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.GradientColor>(global::Soenneker.Bitly.OpenApiClient.Models.GradientColor.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exclude_corners", n => { ExcludeCorners = n.GetBoolValue(); } },
-                { "style", n => { Style = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradientStyle>(); } },
+                { "style", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeGradientStyle>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStyle = default; _explicitNullProperties?.Remove("style"); AdditionalData["style"] = unknown; } else { Style = parsed; AdditionalData.Remove("style"); } } },
             };
         }
         /// <summary>

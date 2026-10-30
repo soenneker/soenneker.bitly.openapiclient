@@ -17,21 +17,24 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
-            if (parseNode.GetChildNode("lib_button_clicks") is { } nullNodeLibButtonClicks && nullNodeLibButtonClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LibButtonClicks = null;
-            if (parseNode.GetChildNode("scans") is { } nullNodeScans && nullNodeScans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scans = null;
+            if (parseNode.GetChildNode("clicks") is null) { _explicitNullValueClicks = default!; _explicitNullProperties?.Remove("clicks"); }
+            else if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
+            if (parseNode.GetChildNode("lib_button_clicks") is null) { _explicitNullValueLibButtonClicks = default!; _explicitNullProperties?.Remove("lib_button_clicks"); }
+            else if (parseNode.GetChildNode("lib_button_clicks") is { } nullNodeLibButtonClicks && nullNodeLibButtonClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LibButtonClicks = null;
+            if (parseNode.GetChildNode("scans") is null) { _explicitNullValueScans = default!; _explicitNullProperties?.Remove("scans"); }
+            else if (parseNode.GetChildNode("scans") is { } nullNodeScans && nullNodeScans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scans = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clicks property</summary>
-        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
+        public int? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; AdditionalData?.Remove("clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
         private int? _explicitNullValueClicks = default!;
         /// <summary>The lib_button_clicks property</summary>
-        public int? LibButtonClicks { get => _explicitNullValueLibButtonClicks; set { _explicitNullValueLibButtonClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lib_button_clicks"); else _explicitNullProperties?.Remove("lib_button_clicks"); } }
+        public int? LibButtonClicks { get => _explicitNullValueLibButtonClicks; set { _explicitNullValueLibButtonClicks = value; AdditionalData?.Remove("lib_button_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lib_button_clicks"); else _explicitNullProperties?.Remove("lib_button_clicks"); } }
         private int? _explicitNullValueLibButtonClicks = default!;
         /// <summary>The scans property</summary>
-        public int? Scans { get => _explicitNullValueScans; set { _explicitNullValueScans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scans"); else _explicitNullProperties?.Remove("scans"); } }
+        public int? Scans { get => _explicitNullValueScans; set { _explicitNullValueScans = value; AdditionalData?.Remove("scans"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scans"); else _explicitNullProperties?.Remove("scans"); } }
         private int? _explicitNullValueScans = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.Engagement"/> and sets the default values.

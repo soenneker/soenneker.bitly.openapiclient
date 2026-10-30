@@ -17,9 +17,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agreement_keys") is { } nullNodeAgreementKeys && nullNodeAgreementKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementKeys = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
+            if (parseNode.GetChildNode("agreement_keys") is null) { _explicitNullValueAgreementKeys = default!; _explicitNullProperties?.Remove("agreement_keys"); }
+            else if (parseNode.GetChildNode("agreement_keys") is { } nullNodeAgreementKeys && nullNodeAgreementKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementKeys = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("organization_guid") is null) { _explicitNullValueOrganizationGuid = default!; _explicitNullProperties?.Remove("organization_guid"); }
+            else if (parseNode.GetChildNode("organization_guid") is { } nullNodeOrganizationGuid && nullNodeOrganizationGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationGuid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The agreement_keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AgreementKeys { get => _explicitNullValueAgreementKeys; set { _explicitNullValueAgreementKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_keys"); else _explicitNullProperties?.Remove("agreement_keys"); } }
+        public List<string>? AgreementKeys { get => _explicitNullValueAgreementKeys; set { _explicitNullValueAgreementKeys = value; AdditionalData?.Remove("agreement_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_keys"); else _explicitNullProperties?.Remove("agreement_keys"); } }
         private List<string>? _explicitNullValueAgreementKeys = default!;
 #nullable restore
 #else
-        public List<string> AgreementKeys { get => _explicitNullValueAgreementKeys; set { _explicitNullValueAgreementKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_keys"); else _explicitNullProperties?.Remove("agreement_keys"); } }
+        public List<string> AgreementKeys { get => _explicitNullValueAgreementKeys; set { _explicitNullValueAgreementKeys = value; AdditionalData?.Remove("agreement_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_keys"); else _explicitNullProperties?.Remove("agreement_keys"); } }
         private List<string> _explicitNullValueAgreementKeys = default!;
 #endif
         /// <summary>the domain to register, in Unicode or punycode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>The organization_guid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string? OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string? _explicitNullValueOrganizationGuid = default!;
 #nullable restore
 #else
-        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
+        public string OrganizationGuid { get => _explicitNullValueOrganizationGuid; set { _explicitNullValueOrganizationGuid = value; AdditionalData?.Remove("organization_guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_guid"); else _explicitNullProperties?.Remove("organization_guid"); } }
         private string _explicitNullValueOrganizationGuid = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_domains") is { } nullNodeCustomDomainsProp && nullNodeCustomDomainsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDomainsProp = null;
+            if (parseNode.GetChildNode("custom_domains") is null) { _explicitNullValueCustomDomainsProp = default!; _explicitNullProperties?.Remove("custom_domains"); }
+            else if (parseNode.GetChildNode("custom_domains") is { } nullNodeCustomDomainsProp && nullNodeCustomDomainsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDomainsProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The custom_domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody>? CustomDomainsProp { get => _explicitNullValueCustomDomainsProp; set { _explicitNullValueCustomDomainsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domains"); else _explicitNullProperties?.Remove("custom_domains"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody>? CustomDomainsProp { get => _explicitNullValueCustomDomainsProp; set { _explicitNullValueCustomDomainsProp = value; AdditionalData?.Remove("custom_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domains"); else _explicitNullProperties?.Remove("custom_domains"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody>? _explicitNullValueCustomDomainsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody> CustomDomainsProp { get => _explicitNullValueCustomDomainsProp; set { _explicitNullValueCustomDomainsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domains"); else _explicitNullProperties?.Remove("custom_domains"); } }
+        public List<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody> CustomDomainsProp { get => _explicitNullValueCustomDomainsProp; set { _explicitNullValueCustomDomainsProp = value; AdditionalData?.Remove("custom_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_domains"); else _explicitNullProperties?.Remove("custom_domains"); } }
         private List<global::Soenneker.Bitly.OpenApiClient.Models.CustomDomainBody> _explicitNullValueCustomDomainsProp = default!;
 #endif
         /// <summary>

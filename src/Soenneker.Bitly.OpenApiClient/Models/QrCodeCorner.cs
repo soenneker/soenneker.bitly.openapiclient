@@ -18,9 +18,12 @@ namespace Soenneker.Bitly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inner_color") is { } nullNodeInnerColor && nullNodeInnerColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InnerColor = null;
-            if (parseNode.GetChildNode("outer_color") is { } nullNodeOuterColor && nullNodeOuterColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OuterColor = null;
-            if (parseNode.GetChildNode("shape") is { } nullNodeShape && nullNodeShape.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shape = null;
+            if (parseNode.GetChildNode("inner_color") is null) { _explicitNullValueInnerColor = default!; _explicitNullProperties?.Remove("inner_color"); }
+            else if (parseNode.GetChildNode("inner_color") is { } nullNodeInnerColor && nullNodeInnerColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InnerColor = null;
+            if (parseNode.GetChildNode("outer_color") is null) { _explicitNullValueOuterColor = default!; _explicitNullProperties?.Remove("outer_color"); }
+            else if (parseNode.GetChildNode("outer_color") is { } nullNodeOuterColor && nullNodeOuterColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OuterColor = null;
+            if (parseNode.GetChildNode("shape") is null) { _explicitNullValueShape = default!; _explicitNullProperties?.Remove("shape"); }
+            else if (parseNode.GetChildNode("shape") is { } nullNodeShape && nullNodeShape.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shape = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <summary>The inner color of a corner of the QR code in hex code format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InnerColor { get => _explicitNullValueInnerColor; set { _explicitNullValueInnerColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inner_color"); else _explicitNullProperties?.Remove("inner_color"); } }
+        public string? InnerColor { get => _explicitNullValueInnerColor; set { _explicitNullValueInnerColor = value; AdditionalData?.Remove("inner_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inner_color"); else _explicitNullProperties?.Remove("inner_color"); } }
         private string? _explicitNullValueInnerColor = default!;
 #nullable restore
 #else
-        public string InnerColor { get => _explicitNullValueInnerColor; set { _explicitNullValueInnerColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inner_color"); else _explicitNullProperties?.Remove("inner_color"); } }
+        public string InnerColor { get => _explicitNullValueInnerColor; set { _explicitNullValueInnerColor = value; AdditionalData?.Remove("inner_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inner_color"); else _explicitNullProperties?.Remove("inner_color"); } }
         private string _explicitNullValueInnerColor = default!;
 #endif
         /// <summary>The outer color of a corner of the QR code in hex code format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OuterColor { get => _explicitNullValueOuterColor; set { _explicitNullValueOuterColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outer_color"); else _explicitNullProperties?.Remove("outer_color"); } }
+        public string? OuterColor { get => _explicitNullValueOuterColor; set { _explicitNullValueOuterColor = value; AdditionalData?.Remove("outer_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outer_color"); else _explicitNullProperties?.Remove("outer_color"); } }
         private string? _explicitNullValueOuterColor = default!;
 #nullable restore
 #else
-        public string OuterColor { get => _explicitNullValueOuterColor; set { _explicitNullValueOuterColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outer_color"); else _explicitNullProperties?.Remove("outer_color"); } }
+        public string OuterColor { get => _explicitNullValueOuterColor; set { _explicitNullValueOuterColor = value; AdditionalData?.Remove("outer_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outer_color"); else _explicitNullProperties?.Remove("outer_color"); } }
         private string _explicitNullValueOuterColor = default!;
 #endif
         /// <summary>The shape one of the QR code&apos;s corners should take</summary>
-        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCornerShape? Shape { get => _explicitNullValueShape; set { _explicitNullValueShape = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shape"); else _explicitNullProperties?.Remove("shape"); } }
+        public global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCornerShape? Shape { get => _explicitNullValueShape; set { _explicitNullValueShape = value; AdditionalData?.Remove("shape"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shape"); else _explicitNullProperties?.Remove("shape"); } }
         private global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCornerShape? _explicitNullValueShape = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCorner"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
             {
                 { "inner_color", n => { InnerColor = n.GetStringValue(); } },
                 { "outer_color", n => { OuterColor = n.GetStringValue(); } },
-                { "shape", n => { Shape = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCornerShape>(); } },
+                { "shape", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeCornerShape>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueShape = default; _explicitNullProperties?.Remove("shape"); AdditionalData["shape"] = unknown; } else { Shape = parsed; AdditionalData.Remove("shape"); } } },
             };
         }
         /// <summary>
