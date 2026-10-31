@@ -84,7 +84,7 @@ namespace Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks_by_destinati
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Bitly.OpenApiClient.Custom_bitlinks.Item.Clicks_by_destination.Clicks_by_destinationRequestBuilder.Clicks_by_destinationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api-ssl.bitly.com/v4", "/custom_bitlinks/{customBitlink}/clicks_by_destination", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
