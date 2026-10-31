@@ -778,22 +778,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Clicks"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Date, Clicks\n2023-07-10T00:00:00\u002B0000, 15\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetClicksForBitlink200CsvResponseSchema"
-                }
+                },
+                "example": "Date, Clicks\n2023-07-10T00:00:00\u002B0000, 15\n"
               }
             }
           },
@@ -978,22 +972,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/TotalEngagements"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Date, Engagements\n2006-01-02T15:04:05, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetEngagements200CsvResponseSchema"
-                }
+                },
+                "example": "Date, Engagements\n2006-01-02T15:04:05, 5\n"
               }
             }
           },
@@ -1198,22 +1186,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Agent, Clicks\nChatGPT, 25\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetAgenticTrafficForBitlink200CsvResponseSchema"
-                }
+                },
+                "example": "Agent, Clicks\nChatGPT, 25\n"
               }
             }
           },
@@ -1338,22 +1320,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Country, Clicks\nUS, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetMetricsForBitlinkByCountries200CsvResponseSchema"
-                }
+                },
+                "example": "Country, Clicks\nUS, 5\n"
               }
             }
           },
@@ -1468,22 +1444,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CityMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetMetricsForBitlinkByCities200CsvResponseSchema"
-                }
+                },
+                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
               }
             }
           },
@@ -1608,22 +1578,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/DeviceMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Device Type, Clicks\nDesktop, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetMetricsForBitlinkByDevices200CsvResponseSchema"
-                }
+                },
+                "example": "Device Type, Clicks\nDesktop, 5\n"
               }
             }
           },
@@ -1748,22 +1712,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Referrers, Domain/Sub-Domain, Clicks\nOther Sites, direct, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrers200CsvResponseSchema"
-                }
+                },
+                "example": "Referrers, Domain/Sub-Domain, Clicks\nOther Sites, direct, 5\n"
               }
             }
           },
@@ -1878,22 +1836,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Referrer-Name,Clicks\ndirect,4\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetMetricsForBitlinkByReferrerName200CsvResponseSchema"
-                }
+                },
+                "example": "Referrer-Name,Clicks\ndirect,4\n"
               }
             }
           },
@@ -3908,22 +3860,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Country, Clicks\nUS, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetGroupMetricsByCountries200CsvResponseSchema"
-                }
+                },
+                "example": "Country, Clicks\nUS, 5\n"
               }
             }
           },
@@ -4018,22 +3964,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CityMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetGroupMetricsByCities200CsvResponseSchema"
-                }
+                },
+                "example": "City, Subregion, Region, Country, Clicks\nNew York, , NY, US, 5\n"
               }
             }
           },
@@ -4138,22 +4078,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/DeviceMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Device Type, Clicks\nDesktop, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetGroupMetricsByDevices200CsvResponseSchema"
-                }
+                },
+                "example": "Device Type, Clicks\nDesktop, 5\n"
               }
             }
           },
@@ -4344,22 +4278,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ClickMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Referrer,Clicks\ndirect,25\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetGroupMetricsByReferrer200CsvResponseSchema"
-                }
+                },
+                "example": "Referrer,Clicks\ndirect,25\n"
               }
             }
           },
@@ -7000,6 +6928,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PurchaseBsdResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -7293,6 +7232,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Webhook"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -7943,6 +7893,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationBulkUpload"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -8237,6 +8198,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -8830,6 +8802,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -8927,6 +8910,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BitlySite"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -9250,6 +9244,27 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteBlock"
+                },
+                "example": {
+                  "site_id": "M0000guid01",
+                  "block_id": "L0000guid01",
+                  "type": "grid",
+                  "content": {},
+                  "sort_order": 1,
+                  "is_active": true,
+                  "is_pinned": false,
+                  "container_id": "root"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -9405,6 +9420,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SiteBlock"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -9752,6 +9778,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageUploadResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -11747,6 +11784,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QrCodeMinimal"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -11830,32 +11878,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PublicStaticQrCodeResponse"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "image/svg\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CreateStaticQrCodePublic200SvgXmlResponseSchema"
-                }
+                },
+                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
               },
               "image/png": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "...png bytes...",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CreateStaticQrCodePublic200PngResponseSchema"
-                }
+                },
+                "example": "...png bytes..."
               }
             }
           },
@@ -11965,32 +12003,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PublicQrCodeImageResponse"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "image/svg\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetQrCodeImagePublic200SvgXmlResponseSchema"
-                }
+                },
+                "example": "\u003Csvg\u003EQR code svg\u003C/svg\u003E"
               },
               "image/png": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "...png bytes...",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetQrCodeImagePublic200PngResponseSchema"
-                }
+                },
+                "example": "...png bytes..."
               }
             }
           },
@@ -12955,22 +12983,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ScanMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Country, Scans\nUS, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCountries200CsvResponseSchema"
-                }
+                },
+                "example": "Country, Scans\nUS, 5\n"
               }
             }
           },
@@ -13075,22 +13097,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CityScanMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "City, Subregion, Region, Country, Scans\nNew York, , NY, US, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetScanMetricsForQrCodeByCities200CsvResponseSchema"
-                }
+                },
+                "example": "City, Subregion, Region, Country, Scans\nNew York, , NY, US, 5\n"
               }
             }
           },
@@ -13205,22 +13221,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ScanMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Device OS, Scans\nApple, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetScanMetricsForQrCodeByDevicesOs200CsvResponseSchema"
-                }
+                },
+                "example": "Device OS, Scans\nApple, 5\n"
               }
             }
           },
@@ -13335,22 +13345,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ScanMetrics"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "example": "Browser, Scans\nGoogle Chrome, 5\n",
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GetScanMetricsForQrCodeByBrowser200CsvResponseSchema"
-                }
+                },
+                "example": "Browser, Scans\nGoogle Chrome, 5\n"
               }
             }
           },
