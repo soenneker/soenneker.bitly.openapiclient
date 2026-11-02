@@ -2,7 +2,7 @@
   "descriptionHash": "B83BFEFFFC41FC2186217C89E4473D8E9745FA41898343B0F63E2BEAABAF8FB6EA8231E032D3E1001B2680E85F0E2DA69941F275700E31157BC295D1A02CB8CF",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "BitlyOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Bitly.OpenApiClient",
