@@ -14815,20 +14815,6 @@
           }
         }
       },
-      "SimplifiedError": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "resource": {
-            "type": "string"
-          }
-        }
-      },
       "BitlinksPagination": {
         "type": "object",
         "properties": {
@@ -15207,87 +15193,6 @@
           "references": {
             "$ref": "#/components/schemas/BitlinkBodyReferences"
           },
-          "link": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "long_url": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "archived": {
-            "type": "boolean"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "client_id": {
-            "type": "string"
-          },
-          "custom_bitlinks": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "list of previously edited backhalfs for the bitlink - these are in reverse chronological order, with the most recently edited backhalf first"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "launchpad_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "qr_code_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "a list of qr code ids that are associated with this bitlink"
-          },
-          "deeplinks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DeeplinkRule"
-            }
-          },
-          "is_deleted": {
-            "type": "boolean"
-          },
-          "campaign_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "expiration_at": {
-            "type": "string",
-            "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
-          },
-          "dynamic_routing": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DynamicRoutingRule"
-            },
-            "description": "Dynamic routing rules for this bitlink. Only present when at least one rule is configured."
-          }
-        }
-      },
-      "BitlinkUpdate": {
-        "type": "object",
-        "properties": {
           "link": {
             "type": "string"
           },
@@ -16457,31 +16362,6 @@
           }
         }
       },
-      "BaseMetrics": {
-        "type": "object",
-        "properties": {
-          "unit": {
-            "type": "string",
-            "x-faker": "internet.userName"
-          },
-          "units": {
-            "type": "integer",
-            "x-faker": {
-              "datatype.number": {
-                "min": 1,
-                "max": 100
-              }
-            }
-          },
-          "facet": {
-            "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
-          },
-          "unit_reference": {
-            "type": "string",
-            "x-faker": "date.past"
-          }
-        }
-      },
       "Metrics": {
         "type": "object",
         "properties": {
@@ -16636,23 +16516,6 @@
             "type": "integer"
           },
           "value": {
-            "type": "string"
-          }
-        }
-      },
-      "BaseScanMetrics": {
-        "type": "object",
-        "properties": {
-          "unit": {
-            "type": "string"
-          },
-          "units": {
-            "type": "integer"
-          },
-          "facet": {
-            "$ref": "#/components/schemas/BaseScanMetricsFacet"
-          },
-          "unit_reference": {
             "type": "string"
           }
         }
@@ -16942,28 +16805,6 @@
           }
         }
       },
-      "BaseChannel": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "guid": {
-            "type": "string"
-          },
-          "created": {
-            "type": "string",
-            "description": "ISO TIMESTAMP"
-          },
-          "modified": {
-            "type": "string",
-            "description": "ISO_TIMESTAMP"
-          },
-          "group_guid": {
-            "type": "string"
-          }
-        }
-      },
       "Channel": {
         "type": "object",
         "properties": {
@@ -17036,14 +16877,6 @@
             "items": {
               "$ref": "#/components/schemas/Channel"
             }
-          }
-        }
-      },
-      "HasReferences": {
-        "type": "object",
-        "properties": {
-          "references": {
-            "$ref": "#/components/schemas/HasReferencesReferencesProperty"
           }
         }
       },
@@ -18646,40 +18479,6 @@
           ]
         }
       },
-      "SiteBlockCommon": {
-        "type": "object",
-        "properties": {
-          "site_id": {
-            "type": "string",
-            "example": "M1234567890"
-          },
-          "block_id": {
-            "type": "string",
-            "example": "L1234567890"
-          },
-          "sort_order": {
-            "type": "integer"
-          },
-          "schedule_start": {
-            "type": "string"
-          },
-          "schedule_end": {
-            "type": "string"
-          },
-          "is_active": {
-            "type": "boolean"
-          },
-          "is_pinned": {
-            "type": "boolean"
-          },
-          "is_sample": {
-            "type": "boolean"
-          },
-          "type": {
-            "$ref": "#/components/schemas/SiteBlockTypeEnum"
-          }
-        }
-      },
       "SiteBlockContent": {
         "type": "object",
         "properties": {
@@ -18717,61 +18516,6 @@
           "channel_url": {
             "type": "string"
           },
-          "digital_business_card_id": {
-            "type": "string"
-          },
-          "layout": {
-            "$ref": "#/components/schemas/DigitalBusinessCardLayout"
-          },
-          "first_name": {
-            "type": "string"
-          },
-          "last_name": {
-            "type": "string"
-          },
-          "job_title": {
-            "type": "string"
-          },
-          "company": {
-            "type": "string"
-          },
-          "pronouns": {
-            "type": "string"
-          },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DigitalBusinessCardContact"
-            }
-          },
-          "download_enabled": {
-            "type": "boolean",
-            "example": true
-          }
-        }
-      },
-      "BlockContentYoutube": {
-        "type": "object",
-        "properties": {
-          "thumbnail_url": {
-            "type": "string"
-          }
-        }
-      },
-      "BlockContentSocial": {
-        "type": "object",
-        "properties": {
-          "channel": {
-            "type": "string"
-          },
-          "channel_url": {
-            "type": "string"
-          }
-        }
-      },
-      "BlockContentDigitalBusinessCard": {
-        "type": "object",
-        "properties": {
           "digital_business_card_id": {
             "type": "string"
           },
@@ -18907,32 +18651,11 @@
           }
         }
       },
-      "SiteBlocks": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SiteBlock"
-        }
-      },
       "SiteBlockContainerRequest": {
         "type": "object",
         "properties": {
           "type": {
             "$ref": "#/components/schemas/SiteContainerTypeEnum"
-          }
-        }
-      },
-      "ImageCommon": {
-        "type": "object",
-        "properties": {
-          "image_guid": {
-            "type": "string"
-          },
-          "image_url": {
-            "type": "string"
-          },
-          "crop": {
-            "type": "string",
-            "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
           }
         }
       },
@@ -21174,411 +20897,6 @@
         },
         "description": "GONE"
       },
-      "GroupAllOf2": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "guid": {
-            "type": "string"
-          },
-          "created": {
-            "type": "string"
-          },
-          "modified": {
-            "type": "string"
-          },
-          "is_active": {
-            "type": "boolean"
-          },
-          "role": {
-            "type": "string"
-          },
-          "organization_guid": {
-            "type": "string"
-          },
-          "bsds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "OrganizationAllOf2": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "is_active": {
-            "type": "boolean"
-          },
-          "guid": {
-            "type": "string"
-          },
-          "tier": {
-            "type": "string"
-          },
-          "tier_family": {
-            "type": "string"
-          },
-          "tier_display_name": {
-            "type": "string"
-          },
-          "role": {
-            "type": "string"
-          },
-          "created": {
-            "type": "string"
-          },
-          "modified": {
-            "type": "string"
-          },
-          "bsds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "require_sso": {
-            "$ref": "#/components/schemas/OrganizationRequireSso"
-          },
-          "require_2fa": {
-            "$ref": "#/components/schemas/OrganizationRequire2Fa"
-          }
-        }
-      },
-      "ShortenBitlinkBodyAllOf2": {
-        "type": "object",
-        "properties": {
-          "link": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "long_url": {
-            "type": "string"
-          },
-          "archived": {
-            "type": "boolean"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "custom_bitlinks": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "list of previously edited backhalfs for the bitlink - these are in reverse chronological order, with the most recently edited backhalf first"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "deeplinks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DeeplinkRule"
-            }
-          }
-        }
-      },
-      "SiteCityViewMetricsAllOf2": {
-        "type": "object",
-        "properties": {
-          "site_views": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewMetric"
-            }
-          },
-          "other_metrics": {
-            "$ref": "#/components/schemas/OtherViewMetrics"
-          }
-        }
-      },
-      "MetricsAllOf2": {
-        "type": "object",
-        "properties": {
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Metric"
-            }
-          }
-        }
-      },
-      "ClickMetricsAllOf2": {
-        "type": "object",
-        "properties": {
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ClickMetric"
-            }
-          }
-        }
-      },
-      "DeviceMetricsAllOf2": {
-        "type": "object",
-        "properties": {
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DeviceMetric"
-            }
-          }
-        }
-      },
-      "CityMetricsAllOf2": {
-        "type": "object",
-        "properties": {
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CityMetric"
-            }
-          },
-          "other_metrics": {
-            "$ref": "#/components/schemas/OtherMetrics"
-          }
-        }
-      },
-      "ScanMetricsAllOf2": {
-        "type": "object",
-        "properties": {
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ScanMetric"
-            }
-          }
-        }
-      },
-      "CityScanMetricsAllOf2": {
-        "type": "object",
-        "properties": {
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CityScanMetric"
-            }
-          },
-          "other_metrics": {
-            "$ref": "#/components/schemas/OtherScanMetrics"
-          }
-        }
-      },
-      "CampaignAllOf2": {
-        "type": "object",
-        "properties": {
-          "guid": {
-            "type": "string"
-          },
-          "group_guid": {
-            "type": "string"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "created": {
-            "type": "string",
-            "description": "ISO timestamp"
-          },
-          "modified": {
-            "type": "string",
-            "description": "ISO timestamp"
-          }
-        }
-      },
-      "ChannelModifyAllOf2": {
-        "type": "object",
-        "properties": {
-          "bitlinks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BaseChannelBitlink"
-            }
-          }
-        }
-      },
-      "WebhookAllOf2": {
-        "type": "object",
-        "properties": {
-          "guid": {
-            "type": "string"
-          },
-          "created": {
-            "type": "string"
-          },
-          "modified": {
-            "type": "string"
-          },
-          "modified_by": {
-            "type": "string"
-          },
-          "alerted": {
-            "type": "string"
-          },
-          "deactivated": {
-            "type": "string"
-          },
-          "is_active": {
-            "type": "boolean"
-          },
-          "is_alert": {
-            "type": "boolean"
-          },
-          "organization_guid": {
-            "type": "string"
-          },
-          "group_guid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "event": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "oauth_url": {
-            "type": "string"
-          },
-          "client_id": {
-            "type": "string"
-          },
-          "client_secret": {
-            "type": "string"
-          },
-          "fetch_tags": {
-            "type": "boolean"
-          }
-        }
-      },
-      "PlanLimitsAllOf2": {
-        "type": "object",
-        "properties": {
-          "organization_guid": {
-            "type": "string"
-          },
-          "plan_limits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PlanLimit"
-            }
-          }
-        }
-      },
-      "SiteBlockCreateRequestAllOf2": {
-        "required": [
-          "type",
-          "content"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/SiteBlockCreateTypeEnum"
-          }
-        }
-      },
-      "ImageContentAllOf2": {
-        "type": "object",
-        "properties": {
-          "aspect_ratio": {
-            "type": "string",
-            "example": "1:1"
-          },
-          "link_title": {
-            "type": "string",
-            "example": "my image"
-          },
-          "description": {
-            "type": "string",
-            "example": "more about my image"
-          },
-          "bitlink_id": {
-            "type": "string",
-            "example": "bit.ly/123"
-          }
-        }
-      },
-      "BitlySiteAllOf1": {
-        "type": "object",
-        "properties": {
-          "site_guid": {
-            "type": "string"
-          },
-          "group_guid": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "is_edited": {
-            "type": "boolean"
-          },
-          "url": {
-            "type": "string"
-          },
-          "content": {
-            "$ref": "#/components/schemas/BitlySiteContent"
-          },
-          "appearance": {
-            "$ref": "#/components/schemas/BitlySiteAppearance"
-          },
-          "button_count": {
-            "type": "integer"
-          },
-          "last_published": {
-            "type": "string"
-          },
-          "created": {
-            "type": "string"
-          },
-          "modified": {
-            "type": "string"
-          },
-          "qr_code_id": {
-            "type": "string"
-          },
-          "redirects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SiteRedirects"
-            }
-          }
-        }
-      },
-      "BitlySiteWithBlocksAllOf2": {
-        "type": "object",
-        "properties": {
-          "blocks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SiteBlock"
-            },
-            "description": "The site\u0027s draft content blocks, ordered by container and then by sort order within that container. Blocks nested inside a grid or carousel carry that container\u0027s ID in container_id. The field is absent unless include_blocks is true, and is an empty array when the site has no blocks.\n\nBlocks taken down by a Bitly admin are not returned. Every other draft block is, including ones that do not appear on the published site: check is_active for blocks that are hidden or scheduled, and is_sample for template placeholders that are still missing their destination. A block with is_sample true never renders on the published site, regardless of is_active.\n"
-          }
-        }
-      },
       "SortedButtonsButtonsItem": {
         "type": "object",
         "properties": {
@@ -21610,12 +20928,6 @@
           }
         }
       },
-      "HasReferencesReferences": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
       "DomainDnsRequiredRecordsItem": {
         "type": "object",
         "properties": {
@@ -21631,13 +20943,6 @@
             "description": "what the record points to"
           }
         }
-      },
-      "OrganizationBulkUploadHeaders": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "Headers to send without changes in the PUT request to \u0060upload_url\u0060. Present only in the create response."
       },
       "DigitalBusinessCardContentFile": {
         "required": [
@@ -21686,48 +20991,6 @@
         },
         "description": "The text to be inserted into the QR code\u0027s frame"
       },
-      "GetClicksForBitlink200CsvResponse": {
-        "type": "string"
-      },
-      "GetEngagements200CsvResponse": {
-        "type": "string"
-      },
-      "GetAgenticTrafficForBitlink200CsvResponse": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByCountries200CsvResponse": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByCities200CsvResponse": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByDevices200CsvResponse": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByReferrers200CsvResponse": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByReferrerName200CsvResponse": {
-        "type": "string"
-      },
-      "GetGroupMetricsByCountries200CsvResponse": {
-        "type": "string"
-      },
-      "GetGroupMetricsByCities200CsvResponse": {
-        "type": "string"
-      },
-      "GetGroupMetricsByDevices200CsvResponse": {
-        "type": "string"
-      },
-      "GetGroupMetricsByReferrer200CsvResponse": {
-        "type": "string"
-      },
-      "GetTemplates200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Template"
-        }
-      },
       "GetAggregateSitesOverview200Response": {
         "type": "object",
         "properties": {
@@ -21741,31 +21004,6 @@
             "type": "string"
           }
         }
-      },
-      "CreateStaticQrCodePublic200SvgXmlResponse": {
-        "type": "string"
-      },
-      "CreateStaticQrCodePublic200PngResponse": {
-        "type": "string",
-        "format": "binary"
-      },
-      "GetQrCodeImagePublic200SvgXmlResponse": {
-        "type": "string"
-      },
-      "GetQrCodeImagePublic200PngResponse": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByCountries200CsvResponse": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByCities200CsvResponse": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByDevicesOs200CsvResponse": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByBrowser200CsvResponse": {
-        "type": "string"
       },
       "GetGroupLinkClicksByDevice200Response": {
         "type": "object",
@@ -21808,76 +21046,11 @@
           }
         ]
       },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
-      },
-      "GetClicksForBitlink200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetEngagements200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetAgenticTrafficForBitlink200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByCountries200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByCities200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByDevices200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByReferrers200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetMetricsForBitlinkByReferrerName200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetGroupMetricsByCountries200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetGroupMetricsByCities200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetGroupMetricsByDevices200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetGroupMetricsByReferrer200CsvResponseSchema": {
-        "type": "string"
-      },
       "GetTemplates200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Template"
         }
-      },
-      "CreateStaticQrCodePublic200SvgXmlResponseSchema": {
-        "type": "string"
-      },
-      "CreateStaticQrCodePublic200PngResponseSchema": {
-        "type": "string",
-        "format": "binary"
-      },
-      "GetQrCodeImagePublic200SvgXmlResponseSchema": {
-        "type": "string"
-      },
-      "GetQrCodeImagePublic200PngResponseSchema": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByCountries200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByCities200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByDevicesOs200CsvResponseSchema": {
-        "type": "string"
-      },
-      "GetScanMetricsForQrCodeByBrowser200CsvResponseSchema": {
-        "type": "string"
       },
       "GroupReferences": {
         "type": "object",
@@ -21910,12 +21083,6 @@
         }
       },
       "ChannelReferences": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "HasReferencesReferencesProperty": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
@@ -24241,5 +23408,840 @@
       "name": "AI Assist",
       "description": "AI Assist insights and chat functionality for data analysis and link creation.\n"
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "SimplifiedError": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        }
+      }
+    },
+    "BitlinkUpdate": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "long_url": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "client_id": {
+          "type": "string"
+        },
+        "custom_bitlinks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "list of previously edited backhalfs for the bitlink - these are in reverse chronological order, with the most recently edited backhalf first"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "launchpad_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "qr_code_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "a list of qr code ids that are associated with this bitlink"
+        },
+        "deeplinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DeeplinkRule"
+          }
+        },
+        "is_deleted": {
+          "type": "boolean"
+        },
+        "campaign_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expiration_at": {
+          "type": "string",
+          "description": "Optional expiration timestamp for the bitlink (e.g., 2025-01-28T14:30:00\u002B0000)"
+        },
+        "dynamic_routing": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DynamicRoutingRule"
+          },
+          "description": "Dynamic routing rules for this bitlink. Only present when at least one rule is configured."
+        }
+      }
+    },
+    "BaseMetrics": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "x-faker": "internet.userName"
+        },
+        "units": {
+          "type": "integer",
+          "x-faker": {
+            "datatype.number": {
+              "min": 1,
+              "max": 100
+            }
+          }
+        },
+        "facet": {
+          "$ref": "#/components/schemas/SiteCityViewMetricsFacet"
+        },
+        "unit_reference": {
+          "type": "string",
+          "x-faker": "date.past"
+        }
+      }
+    },
+    "BaseScanMetrics": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "units": {
+          "type": "integer"
+        },
+        "facet": {
+          "$ref": "#/components/schemas/BaseScanMetricsFacet"
+        },
+        "unit_reference": {
+          "type": "string"
+        }
+      }
+    },
+    "BaseChannel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "description": "ISO TIMESTAMP"
+        },
+        "modified": {
+          "type": "string",
+          "description": "ISO_TIMESTAMP"
+        },
+        "group_guid": {
+          "type": "string"
+        }
+      }
+    },
+    "HasReferences": {
+      "type": "object",
+      "properties": {
+        "references": {
+          "$ref": "#/components/schemas/HasReferencesReferencesProperty"
+        }
+      }
+    },
+    "SiteBlockCommon": {
+      "type": "object",
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "example": "M1234567890"
+        },
+        "block_id": {
+          "type": "string",
+          "example": "L1234567890"
+        },
+        "sort_order": {
+          "type": "integer"
+        },
+        "schedule_start": {
+          "type": "string"
+        },
+        "schedule_end": {
+          "type": "string"
+        },
+        "is_active": {
+          "type": "boolean"
+        },
+        "is_pinned": {
+          "type": "boolean"
+        },
+        "is_sample": {
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/components/schemas/SiteBlockTypeEnum"
+        }
+      }
+    },
+    "BlockContentYoutube": {
+      "type": "object",
+      "properties": {
+        "thumbnail_url": {
+          "type": "string"
+        }
+      }
+    },
+    "BlockContentSocial": {
+      "type": "object",
+      "properties": {
+        "channel": {
+          "type": "string"
+        },
+        "channel_url": {
+          "type": "string"
+        }
+      }
+    },
+    "BlockContentDigitalBusinessCard": {
+      "type": "object",
+      "properties": {
+        "digital_business_card_id": {
+          "type": "string"
+        },
+        "layout": {
+          "$ref": "#/components/schemas/DigitalBusinessCardLayout"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "job_title": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "pronouns": {
+          "type": "string"
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DigitalBusinessCardContact"
+          }
+        },
+        "download_enabled": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "SiteBlocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SiteBlock"
+      }
+    },
+    "ImageCommon": {
+      "type": "object",
+      "properties": {
+        "image_guid": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "crop": {
+          "type": "string",
+          "example": "{\u0022Min\u0022: {\u0022X\u0022: 0, \u0022Y\u0022: 0}, \u0022Max\u0022: {\u0022X\u0022: 1, \u0022Y\u0022: 1}}"
+        }
+      }
+    },
+    "GroupAllOf2": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "modified": {
+          "type": "string"
+        },
+        "is_active": {
+          "type": "boolean"
+        },
+        "role": {
+          "type": "string"
+        },
+        "organization_guid": {
+          "type": "string"
+        },
+        "bsds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "OrganizationAllOf2": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "is_active": {
+          "type": "boolean"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "tier_family": {
+          "type": "string"
+        },
+        "tier_display_name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "modified": {
+          "type": "string"
+        },
+        "bsds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "require_sso": {
+          "$ref": "#/components/schemas/OrganizationRequireSso"
+        },
+        "require_2fa": {
+          "$ref": "#/components/schemas/OrganizationRequire2Fa"
+        }
+      }
+    },
+    "ShortenBitlinkBodyAllOf2": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "long_url": {
+          "type": "string"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "custom_bitlinks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "list of previously edited backhalfs for the bitlink - these are in reverse chronological order, with the most recently edited backhalf first"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deeplinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DeeplinkRule"
+          }
+        }
+      }
+    },
+    "SiteCityViewMetricsAllOf2": {
+      "type": "object",
+      "properties": {
+        "site_views": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ViewMetric"
+          }
+        },
+        "other_metrics": {
+          "$ref": "#/components/schemas/OtherViewMetrics"
+        }
+      }
+    },
+    "MetricsAllOf2": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Metric"
+          }
+        }
+      }
+    },
+    "ClickMetricsAllOf2": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ClickMetric"
+          }
+        }
+      }
+    },
+    "DeviceMetricsAllOf2": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DeviceMetric"
+          }
+        }
+      }
+    },
+    "CityMetricsAllOf2": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/CityMetric"
+          }
+        },
+        "other_metrics": {
+          "$ref": "#/components/schemas/OtherMetrics"
+        }
+      }
+    },
+    "ScanMetricsAllOf2": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ScanMetric"
+          }
+        }
+      }
+    },
+    "CityScanMetricsAllOf2": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/CityScanMetric"
+          }
+        },
+        "other_metrics": {
+          "$ref": "#/components/schemas/OtherScanMetrics"
+        }
+      }
+    },
+    "CampaignAllOf2": {
+      "type": "object",
+      "properties": {
+        "guid": {
+          "type": "string"
+        },
+        "group_guid": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "description": "ISO timestamp"
+        },
+        "modified": {
+          "type": "string",
+          "description": "ISO timestamp"
+        }
+      }
+    },
+    "ChannelModifyAllOf2": {
+      "type": "object",
+      "properties": {
+        "bitlinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/BaseChannelBitlink"
+          }
+        }
+      }
+    },
+    "WebhookAllOf2": {
+      "type": "object",
+      "properties": {
+        "guid": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "modified": {
+          "type": "string"
+        },
+        "modified_by": {
+          "type": "string"
+        },
+        "alerted": {
+          "type": "string"
+        },
+        "deactivated": {
+          "type": "string"
+        },
+        "is_active": {
+          "type": "boolean"
+        },
+        "is_alert": {
+          "type": "boolean"
+        },
+        "organization_guid": {
+          "type": "string"
+        },
+        "group_guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "oauth_url": {
+          "type": "string"
+        },
+        "client_id": {
+          "type": "string"
+        },
+        "client_secret": {
+          "type": "string"
+        },
+        "fetch_tags": {
+          "type": "boolean"
+        }
+      }
+    },
+    "PlanLimitsAllOf2": {
+      "type": "object",
+      "properties": {
+        "organization_guid": {
+          "type": "string"
+        },
+        "plan_limits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/PlanLimit"
+          }
+        }
+      }
+    },
+    "SiteBlockCreateRequestAllOf2": {
+      "required": [
+        "type",
+        "content"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/SiteBlockCreateTypeEnum"
+        }
+      }
+    },
+    "ImageContentAllOf2": {
+      "type": "object",
+      "properties": {
+        "aspect_ratio": {
+          "type": "string",
+          "example": "1:1"
+        },
+        "link_title": {
+          "type": "string",
+          "example": "my image"
+        },
+        "description": {
+          "type": "string",
+          "example": "more about my image"
+        },
+        "bitlink_id": {
+          "type": "string",
+          "example": "bit.ly/123"
+        }
+      }
+    },
+    "BitlySiteAllOf1": {
+      "type": "object",
+      "properties": {
+        "site_guid": {
+          "type": "string"
+        },
+        "group_guid": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "is_edited": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "string"
+        },
+        "content": {
+          "$ref": "#/components/schemas/BitlySiteContent"
+        },
+        "appearance": {
+          "$ref": "#/components/schemas/BitlySiteAppearance"
+        },
+        "button_count": {
+          "type": "integer"
+        },
+        "last_published": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "modified": {
+          "type": "string"
+        },
+        "qr_code_id": {
+          "type": "string"
+        },
+        "redirects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SiteRedirects"
+          }
+        }
+      }
+    },
+    "BitlySiteWithBlocksAllOf2": {
+      "type": "object",
+      "properties": {
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SiteBlock"
+          },
+          "description": "The site\u0027s draft content blocks, ordered by container and then by sort order within that container. Blocks nested inside a grid or carousel carry that container\u0027s ID in container_id. The field is absent unless include_blocks is true, and is an empty array when the site has no blocks.\n\nBlocks taken down by a Bitly admin are not returned. Every other draft block is, including ones that do not appear on the published site: check is_active for blocks that are hidden or scheduled, and is_sample for template placeholders that are still missing their destination. A block with is_sample true never renders on the published site, regardless of is_active.\n"
+        }
+      }
+    },
+    "HasReferencesReferences": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "OrganizationBulkUploadHeaders": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Headers to send without changes in the PUT request to \u0060upload_url\u0060. Present only in the create response."
+    },
+    "GetClicksForBitlink200CsvResponse": {
+      "type": "string"
+    },
+    "GetEngagements200CsvResponse": {
+      "type": "string"
+    },
+    "GetAgenticTrafficForBitlink200CsvResponse": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByCountries200CsvResponse": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByCities200CsvResponse": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByDevices200CsvResponse": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByReferrers200CsvResponse": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByReferrerName200CsvResponse": {
+      "type": "string"
+    },
+    "GetGroupMetricsByCountries200CsvResponse": {
+      "type": "string"
+    },
+    "GetGroupMetricsByCities200CsvResponse": {
+      "type": "string"
+    },
+    "GetGroupMetricsByDevices200CsvResponse": {
+      "type": "string"
+    },
+    "GetGroupMetricsByReferrer200CsvResponse": {
+      "type": "string"
+    },
+    "GetTemplates200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Template"
+      }
+    },
+    "CreateStaticQrCodePublic200SvgXmlResponse": {
+      "type": "string"
+    },
+    "CreateStaticQrCodePublic200PngResponse": {
+      "type": "string",
+      "format": "binary"
+    },
+    "GetQrCodeImagePublic200SvgXmlResponse": {
+      "type": "string"
+    },
+    "GetQrCodeImagePublic200PngResponse": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByCountries200CsvResponse": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByCities200CsvResponse": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByDevicesOs200CsvResponse": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByBrowser200CsvResponse": {
+      "type": "string"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "GetClicksForBitlink200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetEngagements200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetAgenticTrafficForBitlink200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByCountries200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByCities200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByDevices200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByReferrers200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetMetricsForBitlinkByReferrerName200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetGroupMetricsByCountries200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetGroupMetricsByCities200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetGroupMetricsByDevices200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetGroupMetricsByReferrer200CsvResponseSchema": {
+      "type": "string"
+    },
+    "CreateStaticQrCodePublic200SvgXmlResponseSchema": {
+      "type": "string"
+    },
+    "CreateStaticQrCodePublic200PngResponseSchema": {
+      "type": "string",
+      "format": "binary"
+    },
+    "GetQrCodeImagePublic200SvgXmlResponseSchema": {
+      "type": "string"
+    },
+    "GetQrCodeImagePublic200PngResponseSchema": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByCountries200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByCities200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByDevicesOs200CsvResponseSchema": {
+      "type": "string"
+    },
+    "GetScanMetricsForQrCodeByBrowser200CsvResponseSchema": {
+      "type": "string"
+    },
+    "HasReferencesReferencesProperty": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
 }
