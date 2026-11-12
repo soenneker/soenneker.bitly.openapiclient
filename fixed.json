@@ -23349,6 +23349,10 @@
       "description": "Set up a custom domain, the domain that replaces bit.ly in your short links. Register a domain that your plan includes, where Bitly configures the DNS for you. Or add a domain you already own, then create the DNS records Bitly returns at your registrar. DNS verification runs asynchronously in both cases, and takes 24 to 48 hours, so read the domain for its validation_status when your user returns.\n"
     },
     {
+      "name": "Automations",
+      "description": "Automations are Instagram keyword auto-replies. When a follower comments or messages a keyword on a connected Instagram account, the automation responds with a configured message and call-to-action buttons.\n"
+    },
+    {
       "name": "Bitlinks",
       "description": "Bitlinks are shortened links. They could begin with the bit.ly domain or your own custom branded short domain (BSD).\n\n**Related Operations:**\n- [POST /bitlinks](#createFullBitlink) - Create a new bitlink or add a custom keyword to an existing bitlink\n- [PATCH /bitlinks/{bitlink}](#updateBitlink) - Redirect an existing bitlink\n"
     },
