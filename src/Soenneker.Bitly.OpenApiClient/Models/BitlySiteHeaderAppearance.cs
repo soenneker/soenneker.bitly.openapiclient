@@ -158,7 +158,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(20)
             {
                 { "banner_image_alignment", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteImageAlignment>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBannerImageAlignment = default; _explicitNullProperties?.Remove("banner_image_alignment"); AdditionalData["banner_image_alignment"] = unknown; } else { BannerImageAlignment = parsed; AdditionalData.Remove("banner_image_alignment"); } } },
                 { "banner_image_url", n => { BannerImageUrl = n.GetStringValue(); } },

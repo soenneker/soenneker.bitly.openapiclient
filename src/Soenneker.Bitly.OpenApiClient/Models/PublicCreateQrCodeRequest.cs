@@ -159,7 +159,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination>(global::Soenneker.Bitly.OpenApiClient.Models.QrCodeDestination.CreateFromDiscriminatorValue); } },

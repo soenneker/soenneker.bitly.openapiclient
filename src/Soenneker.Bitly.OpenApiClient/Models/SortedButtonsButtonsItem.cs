@@ -85,7 +85,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "button_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.LaunchpadButtonTypeEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueButtonType = default; _explicitNullProperties?.Remove("button_type"); AdditionalData["button_type"] = unknown; } else { ButtonType = parsed; AdditionalData.Remove("button_type"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },

@@ -104,7 +104,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "end_date", n => { EndDate = n.GetStringValue(); } },
                 { "group_guid", n => { GroupGuid = n.GetStringValue(); } },

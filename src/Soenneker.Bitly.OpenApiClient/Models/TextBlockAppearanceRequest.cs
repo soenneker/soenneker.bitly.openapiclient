@@ -90,7 +90,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "alignment", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.TextBlockAppearanceRequestAlignmentEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlignment = default; _explicitNullProperties?.Remove("alignment"); AdditionalData["alignment"] = unknown; } else { Alignment = parsed; AdditionalData.Remove("alignment"); } } },
                 { "background_color", n => { BackgroundColor = n.GetStringValue(); } },

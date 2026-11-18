@@ -83,7 +83,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "engagements", n => { Engagements = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.Engagement>(global::Soenneker.Bitly.OpenApiClient.Models.Engagement.CreateFromDiscriminatorValue); } },
                 { "total_engagements", n => { TotalEngagements = n.GetIntValue(); } },

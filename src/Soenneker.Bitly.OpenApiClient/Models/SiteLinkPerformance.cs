@@ -119,7 +119,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "link_clicks", n => { LinkClicks = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks>(global::Soenneker.Bitly.OpenApiClient.Models.SiteClicks.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "page", n => { Page = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination>(global::Soenneker.Bitly.OpenApiClient.Models.SitesPagination.CreateFromDiscriminatorValue); } },

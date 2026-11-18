@@ -102,7 +102,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "facet", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.SiteCityViewMetricsFacet>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFacet = default; _explicitNullProperties?.Remove("facet"); AdditionalData["facet"] = unknown; } else { Facet = parsed; AdditionalData.Remove("facet"); } } },
                 { "other_metrics", n => { OtherMetrics = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.OtherViewMetrics>(global::Soenneker.Bitly.OpenApiClient.Models.OtherViewMetrics.CreateFromDiscriminatorValue); } },

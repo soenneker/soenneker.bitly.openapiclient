@@ -88,7 +88,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "bitlinks", n => { Bitlinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "export_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportRequestBodyExportType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExportType = default; _explicitNullProperties?.Remove("export_type"); AdditionalData["export_type"] = unknown; } else { ExportType = parsed; AdditionalData.Remove("export_type"); } } },

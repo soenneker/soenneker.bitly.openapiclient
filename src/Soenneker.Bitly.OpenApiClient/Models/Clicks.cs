@@ -78,7 +78,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "link_clicks", n => { LinkClicks = n.GetCollectionOfObjectValues<global::Soenneker.Bitly.OpenApiClient.Models.LinkClicks>(global::Soenneker.Bitly.OpenApiClient.Models.LinkClicks.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "unit", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.ClicksUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUnit = default; _explicitNullProperties?.Remove("unit"); AdditionalData["unit"] = unknown; } else { Unit = parsed; AdditionalData.Remove("unit"); } } },

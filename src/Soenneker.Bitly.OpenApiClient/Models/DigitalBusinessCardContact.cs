@@ -83,7 +83,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "bitlink_id", n => { BitlinkId = n.GetStringValue(); } },
                 { "contact_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.DigitalBusinessCardContactContactMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContactMethod = default; _explicitNullProperties?.Remove("contact_method"); AdditionalData["contact_method"] = unknown; } else { ContactMethod = parsed; AdditionalData.Remove("contact_method"); } } },

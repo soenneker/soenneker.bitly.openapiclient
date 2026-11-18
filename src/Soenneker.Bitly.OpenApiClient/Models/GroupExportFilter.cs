@@ -108,7 +108,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "archived", n => { var parsed = n.GetEnumValue<global::Soenneker.Bitly.OpenApiClient.Models.GroupExportFilterArchived>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueArchived = default; _explicitNullProperties?.Remove("archived"); AdditionalData["archived"] = unknown; } else { Archived = parsed; AdditionalData.Remove("archived"); } } },
                 { "campaign_guid", n => { CampaignGuid = n.GetStringValue(); } },

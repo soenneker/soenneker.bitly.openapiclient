@@ -110,7 +110,7 @@ namespace Soenneker.Bitly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "background_color", n => { BackgroundColor = n.GetStringValue(); } },
                 { "branding", n => { Branding = n.GetObjectValue<global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding>(global::Soenneker.Bitly.OpenApiClient.Models.QrCodeBranding.CreateFromDiscriminatorValue); } },
